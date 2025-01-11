@@ -60,7 +60,7 @@ internal class Startup : StartupBase
 
     application.UseHttpsRedirection();
 
-    application.UseGraphQL<SkillCraftSchema>("/graphql"/*, options => options.AuthenticationSchemes.AddRange(_authenticationSchemes)*/); // TODO(fpion): auth²
+    application.UseGraphQL<SkillCraftSchema>("/graphql"/*, options => options.AuthenticationSchemes.AddRange(_authenticationSchemes)*/); // ISSUE: https://github.com/SkillCraftRPG/tools/issues/5
 
     application.MapControllers();
   }

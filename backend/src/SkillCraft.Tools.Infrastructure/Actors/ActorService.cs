@@ -53,7 +53,7 @@ internal class ActorService : IActorService
     //    actors[id] = actor;
     //    _cacheService.SetActor(actor);
     //  }
-    //} // TODO(fpion): read actors from DB
+    //} // ISSUE: https://github.com/SkillCraftRPG/tools/issues/5
 
     return Task.FromResult<IReadOnlyCollection<ActorModel>>(actors.Values);
   }

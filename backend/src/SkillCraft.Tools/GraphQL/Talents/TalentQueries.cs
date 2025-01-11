@@ -9,7 +9,7 @@ internal static class TalentQueries
   public static void Register(RootQuery root)
   {
     root.Field<TalentGraphType>("talent")
-      //.Authorize() // TODO(fpion): auth²
+      //.Authorize() // ISSUE: https://github.com/SkillCraftRPG/tools/issues/5
       .Description("Retrieves a single talent.")
       .Arguments(
         new QueryArgument<IdGraphType>() { Name = "id", Description = "The unique identifier of the talent." },

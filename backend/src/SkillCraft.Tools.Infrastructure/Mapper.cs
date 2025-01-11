@@ -41,7 +41,6 @@ internal class Mapper
     {
       destination.RequiredTalent = ToTalent(source.RequiredTalent);
     }
-    // TODO(fpion): RequiringTalents
 
     MapAggregate(source, destination);
 
