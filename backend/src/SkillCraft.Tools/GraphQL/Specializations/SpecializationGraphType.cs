@@ -1,4 +1,6 @@
-﻿using SkillCraft.Tools.Core.Specializations.Models;
+﻿using GraphQL.Types;
+using SkillCraft.Tools.Core.Specializations.Models;
+using SkillCraft.Tools.GraphQL.Talents;
 
 namespace SkillCraft.Tools.GraphQL.Specializations;
 
@@ -14,5 +16,10 @@ internal class SpecializationGraphType : AggregateGraphType<SpecializationModel>
       .Description("The display name of the specialization.");
     Field(x => x.Description)
       .Description("A textual description of the specialization. It may contain Markdown and HTML.");
+
+    Field(x => x.RequiredTalent, type: typeof(TalentGraphType))
+      .Description("The required talent to acquire this specialization.");
+    Field(x => x.OptionalTalents, type: typeof(NonNullGraphType<ListGraphType<NonNullGraphType<TalentGraphType>>>))
+      .Description("The list of optional talents to acquire this specialization.");
   }
 }

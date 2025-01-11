@@ -1,4 +1,6 @@
-﻿namespace SkillCraft.Tools.Core.Specializations.Models;
+﻿using SkillCraft.Tools.Core.Talents.Models;
+
+namespace SkillCraft.Tools.Core.Specializations.Models;
 
 public class SpecializationModel : AggregateModel
 {
@@ -7,11 +9,14 @@ public class SpecializationModel : AggregateModel
   public string? DisplayName { get; set; }
   public string? Description { get; set; }
 
-  // TODO(fpion): Requis
-  // TODO(fpion): Talent obligatoire
-  // TODO(fpion): Talents optionnels
+  // TODO(fpion): Autres requis
+  public TalentModel? RequiredTalent { get; set; }
+  public List<TalentModel> OptionalTalents { get; set; } = [];
+  // TODO(fpion): Autres options
   // TODO(fpion): Talent réservé
-  // TODO(fpion): Contenu supplémentaire
+
+  // TODO(fpion): Arbres de spécialisations
+  // TODO(fpion): Contenu supplémentaire (annexes)
 
   public override string ToString() => $"{DisplayName ?? UniqueSlug} | {base.ToString()}";
 }
