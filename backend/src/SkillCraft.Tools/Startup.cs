@@ -44,6 +44,7 @@ internal class Startup : StartupBase
     services.AddCors();
 
     AuthenticationBuilder authenticationBuilder = services.AddAuthentication()
+      .AddScheme<ApiKeyAuthenticationOptions, ApiKeyAuthenticationHandler>(Schemes.ApiKey, options => { })
       .AddScheme<SessionAuthenticationOptions, SessionAuthenticationHandler>(Schemes.Session, options => { });
     if (_authenticationSchemes.Contains(Schemes.Basic))
     {

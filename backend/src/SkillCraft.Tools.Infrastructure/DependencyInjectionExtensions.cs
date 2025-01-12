@@ -37,6 +37,7 @@ public static class DependencyInjectionExtensions
   private static IServiceCollection AddIdentityServices(this IServiceCollection services)
   {
     return services
+      .AddTransient<IApiKeyService, ApiKeyService>()
       .AddTransient<ISessionService, SessionService>()
       .AddTransient<IUserService, UserService>();
   }
