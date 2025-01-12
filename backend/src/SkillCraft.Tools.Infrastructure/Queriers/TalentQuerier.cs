@@ -23,6 +23,7 @@ internal class TalentQuerier : ITalentQuerier
   public async Task<TalentModel?> ReadAsync(Guid id, CancellationToken cancellationToken)
   {
     TalentEntity? talent = await _talents.AsNoTracking()
+      .Include(x => x.RequiredTalent)
       .SingleOrDefaultAsync(x => x.Id == id, cancellationToken);
 
     return talent == null ? null : await MapAsync(talent, cancellationToken);
@@ -32,6 +33,7 @@ internal class TalentQuerier : ITalentQuerier
     string uniqueSlugNormalized = Helper.Normalize(uniqueSlug);
 
     TalentEntity? talent = await _talents.AsNoTracking()
+      .Include(x => x.RequiredTalent)
       .SingleOrDefaultAsync(x => x.UniqueSlugNormalized == uniqueSlugNormalized, cancellationToken);
 
     return talent == null ? null : await MapAsync(talent, cancellationToken);

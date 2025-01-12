@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Logitar.EventSourcing.EntityFrameworkCore.Relational;
+using Logitar.EventSourcing.Infrastructure;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SkillCraft.Tools.Core.Actors;
 using SkillCraft.Tools.Core.Caching;
@@ -16,12 +18,15 @@ public static class DependencyInjectionExtensions
   public static IServiceCollection AddSkillCraftToolsInfrastructure(this IServiceCollection services)
   {
     return services
+      .AddLogitarEventSourcingWithEntityFrameworkCoreRelational()
       .AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()))
       .AddMemoryCache()
       .AddQueriers()
       .AddSingleton(InitializeCachingSettings)
       .AddSingleton<ICacheService, CacheService>()
-      .AddScoped<IActorService, ActorService>();
+      .AddSingleton<IEventSerializer, EventSerializer>()
+      .AddScoped<IActorService, ActorService>()
+      .AddScoped<IEventBus, EventBus>();
   }
 
   private static IServiceCollection AddQueriers(this IServiceCollection services)

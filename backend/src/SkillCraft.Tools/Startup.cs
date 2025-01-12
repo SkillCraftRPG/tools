@@ -1,5 +1,6 @@
 ﻿using GraphQL;
 using GraphQL.Execution;
+using Logitar.EventSourcing.EntityFrameworkCore.Relational;
 using Microsoft.FeatureManagement;
 using Scalar.AspNetCore;
 using SkillCraft.Tools.Core;
@@ -49,6 +50,7 @@ internal class Startup : StartupBase
     {
       case DatabaseProvider.SqlServer:
         services.AddSkillCraftToolsInfrastructureSqlServer(_configuration);
+        healthChecks.AddDbContextCheck<EventContext>();
         healthChecks.AddDbContextCheck<SkillCraftContext>();
         break;
       default:

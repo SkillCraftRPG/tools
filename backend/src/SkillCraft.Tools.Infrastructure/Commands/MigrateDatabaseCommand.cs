@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Logitar.EventSourcing.EntityFrameworkCore.Relational;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace SkillCraft.Tools.Infrastructure.Commands;
@@ -7,15 +8,18 @@ public record MigrateDatabaseCommand : IRequest;
 
 internal class MigrateDatabaseCommandHandler : IRequestHandler<MigrateDatabaseCommand>
 {
-  private readonly SkillCraftContext _context;
+  private readonly EventContext _eventContext;
+  private readonly SkillCraftContext _skillCraftContext;
 
-  public MigrateDatabaseCommandHandler(SkillCraftContext context)
+  public MigrateDatabaseCommandHandler(EventContext eventContext, SkillCraftContext skillCraftContext)
   {
-    _context = context;
+    _eventContext = eventContext;
+    _skillCraftContext = skillCraftContext;
   }
 
   public async Task Handle(MigrateDatabaseCommand _, CancellationToken cancellationToken)
   {
-    await _context.Database.MigrateAsync(cancellationToken);
+    await _eventContext.Database.MigrateAsync(cancellationToken);
+    await _skillCraftContext.Database.MigrateAsync(cancellationToken);
   }
 }
