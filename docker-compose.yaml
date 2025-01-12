@@ -1,1 +1,50 @@
-name: skillcraft-tools
+name: skillcraft_tools
+services:
+  skillcraft_tools_mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: SkillCraft.Tools_mssql
+    restart: unless-stopped
+    user: root
+    environment:
+      ACCEPT_EULA: 'Y'
+      SA_PASSWORD: ATMdrBhNHQ9Z2xG6
+    ports:
+      - 21438:1433
+    volumes:
+      - mssql_backup:/var/opt/mssql/backup
+      - mssql_data:/var/opt/mssql/data
+      - mssql_log:/var/opt/mssql/log
+
+  skillcraft_tools_postgres:
+    image: postgres
+    container_name: SkillCraft.Tools_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: kCK6g3w9P4Z8HYse
+    ports:
+      - 25438:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  skillcraft_tools_backend:
+    build:
+      context: ./backend
+      dockerfile: /src/SkillCraft.Tools/Dockerfile
+    image: skillcraft_tools_backend
+    container_name: SkillCraft.Tools.backend
+    depends_on:
+      - skillcraft_tools_mssql
+      - skillcraft_tools_postgres
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_Environment: Development
+      POSTGRESQLCONNSTR_SkillCraft: "User ID=postgres;Password=kCK6g3w9P4Z8HYse;Host=skillcraft_tools_postgres;Port=5432;Database=SkillCraftTools;"
+      SQLCONNSTR_SkillCraft: "Server=skillcraft_tools_mssql,1433;Database=SkillCraftTools;User Id=SA;Password=ATMdrBhNHQ9Z2xG6;Persist Security Info=False;Encrypt=False;"
+    ports:
+      - 28088:8080
+
+volumes:
+  mssql_backup:
+  mssql_data:
+  mssql_log:
+  postgres_data:

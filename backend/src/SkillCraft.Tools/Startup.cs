@@ -3,6 +3,8 @@ using GraphQL.Execution;
 using Microsoft.FeatureManagement;
 using SkillCraft.Tools.Core;
 using SkillCraft.Tools.GraphQL;
+using SkillCraft.Tools.Infrastructure;
+using SkillCraft.Tools.Infrastructure.SqlServer;
 using SkillCraft.Tools.Settings;
 
 namespace SkillCraft.Tools;
@@ -21,6 +23,7 @@ internal class Startup : StartupBase
     base.ConfigureServices(services);
 
     services.AddSkillCraftToolsCore();
+    services.AddSkillCraftToolsInfrastructure();
 
     services.AddControllers()
       .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
@@ -34,6 +37,20 @@ internal class Startup : StartupBase
       .AddErrorInfoProvider(new ErrorInfoProvider(options => options.ExposeExceptionDetails = graphQLSettings.ExposeExceptionDetails))
       .AddGraphTypes(Assembly.GetExecutingAssembly())
       .ConfigureExecutionOptions(options => options.EnableMetrics = graphQLSettings.EnableMetrics));
+
+    services.AddApplicationInsightsTelemetry();
+    IHealthChecksBuilder healthChecks = services.AddHealthChecks();
+
+    DatabaseProvider databaseProvider = _configuration.GetValue<DatabaseProvider?>("DatabaseProvider") ?? DatabaseProvider.SqlServer;
+    switch (databaseProvider)
+    {
+      case DatabaseProvider.SqlServer:
+        services.AddSkillCraftToolsInfrastructureSqlServer(_configuration);
+        healthChecks.AddDbContextCheck<SkillCraftContext>();
+        break;
+      default:
+        throw new DatabaseProviderNotSupportedException(databaseProvider);
+    }
 
     services.AddFeatureManagement();
   }

@@ -30,7 +30,7 @@ internal class TalentConfiguration : AggregateConfiguration<TalentEntity>, IEnti
     builder.Property(x => x.Skill).HasMaxLength(byte.MaxValue).HasConversion(new EnumToStringConverter<Skill>());
 
     builder.HasOne(x => x.RequiredTalent).WithMany(x => x.RequiringTalents)
-      .HasPrincipalKey(x => x.TalentId).HasForeignKey(x => x.TalentId)
-      .OnDelete(DeleteBehavior.Cascade);
+      .HasPrincipalKey(x => x.TalentId).HasForeignKey(x => x.RequiredTalentId)
+      .OnDelete(DeleteBehavior.Restrict);
   }
 }
