@@ -14,12 +14,6 @@ internal class SeedUsersTask : SeedingTask
 
 internal class SeedUsersTaskHandler : INotificationHandler<SeedUsersTask>
 {
-  private static readonly JsonSerializerOptions _serializerOptions = new();
-  static SeedUsersTaskHandler()
-  {
-    _serializerOptions.Converters.Add(new JsonStringEnumConverter());
-  } // TODO(fpion): refactor
-
   private readonly ILogger<SeedUsersTaskHandler> _logger;
   private readonly IUserClient _users;
 
@@ -34,7 +28,7 @@ internal class SeedUsersTaskHandler : INotificationHandler<SeedUsersTask>
     RequestContext context = new(cancellationToken);
 
     string json = await File.ReadAllTextAsync("Portal/data/users.json", Encoding.UTF8, cancellationToken);
-    IEnumerable<UserPayload>? payloads = JsonSerializer.Deserialize<IEnumerable<UserPayload>>(json, _serializerOptions);
+    IEnumerable<UserPayload>? payloads = SeedingSerializer.Deserialize<IEnumerable<UserPayload>>(json);
     if (payloads != null)
     {
       SearchResults<UserModel> results = await _users.SearchAsync(new SearchUsersPayload(), context);

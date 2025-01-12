@@ -12,12 +12,6 @@ internal class SeedTalentsTask : SeedingTask
 
 internal class SeedTalentsTaskHandler : INotificationHandler<SeedTalentsTask>
 {
-  private static readonly JsonSerializerOptions _serializerOptions = new();
-  static SeedTalentsTaskHandler()
-  {
-    _serializerOptions.Converters.Add(new JsonStringEnumConverter());
-  } // TODO(fpion): refactor
-
   private readonly ILogger<SeedTalentsTaskHandler> _logger;
   private readonly IMediator _mediator;
 
@@ -30,7 +24,7 @@ internal class SeedTalentsTaskHandler : INotificationHandler<SeedTalentsTask>
   public async Task Handle(SeedTalentsTask _, CancellationToken cancellationToken)
   {
     string json = await File.ReadAllTextAsync("Backend/data/talents.json", Encoding.UTF8, cancellationToken);
-    IEnumerable<TalentPayload>? payloads = JsonSerializer.Deserialize<IEnumerable<TalentPayload>>(json, _serializerOptions);
+    IEnumerable<TalentPayload>? payloads = SeedingSerializer.Deserialize<IEnumerable<TalentPayload>>(json);
     if (payloads != null)
     {
       foreach (TalentPayload payload in payloads)

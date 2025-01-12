@@ -12,12 +12,6 @@ internal class SeedRealmTask : SeedingTask
 
 internal class SeedRealmTaskHandler : INotificationHandler<SeedRealmTask>
 {
-  private static readonly JsonSerializerOptions _serializerOptions = new();
-  static SeedRealmTaskHandler()
-  {
-    _serializerOptions.Converters.Add(new JsonStringEnumConverter());
-  } // TODO(fpion): refactor
-
   private readonly ILogger<SeedRealmTaskHandler> _logger;
   private readonly IRealmClient _realms;
 
@@ -32,7 +26,7 @@ internal class SeedRealmTaskHandler : INotificationHandler<SeedRealmTask>
     RequestContext context = new(cancellationToken);
 
     string json = await File.ReadAllTextAsync("Portal/data/realm.json", Encoding.UTF8, cancellationToken);
-    RealmPayload? payload = JsonSerializer.Deserialize<RealmPayload>(json, _serializerOptions);
+    RealmPayload? payload = SeedingSerializer.Deserialize<RealmPayload>(json);
     if (payload == null)
     {
       _logger.LogWarning("The realm could not be deserialized.");

@@ -13,12 +13,6 @@ internal class SeedRolesTask : SeedingTask
 
 internal class SeedRolesTaskHandler : INotificationHandler<SeedRolesTask>
 {
-  private static readonly JsonSerializerOptions _serializerOptions = new();
-  static SeedRolesTaskHandler()
-  {
-    _serializerOptions.Converters.Add(new JsonStringEnumConverter());
-  } // TODO(fpion): refactor
-
   private readonly ILogger<SeedRolesTaskHandler> _logger;
   private readonly IRoleClient _roles;
 
@@ -33,7 +27,7 @@ internal class SeedRolesTaskHandler : INotificationHandler<SeedRolesTask>
     RequestContext context = new(cancellationToken);
 
     string json = await File.ReadAllTextAsync("Portal/data/roles.json", Encoding.UTF8, cancellationToken);
-    IEnumerable<RolePayload>? payloads = JsonSerializer.Deserialize<IEnumerable<RolePayload>>(json, _serializerOptions);
+    IEnumerable<RolePayload>? payloads = SeedingSerializer.Deserialize<IEnumerable<RolePayload>>(json);
     if (payloads != null)
     {
       SearchResults<RoleModel> results = await _roles.SearchAsync(new SearchRolesPayload(), context);
