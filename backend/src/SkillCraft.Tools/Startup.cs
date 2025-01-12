@@ -10,6 +10,7 @@ using SkillCraft.Tools.Authentication;
 using SkillCraft.Tools.Authorization;
 using SkillCraft.Tools.Constants;
 using SkillCraft.Tools.Core;
+using SkillCraft.Tools.Extensions;
 using SkillCraft.Tools.GraphQL;
 using SkillCraft.Tools.Infrastructure;
 using SkillCraft.Tools.Infrastructure.SqlServer;
@@ -22,11 +23,13 @@ internal class Startup : StartupBase
 {
   private readonly string[] _authenticationSchemes;
   private readonly IConfiguration _configuration;
+  private readonly CorsSettings _corsSettings;
 
   public Startup(IConfiguration configuration)
   {
     _authenticationSchemes = Schemes.GetEnabled(configuration);
     _configuration = configuration;
+    _corsSettings = configuration.GetSection(CorsSettings.SectionKey).Get<CorsSettings>() ?? new();
   }
 
   public override void ConfigureServices(IServiceCollection services)
@@ -36,6 +39,9 @@ internal class Startup : StartupBase
     services.AddSkillCraftToolsCore();
     services.AddSkillCraftToolsInfrastructure();
     services.AddSingleton<IApplicationContext, HttpApplicationContext>();
+
+    services.AddSingleton(_corsSettings);
+    services.AddCors();
 
     AuthenticationBuilder authenticationBuilder = services.AddAuthentication()
       .AddScheme<SessionAuthenticationOptions, SessionAuthenticationHandler>(Schemes.Session, options => { });
@@ -127,7 +133,7 @@ internal class Startup : StartupBase
     }
 
     application.UseHttpsRedirection();
-    application.UseCors();
+    application.UseCors(_corsSettings);
     application.UseExceptionHandler();
     application.UseSession();
     application.UseMiddleware<RenewSession>();
