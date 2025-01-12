@@ -1,0 +1,13 @@
+﻿[
+  {
+    "Id": "216efb4b-03f4-49dd-a085-f831491d753e",
+    "UniqueName": "fpion",
+    "Password": "P@s$W0rD",
+    "FirstName": "Francis",
+    "MiddleName": null,
+    "LastName": "Pion",
+    "EmailAddress": "francispion@hotmail.com",
+    "PictureUrl": "https://www.francispion.ca/assets/img/profile-img.jpg",
+    "Roles": [ "admin" ]
+  }
+]

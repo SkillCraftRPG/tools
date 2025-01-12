@@ -128,7 +128,7 @@ public class Talent : AggregateRoot
       _updated = new();
     }
   }
-  protected virtual void Apply(TalentUpdated @event)
+  protected virtual void Handle(TalentUpdated @event)
   {
     if (@event.UniqueSlug != null)
     {
