@@ -11,6 +11,6 @@ internal class CreateOrReplaceNatureValidator : AbstractValidator<CreateOrReplac
     When(x => !string.IsNullOrWhiteSpace(x.DisplayName), () => RuleFor(x => x.DisplayName!).DisplayName());
     When(x => !string.IsNullOrWhiteSpace(x.Description), () => RuleFor(x => x.Description!).Description());
 
-    When(x => x.GiftId.HasValue, () => RuleFor(x => x.GiftId!.Value).IsInEnum());
+    When(x => x.Attribute.HasValue, () => RuleFor(x => x.Attribute!.Value).IsInEnum());
   }
 }

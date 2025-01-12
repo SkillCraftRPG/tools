@@ -79,7 +79,7 @@ internal class NatureQuerier : INatureQuerier
 
     if (payload.Attribute.HasValue)
     {
-      builder.Where(Natures.Attribute, Operators.IsEqualTo(payload.Attribute.Value));
+      builder.Where(Natures.Attribute, Operators.IsEqualTo(payload.Attribute.Value.ToString()));
     }
     if (payload.GiftId.HasValue)
     {
@@ -88,7 +88,8 @@ internal class NatureQuerier : INatureQuerier
         new OperatorCondition(Customizations.Id, Operators.IsEqualTo(payload.GiftId.Value)));
     }
 
-    IQueryable<NatureEntity> query = _natures.FromQuery(builder).AsNoTracking();
+    IQueryable<NatureEntity> query = _natures.FromQuery(builder).AsNoTracking()
+      .Include(x => x.Gift);
 
     long total = await query.LongCountAsync(cancellationToken);
 

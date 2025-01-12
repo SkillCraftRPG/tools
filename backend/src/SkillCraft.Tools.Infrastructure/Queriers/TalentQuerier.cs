@@ -111,7 +111,8 @@ internal class TalentQuerier : ITalentQuerier
       builder.ApplyFilter(payload.Tier, Talents.Tier);
     }
 
-    IQueryable<TalentEntity> query = _talents.FromQuery(builder).AsNoTracking();
+    IQueryable<TalentEntity> query = _talents.FromQuery(builder).AsNoTracking()
+      .Include(x => x.RequiredTalent);
 
     long total = await query.LongCountAsync(cancellationToken);
 
