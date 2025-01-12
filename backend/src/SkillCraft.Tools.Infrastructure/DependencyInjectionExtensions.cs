@@ -39,6 +39,7 @@ public static class DependencyInjectionExtensions
     return services
       .AddTransient<IApiKeyService, ApiKeyService>()
       .AddTransient<ISessionService, SessionService>()
+      .AddTransient<ITokenService, TokenService>()
       .AddTransient<IUserService, UserService>();
   }
 

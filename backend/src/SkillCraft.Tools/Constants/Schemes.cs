@@ -12,7 +12,7 @@ internal static class Schemes
     List<string> schemes = new(capacity: 4)
     {
       ApiKey,
-      //Bearer, // TODO(fpion): Bearer
+      Bearer,
       Session
     };
 
