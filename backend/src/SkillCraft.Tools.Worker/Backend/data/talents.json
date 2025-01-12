@@ -1,0 +1,102 @@
+﻿[
+  {
+    "Id": "ea027ebe-2480-4743-92f6-2d8c609c9d60",
+    "Tier": 0,
+    "UniqueSlug": "acrobaties",
+    "DisplayName": "Acrobaties",
+    "Description": "Lorsque le personnage est renversé, se relever ne lui coûte maintenant que le quart de ses points de mouvement plutôt que la moitié.",
+    "AllowMultiplePurchases": false,
+    "RequiredTalentId": null,
+    "Skill": "Acrobatics"
+  },
+  {
+    "Id": "dbf9bab9-7f2c-4706-8886-48d719dd73ec",
+    "Tier": 0,
+    "UniqueSlug": "armes-improvisees",
+    "DisplayName": "Armes improvisées",
+    "Description": "Permet au personnage d’effectuer une attaque en utilisant un objet qui n’est pas une arme, comme s’il maniait une arme pour laquelle il est formé. Il effectue un test de _Mêlée_ lorsqu’il utilise l’objet en mêlée, ou un test d’_Orientation_ lorsqu’il lance l’objet.\n\nLe bonus conféré au test de l’attaque varie en fonction du maniement de l’objet :\n\n• Manié à une main : +1\n• Objet lancé : +2\n• Manié à deux mains : +3\n\nL’objet inflige 1d4 points de dégâts. S’il met en danger la vie de la cible, il inflige des points de dégâts létaux, sinon, il inflige des points de dégâts non létaux. Le type de dégâts varie en fonction de la nature de l’objet, par exemple :\n\n• Contondant : barreau de prison en métal, chope, coup de luth, louche à soupe, mobilier.\n• Perçant : aiguille, arrache-clou d’un marteau, clou, fourchette, pointe d’un porte-bannière.\n• Tranchant : brides d’une monture, couteau de cuisine, fragment de verre, hache de bûcheron.",
+    "AllowMultiplePurchases": false,
+    "RequiredTalentId": null,
+    "Skill": null
+  },
+  {
+    "Id": "1b0643d1-c404-4ae7-ae6d-5e89368b7035",
+    "Tier": 0,
+    "UniqueSlug": "orientation",
+    "DisplayName": "Orientation",
+    "Description": "Forme le personnage au maniement des armes de finesse et des armes à portée.",
+    "AllowMultiplePurchases": false,
+    "RequiredTalentId": null,
+    "Skill": "Orientation"
+  },
+  {
+    "Id": "7fd1e236-4e90-4083-8c55-7e8347951ae8",
+    "Tier": 0,
+    "UniqueSlug": "langue-supplementaire",
+    "DisplayName": "Langue supplémentaire",
+    "Description": "Permet au personnage d’apprendre une langue supplémentaire de son choix s’il a accès à un interlocuteur pouvant lui apprendre cette langue. S’il a acquis le talent <u>Linguistique</u>, il peut apprendre une langue exotique. S’il a acquis le talent <u>Philologie</u>, il peut apprendre une langue ancienne s’il a accès à suffisamment de sources écrites.",
+    "AllowMultiplePurchases": true,
+    "RequiredTalentId": null,
+    "Skill": null
+  },
+  {
+    "Id": "12b542bf-e19b-4a27-8b4b-877082a043d9",
+    "Tier": 0,
+    "UniqueSlug": "linguistique",
+    "DisplayName": "Linguistique",
+    "Description": "Le personnage peut désormais apprendre les langues exotiques. Il apprend également une langue de son choix et est formé à l’utilisation de la trousse de falsification.",
+    "AllowMultiplePurchases": false,
+    "RequiredTalentId": null,
+    "Skill": "Linguistics"
+  },
+  {
+    "Id": "0cf78d58-bf9c-432d-a861-2176b8cf0a63",
+    "Tier": 0,
+    "UniqueSlug": "melee",
+    "DisplayName": "Mêlée",
+    "Description": "Forme le personnage au maniement des armes simples. Il est également formé au port des armures légères et à l’utilisation des boucliers légers.",
+    "AllowMultiplePurchases": false,
+    "RequiredTalentId": null,
+    "Skill": "Melee"
+  },
+  {
+    "Id": "44bda020-d2d1-4d58-b73e-de84e9cac661",
+    "Tier": 0,
+    "UniqueSlug": "formation-martiale",
+    "DisplayName": "Formation martiale",
+    "Description": "Forme le personnage au maniement des armes martiales. Il est également formé au port des armures moyennes et à l’utilisation des boucliers moyens. De plus, il n’est pas affligé de la pénalité à ses tests de _Furtivité_ et à sa régénération de Vitalité et d’Énergie lorsqu’il porte une armure légère ou moyenne.",
+    "AllowMultiplePurchases": false,
+    "RequiredTalentId": "0cf78d58-bf9c-432d-a861-2176b8cf0a63",
+    "Skill": null
+  },
+  {
+    "Id": "8526a1ce-2ba1-4d76-86d2-573c20735ac6",
+    "Tier": 1,
+    "UniqueSlug": "cuirasse",
+    "DisplayName": "Cuirassé",
+    "Description": "Le personnage acquiert les capacités suivantes :\n\n• Il est formé au port des armures lourdes et à l’utilisation des boucliers lourds.\n• Il est formé au port de deux couches d’armure.\n• Lorsqu’il porte une armure complète, il se voit conférer un bonus de +1 à sa Défense.",
+    "AllowMultiplePurchases": false,
+    "RequiredTalentId": "44bda020-d2d1-4d58-b73e-de84e9cac661",
+    "Skill": null
+  },
+  {
+    "Id": "ac456f84-acf1-4e82-b54d-c183c3c20595",
+    "Tier": 0,
+    "UniqueSlug": "occultisme",
+    "DisplayName": "Occultisme",
+    "Description": "Lorsque le personnage voit une créature canaliser un pouvoir, il peut déterminer si les capacités surnaturelles de la créature sont inférieures, supérieures ou équivalentes aux siennes.\n\nÉgalement, il peut lire et examiner un parchemin de pouvoir pendant une minute afin de déterminer quel pouvoir est inscrit sur le parchemin, à quel niveau celui-ci sera-t-il canalisé lors de l’utilisation du parchemin, ainsi que les effets déclenchés par l’utilisation du parchemin.",
+    "AllowMultiplePurchases": false,
+    "RequiredTalentId": null,
+    "Skill": "Occultism"
+  },
+  {
+    "Id": "90e339c2-35ae-422b-a8d4-e188a762d6e8",
+    "Tier": 2,
+    "UniqueSlug": "magie-puissante",
+    "DisplayName": "Magie puissante",
+    "Description": "Permet au personnage de canaliser un pouvoir à un niveau de plus que le niveau de base, ce qui augmente la dépense en points d’Énergie. Également, lorsqu’il atteint le tiers 2, il peut désormais canaliser un pouvoir au niveau maximal, c’est-à-dire à deux niveaux de plus que le niveau de base. Il peut donc canaliser tous les niveaux d’un pouvoir.",
+    "AllowMultiplePurchases": false,
+    "RequiredTalentId": "ac456f84-acf1-4e82-b54d-c183c3c20595",
+    "Skill": null
+  }
+]

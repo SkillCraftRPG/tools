@@ -46,6 +46,7 @@ internal class SeedingWorker : BackgroundService
     {
       // NOTE(fpion): the order of these tasks matter.
       await ExecuteAsync(new MigrateDatabaseTask(), cancellationToken);
+      await ExecuteAsync(new SeedTalentsTask(), cancellationToken);
     }
     catch (Exception exception)
     {
