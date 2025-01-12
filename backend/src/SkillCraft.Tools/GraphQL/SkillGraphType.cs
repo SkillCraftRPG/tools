@@ -7,7 +7,7 @@ internal class SkillGraphType : EnumerationGraphType<Skill>
 {
   public SkillGraphType()
   {
-    Name = nameof(Skill);
+    Name = "Skill";
     Description = "Represents the available character skills.";
 
     AddValue(Skill.Acrobatics, string.Empty);
