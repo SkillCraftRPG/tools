@@ -5,5 +5,19 @@ namespace SkillCraft.Tools.Worker;
 
 internal class WorkerApplicationContext : IApplicationContext
 {
-  public ActorId? ActorId => null; // ISSUE: https://github.com/SkillCraftRPG/tools/issues/5
+  private readonly IConfiguration _configuration;
+
+  public WorkerApplicationContext(IConfiguration configuration)
+  {
+    _configuration = configuration;
+  }
+
+  public ActorId? ActorId
+  {
+    get
+    {
+      Guid? actorId = _configuration.GetValue<Guid?>("ActorId");
+      return actorId.HasValue ? new(actorId.Value) : null;
+    }
+  }
 }

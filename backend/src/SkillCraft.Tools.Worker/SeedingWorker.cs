@@ -1,6 +1,7 @@
 ﻿using Logitar.Portal.Client;
 using MediatR;
 using SkillCraft.Tools.Worker.Backend.Tasks;
+using SkillCraft.Tools.Worker.Portal.Tasks;
 
 namespace SkillCraft.Tools.Worker;
 
@@ -37,7 +38,7 @@ internal class SeedingWorker : BackgroundService
     Stopwatch chrono = Stopwatch.StartNew();
     _logger.LogInformation("Worker executing at {Timestamp}.", DateTimeOffset.Now);
 
-    //await WaitForStartupAsync(cancellationToken); // ISSUE: https://github.com/SkillCraftRPG/tools/issues/5
+    await WaitForStartupAsync(cancellationToken);
 
     using IServiceScope scope = _serviceProvider.CreateScope();
     _publisher = scope.ServiceProvider.GetRequiredService<IPublisher>();
@@ -45,6 +46,9 @@ internal class SeedingWorker : BackgroundService
     try
     {
       // NOTE(fpion): the order of these tasks matter.
+      await ExecuteAsync(new SeedRealmTask(), cancellationToken);
+      await ExecuteAsync(new SeedRolesTask(), cancellationToken);
+      await ExecuteAsync(new SeedUsersTask(), cancellationToken);
       await ExecuteAsync(new MigrateDatabaseTask(), cancellationToken);
       await ExecuteAsync(new SeedTalentsTask(), cancellationToken);
     }
