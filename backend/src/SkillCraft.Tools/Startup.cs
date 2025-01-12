@@ -1,22 +1,31 @@
 ﻿using GraphQL;
 using GraphQL.Execution;
 using Logitar.EventSourcing.EntityFrameworkCore.Relational;
+using Logitar.Portal.Client;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.FeatureManagement;
 using Scalar.AspNetCore;
+using SkillCraft.Tools.Authentication;
+using SkillCraft.Tools.Authorization;
+using SkillCraft.Tools.Constants;
 using SkillCraft.Tools.Core;
 using SkillCraft.Tools.GraphQL;
 using SkillCraft.Tools.Infrastructure;
 using SkillCraft.Tools.Infrastructure.SqlServer;
+using SkillCraft.Tools.Middlewares;
 using SkillCraft.Tools.Settings;
 
 namespace SkillCraft.Tools;
 
 internal class Startup : StartupBase
 {
+  private readonly string[] _authenticationSchemes;
   private readonly IConfiguration _configuration;
 
   public Startup(IConfiguration configuration)
   {
+    _authenticationSchemes = Schemes.GetEnabled(configuration);
     _configuration = configuration;
   }
 
@@ -27,6 +36,32 @@ internal class Startup : StartupBase
     services.AddSkillCraftToolsCore();
     services.AddSkillCraftToolsInfrastructure();
     services.AddSingleton<IApplicationContext, HttpApplicationContext>();
+
+    AuthenticationBuilder authenticationBuilder = services.AddAuthentication()
+      .AddScheme<SessionAuthenticationOptions, SessionAuthenticationHandler>(Schemes.Session, options => { });
+    if (_authenticationSchemes.Contains(Schemes.Basic))
+    {
+      authenticationBuilder.AddScheme<BasicAuthenticationOptions, BasicAuthenticationHandler>(Schemes.Basic, options => { });
+    }
+
+    services.AddAuthorizationBuilder()
+      .SetDefaultPolicy(new AuthorizationPolicyBuilder(_authenticationSchemes)
+        .RequireAuthenticatedUser()
+        .Build())
+      .AddPolicy(Policies.IsAdmin, new AuthorizationPolicyBuilder(_authenticationSchemes)
+        .RequireAuthenticatedUser()
+        .AddRequirements(new RoleAuthorizationRequirement("admin"))
+        .Build());
+    services.AddSingleton<IAuthorizationHandler, RoleAuthorizationHandler>();
+
+    CookiesSettings cookiesSettings = _configuration.GetSection(CookiesSettings.SectionKey).Get<CookiesSettings>() ?? new();
+    services.AddSingleton(cookiesSettings);
+    services.AddSession(options =>
+    {
+      options.Cookie.SameSite = cookiesSettings.Session.SameSite;
+      options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    });
+    services.AddDistributedMemoryCache();
 
     services.AddControllers()
       .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
@@ -61,6 +96,8 @@ internal class Startup : StartupBase
     services.AddExceptionHandler<ExceptionHandler>();
     services.AddFeatureManagement();
     services.AddProblemDetails();
+
+    services.AddLogitarPortalClient(_configuration);
   }
 
   public override void Configure(IApplicationBuilder builder)
@@ -90,9 +127,14 @@ internal class Startup : StartupBase
     }
 
     application.UseHttpsRedirection();
+    application.UseCors();
     application.UseExceptionHandler();
+    application.UseSession();
+    application.UseMiddleware<RenewSession>();
+    application.UseAuthentication();
+    application.UseAuthorization();
 
-    application.UseGraphQL<SkillCraftSchema>("/graphql"/*, options => options.AuthenticationSchemes.AddRange(_authenticationSchemes)*/); // ISSUE: https://github.com/SkillCraftRPG/tools/issues/5
+    application.UseGraphQL<SkillCraftSchema>("/graphql", options => options.AuthenticationSchemes.AddRange(_authenticationSchemes));
 
     application.MapControllers();
   }

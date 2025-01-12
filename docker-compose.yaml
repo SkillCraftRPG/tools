@@ -77,6 +77,7 @@ services:
     restart: unless-stopped
     environment:
       ASPNETCORE_Environment: Development
+      Portal:BaseUrl: "http://skillcraft_tools_portal:8080"
       POSTGRESQLCONNSTR_SkillCraft: "User ID=postgres;Password=kCK6g3w9P4Z8HYse;Host=skillcraft_tools_postgres;Port=5432;Database=SkillCraftTools;"
       SQLCONNSTR_SkillCraft: "Server=skillcraft_tools_mssql,1433;Database=SkillCraftTools;User Id=SA;Password=ATMdrBhNHQ9Z2xG6;Persist Security Info=False;Encrypt=False;"
     ports:

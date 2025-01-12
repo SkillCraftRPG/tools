@@ -1,5 +1,7 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SkillCraft.Tools.Constants;
 using SkillCraft.Tools.Core.Search;
 using SkillCraft.Tools.Core.Talents.Commands;
 using SkillCraft.Tools.Core.Talents.Models;
@@ -9,7 +11,7 @@ using SkillCraft.Tools.Models.Talent;
 namespace SkillCraft.Tools.Controllers;
 
 [ApiController]
-//[Authorize] // ISSUE: https://github.com/SkillCraftRPG/tools/issues/5
+[Authorize(Policy = Policies.IsAdmin)]
 [Route("api/talents")]
 public class TalentController : ControllerBase
 {

@@ -10,7 +10,7 @@ internal static class TalentQueries
   public static void Register(RootQuery root)
   {
     root.Field<TalentGraphType>("talent")
-      //.Authorize() // ISSUE: https://github.com/SkillCraftRPG/tools/issues/5
+      .Authorize()
       .Description("Retrieves a single talent.")
       .Arguments(
         new QueryArgument<IdGraphType>() { Name = "id", Description = "The unique identifier of the talent." },
@@ -20,7 +20,7 @@ internal static class TalentQueries
         context.GetArgument<string?>("slug"))));
 
     root.Field<NonNullGraphType<TalentSearchResultsGraphType>>("talents")
-      //.Authorize() // ISSUE: https://github.com/SkillCraftRPG/tools/issues/5
+      .Authorize()
       .Description("Searches a list of talents.")
       .Arguments(
       new QueryArgument<NonNullGraphType<SearchTalentsPayloadGraphType>>() { Name = "payload", Description = "The talent search parameters." })

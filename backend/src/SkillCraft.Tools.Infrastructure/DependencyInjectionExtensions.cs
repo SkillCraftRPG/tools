@@ -4,10 +4,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SkillCraft.Tools.Core.Actors;
 using SkillCraft.Tools.Core.Caching;
+using SkillCraft.Tools.Core.Identity;
 using SkillCraft.Tools.Core.Specializations;
 using SkillCraft.Tools.Core.Talents;
 using SkillCraft.Tools.Infrastructure.Actors;
 using SkillCraft.Tools.Infrastructure.Caching;
+using SkillCraft.Tools.Infrastructure.Identity;
 using SkillCraft.Tools.Infrastructure.Queriers;
 using SkillCraft.Tools.Infrastructure.Repositories;
 using SkillCraft.Tools.Infrastructure.Settings;
@@ -22,6 +24,7 @@ public static class DependencyInjectionExtensions
       .AddLogitarEventSourcingWithEntityFrameworkCoreRelational()
       .AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()))
       .AddMemoryCache()
+      .AddIdentityServices()
       .AddQueriers()
       .AddRepositories()
       .AddSingleton(InitializeCachingSettings)
@@ -29,6 +32,13 @@ public static class DependencyInjectionExtensions
       .AddSingleton<IEventSerializer, EventSerializer>()
       .AddScoped<IActorService, ActorService>()
       .AddScoped<IEventBus, EventBus>();
+  }
+
+  private static IServiceCollection AddIdentityServices(this IServiceCollection services)
+  {
+    return services
+      .AddTransient<ISessionService, SessionService>()
+      .AddTransient<IUserService, UserService>();
   }
 
   private static IServiceCollection AddQueriers(this IServiceCollection services)
