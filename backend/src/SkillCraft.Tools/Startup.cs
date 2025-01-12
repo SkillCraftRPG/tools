@@ -1,6 +1,7 @@
 ﻿using GraphQL;
 using GraphQL.Execution;
 using Microsoft.FeatureManagement;
+using Scalar.AspNetCore;
 using SkillCraft.Tools.Core;
 using SkillCraft.Tools.GraphQL;
 using SkillCraft.Tools.Infrastructure;
@@ -41,6 +42,8 @@ internal class Startup : StartupBase
     services.AddApplicationInsightsTelemetry();
     IHealthChecksBuilder healthChecks = services.AddHealthChecks();
 
+    services.AddOpenApi();
+
     DatabaseProvider databaseProvider = _configuration.GetValue<DatabaseProvider?>("DatabaseProvider") ?? DatabaseProvider.SqlServer;
     switch (databaseProvider)
     {
@@ -61,12 +64,18 @@ internal class Startup : StartupBase
   {
     if (builder is WebApplication application)
     {
-      this.ConfigureAsync(application).Wait();
+      ConfigureAsync(application).Wait();
     }
   }
   public async Task ConfigureAsync(WebApplication application)
   {
     IFeatureManager featureManager = application.Services.GetRequiredService<IFeatureManager>();
+
+    if (await featureManager.IsEnabledAsync(FeatureFlags.UseScalarUI))
+    {
+      application.MapOpenApi();
+      application.MapScalarApiReference();
+    }
 
     if (await featureManager.IsEnabledAsync(FeatureFlags.UseGraphQLGraphiQL))
     {
