@@ -1,5 +1,4 @@
 ﻿using Logitar;
-using SkillCraft.Tools.Core.Errors;
 
 namespace SkillCraft.Tools.Core;
 
@@ -28,8 +27,8 @@ public class TooManyResultsException : BadRequestException
     get
     {
       Error error = new(this.GetErrorCode(), ErrorMessage);
-      error.Data.Add(new ErrorData(nameof(ExpectedCount), ExpectedCount));
-      error.Data.Add(new ErrorData(nameof(ActualCount), ActualCount));
+      error.Data[nameof(ExpectedCount)] = ExpectedCount;
+      error.Data[nameof(ActualCount)] = ActualCount;
       return error;
     }
   }

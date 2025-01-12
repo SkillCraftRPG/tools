@@ -52,7 +52,9 @@ internal class Startup : StartupBase
         throw new DatabaseProviderNotSupportedException(databaseProvider);
     }
 
+    services.AddExceptionHandler<ExceptionHandler>();
     services.AddFeatureManagement();
+    services.AddProblemDetails();
   }
 
   public override void Configure(IApplicationBuilder builder)
@@ -76,6 +78,7 @@ internal class Startup : StartupBase
     }
 
     application.UseHttpsRedirection();
+    application.UseExceptionHandler();
 
     application.UseGraphQL<SkillCraftSchema>("/graphql"/*, options => options.AuthenticationSchemes.AddRange(_authenticationSchemes)*/); // ISSUE: https://github.com/SkillCraftRPG/tools/issues/5
 
