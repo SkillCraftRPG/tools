@@ -100,6 +100,7 @@ public class Talent : AggregateRoot
   protected virtual void Handle(TalentCreated @event)
   {
     Tier = @event.Tier;
+
     _uniqueSlug = @event.UniqueSlug;
   }
 
