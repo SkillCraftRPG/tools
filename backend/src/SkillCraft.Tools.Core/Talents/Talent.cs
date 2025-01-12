@@ -84,6 +84,10 @@ public class Talent : AggregateRoot
     }
   }
 
+  public Talent() : base()
+  {
+  }
+
   public Talent(int tier, Slug uniqueSlug, ActorId? actorId = null, TalentId? talentId = null) : base(talentId?.StreamId)
   {
     if (tier < 0 || tier > 3)

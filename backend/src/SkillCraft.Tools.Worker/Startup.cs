@@ -35,5 +35,6 @@ internal class Startup
       default:
         throw new DatabaseProviderNotSupportedException(databaseProvider);
     }
+    services.AddSingleton<IApplicationContext, WorkerApplicationContext>();
   }
 }
