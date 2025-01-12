@@ -9,6 +9,7 @@ using SkillCraft.Tools.Core.Talents;
 using SkillCraft.Tools.Infrastructure.Actors;
 using SkillCraft.Tools.Infrastructure.Caching;
 using SkillCraft.Tools.Infrastructure.Queriers;
+using SkillCraft.Tools.Infrastructure.Repositories;
 using SkillCraft.Tools.Infrastructure.Settings;
 
 namespace SkillCraft.Tools.Infrastructure;
@@ -22,6 +23,7 @@ public static class DependencyInjectionExtensions
       .AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()))
       .AddMemoryCache()
       .AddQueriers()
+      .AddRepositories()
       .AddSingleton(InitializeCachingSettings)
       .AddSingleton<ICacheService, CacheService>()
       .AddSingleton<IEventSerializer, EventSerializer>()
@@ -34,6 +36,12 @@ public static class DependencyInjectionExtensions
     return services
       .AddScoped<ISpecializationQuerier, SpecializationQuerier>()
       .AddScoped<ITalentQuerier, TalentQuerier>();
+  }
+
+  private static IServiceCollection AddRepositories(this IServiceCollection services)
+  {
+    return services
+      .AddScoped<ITalentRepository, TalentRepository>();
   }
 
   private static CachingSettings InitializeCachingSettings(IServiceProvider serviceProvider)

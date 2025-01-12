@@ -119,6 +119,14 @@ internal class ExceptionHandler : IExceptionHandler
     {
       return StatusCodes.Status400BadRequest;
     }
+    if (exception is NotFoundException)
+    {
+      return StatusCodes.Status404NotFound;
+    }
+    if (exception is ConflictException)
+    {
+      return StatusCodes.Status409Conflict;
+    }
 
     return null;
   }

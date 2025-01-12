@@ -1,5 +1,6 @@
 ﻿using Logitar.EventSourcing;
 using Microsoft.EntityFrameworkCore;
+using SkillCraft.Tools.Core;
 using SkillCraft.Tools.Core.Actors;
 using SkillCraft.Tools.Core.Actors.Models;
 using SkillCraft.Tools.Core.Talents;
@@ -20,6 +21,33 @@ internal class TalentQuerier : ITalentQuerier
     _talents = context.Talents;
   }
 
+  public async Task<TalentId?> FindIdAsync(Slug uniqueSlug, CancellationToken cancellationToken)
+  {
+    string uniqueSlugNormalized = Helper.Normalize(uniqueSlug.Value);
+
+    string? streamId = await _talents.AsNoTracking()
+      .Where(x => x.UniqueSlugNormalized == uniqueSlugNormalized)
+      .Select(x => x.StreamId)
+      .SingleOrDefaultAsync(cancellationToken);
+
+    return streamId == null ? null : new TalentId(streamId);
+  }
+
+  public async Task<TalentModel> ReadAsync(Talent talent, CancellationToken cancellationToken)
+  {
+    return await ReadAsync(talent.Id, cancellationToken)
+      ?? throw new InvalidOperationException($"The talent entity 'StreamId={talent.Id}' could not be found.");
+  }
+  public async Task<TalentModel?> ReadAsync(TalentId talentId, CancellationToken cancellationToken)
+  {
+    string streamId = talentId.Value;
+
+    TalentEntity? talent = await _talents.AsNoTracking()
+      .Include(x => x.RequiredTalent)
+      .SingleOrDefaultAsync(x => x.StreamId == streamId, cancellationToken);
+
+    return talent == null ? null : await MapAsync(talent, cancellationToken);
+  }
   public async Task<TalentModel?> ReadAsync(Guid id, CancellationToken cancellationToken)
   {
     TalentEntity? talent = await _talents.AsNoTracking()

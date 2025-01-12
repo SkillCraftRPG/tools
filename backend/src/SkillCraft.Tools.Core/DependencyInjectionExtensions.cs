@@ -1,5 +1,6 @@
 ﻿using Logitar.EventSourcing;
 using Microsoft.Extensions.DependencyInjection;
+using SkillCraft.Tools.Core.Talents;
 
 namespace SkillCraft.Tools.Core;
 
@@ -9,6 +10,7 @@ public static class DependencyInjectionExtensions
   {
     return services
       .AddLogitarEventSourcing()
-      .AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+      .AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()))
+      .AddTransient<ITalentManager, TalentManager>();
   }
 }

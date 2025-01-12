@@ -26,6 +26,7 @@ internal class Startup : StartupBase
 
     services.AddSkillCraftToolsCore();
     services.AddSkillCraftToolsInfrastructure();
+    services.AddSingleton<IApplicationContext, HttpApplicationContext>();
 
     services.AddControllers()
       .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
