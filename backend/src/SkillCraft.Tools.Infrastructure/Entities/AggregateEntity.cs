@@ -1,4 +1,5 @@
-﻿using Logitar.EventSourcing;
+﻿using Logitar;
+using Logitar.EventSourcing;
 
 namespace SkillCraft.Tools.Infrastructure.Entities;
 
@@ -17,6 +18,16 @@ internal abstract class AggregateEntity
   {
   }
 
+  protected AggregateEntity(DomainEvent @event)
+  {
+    StreamId = @event.StreamId.Value;
+
+    CreatedBy = @event.ActorId?.Value;
+    CreatedOn = @event.OccurredOn.AsUniversalTime();
+
+    Update(@event);
+  }
+
   public virtual IReadOnlyCollection<ActorId> GetActorIds()
   {
     List<ActorId> actorIds = new(capacity: 2);
@@ -29,6 +40,14 @@ internal abstract class AggregateEntity
       actorIds.Add(new ActorId(UpdatedBy));
     }
     return actorIds.AsReadOnly();
+  }
+
+  protected virtual void Update(DomainEvent @event)
+  {
+    Version = @event.Version;
+
+    UpdatedBy = @event.ActorId?.Value;
+    UpdatedOn = @event.OccurredOn.AsUniversalTime();
   }
 
   public override bool Equals(object? obj) => obj is AggregateEntity aggregate && aggregate.StreamId == StreamId;

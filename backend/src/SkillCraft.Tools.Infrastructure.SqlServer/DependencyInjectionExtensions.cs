@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Logitar.EventSourcing.EntityFrameworkCore.SqlServer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -23,7 +24,9 @@ public static class DependencyInjectionExtensions
   }
   public static IServiceCollection AddSkillCraftToolsInfrastructureSqlServer(this IServiceCollection services, string connectionString)
   {
-    return services.AddDbContext<SkillCraftContext>(options => options.UseSqlServer(connectionString,
-      options => options.MigrationsAssembly("SkillCraft.Tools.Infrastructure.SqlServer")));
+    return services
+      .AddLogitarEventSourcingWithEntityFrameworkCoreSqlServer(connectionString)
+      .AddDbContext<SkillCraftContext>(options => options.UseSqlServer(connectionString,
+        options => options.MigrationsAssembly("SkillCraft.Tools.Infrastructure.SqlServer")));
   }
 }
