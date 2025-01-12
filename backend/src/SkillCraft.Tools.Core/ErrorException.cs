@@ -1,4 +1,4 @@
-﻿namespace SkillCraft.Tools.Core.Errors;
+﻿namespace SkillCraft.Tools.Core;
 
 public abstract class ErrorException : Exception
 {

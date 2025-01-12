@@ -1,6 +1,4 @@
-﻿using SkillCraft.Tools.Core.Errors;
-
-namespace SkillCraft.Tools.Core;
+﻿namespace SkillCraft.Tools.Core;
 
 public abstract class BadRequestException : ErrorException
 {
