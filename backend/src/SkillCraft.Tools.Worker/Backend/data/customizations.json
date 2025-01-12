@@ -1,0 +1,23 @@
+﻿[
+  {
+    "Id": "220e71a9-7105-4d0b-a461-f58b4fa9dfa3",
+    "Type": "Gift",
+    "UniqueSlug": "dur-a-cuire",
+    "DisplayName": "Dur à cuire",
+    "Description": "Lorsque le personnage reçoit des points de dégâts létaux, il retire à ceux-ci un nombre de points égal à son modificateur de Vigueur (minimum 1)."
+  },
+  {
+    "Id": "ba107526-24ec-42dc-9f24-715836b2ede8",
+    "Type": "Gift",
+    "UniqueSlug": "feroce",
+    "DisplayName": "Féroce",
+    "Description": "Une fois par round, le personnage peut rouler deux fois les dés de dégâts d’une attaque. Il peut ensuite utiliser le résultat de son choix."
+  },
+  {
+    "Id": "1092c61f-57fc-441f-868f-1e169102e609",
+    "Type": "Disability",
+    "UniqueSlug": "abruti",
+    "DisplayName": "Abruti",
+    "Description": "Simple d’esprit et bon vivant ou complètement taré, le personnage est dénué de sens commun et n’est pas doté d’une bonne mémoire. Ses tests de _Connaissance_ ainsi que ses tests d’_Investigation_ afin de poser une conclusion sont effectués avec désavantage."
+  }
+]

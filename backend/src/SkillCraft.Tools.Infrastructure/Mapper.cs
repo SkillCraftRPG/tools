@@ -2,6 +2,7 @@
 using Logitar.EventSourcing;
 using SkillCraft.Tools.Core;
 using SkillCraft.Tools.Core.Actors.Models;
+using SkillCraft.Tools.Core.Customizations.Models;
 using SkillCraft.Tools.Core.Talents.Models;
 using SkillCraft.Tools.Infrastructure.Entities;
 
@@ -23,6 +24,21 @@ internal class Mapper
       ActorId id = new(actor.Id);
       _actors[id] = actor;
     }
+  }
+
+  public CustomizationModel ToCustomization(CustomizationEntity source)
+  {
+    CustomizationModel destination = new()
+    {
+      Type = source.Type,
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description
+    };
+
+    MapAggregate(source, destination);
+
+    return destination;
   }
 
   public TalentModel ToTalent(TalentEntity source)
