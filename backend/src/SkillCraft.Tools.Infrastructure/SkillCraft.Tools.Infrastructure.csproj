@@ -17,6 +17,7 @@
   <ItemGroup>
     <PackageReference Include="Logitar.Data" Version="7.0.0" />
     <PackageReference Include="Logitar.EventSourcing.EntityFrameworkCore.Relational" Version="7.0.1" />
+    <PackageReference Include="Logitar.Portal.Client" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>

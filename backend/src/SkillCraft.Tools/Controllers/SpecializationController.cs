@@ -1,12 +1,14 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SkillCraft.Tools.Constants;
 using SkillCraft.Tools.Core.Specializations.Models;
 using SkillCraft.Tools.Core.Specializations.Queries;
 
 namespace SkillCraft.Tools.Controllers;
 
 [ApiController]
-//[Authorize] // ISSUE: https://github.com/SkillCraftRPG/tools/issues/5
+[Authorize(Policy = Policies.IsAdmin)]
 [Route("api/specializations")]
 public class SpecializationController : ControllerBase
 {
