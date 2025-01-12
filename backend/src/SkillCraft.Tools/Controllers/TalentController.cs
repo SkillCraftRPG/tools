@@ -1,8 +1,10 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using SkillCraft.Tools.Core.Search;
 using SkillCraft.Tools.Core.Talents.Commands;
 using SkillCraft.Tools.Core.Talents.Models;
 using SkillCraft.Tools.Core.Talents.Queries;
+using SkillCraft.Tools.Models.Talent;
 
 namespace SkillCraft.Tools.Controllers;
 
@@ -48,6 +50,14 @@ public class TalentController : ControllerBase
     CreateOrReplaceTalentCommand command = new(id, payload, version);
     CreateOrReplaceTalentResult result = await _mediator.Send(command, cancellationToken);
     return ToActionResult(result);
+  }
+
+  [HttpGet]
+  public async Task<ActionResult<SearchResults<TalentModel>>> SearchAsync([FromQuery] SearchTalentsParameters parameters, CancellationToken cancellationToken)
+  {
+    SearchTalentsQuery query = new(parameters.ToPayload());
+    SearchResults<TalentModel> talents = await _mediator.Send(query, cancellationToken);
+    return Ok(talents);
   }
 
   private ActionResult<TalentModel> ToActionResult(CreateOrReplaceTalentResult result)
