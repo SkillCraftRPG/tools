@@ -63,7 +63,7 @@ internal class TalentEntity : AggregateEntity
     if (@event.RequiredTalentId != null)
     {
       RequiredTalent = requiredTalent;
-      RequiredTalentId = requiredTalent?.RequiredTalentId;
+      RequiredTalentId = requiredTalent?.TalentId;
     }
     if (@event.Skill != null)
     {
