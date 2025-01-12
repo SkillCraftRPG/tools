@@ -37,7 +37,7 @@ internal class SeedingWorker : BackgroundService
     Stopwatch chrono = Stopwatch.StartNew();
     _logger.LogInformation("Worker executing at {Timestamp}.", DateTimeOffset.Now);
 
-    await WaitForStartupAsync(cancellationToken);
+    //await WaitForStartupAsync(cancellationToken); // ISSUE: https://github.com/SkillCraftRPG/tools/issues/5
 
     using IServiceScope scope = _serviceProvider.CreateScope();
     _publisher = scope.ServiceProvider.GetRequiredService<IPublisher>();
