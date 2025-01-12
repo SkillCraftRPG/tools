@@ -15,16 +15,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Logitar.Data" Version="7.0.0" />
-    <PackageReference Include="Logitar.EventSourcing.EntityFrameworkCore.Relational" Version="7.0.1" />
+    <PackageReference Include="Logitar.Data.SqlServer" Version="7.0.0" />
+    <PackageReference Include="Logitar.EventSourcing.EntityFrameworkCore.SqlServer" Version="7.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SkillCraft.Tools.Core\SkillCraft.Tools.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Using Include="System.Reflection" />
+    <ProjectReference Include="..\SkillCraft.Tools.Infrastructure\SkillCraft.Tools.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
