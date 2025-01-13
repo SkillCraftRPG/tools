@@ -1,6 +1,7 @@
 ﻿using Logitar.EventSourcing;
 using Microsoft.Extensions.DependencyInjection;
 using SkillCraft.Tools.Core.Customizations;
+using SkillCraft.Tools.Core.Educations;
 using SkillCraft.Tools.Core.Natures;
 using SkillCraft.Tools.Core.Talents;
 
@@ -20,6 +21,7 @@ public static class DependencyInjectionExtensions
   {
     return services
       .AddTransient<ICustomizationManager, CustomizationManager>()
+      .AddTransient<IEducationManager, EducationManager>()
       .AddTransient<INatureManager, NatureManager>()
       .AddTransient<ITalentManager, TalentManager>();
   }

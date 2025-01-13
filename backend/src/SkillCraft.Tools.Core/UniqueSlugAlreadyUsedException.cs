@@ -1,6 +1,7 @@
 ﻿using Logitar;
 using Logitar.EventSourcing;
 using SkillCraft.Tools.Core.Customizations;
+using SkillCraft.Tools.Core.Educations;
 using SkillCraft.Tools.Core.Natures;
 using SkillCraft.Tools.Core.Talents;
 
@@ -46,6 +47,10 @@ public class UniqueSlugAlreadyUsedException : ConflictException
 
   public UniqueSlugAlreadyUsedException(Customization customization, CustomizationId conflictId)
     : this(conflictId.StreamId, customization.Id.StreamId, customization.UniqueSlug, nameof(customization.UniqueSlug))
+  {
+  }
+  public UniqueSlugAlreadyUsedException(Education education, EducationId conflictId)
+    : this(conflictId.StreamId, education.Id.StreamId, education.UniqueSlug, nameof(education.UniqueSlug))
   {
   }
   public UniqueSlugAlreadyUsedException(Nature nature, NatureId conflictId)
