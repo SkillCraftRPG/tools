@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SkillCraft.Tools.Infrastructure;
 
@@ -10,9 +11,11 @@ using SkillCraft.Tools.Infrastructure;
 namespace SkillCraft.Tools.Infrastructure.SqlServer.Migrations
 {
     [DbContext(typeof(SkillCraftContext))]
-    partial class SkillCraftContextModelSnapshot : ModelSnapshot
+    [Migration("20250112234048_CreateNatureTable")]
+    partial class CreateNatureTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

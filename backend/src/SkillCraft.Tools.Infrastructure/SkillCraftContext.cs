@@ -10,6 +10,7 @@ public class SkillCraftContext : DbContext
   }
 
   internal DbSet<CustomizationEntity> Customizations => Set<CustomizationEntity>();
+  internal DbSet<NatureEntity> Natures => Set<NatureEntity>();
   internal DbSet<TalentEntity> Talents => Set<TalentEntity>();
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)

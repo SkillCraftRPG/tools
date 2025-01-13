@@ -6,6 +6,7 @@ using SkillCraft.Tools.Core.Actors;
 using SkillCraft.Tools.Core.Caching;
 using SkillCraft.Tools.Core.Customizations;
 using SkillCraft.Tools.Core.Identity;
+using SkillCraft.Tools.Core.Natures;
 using SkillCraft.Tools.Core.Specializations;
 using SkillCraft.Tools.Core.Talents;
 using SkillCraft.Tools.Infrastructure.Actors;
@@ -48,6 +49,7 @@ public static class DependencyInjectionExtensions
   {
     return services
       .AddScoped<ICustomizationQuerier, CustomizationQuerier>()
+      .AddScoped<INatureQuerier, NatureQuerier>()
       .AddScoped<ISpecializationQuerier, SpecializationQuerier>()
       .AddScoped<ITalentQuerier, TalentQuerier>();
   }
@@ -56,6 +58,7 @@ public static class DependencyInjectionExtensions
   {
     return services
       .AddScoped<ICustomizationRepository, CustomizationRepository>()
+      .AddScoped<INatureRepository, NatureRepository>()
       .AddScoped<ITalentRepository, TalentRepository>();
   }
 

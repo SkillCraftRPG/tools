@@ -1,0 +1,34 @@
+﻿[
+  {
+    "Id": "9ff80dce-8dad-427e-a35d-6fb6f0e740c5",
+    "UniqueSlug": "agile",
+    "DisplayName": "Agile",
+    "Description": "Les mouvements du personnage sont effectués avec aisance et promptitude, souplesse et alerte.",
+    "Attribute": "Agility",
+    "GiftId": null
+  },
+  {
+    "Id": "85094be4-f43d-44df-a3d4-941b79179c7a",
+    "UniqueSlug": "coriace",
+    "DisplayName": "Coriace",
+    "Description": "Le personnage est tenace et solide, il maintient fermement ses positions.",
+    "Attribute": "Vigor",
+    "GiftId": "220e71a9-7105-4d0b-a461-f58b4fa9dfa3"
+  },
+  {
+    "Id": "70e634e8-67e3-458a-b6e4-baafddde08f0",
+    "UniqueSlug": "courrouce",
+    "DisplayName": "Courroucé",
+    "Description": "Les émotions du personnage sont vives et ses mouvements sont brusques.",
+    "Attribute": "Agility",
+    "GiftId": "ba107526-24ec-42dc-9f24-715836b2ede8"
+  },
+  {
+    "Id": "6e4ba254-36f4-47ed-b6ce-e73c627ab2a6",
+    "UniqueSlug": "mysterieux",
+    "DisplayName": "Mystérieux",
+    "Description": "Le personnage s’entoure de secrets et de mystères, il laisse peu paraître ses idées et émotions.",
+    "Attribute": "Spirit",
+    "GiftId": null
+  }
+]

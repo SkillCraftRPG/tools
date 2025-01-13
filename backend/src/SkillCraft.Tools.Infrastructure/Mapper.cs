@@ -3,6 +3,7 @@ using Logitar.EventSourcing;
 using SkillCraft.Tools.Core;
 using SkillCraft.Tools.Core.Actors.Models;
 using SkillCraft.Tools.Core.Customizations.Models;
+using SkillCraft.Tools.Core.Natures.Models;
 using SkillCraft.Tools.Core.Talents.Models;
 using SkillCraft.Tools.Infrastructure.Entities;
 
@@ -35,6 +36,26 @@ internal class Mapper
       DisplayName = source.DisplayName,
       Description = source.Description
     };
+
+    MapAggregate(source, destination);
+
+    return destination;
+  }
+
+  public NatureModel ToNature(NatureEntity source)
+  {
+    NatureModel destination = new()
+    {
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description,
+      Attribute = source.Attribute
+    };
+
+    if (source.Gift != null)
+    {
+      destination.Gift = ToCustomization(source.Gift);
+    }
 
     MapAggregate(source, destination);
 

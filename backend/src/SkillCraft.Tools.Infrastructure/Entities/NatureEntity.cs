@@ -1,15 +1,13 @@
-﻿using SkillCraft.Tools.Core.Customizations;
-using SkillCraft.Tools.Core.Customizations.Events;
+﻿using SkillCraft.Tools.Core;
+using SkillCraft.Tools.Core.Natures.Events;
 using SkillCraft.Tools.Infrastructure.SkillCraftDb;
 
 namespace SkillCraft.Tools.Infrastructure.Entities;
 
-internal class CustomizationEntity : AggregateEntity
+internal class NatureEntity : AggregateEntity
 {
-  public int CustomizationId { get; private set; }
+  public int NatureId { get; private set; }
   public Guid Id { get; private set; }
-
-  public CustomizationType Type { get; private set; }
 
   public string UniqueSlug { get; private set; } = string.Empty;
   public string UniqueSlugNormalized
@@ -20,24 +18,24 @@ internal class CustomizationEntity : AggregateEntity
   public string? DisplayName { get; private set; }
   public string? Description { get; private set; }
 
-  public List<NatureEntity> Natures { get; private set; } = [];
+  public Ability? Attribute { get; private set; }
+  public int? GiftId { get; private set; }
+  public CustomizationEntity? Gift { get; private set; }
 
-  public CustomizationEntity(CustomizationCreated @event) : base(@event)
+  public NatureEntity(NatureCreated @event) : base(@event)
   {
     Id = @event.StreamId.ToGuid();
-
-    Type = @event.Type;
 
     UniqueSlug = @event.UniqueSlug.Value;
   }
 
-  private CustomizationEntity() : base()
+  private NatureEntity() : base()
   {
   }
 
-  public void Update(CustomizationUpdated @event)
+  public void Update(CustomizationEntity? gift, NatureUpdated @event)
   {
-    base.Update(@event);
+    Update(@event);
 
     if (@event.UniqueSlug != null)
     {
@@ -50,6 +48,16 @@ internal class CustomizationEntity : AggregateEntity
     if (@event.Description != null)
     {
       Description = @event.Description.Value?.Value;
+    }
+
+    if (@event.Attribute != null)
+    {
+      Attribute = @event.Attribute.Value;
+    }
+    if (@event.GiftId != null)
+    {
+      Gift = gift;
+      GiftId = gift?.CustomizationId;
     }
   }
 

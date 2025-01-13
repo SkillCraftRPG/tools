@@ -8,7 +8,7 @@ internal abstract class AggregateConfiguration<T> where T : AggregateEntity
 {
   public virtual void Configure(EntityTypeBuilder<T> builder)
   {
-    builder.HasIndex(x => x.StreamId);
+    builder.HasIndex(x => x.StreamId).IsUnique();
     builder.HasIndex(x => x.Version);
     builder.HasIndex(x => x.CreatedBy);
     builder.HasIndex(x => x.CreatedOn);
