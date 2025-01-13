@@ -1,0 +1,26 @@
+﻿[
+  {
+    "Id": "64849d46-7793-480e-89e5-670464fc1a6b",
+    "UniqueSlug": "apprenti-a-l-etranger",
+    "DisplayName": "Apprenti à l’étranger",
+    "Description": "L’éducation du personnage a été effectuée à l’étranger, dans une région différente de sa terre natale. Il y a appris une nouvelle langue ainsi que l’importance de s’ouvre aux autres cultures différentes de la sienne.",
+    "Skill": "Linguistics",
+    "WealthMultiplier": 8.0
+  },
+  {
+    "Id": "2b6f408e-2843-43a9-a016-7ee68a205927",
+    "UniqueSlug": "apprenti-d-un-maitre",
+    "DisplayName": "Apprenti d’un maître",
+    "Description": "Le personnage a tout appris d’un maître partageant un art ou une profession avec lui. Ce maître lui a enseigné les subtilités qui permettront au personnage d’être éventuellement reconnu comme un maître lui aussi. Cet apprentissage a été effectué dans l’ordre et la discipline, sous la direction du maître.",
+    "Skill": "Discipline",
+    "WealthMultiplier": 12.0
+  },
+  {
+    "Id": "f33e6ec5-4372-4771-b5aa-aea504d73ec1",
+    "UniqueSlug": "champs-de-bataille",
+    "DisplayName": "Champs de bataille",
+    "Description": "Le personnage est un enfant de la guerre, un fugitif d’un conflit ayant affecté les civils. Son enfance est maigre de moments heureux et aisés, ce a fait de lui une personne endurcie dotée d’une personnalité pragmatique.",
+    "Skill": "Resistance",
+    "WealthMultiplier": 4.0
+  }
+]
