@@ -1,4 +1,6 @@
-﻿using SkillCraft.Tools.Core.Aspects.Events;
+﻿using SkillCraft.Tools.Core;
+using SkillCraft.Tools.Core.Aspects.Events;
+using SkillCraft.Tools.Core.Aspects.Models;
 using SkillCraft.Tools.Infrastructure.SkillCraftDb;
 
 namespace SkillCraft.Tools.Infrastructure.Entities;
@@ -17,8 +19,12 @@ internal class AspectEntity : AggregateEntity
   public string? DisplayName { get; private set; }
   public string? Description { get; private set; }
 
-  // TODO(fpion): Attributes
-  // TODO(fpion): Skills
+  public Ability? MandatoryAttribute1 { get; private set; }
+  public Ability? MandatoryAttribute2 { get; private set; }
+  public Ability? OptionalAttribute1 { get; private set; }
+  public Ability? OptionalAttribute2 { get; private set; }
+  public Skill? DiscountedSkill1 { get; private set; }
+  public Skill? DiscountedSkill2 { get; private set; }
 
   public AspectEntity(AspectCreated @event) : base(@event)
   {
@@ -48,9 +54,32 @@ internal class AspectEntity : AggregateEntity
       Description = @event.Description.Value?.Value;
     }
 
-    // TODO(fpion): Attributes
-    // TODO(fpion): Skills
+    if (@event.Attributes != null)
+    {
+      MandatoryAttribute1 = @event.Attributes.Mandatory1;
+      MandatoryAttribute2 = @event.Attributes.Mandatory2;
+      OptionalAttribute1 = @event.Attributes.Optional1;
+      OptionalAttribute2 = @event.Attributes.Optional2;
+    }
+    if (@event.Skills != null)
+    {
+      DiscountedSkill1 = @event.Skills.Discounted1;
+      DiscountedSkill2 = @event.Skills.Discounted2;
+    }
   }
+
+  public AttributeSelectionModel GetAttributeSelection() => new()
+  {
+    Mandatory1 = MandatoryAttribute1,
+    Mandatory2 = MandatoryAttribute2,
+    Optional1 = OptionalAttribute1,
+    Optional2 = OptionalAttribute2
+  };
+  public SkillSelectionModel GetSkillSelection() => new()
+  {
+    Discounted1 = DiscountedSkill1,
+    Discounted2 = DiscountedSkill2
+  };
 
   public override string ToString() => $"{DisplayName ?? UniqueSlug} | {base.ToString()}";
 }

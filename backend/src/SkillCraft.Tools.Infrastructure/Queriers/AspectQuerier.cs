@@ -76,11 +76,13 @@ internal class AspectQuerier : IAspectQuerier
 
     if (payload.Attribute.HasValue)
     {
-      // TODO(fpion): Attributes
+      ColumnId[] columns = [Aspects.MandatoryAttribute1, Aspects.MandatoryAttribute2, Aspects.OptionalAttribute1, Aspects.OptionalAttribute2];
+      builder.WhereOr(columns.Select(column => new OperatorCondition(column, Operators.IsEqualTo(payload.Attribute.Value.ToString()))).ToArray());
     }
     if (payload.Skill.HasValue)
     {
-      // TODO(fpion): Skills
+      ColumnId[] columns = [Aspects.DiscountedSkill1, Aspects.DiscountedSkill2];
+      builder.WhereOr(columns.Select(column => new OperatorCondition(column, Operators.IsEqualTo(payload.Skill.Value.ToString()))).ToArray());
     }
 
     IQueryable<AspectEntity> query = _aspects.FromQuery(builder).AsNoTracking();

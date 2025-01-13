@@ -37,8 +37,8 @@ internal class Mapper
       UniqueSlug = source.UniqueSlug,
       DisplayName = source.DisplayName,
       Description = source.Description,
-      // TODO(fpion): Attributes
-      // TODO(fpion): Skills
+      Attributes = source.GetAttributeSelection(),
+      Skills = source.GetSkillSelection()
     };
 
     MapAggregate(source, destination);

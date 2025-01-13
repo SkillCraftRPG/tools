@@ -1,4 +1,5 @@
-﻿using SkillCraft.Tools.Core.Aspects.Models;
+﻿using GraphQL.Types;
+using SkillCraft.Tools.Core.Aspects.Models;
 
 namespace SkillCraft.Tools.GraphQL.Aspects;
 
@@ -13,7 +14,9 @@ internal class AspectGraphType : AggregateGraphType<AspectModel>
     Field(x => x.Description)
       .Description("A textual description of the aspect. It may contain Markdown and HTML.");
 
-    // TODO(fpion): Attributes
-    // TODO(fpion): Skills
+    Field(x => x.Attributes, type: typeof(NonNullGraphType<AttributeSelectionGraphType>))
+      .Description("The attribute selection of the aspect.");
+    Field(x => x.Skills, type: typeof(NonNullGraphType<SkillSelectionGraphType>))
+      .Description("The skill selection of the aspect.");
   }
 }
