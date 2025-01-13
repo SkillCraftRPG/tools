@@ -1,8 +1,8 @@
 ﻿using Logitar.EventSourcing;
+using Logitar.Portal.Contracts.Actors;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SkillCraft.Tools.Core.Actors.Models;
 using SkillCraft.Tools.Infrastructure.Entities;
 
 namespace SkillCraft.Tools.Infrastructure.Configurations;

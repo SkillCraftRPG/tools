@@ -1,5 +1,5 @@
 ﻿using GraphQL.Types;
-using SkillCraft.Tools.Core.Actors.Models;
+using Logitar.Portal.Contracts.Actors;
 
 namespace SkillCraft.Tools.GraphQL.Actors;
 

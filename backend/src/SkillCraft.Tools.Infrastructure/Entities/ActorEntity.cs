@@ -1,7 +1,7 @@
 ﻿using Logitar.EventSourcing;
+using Logitar.Portal.Contracts.Actors;
 using Logitar.Portal.Contracts.ApiKeys;
 using Logitar.Portal.Contracts.Users;
-using SkillCraft.Tools.Core.Actors.Models;
 
 namespace SkillCraft.Tools.Infrastructure.Entities;
 
