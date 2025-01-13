@@ -1,7 +1,7 @@
 ﻿using Logitar;
 using Logitar.EventSourcing;
-using SkillCraft.Tools.Core;
-using SkillCraft.Tools.Core.Actors.Models;
+using Logitar.Portal.Contracts;
+using Logitar.Portal.Contracts.Actors;
 using SkillCraft.Tools.Core.Aspects.Models;
 using SkillCraft.Tools.Core.Castes.Models;
 using SkillCraft.Tools.Core.Customizations.Models;
@@ -16,7 +16,7 @@ namespace SkillCraft.Tools.Infrastructure;
 internal class Mapper
 {
   private readonly Dictionary<ActorId, ActorModel> _actors = [];
-  private readonly ActorModel _system = new();
+  private readonly ActorModel _system = ActorModel.System;
 
   public Mapper()
   {
@@ -30,6 +30,16 @@ internal class Mapper
       _actors[id] = actor;
     }
   }
+
+  public static ActorModel ToActor(ActorEntity actor) => new()
+  {
+    Id = actor.Id,
+    Type = actor.Type,
+    IsDeleted = actor.IsDeleted,
+    DisplayName = actor.DisplayName,
+    EmailAddress = actor.EmailAddress,
+    PictureUrl = actor.PictureUrl
+  };
 
   public AspectModel ToAspect(AspectEntity source)
   {

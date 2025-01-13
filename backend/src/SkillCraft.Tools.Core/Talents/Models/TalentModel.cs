@@ -1,4 +1,6 @@
-﻿namespace SkillCraft.Tools.Core.Talents.Models;
+﻿using Logitar.Portal.Contracts;
+
+namespace SkillCraft.Tools.Core.Talents.Models;
 
 public class TalentModel : AggregateModel
 {

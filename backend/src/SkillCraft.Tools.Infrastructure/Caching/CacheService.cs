@@ -1,6 +1,6 @@
 ﻿using Logitar.EventSourcing;
+using Logitar.Portal.Contracts.Actors;
 using Microsoft.Extensions.Caching.Memory;
-using SkillCraft.Tools.Core.Actors.Models;
 using SkillCraft.Tools.Core.Caching;
 using SkillCraft.Tools.Infrastructure.Settings;
 

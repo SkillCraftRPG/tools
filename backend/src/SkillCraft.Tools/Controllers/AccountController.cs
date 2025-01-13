@@ -1,9 +1,11 @@
 ﻿using FluentValidation;
 using Logitar.Portal.Contracts;
 using Logitar.Portal.Contracts.Sessions;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SkillCraft.Tools.Authentication;
 using SkillCraft.Tools.Core.Identity;
+using SkillCraft.Tools.Core.Identity.Events;
 using SkillCraft.Tools.Extensions;
 using SkillCraft.Tools.Models.Account;
 
@@ -13,11 +15,13 @@ namespace SkillCraft.Tools.Controllers;
 [Route("api")]
 public class AccountController : ControllerBase
 {
+  private readonly IMediator _mediator;
   private readonly IOpenAuthenticationService _openAuthenticationService;
   private readonly ISessionService _sessionService;
 
-  public AccountController(IOpenAuthenticationService openAuthenticationService, ISessionService sessionService)
+  public AccountController(IMediator mediator, IOpenAuthenticationService openAuthenticationService, ISessionService sessionService)
   {
+    _mediator = mediator;
     _openAuthenticationService = openAuthenticationService;
     _sessionService = sessionService;
   }
@@ -42,6 +46,7 @@ public class AccountController : ControllerBase
     {
       throw new ArgumentException("The payload validation succeeded, but the payload is not valid.", nameof(payload));
     }
+    await _mediator.Publish(new UserAuthenticated(session.User));
 
     TokenResponse tokenResponse = await _openAuthenticationService.GetTokenResponseAsync(session, cancellationToken);
     return Ok(tokenResponse);

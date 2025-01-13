@@ -1,4 +1,5 @@
-﻿using SkillCraft.Tools.Core.Talents.Models;
+﻿using Logitar.Portal.Contracts;
+using SkillCraft.Tools.Core.Talents.Models;
 
 namespace SkillCraft.Tools.Core.Specializations.Models;
 

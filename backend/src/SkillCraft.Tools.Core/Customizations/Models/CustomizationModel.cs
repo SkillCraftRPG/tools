@@ -1,4 +1,6 @@
-﻿namespace SkillCraft.Tools.Core.Customizations.Models;
+﻿using Logitar.Portal.Contracts;
+
+namespace SkillCraft.Tools.Core.Customizations.Models;
 
 public class CustomizationModel : AggregateModel
 {
