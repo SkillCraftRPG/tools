@@ -4,6 +4,7 @@ using SkillCraft.Tools.Core.Aspects;
 using SkillCraft.Tools.Core.Castes;
 using SkillCraft.Tools.Core.Customizations;
 using SkillCraft.Tools.Core.Educations;
+using SkillCraft.Tools.Core.Languages;
 using SkillCraft.Tools.Core.Natures;
 using SkillCraft.Tools.Core.Talents;
 
@@ -61,6 +62,10 @@ public class UniqueSlugAlreadyUsedException : ConflictException
   }
   public UniqueSlugAlreadyUsedException(Education education, EducationId conflictId)
     : this(conflictId.StreamId, education.Id.StreamId, education.UniqueSlug, nameof(education.UniqueSlug))
+  {
+  }
+  public UniqueSlugAlreadyUsedException(Language language, EducationId conflictId)
+    : this(conflictId.StreamId, language.Id.StreamId, language.UniqueSlug, nameof(language.UniqueSlug))
   {
   }
   public UniqueSlugAlreadyUsedException(Nature nature, NatureId conflictId)
