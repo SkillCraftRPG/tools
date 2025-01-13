@@ -9,9 +9,10 @@ public record AspectUpdated : DomainEvent, INotification
   public Change<DisplayName>? DisplayName { get; set; }
   public Change<Description>? Description { get; set; }
 
-  // TODO(fpion): Attributes
-  // TODO(fpion): Skills
+  public AttributeSelection? Attributes { get; set; }
+  public SkillSelection? Skills { get; set; }
 
   [JsonIgnore]
-  public bool HasChanges => UniqueSlug != null || DisplayName != null || Description != null;
+  public bool HasChanges => UniqueSlug != null || DisplayName != null || Description != null
+    || Attributes != null || Skills != null;
 }

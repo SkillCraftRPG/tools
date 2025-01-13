@@ -6,6 +6,6 @@ public record CreateOrReplaceAspectPayload
   public string? DisplayName { get; set; }
   public string? Description { get; set; }
 
-  // TODO(fpion): Attributes
-  // TODO(fpion): Skills
+  public AttributeSelectionModel Attributes { get; set; } = new();
+  public SkillSelectionModel Skills { get; set; } = new();
 }

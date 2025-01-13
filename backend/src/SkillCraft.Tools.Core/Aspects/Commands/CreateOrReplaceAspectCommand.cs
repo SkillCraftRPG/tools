@@ -79,8 +79,16 @@ internal class CreateOrReplaceAspectCommandHandler : IRequestHandler<CreateOrRep
       aspect.Description = description;
     }
 
-    // TODO(fpion): Attributes
-    // TODO(fpion): Skills
+    AttributeSelection attributes = new(payload.Attributes);
+    if (reference.Attributes != attributes)
+    {
+      aspect.Attributes = attributes;
+    }
+    SkillSelection skills = new(payload.Skills);
+    if (reference.Skills != skills)
+    {
+      aspect.Skills = skills;
+    }
 
     aspect.Update(actorId);
 

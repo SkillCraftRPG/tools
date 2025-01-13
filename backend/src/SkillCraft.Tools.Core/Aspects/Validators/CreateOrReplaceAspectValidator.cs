@@ -11,7 +11,7 @@ internal class CreateOrReplaceAspectValidator : AbstractValidator<CreateOrReplac
     When(x => !string.IsNullOrWhiteSpace(x.DisplayName), () => RuleFor(x => x.DisplayName!).DisplayName());
     When(x => !string.IsNullOrWhiteSpace(x.Description), () => RuleFor(x => x.Description!).Description());
 
-    // TODO(fpion): Attributes
-    // TODO(fpion): Skills
+    RuleFor(x => x.Attributes).SetValidator(new AttributeSelectionValidator());
+    RuleFor(x => x.Skills).SetValidator(new SkillSelectionValidator());
   }
 }

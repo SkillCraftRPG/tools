@@ -49,8 +49,32 @@ public class Aspect : AggregateRoot
     }
   }
 
-  // TODO(fpion): Attributes
-  // TODO(fpion): Skills
+  private AttributeSelection _attributes = new();
+  public AttributeSelection Attributes
+  {
+    get => _attributes;
+    set
+    {
+      if (_attributes != value)
+      {
+        _attributes = value;
+        _updated.Attributes = value;
+      }
+    }
+  }
+  private SkillSelection _skills = new();
+  public SkillSelection Skills
+  {
+    get => _skills;
+    set
+    {
+      if (_skills != value)
+      {
+        _skills = value;
+        _updated.Skills = value;
+      }
+    }
+  }
 
   public Aspect() : base()
   {
@@ -88,8 +112,14 @@ public class Aspect : AggregateRoot
       _description = @event.Description.Value;
     }
 
-    // TODO(fpion): Attributes
-    // TODO(fpion): Skills
+    if (@event.Attributes != null)
+    {
+      _attributes = @event.Attributes;
+    }
+    if (@event.Skills != null)
+    {
+      _skills = @event.Skills;
+    }
   }
 
   public override string ToString() => $"{DisplayName?.Value ?? UniqueSlug.Value} | {base.ToString()}";
