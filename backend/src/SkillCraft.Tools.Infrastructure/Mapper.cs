@@ -2,6 +2,7 @@
 using Logitar.EventSourcing;
 using SkillCraft.Tools.Core;
 using SkillCraft.Tools.Core.Actors.Models;
+using SkillCraft.Tools.Core.Aspects.Models;
 using SkillCraft.Tools.Core.Castes.Models;
 using SkillCraft.Tools.Core.Customizations.Models;
 using SkillCraft.Tools.Core.Educations.Models;
@@ -27,6 +28,22 @@ internal class Mapper
       ActorId id = new(actor.Id);
       _actors[id] = actor;
     }
+  }
+
+  public AspectModel ToAspect(AspectEntity source)
+  {
+    AspectModel destination = new()
+    {
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description,
+      // TODO(fpion): Attributes
+      // TODO(fpion): Skills
+    };
+
+    MapAggregate(source, destination);
+
+    return destination;
   }
 
   public CasteModel ToCaste(CasteEntity source)
