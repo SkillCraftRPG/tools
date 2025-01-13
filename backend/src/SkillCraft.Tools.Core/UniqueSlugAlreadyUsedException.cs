@@ -64,7 +64,7 @@ public class UniqueSlugAlreadyUsedException : ConflictException
     : this(conflictId.StreamId, education.Id.StreamId, education.UniqueSlug, nameof(education.UniqueSlug))
   {
   }
-  public UniqueSlugAlreadyUsedException(Language language, EducationId conflictId)
+  public UniqueSlugAlreadyUsedException(Language language, LanguageId conflictId)
     : this(conflictId.StreamId, language.Id.StreamId, language.UniqueSlug, nameof(language.UniqueSlug))
   {
   }
