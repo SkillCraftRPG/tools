@@ -20,11 +20,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.Infrastruc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.Infrastructure.SqlServer", "src\SkillCraft.Tools.Infrastructure.SqlServer\SkillCraft.Tools.Infrastructure.SqlServer.csproj", "{33D6401B-5C68-4152-ACA9-4904861D052E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.Worker", "src\SkillCraft.Tools.Worker\SkillCraft.Tools.Worker.csproj", "{CAAD69C3-3B69-4FBA-813A-1C46C5760A68}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.DataTransform.Worker", "src\SkillCraft.Tools.DataTransform.Worker\SkillCraft.Tools.DataTransform.Worker.csproj", "{8A14DF8E-9F4B-4664-AD29-734853689415}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataTransform", "DataTransform", "{BB4AFFC5-BE86-4663-B998-3B439E3E0161}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Seeding", "Seeding", "{77EADDA1-A6D1-4838-9604-EBA9B36009C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.Seeding.Worker", "src\SkillCraft.Tools.Seeding.Worker\SkillCraft.Tools.Seeding.Worker.csproj", "{0326C613-5940-453B-B593-93C7075DBF18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,19 +50,20 @@ Global
 		{33D6401B-5C68-4152-ACA9-4904861D052E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33D6401B-5C68-4152-ACA9-4904861D052E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33D6401B-5C68-4152-ACA9-4904861D052E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CAAD69C3-3B69-4FBA-813A-1C46C5760A68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CAAD69C3-3B69-4FBA-813A-1C46C5760A68}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CAAD69C3-3B69-4FBA-813A-1C46C5760A68}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CAAD69C3-3B69-4FBA-813A-1C46C5760A68}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8A14DF8E-9F4B-4664-AD29-734853689415}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8A14DF8E-9F4B-4664-AD29-734853689415}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A14DF8E-9F4B-4664-AD29-734853689415}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A14DF8E-9F4B-4664-AD29-734853689415}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0326C613-5940-453B-B593-93C7075DBF18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0326C613-5940-453B-B593-93C7075DBF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0326C613-5940-453B-B593-93C7075DBF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0326C613-5940-453B-B593-93C7075DBF18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8A14DF8E-9F4B-4664-AD29-734853689415} = {BB4AFFC5-BE86-4663-B998-3B439E3E0161}
+		{0326C613-5940-453B-B593-93C7075DBF18} = {77EADDA1-A6D1-4838-9604-EBA9B36009C2}
 	EndGlobalSection
 EndGlobal
