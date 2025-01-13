@@ -3,6 +3,7 @@ using Logitar.EventSourcing;
 using SkillCraft.Tools.Core;
 using SkillCraft.Tools.Core.Actors.Models;
 using SkillCraft.Tools.Core.Customizations.Models;
+using SkillCraft.Tools.Core.Educations.Models;
 using SkillCraft.Tools.Core.Natures.Models;
 using SkillCraft.Tools.Core.Talents.Models;
 using SkillCraft.Tools.Infrastructure.Entities;
@@ -35,6 +36,22 @@ internal class Mapper
       UniqueSlug = source.UniqueSlug,
       DisplayName = source.DisplayName,
       Description = source.Description
+    };
+
+    MapAggregate(source, destination);
+
+    return destination;
+  }
+
+  public EducationModel ToEducation(EducationEntity source)
+  {
+    EducationModel destination = new()
+    {
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description,
+      Skill = source.Skill
+      // TODO(fpion): WealthMultiplier
     };
 
     MapAggregate(source, destination);
