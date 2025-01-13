@@ -1,7 +1,12 @@
-﻿using Logitar.Portal.Contracts.Sessions;
+﻿using Logitar.Portal.Contracts.Roles;
+using Logitar.Portal.Contracts.Sessions;
 using Logitar.Portal.Contracts.Tokens;
+using Logitar.Portal.Contracts.Users;
 using Logitar.Security.Claims;
+using SkillCraft.Tools.Constants;
 using SkillCraft.Tools.Core.Identity;
+using SkillCraft.Tools.Core.Identity.Models;
+using SkillCraft.Tools.Models.Account;
 using SkillCraft.Tools.Settings;
 
 namespace SkillCraft.Tools.Authentication;
@@ -17,6 +22,75 @@ internal class OpenAuthenticationService : IOpenAuthenticationService
     _sessionService = sessionService;
     _settings = settings;
     _tokenService = tokenService;
+  }
+
+  public async Task<TokenResponse> GetTokenResponseAsync(SessionModel session, CancellationToken cancellationToken)
+  {
+    IdentityModel identity = GetIdentityModel(session);
+    CreatedTokenModel access = await _tokenService.CreateAsync(identity, _settings.AccessToken.Lifetime, _settings.AccessToken.TokenType, cancellationToken);
+
+    return new TokenResponse
+    {
+      AccessToken = access.Token,
+      TokenType = Schemes.Bearer,
+      ExpiresIn = _settings.AccessToken.Lifetime,
+      RefreshToken = session.RefreshToken
+    };
+  }
+  private static IdentityModel GetIdentityModel(SessionModel session)
+  {
+    UserModel user = session.User;
+
+    IdentityModel identity = new()
+    {
+      Subject = user.Id.ToString()
+    };
+    if (user.Email != null)
+    {
+      identity.Email = new EmailPayload(user.Email.Address, user.Email.IsVerified);
+    }
+
+    identity.Claims.Add(new ClaimModel(Rfc7519ClaimNames.Username, user.UniqueName));
+
+    Claim updatedAt = ClaimHelper.Create(Rfc7519ClaimNames.UpdatedAt, user.UpdatedOn);
+    identity.Claims.Add(new ClaimModel(updatedAt.Type, updatedAt.Value, updatedAt.ValueType));
+
+    if (user.FullName != null)
+    {
+      if (user.FirstName != null)
+      {
+        identity.Claims.Add(new ClaimModel(Rfc7519ClaimNames.FirstName, user.FirstName));
+      }
+      if (user.MiddleName != null)
+      {
+        identity.Claims.Add(new ClaimModel(Rfc7519ClaimNames.MiddleName, user.MiddleName));
+      }
+      if (user.LastName != null)
+      {
+        identity.Claims.Add(new ClaimModel(Rfc7519ClaimNames.LastName, user.LastName));
+      }
+      identity.Claims.Add(new ClaimModel(Rfc7519ClaimNames.FullName, user.FullName));
+    }
+
+    if (user.Picture != null)
+    {
+      identity.Claims.Add(new ClaimModel(Rfc7519ClaimNames.Picture, user.Picture));
+    }
+
+    if (user.AuthenticatedOn.HasValue)
+    {
+      Claim authenticatedOn = ClaimHelper.Create(Rfc7519ClaimNames.AuthenticationTime, user.AuthenticatedOn.Value);
+      identity.Claims.Add(new ClaimModel(authenticatedOn.Type, authenticatedOn.Value, authenticatedOn.ValueType));
+    }
+
+    foreach (RoleModel role in user.Roles)
+    {
+      identity.Claims.Add(new ClaimModel(Rfc7519ClaimNames.Roles, role.UniqueName));
+    }
+
+    identity.Claims.Add(new ClaimModel(Rfc7519ClaimNames.SessionId, session.Id.ToString()));
+
+    return identity;
   }
 
   public async Task<SessionModel> ValidateAsync(string accessToken, CancellationToken cancellationToken)
