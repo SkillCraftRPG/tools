@@ -5,7 +5,6 @@ using SkillCraft.Tools.GraphQL.Customizations;
 using SkillCraft.Tools.GraphQL.Educations;
 using SkillCraft.Tools.GraphQL.Languages;
 using SkillCraft.Tools.GraphQL.Natures;
-using SkillCraft.Tools.GraphQL.Specializations;
 using SkillCraft.Tools.GraphQL.Talents;
 
 namespace SkillCraft.Tools.GraphQL;
@@ -25,7 +24,7 @@ internal class RootQuery : ObjectGraphType
     LanguageQueries.Register(this);
     NatureQueries.Register(this);
     // Powers/Spells
-    SpecializationQueries.Register(this); // Incomplete
+    //SpecializationQueries.Register(this); // ISSUE: https://github.com/SkillCraftRPG/tools/issues/6
     TalentQueries.Register(this);
   }
 }

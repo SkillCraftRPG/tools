@@ -13,8 +13,10 @@ internal class CustomizationInput
 
   [Name("uniqueSlug")]
   public string UniqueSlug { get; set; } = string.Empty;
+
   [Name("displayName")]
   public string? DisplayName { get; set; }
+
   [Name("description")]
   public string? Description { get; set; }
 }

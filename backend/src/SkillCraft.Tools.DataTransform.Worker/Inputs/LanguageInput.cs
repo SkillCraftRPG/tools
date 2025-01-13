@@ -9,13 +9,16 @@ internal class LanguageInput
 
   [Name("uniqueSlug")]
   public string UniqueSlug { get; set; } = string.Empty;
+
   [Name("displayName")]
   public string? DisplayName { get; set; }
+
   [Name("description")]
   public string? Description { get; set; }
 
   [Name("script")]
   public string? Script { get; set; }
+
   [Name("typicalSpeakers")]
   public string? TypicalSpeakers { get; set; }
 }

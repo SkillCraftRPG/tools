@@ -3,10 +3,13 @@ using SkillCraft.Tools.Core;
 
 namespace SkillCraft.Tools.DataTransform.Worker.Inputs;
 
-internal class NatureInput
+internal class TalentInput
 {
   [Name("id")]
   public Guid Id { get; set; }
+
+  [Name("tier")]
+  public int Tier { get; set; }
 
   [Name("uniqueSlug")]
   public string UniqueSlug { get; set; } = string.Empty;
@@ -17,9 +20,12 @@ internal class NatureInput
   [Name("description")]
   public string? Description { get; set; }
 
-  [Name("attribute")]
-  public Ability? Attribute { get; set; }
+  [Name("allowMultiplePurchases")]
+  public bool AllowMultiplePurchases { get; set; }
 
-  [Name("giftId")]
-  public Guid? GiftId { get; set; }
+  [Name("requiredTalentId")]
+  public Guid? RequiredTalentId { get; set; }
+
+  [Name("skill")]
+  public Skill? Skill { get; set; }
 }

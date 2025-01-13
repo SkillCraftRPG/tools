@@ -62,6 +62,9 @@ public class DataTransformWorker : BackgroundService
 
       ConvertNaturesCommand natures = new(encoding, serializerOptions);
       await mediator.Send(natures, cancellationToken);
+
+      ConvertTalentsCommand talents = new(encoding, serializerOptions);
+      await mediator.Send(talents, cancellationToken);
     }
     catch (Exception exception)
     {
