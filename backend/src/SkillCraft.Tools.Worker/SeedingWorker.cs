@@ -50,6 +50,7 @@ internal class SeedingWorker : BackgroundService
       await ExecuteAsync(new SeedRolesTask(), cancellationToken);
       await ExecuteAsync(new SeedUsersTask(), cancellationToken);
       await ExecuteAsync(new MigrateDatabaseTask(), cancellationToken);
+      await ExecuteAsync(new SeedAspectsTask(), cancellationToken);
       await ExecuteAsync(new SeedCustomizationsTask(), cancellationToken);
       await ExecuteAsync(new SeedCastesTask(), cancellationToken);
       await ExecuteAsync(new SeedEducationsTask(), cancellationToken);
