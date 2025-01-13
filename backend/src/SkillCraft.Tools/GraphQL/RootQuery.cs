@@ -1,4 +1,5 @@
 ﻿using GraphQL.Types;
+using SkillCraft.Tools.GraphQL.Aspects;
 using SkillCraft.Tools.GraphQL.Castes;
 using SkillCraft.Tools.GraphQL.Customizations;
 using SkillCraft.Tools.GraphQL.Educations;
@@ -14,11 +15,16 @@ internal class RootQuery : ObjectGraphType
   {
     Name = "RootQuery";
 
+    AspectQueries.Register(this);
     CasteQueries.Register(this);
     CustomizationQueries.Register(this);
     EducationQueries.Register(this);
+    // Ethnicities/People/Races/Species
+    // Items
+    // Languages
     NatureQueries.Register(this);
-    SpecializationQueries.Register(this);
+    // Powers/Spells
+    SpecializationQueries.Register(this); // Incomplete
     TalentQueries.Register(this);
   }
 }
