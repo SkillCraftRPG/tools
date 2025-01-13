@@ -13,6 +13,7 @@ using SkillCraft.Tools.Core;
 using SkillCraft.Tools.Extensions;
 using SkillCraft.Tools.GraphQL;
 using SkillCraft.Tools.Infrastructure;
+using SkillCraft.Tools.Infrastructure.PostgreSQL;
 using SkillCraft.Tools.Infrastructure.SqlServer;
 using SkillCraft.Tools.Middlewares;
 using SkillCraft.Tools.Settings;
@@ -95,6 +96,11 @@ internal class Startup : StartupBase
     DatabaseProvider databaseProvider = _configuration.GetValue<DatabaseProvider?>("DatabaseProvider") ?? DatabaseProvider.SqlServer;
     switch (databaseProvider)
     {
+      case DatabaseProvider.PostgreSQL:
+        services.AddSkillCraftToolsInfrastructurePostgreSQL(_configuration);
+        healthChecks.AddDbContextCheck<EventContext>();
+        healthChecks.AddDbContextCheck<SkillCraftContext>();
+        break;
       case DatabaseProvider.SqlServer:
         services.AddSkillCraftToolsInfrastructureSqlServer(_configuration);
         healthChecks.AddDbContextCheck<EventContext>();
