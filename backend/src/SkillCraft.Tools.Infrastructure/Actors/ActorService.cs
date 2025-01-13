@@ -1,7 +1,9 @@
 ﻿using Logitar.EventSourcing;
+using Microsoft.EntityFrameworkCore;
 using SkillCraft.Tools.Core.Actors;
 using SkillCraft.Tools.Core.Actors.Models;
 using SkillCraft.Tools.Core.Caching;
+using SkillCraft.Tools.Infrastructure.Entities;
 
 namespace SkillCraft.Tools.Infrastructure.Actors;
 
@@ -16,7 +18,7 @@ internal class ActorService : IActorService
     _context = context;
   }
 
-  public Task<IReadOnlyCollection<ActorModel>> FindAsync(IEnumerable<ActorId> ids, CancellationToken cancellationToken)
+  public async Task<IReadOnlyCollection<ActorModel>> FindAsync(IEnumerable<ActorId> ids, CancellationToken cancellationToken)
   {
     int capacity = ids.Count();
     Dictionary<ActorId, ActorModel> actors = new(capacity);
@@ -39,22 +41,22 @@ internal class ActorService : IActorService
       }
     }
 
-    //if (missingIds.Count > 0)
-    //{
-    //  UserEntity[] users = await _context.Users.AsNoTracking()
-    //    .Where(a => missingIds.Contains(a.Id))
-    //    .ToArrayAsync(cancellationToken);
+    if (missingIds.Count > 0)
+    {
+      ActorEntity[] entities = await _context.Actors.AsNoTracking()
+        .Where(a => missingIds.Contains(a.Id))
+        .ToArrayAsync(cancellationToken);
 
-    //  foreach (UserEntity user in users)
-    //  {
-    //    ActorModel actor = Mapper.ToActor(user);
-    //    ActorId id = new(user.Id);
+      foreach (ActorEntity entity in entities)
+      {
+        ActorModel actor = Mapper.ToActor(entity);
+        ActorId id = new(entity.Id);
 
-    //    actors[id] = actor;
-    //    _cacheService.SetActor(actor);
-    //  }
-    //} // ISSUE: https://github.com/SkillCraftRPG/tools/issues/5
+        actors[id] = actor;
+        _cacheService.SetActor(actor);
+      }
+    }
 
-    return Task.FromResult<IReadOnlyCollection<ActorModel>>(actors.Values);
+    return actors.Values;
   }
 }

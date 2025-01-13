@@ -1,9 +1,11 @@
 ﻿using Logitar.Portal.Contracts.ApiKeys;
+using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
 using SkillCraft.Tools.Constants;
 using SkillCraft.Tools.Core.Identity;
+using SkillCraft.Tools.Core.Identity.Events;
 using SkillCraft.Tools.Extensions;
 
 namespace SkillCraft.Tools.Authentication;
@@ -13,11 +15,13 @@ internal class ApiKeyAuthenticationOptions : AuthenticationSchemeOptions;
 internal class ApiKeyAuthenticationHandler : AuthenticationHandler<ApiKeyAuthenticationOptions>
 {
   private readonly IApiKeyService _apiKeyService;
+  private readonly IMediator _mediator;
 
-  public ApiKeyAuthenticationHandler(IApiKeyService apiKeyService, IOptionsMonitor<ApiKeyAuthenticationOptions> options, ILoggerFactory logger, UrlEncoder encoder)
+  public ApiKeyAuthenticationHandler(IApiKeyService apiKeyService, IMediator mediator, IOptionsMonitor<ApiKeyAuthenticationOptions> options, ILoggerFactory logger, UrlEncoder encoder)
     : base(options, logger, encoder)
   {
     _apiKeyService = apiKeyService;
+    _mediator = mediator;
   }
 
   protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
@@ -30,6 +34,7 @@ internal class ApiKeyAuthenticationHandler : AuthenticationHandler<ApiKeyAuthent
         try
         {
           ApiKeyModel apiKey = await _apiKeyService.AuthenticateAsync(value);
+          await _mediator.Publish(new ApiKeyAuthenticated(apiKey));
 
           Context.SetApiKey(apiKey);
 

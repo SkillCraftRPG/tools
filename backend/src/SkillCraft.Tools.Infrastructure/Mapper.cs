@@ -31,6 +31,16 @@ internal class Mapper
     }
   }
 
+  public static ActorModel ToActor(ActorEntity actor) => new()
+  {
+    Id = actor.Id,
+    Type = actor.Type,
+    IsDeleted = actor.IsDeleted,
+    DisplayName = actor.DisplayName,
+    EmailAddress = actor.EmailAddress,
+    PictureUrl = actor.PictureUrl
+  };
+
   public AspectModel ToAspect(AspectEntity source)
   {
     AspectModel destination = new()
