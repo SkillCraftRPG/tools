@@ -1,0 +1,162 @@
+﻿[
+  {
+    "Id": "9fa3bde3-d182-4f58-a020-be14e7e24d7b",
+    "UniqueSlug": "adroit",
+    "DisplayName": "Adroit",
+    "Description": null,
+    "Attributes": {
+      "Mandatory1": "Agility",
+      "Mandatory2": "Coordination",
+      "Optional1": "Spirit",
+      "Optional2": "Vigor"
+    },
+    "Skills": {
+      "Discounted1": "Stealth",
+      "Discounted2": "Thievery"
+    }
+  },
+  {
+    "Id": "89833994-e166-413b-bdb7-2529adfb7eb5",
+    "UniqueSlug": "charismatique",
+    "DisplayName": "Charismatique",
+    "Description": null,
+    "Attributes": {
+      "Mandatory1": "Presence",
+      "Mandatory2": "Sensitivity",
+      "Optional1": "Agility",
+      "Optional2": "Spirit"
+    },
+    "Skills": {
+      "Discounted1": "Insight",
+      "Discounted2": "Deception"
+    }
+  },
+  {
+    "Id": "885ac5c8-a6f3-4624-a284-6eaad4598307",
+    "UniqueSlug": "circonspect",
+    "DisplayName": "Circonspect",
+    "Description": null,
+    "Attributes": {
+      "Mandatory1": "Intellect",
+      "Mandatory2": "Sensitivity",
+      "Optional1": "Agility",
+      "Optional2": "Coordination"
+    },
+    "Skills": {
+      "Discounted1": "Investigation",
+      "Discounted2": "Medicine"
+    }
+  },
+  {
+    "Id": "5ffe0fab-5e98-48d7-9b4f-1e24fdea400d",
+    "UniqueSlug": "consciencieux",
+    "DisplayName": "Consciencieux",
+    "Description": null,
+    "Attributes": {
+      "Mandatory1": "Coordination",
+      "Mandatory2": "Intellect",
+      "Optional1": "Presence",
+      "Optional2": "Sensitivity"
+    },
+    "Skills": {
+      "Discounted1": "Craft",
+      "Discounted2": "Knowledge"
+    }
+  },
+  {
+    "Id": "d9e801d2-f217-47c8-9f52-5f97736449b9",
+    "UniqueSlug": "determine",
+    "DisplayName": "Déterminé",
+    "Description": null,
+    "Attributes": {
+      "Mandatory1": "Spirit",
+      "Mandatory2": "Vigor",
+      "Optional1": "Intellect",
+      "Optional2": "Presence"
+    },
+    "Skills": {
+      "Discounted1": "Discipline",
+      "Discounted2": "Resistance"
+    }
+  },
+  {
+    "Id": "f3389cff-a1ca-49c7-9105-385d25278ef8",
+    "UniqueSlug": "eloquent",
+    "DisplayName": "Éloquent",
+    "Description": null,
+    "Attributes": {
+      "Mandatory1": "Intellect",
+      "Mandatory2": "Presence",
+      "Optional1": "Coordination",
+      "Optional2": "Vigor"
+    },
+    "Skills": {
+      "Discounted1": "Diplomacy",
+      "Discounted2": "Linguistics"
+    }
+  },
+  {
+    "Id": "e1a93b13-74a8-48e1-9b77-f0c4eecf925d",
+    "UniqueSlug": "farouche",
+    "DisplayName": "Farouche",
+    "Description": null,
+    "Attributes": {
+      "Mandatory1": "Agility",
+      "Mandatory2": "Sensitivity",
+      "Optional1": "Spirit",
+      "Optional2": "Vigor"
+    },
+    "Skills": {
+      "Discounted1": "Melee",
+      "Discounted2": "Survival"
+    }
+  },
+  {
+    "Id": "6bbc3aed-dcd9-45aa-b90d-f8ca3dedaa8b",
+    "UniqueSlug": "gymnaste",
+    "DisplayName": "Gymnaste",
+    "Description": null,
+    "Attributes": {
+      "Mandatory1": "Agility",
+      "Mandatory2": "Vigor",
+      "Optional1": "Coordination",
+      "Optional2": "Sensitivity"
+    },
+    "Skills": {
+      "Discounted1": "Acrobatics",
+      "Discounted2": "Athletics"
+    }
+  },
+  {
+    "Id": "72ae45f4-56ba-479f-a847-9adcbae1ee10",
+    "UniqueSlug": "oeil-de-lynx",
+    "DisplayName": "Œil-de-lynx",
+    "Description": null,
+    "Attributes": {
+      "Mandatory1": "Coordination",
+      "Mandatory2": "Sensitivity",
+      "Optional1": "Intellect",
+      "Optional2": "Presence"
+    },
+    "Skills": {
+      "Discounted1": "Orientation",
+      "Discounted2": "Perception"
+    }
+  },
+  {
+    "Id": "ebcab8bb-2ed3-40ef-bdf4-921ac791d4b3",
+    "UniqueSlug": "tenace",
+    "DisplayName": "Tenace",
+    "Description": null,
+    "Attributes": {
+      "Mandatory1": "Spirit",
+      "Mandatory2": "Presence",
+      "Optional1": "Intellect",
+      "Optional2": "Sensitivity"
+    },
+    "Skills": {
+      "Discounted1": "Occultism",
+      "Discounted2": "Performance"
+    }
+  }
+]
