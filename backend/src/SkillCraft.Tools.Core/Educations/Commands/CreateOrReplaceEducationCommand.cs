@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
 using Logitar.EventSourcing;
 using MediatR;
-using SkillCraft.Tools.Core.Customizations;
 using SkillCraft.Tools.Core.Educations.Models;
 using SkillCraft.Tools.Core.Educations.Validators;
 
@@ -14,20 +13,17 @@ public record CreateOrReplaceEducationCommand(Guid? Id, CreateOrReplaceEducation
 internal class CreateOrReplaceEducationCommandHandler : IRequestHandler<CreateOrReplaceEducationCommand, CreateOrReplaceEducationResult>
 {
   private readonly IApplicationContext _applicationContext;
-  private readonly ICustomizationRepository _customizationRepository;
   private readonly IEducationManager _educationManager;
   private readonly IEducationQuerier _educationQuerier;
   private readonly IEducationRepository _educationRepository;
 
   public CreateOrReplaceEducationCommandHandler(
     IApplicationContext applicationContext,
-    ICustomizationRepository customizationRepository,
     IEducationManager educationManager,
     IEducationQuerier educationQuerier,
     IEducationRepository educationRepository)
   {
     _applicationContext = applicationContext;
-    _customizationRepository = customizationRepository;
     _educationManager = educationManager;
     _educationQuerier = educationQuerier;
     _educationRepository = educationRepository;

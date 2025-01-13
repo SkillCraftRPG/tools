@@ -57,6 +57,9 @@ public class DataTransformWorker : BackgroundService
       ConvertEducationsCommand educations = new(encoding, serializerOptions);
       await mediator.Send(educations, cancellationToken);
 
+      ConvertLanguagesCommand languages = new(encoding, serializerOptions);
+      await mediator.Send(languages, cancellationToken);
+
       ConvertNaturesCommand natures = new(encoding, serializerOptions);
       await mediator.Send(natures, cancellationToken);
     }

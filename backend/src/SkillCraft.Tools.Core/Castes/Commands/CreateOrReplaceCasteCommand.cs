@@ -3,7 +3,6 @@ using Logitar.EventSourcing;
 using MediatR;
 using SkillCraft.Tools.Core.Castes.Models;
 using SkillCraft.Tools.Core.Castes.Validators;
-using SkillCraft.Tools.Core.Customizations;
 
 namespace SkillCraft.Tools.Core.Castes.Commands;
 
@@ -14,20 +13,17 @@ public record CreateOrReplaceCasteCommand(Guid? Id, CreateOrReplaceCastePayload 
 internal class CreateOrReplaceCasteCommandHandler : IRequestHandler<CreateOrReplaceCasteCommand, CreateOrReplaceCasteResult>
 {
   private readonly IApplicationContext _applicationContext;
-  private readonly ICustomizationRepository _customizationRepository;
   private readonly ICasteManager _casteManager;
   private readonly ICasteQuerier _casteQuerier;
   private readonly ICasteRepository _casteRepository;
 
   public CreateOrReplaceCasteCommandHandler(
     IApplicationContext applicationContext,
-    ICustomizationRepository customizationRepository,
     ICasteManager casteManager,
     ICasteQuerier casteQuerier,
     ICasteRepository casteRepository)
   {
     _applicationContext = applicationContext;
-    _customizationRepository = customizationRepository;
     _casteManager = casteManager;
     _casteQuerier = casteQuerier;
     _casteRepository = casteRepository;

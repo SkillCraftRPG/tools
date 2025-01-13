@@ -6,6 +6,7 @@ using SkillCraft.Tools.Core.Aspects.Models;
 using SkillCraft.Tools.Core.Castes.Models;
 using SkillCraft.Tools.Core.Customizations.Models;
 using SkillCraft.Tools.Core.Educations.Models;
+using SkillCraft.Tools.Core.Languages.Models;
 using SkillCraft.Tools.Core.Natures.Models;
 using SkillCraft.Tools.Core.Talents.Models;
 using SkillCraft.Tools.Infrastructure.Entities;
@@ -91,6 +92,22 @@ internal class Mapper
       Description = source.Description,
       Skill = source.Skill,
       WealthMultiplier = source.WealthMultiplier
+    };
+
+    MapAggregate(source, destination);
+
+    return destination;
+  }
+
+  public LanguageModel ToLanguage(LanguageEntity source)
+  {
+    LanguageModel destination = new()
+    {
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description,
+      Script = source.Script,
+      TypicalSpeakers = source.TypicalSpeakers
     };
 
     MapAggregate(source, destination);
