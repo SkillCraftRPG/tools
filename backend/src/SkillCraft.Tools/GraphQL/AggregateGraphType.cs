@@ -1,6 +1,6 @@
 ﻿using GraphQL.Types;
 using Logitar;
-using SkillCraft.Tools.Core;
+using Logitar.Portal.Contracts;
 using SkillCraft.Tools.GraphQL.Actors;
 
 namespace SkillCraft.Tools.GraphQL;

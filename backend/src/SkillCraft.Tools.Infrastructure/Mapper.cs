@@ -1,7 +1,7 @@
 ﻿using Logitar;
 using Logitar.EventSourcing;
+using Logitar.Portal.Contracts;
 using Logitar.Portal.Contracts.Actors;
-using SkillCraft.Tools.Core;
 using SkillCraft.Tools.Core.Aspects.Models;
 using SkillCraft.Tools.Core.Castes.Models;
 using SkillCraft.Tools.Core.Customizations.Models;

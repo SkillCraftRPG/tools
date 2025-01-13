@@ -1,4 +1,6 @@
-﻿namespace SkillCraft.Tools.Core.Castes.Models;
+﻿using Logitar.Portal.Contracts;
+
+namespace SkillCraft.Tools.Core.Castes.Models;
 
 public class CasteModel : AggregateModel
 {

@@ -1,4 +1,6 @@
-﻿namespace SkillCraft.Tools.Core.Educations.Models;
+﻿using Logitar.Portal.Contracts;
+
+namespace SkillCraft.Tools.Core.Educations.Models;
 
 public class EducationModel : AggregateModel
 {

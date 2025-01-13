@@ -1,4 +1,5 @@
-﻿using SkillCraft.Tools.Core.Customizations.Models;
+﻿using Logitar.Portal.Contracts;
+using SkillCraft.Tools.Core.Customizations.Models;
 
 namespace SkillCraft.Tools.Core.Natures.Models;
 

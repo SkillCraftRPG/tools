@@ -1,4 +1,6 @@
-﻿namespace SkillCraft.Tools.Core.Aspects.Models;
+﻿using Logitar.Portal.Contracts;
+
+namespace SkillCraft.Tools.Core.Aspects.Models;
 
 public class AspectModel : AggregateModel
 {

@@ -1,4 +1,6 @@
-﻿namespace SkillCraft.Tools.Core.Languages.Models;
+﻿using Logitar.Portal.Contracts;
+
+namespace SkillCraft.Tools.Core.Languages.Models;
 
 public class LanguageModel : AggregateModel
 {
