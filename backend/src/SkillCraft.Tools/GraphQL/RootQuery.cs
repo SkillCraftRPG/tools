@@ -1,4 +1,5 @@
 ﻿using GraphQL.Types;
+using SkillCraft.Tools.GraphQL.Castes;
 using SkillCraft.Tools.GraphQL.Customizations;
 using SkillCraft.Tools.GraphQL.Educations;
 using SkillCraft.Tools.GraphQL.Natures;
@@ -13,6 +14,7 @@ internal class RootQuery : ObjectGraphType
   {
     Name = "RootQuery";
 
+    CasteQueries.Register(this);
     CustomizationQueries.Register(this);
     EducationQueries.Register(this);
     NatureQueries.Register(this);
