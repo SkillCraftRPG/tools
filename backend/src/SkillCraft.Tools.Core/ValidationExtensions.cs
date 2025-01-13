@@ -15,8 +15,18 @@ internal static class ValidationExtensions
     return ruleBuilder.NotEmpty().MaximumLength(Core.DisplayName.MaximumLength);
   }
 
+  public static IRuleBuilderOptions<T, string> Roll<T>(this IRuleBuilder<T, string> ruleBuilder)
+  {
+    return ruleBuilder.NotEmpty().MaximumLength(Core.Roll.MaximumLength).SetValidator(new RollValidator<T>());
+  }
+
   public static IRuleBuilderOptions<T, string> Slug<T>(this IRuleBuilder<T, string> ruleBuilder)
   {
     return ruleBuilder.NotEmpty().MaximumLength(Core.Slug.MaximumLength).SetValidator(new SlugValidator<T>());
+  }
+
+  public static IRuleBuilderOptions<T, double> WealthMultiplier<T>(this IRuleBuilder<T, double> ruleBuilder)
+  {
+    return ruleBuilder.GreaterThan(0.0);
   }
 }

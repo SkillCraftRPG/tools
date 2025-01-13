@@ -2,7 +2,9 @@
 using Logitar.EventSourcing;
 using SkillCraft.Tools.Core;
 using SkillCraft.Tools.Core.Actors.Models;
+using SkillCraft.Tools.Core.Castes.Models;
 using SkillCraft.Tools.Core.Customizations.Models;
+using SkillCraft.Tools.Core.Educations.Models;
 using SkillCraft.Tools.Core.Natures.Models;
 using SkillCraft.Tools.Core.Talents.Models;
 using SkillCraft.Tools.Infrastructure.Entities;
@@ -27,6 +29,27 @@ internal class Mapper
     }
   }
 
+  public CasteModel ToCaste(CasteEntity source)
+  {
+    CasteModel destination = new()
+    {
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description,
+      Skill = source.Skill,
+      WealthRoll = source.WealthRoll
+    };
+
+    foreach (KeyValuePair<Guid, FeatureModel> feature in source.GetFeatures())
+    {
+      destination.Features.Add(feature.Value);
+    }
+
+    MapAggregate(source, destination);
+
+    return destination;
+  }
+
   public CustomizationModel ToCustomization(CustomizationEntity source)
   {
     CustomizationModel destination = new()
@@ -35,6 +58,22 @@ internal class Mapper
       UniqueSlug = source.UniqueSlug,
       DisplayName = source.DisplayName,
       Description = source.Description
+    };
+
+    MapAggregate(source, destination);
+
+    return destination;
+  }
+
+  public EducationModel ToEducation(EducationEntity source)
+  {
+    EducationModel destination = new()
+    {
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description,
+      Skill = source.Skill,
+      WealthMultiplier = source.WealthMultiplier
     };
 
     MapAggregate(source, destination);

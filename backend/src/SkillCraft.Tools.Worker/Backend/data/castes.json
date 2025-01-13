@@ -1,0 +1,62 @@
+﻿[
+  {
+    "Id": "1b504012-c789-4c0b-a6fe-8e94fef22324",
+    "UniqueSlug": "amuseur",
+    "DisplayName": "Amuseur",
+    "Description": "Adepte d’art, de poésie, de cirque ou de théâtre, l’amuseur ère de villages en cités afin d’offrir ses performances. Bien plus qu’un simple gagne-pain, cela lui permet de former un réseau de contacts et de recueillir toutes sortes d’informations.",
+    "Skill": "Performance",
+    "WealthRoll": "8d6",
+    "Features": [
+      {
+        "Id": "638973ce-a350-4e55-bc78-5a1a99f7f3f0",
+        "Name": "Protégé",
+        "Description": "Par le prestige de sa famille et sa participation à des événements de l’aristocratie, le personnage est connu de la noblesse locale. Il peut demander gîte et couvert membres de la noblesse. En échange, ceux-ci peuvent lui demander une ou plusieurs faveurs immédiates, futures ou encore invoquer le droit de surprise, c’est-à-dire une faveur d’un quelconque ordre de grandeur lorsque l’occasion de présenter."
+      },
+      {
+        "Id": "5956fa02-3378-44d5-be85-48332caa7f82",
+        "Name": "Vagabond",
+        "Description": "Aucun village ni aucune ville n’est un meilleur domicile pour le personnage que la route. Qu’il soit nomade par choix ou par obligation, ses tests de _Survie_ afin de trouver de l’eau, de la nourriture ou un abri se voient conférer l’avantage lorsqu’il se trouve à proximité d’une route maintenue."
+      }
+    ]
+  },
+  {
+    "Id": "4572dbcb-d43a-465c-8565-29c701a31f77",
+    "UniqueSlug": "artisan",
+    "DisplayName": "Artisan",
+    "Description": "L’artisan est un expert d’un procédé de transformation des matières brutes. Il peut être un boulanger, un forgeron, un orfèvre, un tisserand ou pratiquer tout genre de profession oeuvrant dans la transformation des matières brutes.",
+    "Skill": "Craft",
+    "WealthRoll": "8d6",
+    "Features": [
+      {
+        "Id": "efbc22d1-b102-479b-bbb5-f691c3b79a7f",
+        "Name": "Professionnel,",
+        "Description": "Les apprentissages et réalisations du personnage lui ont permis de devenir membre d’une organisation de professionnels comme lui, telle une guilde d’artisans ou de marchands. S’il ne peut payer pour un toit ou de la nourriture, il peut facilement trouver du travail afin de couvrir ces dépenses essentielles."
+      },
+      {
+        "Id": "3bb646cf-fc21-4ac7-a989-8042b394bbfa",
+        "Name": "Sujet",
+        "Description": "Sujet d’un seigneur quelconque, le personnage n’est victime d’aucune taxe imposée aux voyageurs étrangers. Il peut réduire ses dépenses essentielles de 10 % sur sa terre natale."
+      }
+    ]
+  },
+  {
+    "Id": "7b363965-328f-46b9-aa13-5c35c1c099bf",
+    "UniqueSlug": "boheme",
+    "DisplayName": "Bohème",
+    "Description": "Le bohème ne possède aucun domicile fixe ni occupation permanente. Il doit sa survie à la bonté des autres lorsqu’il mendie ou aux crimes qu’il perpètre dans les centres urbains. Il est incapable de s’intégrer à la société dont laquelle il dépend afin de survivre, il est donc fréquemment rejeté par celle-ci.",
+    "Skill": "Thievery",
+    "WealthRoll": "6d6",
+    "Features": [
+      {
+        "Id": "58de93f7-1347-48a7-9981-4cfd651f2980",
+        "Name": "Rancunier",
+        "Description": "Peu importe la raison, le personnage a renoncé à sa fidélité envers son seigneur. Il connaît les rouages du système lorsqu’il est question d’éviter de payer des taxes et de jouer avec les lois en place. Lorsqu’il se trouve dans son pays d’origine, il peut réduire ses dépenses essentielles de 10 %."
+      },
+      {
+        "Id": "24445933-2a0f-4cad-bcc8-d5b25e4fea7a",
+        "Name": "Survivant",
+        "Description": "Ayant souffert de nombreuses privations au cours de sa vie, le personnage sait faire plus avec moins. Il se voit conférer l’avantage à ses tests de _Survie_ afin de trouver de l’eau, de la nourriture ou un abri en milieu sauvage."
+      }
+    ]
+  }
+]

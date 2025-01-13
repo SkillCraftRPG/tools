@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SkillCraft.Tools.Infrastructure;
 
@@ -10,9 +11,11 @@ using SkillCraft.Tools.Infrastructure;
 namespace SkillCraft.Tools.Infrastructure.SqlServer.Migrations
 {
     [DbContext(typeof(SkillCraftContext))]
-    partial class SkillCraftContextModelSnapshot : ModelSnapshot
+    [Migration("20250113013210_CreateEducationTable")]
+    partial class CreateEducationTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -20,97 +23,6 @@ namespace SkillCraft.Tools.Infrastructure.SqlServer.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("SkillCraft.Tools.Infrastructure.Entities.CasteEntity", b =>
-                {
-                    b.Property<int>("CasteId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CasteId"));
-
-                    b.Property<string>("CreatedBy")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DisplayName")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("Features")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Skill")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("StreamId")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("UniqueSlug")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("UniqueSlugNormalized")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<DateTime>("UpdatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long>("Version")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("WealthRoll")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.HasKey("CasteId");
-
-                    b.HasIndex("CreatedBy");
-
-                    b.HasIndex("CreatedOn");
-
-                    b.HasIndex("DisplayName");
-
-                    b.HasIndex("Id")
-                        .IsUnique();
-
-                    b.HasIndex("Skill");
-
-                    b.HasIndex("StreamId")
-                        .IsUnique();
-
-                    b.HasIndex("UniqueSlug");
-
-                    b.HasIndex("UniqueSlugNormalized")
-                        .IsUnique();
-
-                    b.HasIndex("UpdatedBy");
-
-                    b.HasIndex("UpdatedOn");
-
-                    b.HasIndex("Version");
-
-                    b.ToTable("Castes", (string)null);
-                });
 
             modelBuilder.Entity("SkillCraft.Tools.Infrastructure.Entities.CustomizationEntity", b =>
                 {
