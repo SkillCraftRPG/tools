@@ -16,12 +16,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Backend\data\castes.json" />
     <Content Remove="secrets.sample.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Backend\data\castes.json" />
     <None Include="secrets.sample.json" />
   </ItemGroup>
 
