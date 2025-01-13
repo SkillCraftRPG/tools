@@ -19,4 +19,9 @@ internal static class ValidationExtensions
   {
     return ruleBuilder.NotEmpty().MaximumLength(Core.Slug.MaximumLength).SetValidator(new SlugValidator<T>());
   }
+
+  public static IRuleBuilderOptions<T, double> WealthMultiplier<T>(this IRuleBuilder<T, double> ruleBuilder)
+  {
+    return ruleBuilder.GreaterThan(0.0);
+  }
 }

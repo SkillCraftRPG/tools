@@ -12,6 +12,6 @@ internal class CreateOrReplaceEducationValidator : AbstractValidator<CreateOrRep
     When(x => !string.IsNullOrWhiteSpace(x.Description), () => RuleFor(x => x.Description!).Description());
 
     When(x => x.Skill.HasValue, () => RuleFor(x => x.Skill!.Value).IsInEnum());
-    // TODO(fpion): WealthMultiplier
+    When(x => x.WealthMultiplier.HasValue, () => RuleFor(x => x.WealthMultiplier!.Value).WealthMultiplier());
   }
 }

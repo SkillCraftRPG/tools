@@ -7,7 +7,7 @@ public class EducationModel : AggregateModel
   public string? Description { get; set; }
 
   public Skill? Skill { get; set; }
-  // TODO(fpion): WealthMultiplier
+  public double? WealthMultiplier { get; set; }
 
   public override string ToString() => $"{DisplayName ?? UniqueSlug} | {base.ToString()}";
 }

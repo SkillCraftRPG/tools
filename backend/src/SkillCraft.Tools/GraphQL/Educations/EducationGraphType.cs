@@ -15,6 +15,7 @@ internal class EducationGraphType : AggregateGraphType<EducationModel>
 
     Field(x => x.Skill, type: typeof(SkillGraphType))
       .Description("The skill talent required by this education.");
-    // TODO(fpion): WealthMultiplier
+    Field(x => x.WealthMultiplier)
+      .Description("The starting wealth multiplier of characters having this education.");
   }
 }

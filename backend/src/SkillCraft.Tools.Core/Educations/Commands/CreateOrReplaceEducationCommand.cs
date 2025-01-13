@@ -83,7 +83,11 @@ internal class CreateOrReplaceEducationCommandHandler : IRequestHandler<CreateOr
     {
       education.Skill = payload.Skill;
     }
-    // TODO(fpion): WealthMultiplier
+    WealthMultiplier? wealthMultiplier = payload.WealthMultiplier.HasValue ? new(payload.WealthMultiplier.Value) : null;
+    if (reference.WealthMultiplier != wealthMultiplier)
+    {
+      education.WealthMultiplier = wealthMultiplier;
+    }
 
     education.Update(actorId);
 

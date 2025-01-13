@@ -50,8 +50,8 @@ internal class Mapper
       UniqueSlug = source.UniqueSlug,
       DisplayName = source.DisplayName,
       Description = source.Description,
-      Skill = source.Skill
-      // TODO(fpion): WealthMultiplier
+      Skill = source.Skill,
+      WealthMultiplier = source.WealthMultiplier
     };
 
     MapAggregate(source, destination);

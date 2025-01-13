@@ -67,7 +67,19 @@ public class Education : AggregateRoot
       }
     }
   }
-  // TODO(fpion): WealthMultiplier
+  private WealthMultiplier? _wealthMultiplier = null;
+  public WealthMultiplier? WealthMultiplier
+  {
+    get => _wealthMultiplier;
+    set
+    {
+      if (_wealthMultiplier != value)
+      {
+        _wealthMultiplier = value;
+        _updated.WealthMultiplier = new Change<WealthMultiplier>(value);
+      }
+    }
+  }
 
   public Education() : base()
   {
@@ -109,7 +121,10 @@ public class Education : AggregateRoot
     {
       _skill = @event.Skill.Value;
     }
-    // TODO(fpion): WealthMultiplier
+    if (@event.WealthMultiplier != null)
+    {
+      _wealthMultiplier = @event.WealthMultiplier.Value;
+    }
   }
 
   public override string ToString() => $"{DisplayName?.Value ?? UniqueSlug.Value} | {base.ToString()}";

@@ -21,5 +21,5 @@ internal static class Educations
   public static readonly ColumnId Skill = new(nameof(EducationEntity.Skill), Table);
   public static readonly ColumnId UniqueSlug = new(nameof(EducationEntity.UniqueSlug), Table);
   public static readonly ColumnId UniqueSlugNormalized = new(nameof(EducationEntity.UniqueSlugNormalized), Table);
-  // TODO(fpion): WealthMultiplier
+  public static readonly ColumnId WealthMultiplier = new(nameof(EducationEntity.WealthMultiplier), Table);
 }

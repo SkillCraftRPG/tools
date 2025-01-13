@@ -10,9 +10,9 @@ public record EducationUpdated : DomainEvent, INotification
   public Change<Description>? Description { get; set; }
 
   public Change<Skill?>? Skill { get; set; }
-  // TODO(fpion): WealthMultiplier
+  public Change<WealthMultiplier>? WealthMultiplier { get; set; }
 
   [JsonIgnore]
   public bool HasChanges => UniqueSlug != null || DisplayName != null || Description != null
-    || Skill != null;
+    || Skill != null || WealthMultiplier != null;
 }

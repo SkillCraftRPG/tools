@@ -19,7 +19,7 @@ internal class EducationEntity : AggregateEntity
   public string? Description { get; private set; }
 
   public Skill? Skill { get; private set; }
-  // TODO(fpion): WealthMultiplier
+  public double? WealthMultiplier { get; private set; }
 
   public EducationEntity(EducationCreated @event) : base(@event)
   {
@@ -53,7 +53,10 @@ internal class EducationEntity : AggregateEntity
     {
       Skill = @event.Skill.Value;
     }
-    // TODO(fpion): WealthMultiplier
+    if (@event.WealthMultiplier != null)
+    {
+      WealthMultiplier = @event.WealthMultiplier.Value?.Value;
+    }
   }
 
   public override string ToString() => $"{DisplayName ?? UniqueSlug} | {base.ToString()}";

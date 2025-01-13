@@ -14,5 +14,6 @@ internal class EventSerializer : Logitar.EventSourcing.Infrastructure.EventSeria
     SerializerOptions.Converters.Add(new NatureIdConverter());
     SerializerOptions.Converters.Add(new SlugConverter());
     SerializerOptions.Converters.Add(new TalentIdConverter());
+    SerializerOptions.Converters.Add(new WealthMultiplierConverter());
   }
 }
