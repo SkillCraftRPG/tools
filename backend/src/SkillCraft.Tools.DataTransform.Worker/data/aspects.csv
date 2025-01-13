@@ -1,0 +1,11 @@
+﻿id,uniqueSlug,displayName,description,attributes.mandatory1,attributes.mandatory2,attributes.optional1,attributes.optional2,skills.discounted1,skills.discounted2
+9fa3bde3-d182-4f58-a020-be14e7e24d7b,adroit,Adroit,,Agility,Coordination,Spirit,Vigor,Stealth,Thievery
+89833994-e166-413b-bdb7-2529adfb7eb5,charismatique,Charismatique,,Presence,Sensitivity,Agility,Spirit,Insight,Deception
+885ac5c8-a6f3-4624-a284-6eaad4598307,circonspect,Circonspect,,Intellect,Sensitivity,Agility,Coordination,Investigation,Medicine
+5ffe0fab-5e98-48d7-9b4f-1e24fdea400d,consciencieux,Consciencieux,,Coordination,Intellect,Presence,Sensitivity,Craft,Knowledge
+d9e801d2-f217-47c8-9f52-5f97736449b9,determine,Déterminé,,Spirit,Vigor,Intellect,Presence,Discipline,Resistance
+f3389cff-a1ca-49c7-9105-385d25278ef8,eloquent,Éloquent,,Intellect,Presence,Coordination,Vigor,Diplomacy,Linguistics
+e1a93b13-74a8-48e1-9b77-f0c4eecf925d,farouche,Farouche,,Agility,Sensitivity,Spirit,Vigor,Melee,Survival
+6bbc3aed-dcd9-45aa-b90d-f8ca3dedaa8b,gymnaste,Gymnaste,,Agility,Vigor,Coordination,Sensitivity,Acrobatics,Athletics
+72ae45f4-56ba-479f-a847-9adcbae1ee10,oeil-de-lynx,Œil-de-lynx,,Coordination,Sensitivity,Intellect,Presence,Orientation,Perception
+ebcab8bb-2ed3-40ef-bdf4-921ac791d4b3,tenace,Tenace,,Spirit,Presence,Intellect,Sensitivity,Occultism,Performance
