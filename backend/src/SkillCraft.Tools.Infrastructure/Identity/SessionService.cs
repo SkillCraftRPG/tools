@@ -27,4 +27,12 @@ internal class SessionService : ISessionService
     SessionModel session = await _sessionClient.RenewAsync(payload, context);
     return session;
   }
+
+  public async Task<SessionModel> SignInAsync(string uniqueName, string password, bool isPersistent, IEnumerable<CustomAttribute> customAttributes, CancellationToken cancellationToken)
+  {
+    SignInSessionPayload payload = new(uniqueName, password, isPersistent, customAttributes);
+    RequestContext context = new(cancellationToken);
+    SessionModel session = await _sessionClient.SignInAsync(payload, context);
+    return session;
+  }
 }

@@ -18,7 +18,7 @@ internal class RenewSession
   {
     if (!context.GetSessionId().HasValue)
     {
-      if (context.Request.Cookies.TryGetValue(Cookies.RefreshToken, out string? refreshToken) && refreshToken != null)
+      if (context.Request.Cookies.TryGetValue(Cookies.RefreshToken, out string? refreshToken) && !string.IsNullOrWhiteSpace(refreshToken))
       {
         try
         {
