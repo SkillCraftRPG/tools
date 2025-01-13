@@ -17,10 +17,10 @@ internal static class Castes
   public static readonly ColumnId CasteId = new(nameof(CasteEntity.CasteId), Table);
   public static readonly ColumnId Description = new(nameof(CasteEntity.Description), Table);
   public static readonly ColumnId DisplayName = new(nameof(CasteEntity.DisplayName), Table);
+  public static readonly ColumnId Features = new(nameof(CasteEntity.Features), Table);
   public static readonly ColumnId Id = new(nameof(CasteEntity.Id), Table);
   public static readonly ColumnId Skill = new(nameof(CasteEntity.Skill), Table);
   public static readonly ColumnId UniqueSlug = new(nameof(CasteEntity.UniqueSlug), Table);
   public static readonly ColumnId UniqueSlugNormalized = new(nameof(CasteEntity.UniqueSlugNormalized), Table);
   public static readonly ColumnId WealthRoll = new(nameof(CasteEntity.WealthRoll), Table);
-  // TODO(fpion): Features
 }

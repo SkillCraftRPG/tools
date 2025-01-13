@@ -21,7 +21,7 @@ internal class CasteEntity : AggregateEntity
   public Skill? Skill { get; private set; }
   public string? WealthRoll { get; private set; }
 
-  // TODO(fpion): Features
+  public string? Features { get; private set; }
 
   public CasteEntity(CasteCreated @event) : base(@event)
   {

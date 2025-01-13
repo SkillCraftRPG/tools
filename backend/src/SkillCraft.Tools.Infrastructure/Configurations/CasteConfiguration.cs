@@ -26,6 +26,5 @@ internal class CasteConfiguration : AggregateConfiguration<CasteEntity>, IEntity
     builder.Property(x => x.DisplayName).HasMaxLength(byte.MaxValue);
     builder.Property(x => x.Skill).HasMaxLength(byte.MaxValue).HasConversion(new EnumToStringConverter<Skill>());
     builder.Property(x => x.WealthRoll).HasMaxLength(Roll.MaximumLength);
-    // TODO(fpion): Features
   }
 }
