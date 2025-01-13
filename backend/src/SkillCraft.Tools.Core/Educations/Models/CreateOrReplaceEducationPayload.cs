@@ -7,5 +7,5 @@ public record CreateOrReplaceEducationPayload
   public string? Description { get; set; }
 
   public Skill? Skill { get; set; }
-  public double? WealthMultiplier { get; set; }
+  // TODO(fpion): WealthMultiplier
 }
