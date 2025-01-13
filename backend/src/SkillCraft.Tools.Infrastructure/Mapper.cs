@@ -2,6 +2,7 @@
 using Logitar.EventSourcing;
 using SkillCraft.Tools.Core;
 using SkillCraft.Tools.Core.Actors.Models;
+using SkillCraft.Tools.Core.Castes.Models;
 using SkillCraft.Tools.Core.Customizations.Models;
 using SkillCraft.Tools.Core.Educations.Models;
 using SkillCraft.Tools.Core.Natures.Models;
@@ -26,6 +27,24 @@ internal class Mapper
       ActorId id = new(actor.Id);
       _actors[id] = actor;
     }
+  }
+
+  public CasteModel ToCaste(CasteEntity source)
+  {
+    CasteModel destination = new()
+    {
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description,
+      Skill = source.Skill
+      // TODO(fpion): WealthRoll
+    };
+
+    // TODO(fpion): Features
+
+    MapAggregate(source, destination);
+
+    return destination;
   }
 
   public CustomizationModel ToCustomization(CustomizationEntity source)

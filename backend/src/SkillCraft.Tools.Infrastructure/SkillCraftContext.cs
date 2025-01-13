@@ -9,6 +9,7 @@ public class SkillCraftContext : DbContext
   {
   }
 
+  internal DbSet<CasteEntity> Castes => Set<CasteEntity>();
   internal DbSet<CustomizationEntity> Customizations => Set<CustomizationEntity>();
   internal DbSet<EducationEntity> Educations => Set<EducationEntity>();
   internal DbSet<NatureEntity> Natures => Set<NatureEntity>();
