@@ -83,7 +83,11 @@ internal class CreateOrReplaceCasteCommandHandler : IRequestHandler<CreateOrRepl
     {
       caste.Skill = payload.Skill;
     }
-    // TODO(fpion): WealthRoll
+    Roll? wealthRoll = Roll.TryCreate(payload.WealthRoll);
+    if (reference.WealthRoll != wealthRoll)
+    {
+      caste.WealthRoll = wealthRoll;
+    }
 
     // TODO(fpion): Features
 

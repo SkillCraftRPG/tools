@@ -21,6 +21,6 @@ internal static class Castes
   public static readonly ColumnId Skill = new(nameof(CasteEntity.Skill), Table);
   public static readonly ColumnId UniqueSlug = new(nameof(CasteEntity.UniqueSlug), Table);
   public static readonly ColumnId UniqueSlugNormalized = new(nameof(CasteEntity.UniqueSlugNormalized), Table);
-  // TODO(fpion): WealthRoll
+  public static readonly ColumnId WealthRoll = new(nameof(CasteEntity.WealthRoll), Table);
   // TODO(fpion): Features
 }

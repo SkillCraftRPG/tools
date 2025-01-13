@@ -67,7 +67,19 @@ public class Caste : AggregateRoot
       }
     }
   }
-  // TODO(fpion): WealthRoll
+  private Roll? _wealthRoll = null;
+  public Roll? WealthRoll
+  {
+    get => _wealthRoll;
+    set
+    {
+      if (_wealthRoll != value)
+      {
+        _wealthRoll = value;
+        _updated.WealthRoll = new Change<Roll>(value);
+      }
+    }
+  }
 
   // TODO(fpion): Features
 
@@ -111,7 +123,10 @@ public class Caste : AggregateRoot
     {
       _skill = @event.Skill.Value;
     }
-    // TODO(fpion): WealthRoll
+    if (@event.WealthRoll != null)
+    {
+      _wealthRoll = @event.WealthRoll.Value;
+    }
 
     // TODO(fpion): Features
   }

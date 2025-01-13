@@ -12,7 +12,7 @@ internal class CreateOrReplaceCasteValidator : AbstractValidator<CreateOrReplace
     When(x => !string.IsNullOrWhiteSpace(x.Description), () => RuleFor(x => x.Description!).Description());
 
     When(x => x.Skill.HasValue, () => RuleFor(x => x.Skill!.Value).IsInEnum());
-    // TODO(fpion): WealthRoll
+    When(x => !string.IsNullOrWhiteSpace(x.WealthRoll), () => RuleFor(x => x.WealthRoll!).Roll());
 
     // TODO(fpion): Features
   }

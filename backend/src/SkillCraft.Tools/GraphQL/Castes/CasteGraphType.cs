@@ -15,7 +15,8 @@ internal class CasteGraphType : AggregateGraphType<CasteModel>
 
     Field(x => x.Skill, type: typeof(SkillGraphType))
       .Description("The skill talent required by this caste.");
-    // TODO(fpion): WealthRoll
+    Field(x => x.WealthRoll)
+      .Description("The starting wealth roll of characters in this caste.");
 
     // TODO(fpion): Features
   }

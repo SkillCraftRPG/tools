@@ -36,8 +36,8 @@ internal class Mapper
       UniqueSlug = source.UniqueSlug,
       DisplayName = source.DisplayName,
       Description = source.Description,
-      Skill = source.Skill
-      // TODO(fpion): WealthRoll
+      Skill = source.Skill,
+      WealthRoll = source.WealthRoll
     };
 
     // TODO(fpion): Features

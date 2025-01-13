@@ -19,7 +19,7 @@ internal class CasteEntity : AggregateEntity
   public string? Description { get; private set; }
 
   public Skill? Skill { get; private set; }
-  // TODO(fpion): WealthRoll
+  public string? WealthRoll { get; private set; }
 
   // TODO(fpion): Features
 
@@ -55,7 +55,10 @@ internal class CasteEntity : AggregateEntity
     {
       Skill = @event.Skill.Value;
     }
-    // TODO(fpion): WealthRoll
+    if (@event.WealthRoll != null)
+    {
+      WealthRoll = @event.WealthRoll.Value?.Value;
+    }
 
     // TODO(fpion): Features
   }

@@ -7,7 +7,7 @@ public record CreateOrReplaceCastePayload
   public string? Description { get; set; }
 
   public Skill? Skill { get; set; }
-  // TODO(fpion): WealthRoll
+  public string? WealthRoll { get; set; }
 
   // TODO(fpion): Features
 }
