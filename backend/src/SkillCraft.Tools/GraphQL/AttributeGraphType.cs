@@ -7,7 +7,7 @@ internal class AttributeGraphType : EnumerationGraphType<Ability>
 {
   public AttributeGraphType()
   {
-    Name = nameof(Attribute);
+    Name = "Attribute";
     Description = "Represents the available character attributes.";
 
     AddValue(Ability.Agility, string.Empty);

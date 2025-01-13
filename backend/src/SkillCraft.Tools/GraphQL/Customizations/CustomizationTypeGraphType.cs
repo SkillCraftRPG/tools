@@ -7,7 +7,7 @@ internal class CustomizationTypeGraphType : EnumerationGraphType<CustomizationTy
 {
   public CustomizationTypeGraphType()
   {
-    Name = nameof(CustomizationType);
+    Name = "CustomizationType";
     Description = "Represents the available customization types.";
 
     AddValue(CustomizationType.Disability, "The customization is a disability. Disabilities are handicaps and detrimental to a character.");
