@@ -1,23 +1,331 @@
 ﻿[
   {
-    "Id": "220e71a9-7105-4d0b-a461-f58b4fa9dfa3",
+    "Id": "5a5a641d-042c-4b52-ade2-1b3b6c42d38c",
+    "Type": "Gift",
+    "UniqueSlug": "adresse-legendaire",
+    "DisplayName": "Adresse légendaire",
+    "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Lorsqu’il peut Faire 10 à un test d’_Orientation_, alors il peut choisir de Faire 20, à la discrétion du maître de jeu.\\n- Lorsqu’il ne peut Faire 10 à un test d’_Orientation_, il peut se conférer l’avantage au test. Il peut utiliser cette capacité un nombre de fois égal à 2 additionné à son tiers de personnage. Il doit compléter une nuit de sommeil afin de récupérer ces utilisations.\\n- Grâce à son sens spatial fabuleux, il sait toujours où il se situe par rapport à des indices visuels. Par exemple, s’il remarque la forme particulière d’un noeud dans l’écorce d’un arbre, lorsqu’il verra à nouveau le noeud, il sera capable de comparer sa position actuelle avec sa position précédente. Cela lui permet par exemple de se rendre compte instinctivement qu’il est perdu et qu’il tourne en rond. Il est également doté d’un sens précis des distances, ce qui lui permet de dessiner avec précision des cartes."
+  },
+  {
+    "Id": "6f4ad9cf-bcf2-413c-8872-97cef7df3d9b",
+    "Type": "Gift",
+    "UniqueSlug": "affinite-animale",
+    "DisplayName": "Affinité animale",
+    "Description": "En interagissant ou en observant un animal pendant au moins une minute, permet au personnage de communiquer des idées simples à l’animal et de comprendre ses réactions. Également, lorsqu’il utilise une action afin de donner un ordre à animal qu’il a dressé, il peut donner un second ordre à ce même animal, ou donner un ordre à un autre animal qu’il a dressé."
+  },
+  {
+    "Id": "5dab6376-cc09-42f3-905c-156bb039d27a",
+    "Type": "Gift",
+    "UniqueSlug": "aigrefin",
+    "DisplayName": "Aigrefin",
+    "Description": "Lorsque le personnage n’est pas surpris en situation de combat, alors il peut utiliser sa réaction afin d’effectuer l’activité **Objet**. Également, il peut effectuer l’activité **Objet** en action libre une fois par tour."
+  },
+  {
+    "Id": "96cee4ab-5005-4c8f-870e-b862b5e17972",
+    "Type": "Gift",
+    "UniqueSlug": "baraque",
+    "DisplayName": "Baraqué",
+    "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- La portée de ses bousculades est doublée.\\n- Les points de dégâts qu’il inflige aux objets, aux structures, aux bâtiments ainsi qu’aux constructions sont doublés.\\n- Il se voit conférer l’avantage à ses tests de _Mêlée_ lorsqu’il effectue une attaque dirigée contre un objet inanimé et non magique, telles des caisses ou une porte. Une fois par tour, il peut effectuer l’activité **Attaque** contre un objet inanimé et non magique par une action libre."
+  },
+  {
+    "Id": "394dc8cd-9dc7-44a5-8488-0dad8f6b8a0f",
+    "Type": "Gift",
+    "UniqueSlug": "chance-extraordinaire",
+    "DisplayName": "Chance extraordinaire",
+    "Description": "Confère 3 points de chance au personnage. Il peut utiliser un point afin de rejouer un test avant de savoir si le résultat est un succès ou un échec, ou deux points afin de réussir un test. Il peut utiliser un point afin d’infliger le désavantage au test d’une attaque dirigée contre lui. Lorsqu’il complète une nuit de sommeil, il récupère tous ses points de chance."
+  },
+  {
+    "Id": "e0aa792e-74ac-4244-9fca-f062944442a5",
     "Type": "Gift",
     "UniqueSlug": "dur-a-cuire",
     "DisplayName": "Dur à cuire",
     "Description": "Lorsque le personnage reçoit des points de dégâts létaux, il retire à ceux-ci un nombre de points égal à son modificateur de Vigueur (minimum 1)."
   },
   {
-    "Id": "ba107526-24ec-42dc-9f24-715836b2ede8",
+    "Id": "5e30d0a4-96a0-4cb4-83f7-6266ce5e217c",
+    "Type": "Gift",
+    "UniqueSlug": "efface",
+    "DisplayName": "Effacé",
+    "Description": "Le personnage est considéré légèrement obscurci lorsqu’il est renversé. Lorsqu’il bénéficie du demi-abri contre une attaque à distance d’une créature, alors il traite l’abri comme un abri aux trois-quarts."
+  },
+  {
+    "Id": "ffa76cd0-3219-4de7-829c-10928375b1ab",
+    "Type": "Gift",
+    "UniqueSlug": "entrepot-a-connaissances",
+    "DisplayName": "Entrepôt à connaissances",
+    "Description": "Permet au personnage de consulter ses vastes connaissances à propos d’un sujet. S’il a la moindre chance d’avoir lu ou entendu quelque information à propos de ce sujet, alors il peut se souvenir d’un passage d’au plus 100 mots répondant exactement à sa question. Sinon, il sait exactement où il peut trouver cette information, ou qui il peut consulter afin de la trouver. Il doit compléter une nuit de sommeil afin de réutiliser cette capacité."
+  },
+  {
+    "Id": "711849f2-81e5-4322-a7f2-501a2737758a",
     "Type": "Gift",
     "UniqueSlug": "feroce",
     "DisplayName": "Féroce",
     "Description": "Une fois par round, le personnage peut rouler deux fois les dés de dégâts d’une attaque. Il peut ensuite utiliser le résultat de son choix."
   },
   {
-    "Id": "1092c61f-57fc-441f-868f-1e169102e609",
+    "Id": "ea92eb82-f4c8-4a85-abde-c0ef873c99cd",
+    "Type": "Gift",
+    "UniqueSlug": "fignolage",
+    "DisplayName": "Fignolage",
+    "Description": "Lorsque le personnage effectue un test d’_Artisanat_ en n’étant pas menacé ni distrait, et qu’il possède amplement de temps afin d’accomplir sa tâche, alors il peut Faire 20 et réussir automatiquement son test. Cela lui permet donc d’ignorer la contrainte de pénalité en cas d’échec du test empêchant normalement de Faire 20."
+  },
+  {
+    "Id": "c7a7fb46-8083-4e84-bcbb-3cc59ea9b299",
+    "Type": "Gift",
+    "UniqueSlug": "globe-trotteur",
+    "DisplayName": "Globe-trotteur",
+    "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Il choisit un des types de climat suivant, et son groupe n’est pas ralentit par le terrain difficile de ce type de climat lorsque le personnage en fait partie : arctique, côte, désert, forêt, marécage, montagne, prairie ou souterrains.\\n- Le personnage ignore les effets du climat rigoureux, comme une température très chaude ou très froide, ainsi que les désavantages infligés aux déplacements par les surfaces naturelles comme la glace.\\n- Les tests du personnage afin de détecter la présente de pièges et de passages secrets se voient conférer l’avantage, et il peut effectuer ces tests en se déplaçant sans réduire sa vitesse."
+  },
+  {
+    "Id": "ce59d64b-e7a0-4abe-ac0d-52c245d47dd7",
+    "Type": "Gift",
+    "UniqueSlug": "infatigable",
+    "DisplayName": "Infatigable",
+    "Description": "Lorsque le personnage reçoit des points de dégâts non létaux, il retire à ceux-ci un nombre de points égal à son modificateur d’Esprit (minimum 1). Une fois par tour, il peut également réduire une dépense en points d’Énergie de ce nombre."
+  },
+  {
+    "Id": "6f369d00-b99f-42fc-88c6-3d8886cd1ff8",
+    "Type": "Gift",
+    "UniqueSlug": "maniement-inne",
+    "DisplayName": "Maniement inné",
+    "Description": "Le personnage sélectionne trois armes et est formé avec celles-ci. Également, il augmente de 1 son score d’Agilité ou de Coordination, au choix. Le score de l’attribut sélectionné doit être inférieur à 20."
+  },
+  {
+    "Id": "675916b1-dd13-4cd4-af95-c90be9d24da6",
+    "Type": "Gift",
+    "UniqueSlug": "medecine-de-brousse",
+    "DisplayName": "Médecine de brousse",
+    "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Lorsqu’il utilise une charge d’une trousse de premiers soins afin de stabiliser une créature agonisante, il peut utiliser une seconde charge par une action supplémentaire afin de permettre à cette créature de récupérer 1 point de Vitalité. Ceci permet à la créature de reprendre conscience et met instantanément fin à son agonie.\\n- Lorsqu’il utilise une charge d’une trousse de premiers soins, il peut se déplacer à la moitié de sa vitesse par une action libre. Cela lui coûte un nombre de points d’Énergie égal au nombre de cases traversées multiplié par 5.\\n- Permet au personnage de soigner une créature non agonisante une fois par tour. Par une action, il consomme une charge d’une trousse de premiers soins et effectue un test de _Médecine_. Le total du test est réduit de moitié. Le personnage consomme un nombre de points d’Énergie égal à cette valeur et la créature récupère un nombre de points de Vitalité égal à cette valeur. La créature doit compléter une nuit de sommeil afin de pouvoir être soignée à nouveau par cette capacité."
+  },
+  {
+    "Id": "1a266675-ea43-45e6-ad3b-23c811f17f43",
+    "Type": "Gift",
+    "UniqueSlug": "menace-ingenieuse",
+    "DisplayName": "Menace ingénieuse",
+    "Description": "Permet au personnage d’intimider une créature d’une manière non conventionnelle et créative. Lorsqu’il en fait ainsi, il remplace son rang de _Performance_ par celui d’une autre compétence, ou il remplace son modificateur de Présence par celui d’un autre attribut. Le test opposé reste un test d’_Intuition_. Par exemple, il peut tenter d’intimider une créature par un exploit de force brute. Il remplace alors son rang de _Performance_ par son rang d’_Athlétisme_, ou bien il substitue son modificateur de Présence par son modificateur de Vigueur. Par exemple, il peut tenter d’intimider par une lettre de menaces. Il remplace alors son rang de _Performance_ par son rang de _Linguistique_, ou bien il substitue son modificateur de Présence par son modificateur d’Intellect."
+  },
+  {
+    "Id": "142a8f4e-d06d-45a1-8dd4-dbd7713e309c",
+    "Type": "Gift",
+    "UniqueSlug": "mots-d-encouragement",
+    "DisplayName": "Mots d’encouragement",
+    "Description": "Lorsque le personnage effectue l’action **Aider** à son tour, plutôt que de recevoir l’avantage à seulement son prochain test, la cible reçoit l’avantage à tout test jugé pertinent par le maître de jeu effectué au cours de son prochain tour."
+  },
+  {
+    "Id": "b6ab7cf0-38cd-4cc5-b3e7-8c3e136d6495",
+    "Type": "Gift",
+    "UniqueSlug": "mysticisme",
+    "DisplayName": "Mysticisme",
+    "Description": "Le personnage sélectionne un domaine de magie ou de spiritualisme (religion, culte ou divinité). Il naît avec un pouvoir de tiers 0 de son choix associé au domaine sélectionné, et acquiert gratuitement un pouvoir de tiers 1 de son choix associé au domaine sélectionné lorsqu’il atteint le tiers 1. Également, il se voit conférer un des bonus suivants en fonction du domaine sélectionné.\\n\\n- (_Magie_) Une fois par round, lorsque le personnage réussit une attaque dirigée contre une créature issue d’une autre réalité ou dimension, il ajoute à son attaque un nombre de points de dégâts égal à son modificateur d’Esprit (minimum 1).\\n- (_Spiritualisme_) Pendant qu’il sommeille, le personnage peut communiquer avec une entité de sa religion ou de son culte afin de lui poser une question ou de placer une requête. L’entité peut ignorer le personnage ou intervenir si elle le désire, à la discrétion du maître de jeu. Si le personnage profane le dogme de sa religion ou de son culte, il perd cette capacité jusqu’à ce qu’il se repente auprès de l’entité."
+  },
+  {
+    "Id": "1c0a9c28-e180-4d04-b9cc-54cdbd2161a3",
+    "Type": "Gift",
+    "UniqueSlug": "odorat-developpe",
+    "DisplayName": "Odorat développé",
+    "Description": "Le personnage est doté d’un sens olfactif très développé. Lorsqu’il est affligé d’un effet de surdité ou d’aveuglement, ses tests de _Perception_ ne sont pas affligés du désavantage si son sens olfactif n’est pas compromis."
+  },
+  {
+    "Id": "b3e183d8-2e4c-4182-add4-7b76ef4aa89c",
+    "Type": "Gift",
+    "UniqueSlug": "orateur",
+    "DisplayName": "Orateur",
+    "Description": "Permet au personnage de performer pour une audience pendant une durée minimale de 10 minutes. Il sélectionne un nombre de cibles inférieur ou égal à son modificateur de Présence additionné de 1 (minimum 1) parmi les créatures pouvant le voir et l’entendre situées à 9 mètres ou moins de sa position. Il effectue un test de _Performance_ et chaque cible compare le résultat du test à son meilleur score d’Esprit, d’Intellect, de Présence ou de Sensibilité. Si le meilleur score d’une créature est inférieur ou égal au résultat du test de _Performance_, alors le personnage se voit conférer l’avantage à ses tests de Présence, de _Diplomatie_, de _Performance_ et de _Tromperie_ contre cette créature pendant les 10 prochaines minutes. Il doit compléter une nuit de sommeil afin de réutiliser cette capacité.\\n\\nÉgalement, permet au personnage de motiver ses compagnons par un discours encourageant d’une durée minimale de 10 minutes. Il sélectionne un nombre de cibles inférieur ou égal à son modificateur de Présence additionné de 1 (minimum 1) parmi les créatures pouvant le voir et l’entendre situées à 9 mètres ou moins de sa position. Il effectue un test de Performance et ces créatures se voient conférer un nombre de points de Vitalité temporaires égal au résultat du test de _Performance_. Il doit compléter une nuit de sommeil afin de réutiliser cette capacité."
+  },
+  {
+    "Id": "f61550c6-cd6e-4138-a16d-a120390005d6",
+    "Type": "Gift",
+    "UniqueSlug": "pensee-claire",
+    "DisplayName": "Pensée claire",
+    "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Il se souvient exactement de tout ce qu’il a vu ou entendu pendant le dernier mois, de toujours savoir où se trouve le Nord ainsi que de toujours savoir le nombre d’heures restant avant le prochain coucher ou lever de soleil.\\n- Une fois par jour, permet au personnage de se concentrer pendant une minute sur une tâche nécessitant un test d’_Investigation_ afin conférer l’avantage à son test.\\n- Bonus permanent de +5 à ses tests passifs d’_Investigation_."
+  },
+  {
+    "Id": "94cd591c-e958-4865-ac22-ecd2f5082937",
+    "Type": "Gift",
+    "UniqueSlug": "polyglotte",
+    "DisplayName": "Polyglotte",
+    "Description": "Le personnage apprend gratuitement deux langues de son choix. Une de ces deux langues peut être une langue exotique, à la discrétion du maître de jeu. De plus, chaque fois qu’il passe à un tiers de personnage supérieur, il apprend une langue supplémentaire de son choix."
+  },
+  {
+    "Id": "a09131aa-7673-47c9-82b9-a396ce371b5e",
+    "Type": "Gift",
+    "UniqueSlug": "reflexes",
+    "DisplayName": "Réflexes",
+    "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Il se voit conférer l’avantage à ses tests d’_Acrobaties_ afin d’éviter des pièges, et il devient résistant aux dégâts infligés par les pièges.\\n- Lorsqu’il réussit un jet de sauvegarde d’_Acrobaties_, il peut utiliser sa réaction afin d’effectuer l’activité **Pas prudent**.\\n- Pendant son tour, il peut utiliser toutes ses actions afin de se libérer de toute contrainte physique sans nécessiter de test, par exemple être agrippé. Il peut ensuite effectuer l’activité **Déplacement** en action libre."
+  },
+  {
+    "Id": "e9546861-f16c-42c2-abb7-ae7fb7be3bc0",
+    "Type": "Gift",
+    "UniqueSlug": "resilient",
+    "DisplayName": "Résilient",
+    "Description": "Le personnage sélectionne un attribut et se voir conférer l’avantage aux jets de sauvegardé associés à cet attribut. Également, il augmente de 1 le score de cet attribut si le score est inférieur à 20. Les compétences correspondant aux jets de sauvegarde de chaque attribut sont décrites au Chapitre 4."
+  },
+  {
+    "Id": "ac1be6de-70d9-4ed7-81bf-54f264526a07",
+    "Type": "Gift",
+    "UniqueSlug": "richesse",
+    "DisplayName": "Richesse",
+    "Description": "L’argent de départ du personnage est multiplié par un facteur égal à 10 ou à 1d10 + 5, à la discrétion du maître de jeu."
+  },
+  {
+    "Id": "f03a7630-2b24-49ba-95f3-b716fed99a33",
+    "Type": "Gift",
+    "UniqueSlug": "sante-de-fer",
+    "DisplayName": "Santé de fer",
+    "Description": "Augmente de 50 % la régénération de Vitalité du personnage lorsqu’il se repose. Ce bonus est cumulatif à tout autre bonus de guérison et de médecine quelconque, qu’il soit magique ou non."
+  },
+  {
+    "Id": "95ddc880-843c-40b7-a2f3-3b101d864d89",
+    "Type": "Gift",
+    "UniqueSlug": "sixieme-sens",
+    "DisplayName": "Sixième sens",
+    "Description": "Une fois par jour, par une action libre, le personnage peut activer son sixième sens, ce qui lui permet de détecter la magie autour de lui pendant une période de 10 minutes, à une distance de 9 mètres. En utilisant une action, il peut voir une faible aura autour de tout objet ou créature de nature magique.\\n\\nÉgalement, une fois par jour, il peut Faire 20 à un test d’_Intuition_ afin d’obtenir un indice précis de la marche à suivre afin de surmonter une épreuve ou de le guider pendant une aventure."
+  },
+  {
+    "Id": "ce7916da-b077-46b6-a3ef-e4758c4c1491",
+    "Type": "Gift",
+    "UniqueSlug": "talentueux",
+    "DisplayName": "Talentueux",
+    "Description": "Le personnage apprend gratuitement deux talents associés à une compétence, ou un seul talent qui n’est pas associé à une compétence. Ce talent ne peut pas être le talent réservé d’une classe."
+  },
+  {
+    "Id": "3205d062-b27b-4e0b-9a1c-f5a17356caed",
+    "Type": "Gift",
+    "UniqueSlug": "ventriloque",
+    "DisplayName": "Ventriloque",
+    "Description": "Permet au personnage d’imiter avec exactitude la voix et les paroles d’une créature en l’écoutant parler pendant une minute. Il peut également imiter les sons d’une créature en l’écoutant effectuer ces sons pendant une minute. S’il tente de dévier des paroles de la créature ou qu’il altère d’une quelconque manière les sons produits, les créatures qui l’écoutent peuvent effectuer un test d’_Intuition_ opposé à un test de _Tromperie_ du personnage afin de déterminer que l’effet est truqué.\\n\\nÉgalement, lorsque le personnage parle, il peut donner l’impression que les paroles dites ou les sons produits sont émis d’une source quelconque située à 9 mètres ou moins de sa position, par exemple une autre créature. Il peut utiliser cette capacité en canalisant un pouvoir afin de donner l’impression qu’une autre créature est en train de canaliser ce pouvoir. Les créatures qui l’écoutent peuvent effectuer un test d’_Intuition_ opposé à un test de _Tromperie_ du personnage afin de détecter la supercherie."
+  },
+  {
+    "Id": "678c3e97-ed28-41b8-8b9a-ebd044a4a276",
+    "Type": "Gift",
+    "UniqueSlug": "vision-aiguisee",
+    "DisplayName": "Vision aiguisée",
+    "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- La pénombre n’inflige pas de désavantage à ses tests de _Perception_ liés à la vue.\\n- Il acquiert une vision aveugle de 1,5 mètres.\\n- Par une action, il peut effleurer une surface afin d’en ressentir les vibrations. Jusqu’à la fin de son prochain tour, il peut discerner la position de toute créature située à 4,5 mètres ou moins de la surface qu’il a effleuré.\\n- Bonus permanent de +5 à ses tests passifs de _Perception_."
+  },
+  {
+    "Id": "d73f5e3a-f029-4b84-b968-f99e3fa87b7e",
     "Type": "Disability",
     "UniqueSlug": "abruti",
     "DisplayName": "Abruti",
     "Description": "Simple d’esprit et bon vivant ou complètement taré, le personnage est dénué de sens commun et n’est pas doté d’une bonne mémoire. Ses tests de _Connaissance_ ainsi que ses tests d’_Investigation_ afin de poser une conclusion sont effectués avec désavantage."
+  },
+  {
+    "Id": "326c302c-767f-4361-8897-f9b32b76189e",
+    "Type": "Disability",
+    "UniqueSlug": "anxiete",
+    "DisplayName": "Anxiété",
+    "Description": "Face au danger, le personnage fige complètement sur place, ce qui le rend vulnérable. Il est également incapable de prendre une décision sous pression. Ses tests d’Initiative ainsi que ses jets de sauvegarde contre les effets de peur sont effectués avec désavantage."
+  },
+  {
+    "Id": "eed0aa51-1716-4712-84c3-7987e8f97900",
+    "Type": "Disability",
+    "UniqueSlug": "aveugle",
+    "DisplayName": "Aveugle",
+    "Description": "Le personnage a perdu son sens de la vision ou en est né dépourvu. Il échoue automatiquement les tests de _Perception_ liés à la vue. Lorsqu’il n’est pas victime d’un effet d’assourdissement ou que le contexte sonore lui est favorable, il peut remplacer ces tests par un test de _Perception_ en utilisant son ouïe."
+  },
+  {
+    "Id": "8c9dafe9-7609-43b9-862d-98d941d70694",
+    "Type": "Disability",
+    "UniqueSlug": "borgne",
+    "DisplayName": "Borgne",
+    "Description": "Un événement tragique a un jour privé le personnage d’un de ses deux yeux. Ses tests de _Perception_ liés à la vue sont effectués avec désavantage. Ses tests de Présence et des compétences associées en lien avec sa beauté ou son apparence physique sont également affligés du désavantage."
+  },
+  {
+    "Id": "8324f0e8-6a70-4ec9-ba11-1351f4a43f36",
+    "Type": "Disability",
+    "UniqueSlug": "chaotique",
+    "DisplayName": "Chaotique",
+    "Description": "Affligé d’un grand besoin de liberté, le personnage a tendance à désobéir lorsqu’il le peut et à contredire les lois. Ses tests de _Discipline_ sont effectués avec désavantage."
+  },
+  {
+    "Id": "4c9925d0-814b-4aff-924a-0fd99f0eb33f",
+    "Type": "Disability",
+    "UniqueSlug": "chetif",
+    "DisplayName": "Chétif",
+    "Description": "Le teint du personnage est blême et sa santé est frêle. Sa régénération naturelle d’Énergie et de Vitalité est réduite du tiers (33 %) lorsqu’il dort et se repose."
+  },
+  {
+    "Id": "2de3de42-e31e-4f26-825c-80b43b7010dc",
+    "Type": "Disability",
+    "UniqueSlug": "cleptomane",
+    "DisplayName": "Cleptomane",
+    "Description": "Victime d’une étrange manie, le personnage ne peut s’empêcher de mettre la main sur tout objet de moindre valeur ou qui pourrait lui plaire d’une quelconque manière."
+  },
+  {
+    "Id": "4dc5415a-391a-42cc-8ab6-d279c2663666",
+    "Type": "Disability",
+    "UniqueSlug": "distrait",
+    "DisplayName": "Distrait",
+    "Description": "La tête dans les nuages, la pensée absente, le personnage entre souvent en collision avec des passants ou des objets se trouvant dans son chemin. Ses tests de _Perception_ sont effectués avec désavantage, tout comme ses tests d’_Investigation_ afin de d’analyser un piège ou un passage secret."
+  },
+  {
+    "Id": "16825e44-a0ca-41c8-8a0c-899e2aab338c",
+    "Type": "Disability",
+    "UniqueSlug": "faiblesse",
+    "DisplayName": "Faiblesse",
+    "Description": "Plutôt svelte, la musculature du personnage est largement inférieure à celle des autres individus de son espèce. Ses tests d’_Athlétisme_ et de _Mêlée_ sont effectués avec désavantage."
+  },
+  {
+    "Id": "c49d3b16-d0e9-44dd-aa57-b9e75d84f8c8",
+    "Type": "Disability",
+    "UniqueSlug": "grossier",
+    "DisplayName": "Grossier",
+    "Description": "L’apparence et les manières du personnage sont désagréables naturellement. Son éloquence laisse également à désirer\u00A0: il est affligé de graves bégaiements ou d’autres problèmes de prononciation évidents. Ses tests de _Diplomatie_ et de _Performance_ sont effectués avec désavantage."
+  },
+  {
+    "Id": "4c714bc6-803f-41a0-a475-9d854709fcbb",
+    "Type": "Disability",
+    "UniqueSlug": "hemophobie",
+    "DisplayName": "Hémophobie",
+    "Description": "Peu n’effraie plus le personnage que la vue du sang ou d’une plaie ouverte. Lorsque lui-même ou un allié situé à 1,5 mètres ou moins de sa position est victime d’une attaque tranchante ou perçante, il doit réussir un jet de sauvegarde de _Discipline_ de degré de difficulté égal aux points de dégâts subis. En cas d’échec, il est paralysé par la peur jusqu’à la fin de son prochain tour."
+  },
+  {
+    "Id": "f0bfdda9-4594-48cb-a296-f0549f76f4be",
+    "Type": "Disability",
+    "UniqueSlug": "infirme",
+    "DisplayName": "Infirme",
+    "Description": "Le personnage est né dépourvu ou a perdu au cours de son passé l’usage d’un de ses bras ou d’une de ses jambes. Ses points de vitesse sont réduits de moitié s’il s’agit d’une jambe. Il ne peut manier d’armes à deux mains s’il s’agit d’un bras."
+  },
+  {
+    "Id": "c059a587-a8fb-4710-be63-5cb0bf068b70",
+    "Type": "Disability",
+    "UniqueSlug": "malentendant",
+    "DisplayName": "Malentendant",
+    "Description": "Dépourvu d’ouïe à la naissance ou doté d’une ouïe peu efficace, les tests de _Perception_ du personnage liés à l’ouïe sont effectués avec désavantage."
+  },
+  {
+    "Id": "73000fb1-5fac-4196-8927-56881cfe85f0",
+    "Type": "Disability",
+    "UniqueSlug": "pauvrete",
+    "DisplayName": "Pauvreté",
+    "Description": "L’argent de départ du personnage est divisé par un facteur égal à 1d10 + 5."
+  },
+  {
+    "Id": "0d80e0f5-9fe2-4f9c-a062-e6e3253a0d4f",
+    "Type": "Disability",
+    "UniqueSlug": "maladroit",
+    "DisplayName": "Maladroit",
+    "Description": "Le corps du personnage n’est pas souple ni agile. Ses tests d’_Acrobaties_ et de _Furtivité_ sont effectués avec désavantage."
+  },
+  {
+    "Id": "d2274b27-51b7-41f7-a504-43c2336fdbc2",
+    "Type": "Disability",
+    "UniqueSlug": "malchanceux",
+    "DisplayName": "Malchanceux",
+    "Description": "Reconnu pour sa mauvaise fortune, les proches du personnage l’évitent ou rient des situations cocasses qui en découlent. Jusqu’à trois fois par jour, le maître de jeu peut infliger le désavantage à n’importe quel test du personnage avant d’en connaître le résultat, ou conférer l’avantage à un test dirigé contre le personnage."
+  },
+  {
+    "Id": "7d9503bd-07aa-4707-9e06-39b3de384669",
+    "Type": "Disability",
+    "UniqueSlug": "muet",
+    "DisplayName": "Muet",
+    "Description": "Les parents du personnage ne sont jamais parvenus à lui apprendre à parler convenablement. Il est complètement incapable de parler ou de formuler des phrases complètes. Il ne peut dire que quelques mots courts, simples et faciles à prononcer. Ses capacités télépathiques sont autant limitées que ses capacités vocales. Il peut tout de même canaliser un pouvoir requérant une composante vocale s’il n’a pas à prononcer des incantations composées de phrases complètes."
+  },
+  {
+    "Id": "1772e87d-f303-4e86-833f-a9f3ec32ef4f",
+    "Type": "Disability",
+    "UniqueSlug": "tremblements",
+    "DisplayName": "Tremblements",
+    "Description": "Les mains du personnage tremblent de manière inexplicable et fréquente, ce qui nuit à sa dextérité. Ses tests de Coordination, d’_Artisanat_, d’_Orientation_ et de _Roublardise_ sont effectués avec désavantage."
   }
 ]

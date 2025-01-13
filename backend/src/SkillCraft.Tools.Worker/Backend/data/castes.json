@@ -1,6 +1,6 @@
 ﻿[
   {
-    "Id": "1b504012-c789-4c0b-a6fe-8e94fef22324",
+    "Id": "e9232d1c-de08-45af-b934-24d833fd31b5",
     "UniqueSlug": "amuseur",
     "DisplayName": "Amuseur",
     "Description": "Adepte d’art, de poésie, de cirque ou de théâtre, l’amuseur ère de villages en cités afin d’offrir ses performances. Bien plus qu’un simple gagne-pain, cela lui permet de former un réseau de contacts et de recueillir toutes sortes d’informations.",
@@ -8,39 +8,39 @@
     "WealthRoll": "8d6",
     "Features": [
       {
-        "Id": "638973ce-a350-4e55-bc78-5a1a99f7f3f0",
+        "Id": "b84d8bdb-65fd-4420-9a8a-7dfbe0e909cf",
         "Name": "Protégé",
         "Description": "Par le prestige de sa famille et sa participation à des événements de l’aristocratie, le personnage est connu de la noblesse locale. Il peut demander gîte et couvert membres de la noblesse. En échange, ceux-ci peuvent lui demander une ou plusieurs faveurs immédiates, futures ou encore invoquer le droit de surprise, c’est-à-dire une faveur d’un quelconque ordre de grandeur lorsque l’occasion de présenter."
       },
       {
-        "Id": "5956fa02-3378-44d5-be85-48332caa7f82",
+        "Id": "89154847-bbf8-4760-adc9-9dd466f6722c",
         "Name": "Vagabond",
         "Description": "Aucun village ni aucune ville n’est un meilleur domicile pour le personnage que la route. Qu’il soit nomade par choix ou par obligation, ses tests de _Survie_ afin de trouver de l’eau, de la nourriture ou un abri se voient conférer l’avantage lorsqu’il se trouve à proximité d’une route maintenue."
       }
     ]
   },
   {
-    "Id": "4572dbcb-d43a-465c-8565-29c701a31f77",
+    "Id": "89f3011a-151f-4617-aae8-1cbfa8e280de",
     "UniqueSlug": "artisan",
     "DisplayName": "Artisan",
-    "Description": "L’artisan est un expert d’un procédé de transformation des matières brutes. Il peut être un boulanger, un forgeron, un orfèvre, un tisserand ou pratiquer tout genre de profession oeuvrant dans la transformation des matières brutes.",
+    "Description": "L’artisan est un expert d’un procédé de transformation des matières brutes. Il peut être un boulanger, un forgeron, un orfèvre, un tisserand ou pratiquer tout genre de profession œuvrant dans la transformation des matières brutes.",
     "Skill": "Craft",
     "WealthRoll": "8d6",
     "Features": [
       {
-        "Id": "efbc22d1-b102-479b-bbb5-f691c3b79a7f",
-        "Name": "Professionnel,",
+        "Id": "56acf228-be0f-46ac-ab5f-ecae32bc8d7f",
+        "Name": "Professionnel",
         "Description": "Les apprentissages et réalisations du personnage lui ont permis de devenir membre d’une organisation de professionnels comme lui, telle une guilde d’artisans ou de marchands. S’il ne peut payer pour un toit ou de la nourriture, il peut facilement trouver du travail afin de couvrir ces dépenses essentielles."
       },
       {
-        "Id": "3bb646cf-fc21-4ac7-a989-8042b394bbfa",
+        "Id": "340abc07-de0b-4792-9718-b0522b6e7451",
         "Name": "Sujet",
         "Description": "Sujet d’un seigneur quelconque, le personnage n’est victime d’aucune taxe imposée aux voyageurs étrangers. Il peut réduire ses dépenses essentielles de 10 % sur sa terre natale."
       }
     ]
   },
   {
-    "Id": "7b363965-328f-46b9-aa13-5c35c1c099bf",
+    "Id": "0547ce2a-d1e8-4009-9d32-a8c7c280bdd9",
     "UniqueSlug": "boheme",
     "DisplayName": "Bohème",
     "Description": "Le bohème ne possède aucun domicile fixe ni occupation permanente. Il doit sa survie à la bonté des autres lorsqu’il mendie ou aux crimes qu’il perpètre dans les centres urbains. Il est incapable de s’intégrer à la société dont laquelle il dépend afin de survivre, il est donc fréquemment rejeté par celle-ci.",
@@ -48,14 +48,154 @@
     "WealthRoll": "6d6",
     "Features": [
       {
-        "Id": "58de93f7-1347-48a7-9981-4cfd651f2980",
+        "Id": "a354620e-bafc-4760-8c4d-f8271a0c2d8f",
         "Name": "Rancunier",
         "Description": "Peu importe la raison, le personnage a renoncé à sa fidélité envers son seigneur. Il connaît les rouages du système lorsqu’il est question d’éviter de payer des taxes et de jouer avec les lois en place. Lorsqu’il se trouve dans son pays d’origine, il peut réduire ses dépenses essentielles de 10 %."
       },
       {
-        "Id": "24445933-2a0f-4cad-bcc8-d5b25e4fea7a",
+        "Id": "cfed39a4-b6a5-40c9-93bb-78c48c80e0ad",
         "Name": "Survivant",
-        "Description": "Ayant souffert de nombreuses privations au cours de sa vie, le personnage sait faire plus avec moins. Il se voit conférer l’avantage à ses tests de _Survie_ afin de trouver de l’eau, de la nourriture ou un abri en milieu sauvage."
+        "Description": "Ayant souffert de nombreuses privations au cours de sa vie, le personnage sait faire plus avec moins. Ses tests de _Survie_ afin de trouver de l’eau, de la nourriture ou un abri en milieu sauvage se voient conférer l’avantage."
+      }
+    ]
+  },
+  {
+    "Id": "99a46697-3804-45fe-b79c-08c631361b19",
+    "UniqueSlug": "exile",
+    "DisplayName": "Exilé",
+    "Description": "Banni par son peuple ou par choix personnel, l’exilé a recours à son instinct de survie et à sa connaissance des milieux sauvages afin de survivre à son environnement. Il garde de mauvais souvenirs de son ancienne vie et prépare aigrement sa vengeance.",
+    "Skill": "Survival",
+    "WealthRoll": "6d6",
+    "Features": [
+      {
+        "Id": "a354620e-bafc-4760-8c4d-f8271a0c2d8f",
+        "Name": "Rancunier",
+        "Description": "Peu importe la raison, le personnage a renoncé à sa fidélité envers son seigneur. Il connaît les rouages du système lorsqu’il est question d’éviter de payer des taxes et de jouer avec les lois en place. Lorsqu’il se trouve dans son pays d’origine, il peut réduire ses dépenses essentielles de 10 %."
+      },
+      {
+        "Id": "89154847-bbf8-4760-adc9-9dd466f6722c",
+        "Name": "Vagabond",
+        "Description": "Aucun village ni aucune ville n’est un meilleur domicile pour le personnage que la route. Qu’il soit nomade par choix ou par obligation, ses tests de _Survie_ afin de trouver de l’eau, de la nourriture ou un abri se voient conférer l’avantage lorsqu’il se trouve à proximité d’une route maintenue."
+      }
+    ]
+  },
+  {
+    "Id": "0d12e0f2-5165-49e7-b1a7-f2dcf4ea3a11",
+    "UniqueSlug": "guerisseur",
+    "DisplayName": "Guérisseur",
+    "Description": "Le guérisseur est responsable du maintien et de l’amélioration de la santé de la communauté ou de la société pour laquelle il œuvre. Sa clientèle est vaste : il doit soigner les citadins bourgeois, la haute noblesse, mais aussi les pauvres paysans, et parfois même les chasseurs en territoire sauvage et les soldats blessés sur un champ de bataille.",
+    "Skill": "Medicine",
+    "WealthRoll": "7d6",
+    "Features": [
+      {
+        "Id": "2e12b6be-536c-4c37-855f-3e64a68f2350",
+        "Name": "Guetteur",
+        "Description": "Le personnage ne dort que d’un œil, toujours aux aguets afin d’appréhender n’importe quel danger. Ses tests de _Perception_ ne sont pas affligés du désavantage lorsqu’il dort en moyenne 4 heures par tranche de deux journées consécutives."
+      },
+      {
+        "Id": "340abc07-de0b-4792-9718-b0522b6e7451",
+        "Name": "Sujet",
+        "Description": "Sujet d’un seigneur quelconque, le personnage n’est victime d’aucune taxe imposée aux voyageurs étrangers. Il peut réduire ses dépenses essentielles de 10 % sur sa terre natale."
+      }
+    ]
+  },
+  {
+    "Id": "c6c474d4-5eb2-464c-9c6d-25bcba87dac3",
+    "UniqueSlug": "marchand",
+    "DisplayName": "Marchand",
+    "Description": "Propriétaire d’une boutique ou vendeur ambulant, le marchand est un des derniers maillons de la chaîne de production de sa société. Sa profession requiert de sa part une excellente communication ainsi qu’un bon sens d’analyse afin de s’assurer de la qualité des produits vendus.",
+    "Skill": "Investigation",
+    "WealthRoll": "8d6",
+    "Features": [
+      {
+        "Id": "56acf228-be0f-46ac-ab5f-ecae32bc8d7f",
+        "Name": "Professionnel",
+        "Description": "Les apprentissages et réalisations du personnage lui ont permis de devenir membre d’une organisation de professionnels comme lui, telle une guilde d’artisans ou de marchands. S’il ne peut payer pour un toit ou de la nourriture, il peut facilement trouver du travail afin de couvrir ces dépenses essentielles."
+      },
+      {
+        "Id": "89154847-bbf8-4760-adc9-9dd466f6722c",
+        "Name": "Vagabond",
+        "Description": "Aucun village ni aucune ville n’est un meilleur domicile pour le personnage que la route. Qu’il soit nomade par choix ou par obligation, ses tests de _Survie_ afin de trouver de l’eau, de la nourriture ou un abri se voient conférer l’avantage lorsqu’il se trouve à proximité d’une route maintenue."
+      }
+    ]
+  },
+  {
+    "Id": "a8f9c94e-bbbd-44bd-a167-00996f83ae9e",
+    "UniqueSlug": "milicien",
+    "DisplayName": "Milicien",
+    "Description": "Le milicien est responsable de protéger les citoyens sur les terres de son seigneur. Il possède les droits mais également la responsabilité de faire appliquer les lois. Il doit également parfois jouer le rôle d’éclaireur et de soldat au sein de l’armée de sa patrie.",
+    "Skill": "Melee",
+    "WealthRoll": "7d6",
+    "Features": [
+      {
+        "Id": "2e12b6be-536c-4c37-855f-3e64a68f2350",
+        "Name": "Guetteur",
+        "Description": "Le personnage ne dort que d’un œil, toujours aux aguets afin d’appréhender n’importe quel danger. Ses tests de _Perception_ ne sont pas affligés du désavantage lorsqu’il dort en moyenne 4 heures par tranche de deux journées consécutives."
+      },
+      {
+        "Id": "340abc07-de0b-4792-9718-b0522b6e7451",
+        "Name": "Sujet",
+        "Description": "Sujet d’un seigneur quelconque, le personnage n’est victime d’aucune taxe imposée aux voyageurs étrangers. Il peut réduire ses dépenses essentielles de 10 % sur sa terre natale."
+      }
+    ]
+  },
+  {
+    "Id": "190418d1-8755-4569-95d6-40713a7b6e55",
+    "UniqueSlug": "noble",
+    "DisplayName": "Noble",
+    "Description": "Riche propriétaire terrien ou lié par son sang à un seigneur, le noble est responsable de l’administration et de la gouvernance de terres. Il codifie les lois et tranche en cas de différents. L’ensemble de ses tâches est lourd de responsabilités et pousse parfois les héritiers nobles à quitter leur famille avant d’hériter de ces fonctions.",
+    "Skill": "Diplomacy",
+    "WealthRoll": "9d6",
+    "Features": [
+      {
+        "Id": "b84d8bdb-65fd-4420-9a8a-7dfbe0e909cf",
+        "Name": "Protégé",
+        "Description": "Par le prestige de sa famille et sa participation à des événements de l’aristocratie, le personnage est connu de la noblesse locale. Il peut demander gîte et couvert membres de la noblesse. En échange, ceux-ci peuvent lui demander une ou plusieurs faveurs immédiates, futures ou encore invoquer le droit de surprise, c’est-à-dire une faveur d’un quelconque ordre de grandeur lorsque l’occasion de présenter."
+      },
+      {
+        "Id": "340abc07-de0b-4792-9718-b0522b6e7451",
+        "Name": "Sujet",
+        "Description": "Sujet d’un seigneur quelconque, le personnage n’est victime d’aucune taxe imposée aux voyageurs étrangers. Il peut réduire ses dépenses essentielles de 10 % sur sa terre natale."
+      }
+    ]
+  },
+  {
+    "Id": "3cc0c849-d103-4c14-ab70-82b72c04236d",
+    "UniqueSlug": "paysan",
+    "DisplayName": "Paysan",
+    "Description": "Les paysans représentent la base de la pyramide hiérarchique de leur société, bien que les plus nombreux. Ils sont affectés aux tâches les moins louables mais les plus importantes au sein de la chaîne de production. Mineurs, bûcherons, agriculteurs ou autres professionnels, leur mode de vie requiert une bonne forme physique et une tolérance exceptionnelle à l’effort.",
+    "Skill": "Athletics",
+    "WealthRoll": "7d6",
+    "Features": [
+      {
+        "Id": "a80c196c-55c3-4a2d-9c18-7522f7579dba",
+        "Name": "Autosuffisant",
+        "Description": "Le personnage préfère l’environnement agricole aux cités surpeuplées et étroites. Ses tests de _Survie_ afin de trouver de l’eau, de la nourriture ou un abri dans son pays d’origine se voient conférer l’avantage."
+      },
+      {
+        "Id": "340abc07-de0b-4792-9718-b0522b6e7451",
+        "Name": "Sujet",
+        "Description": "Sujet d’un seigneur quelconque, le personnage n’est victime d’aucune taxe imposée aux voyageurs étrangers. Il peut réduire ses dépenses essentielles de 10 % sur sa terre natale."
+      }
+    ]
+  },
+  {
+    "Id": "fb3902ff-f2ef-48df-8c77-5b6608d714cf",
+    "UniqueSlug": "religieux",
+    "DisplayName": "Religieux",
+    "Description": "Les religieux sont responsables du culte et des traditions de leur société. Ils ont également le mandat de traiter les événements surnaturels et de rassurer la population quant à ceux-ci. Les religieux œuvrent dans un temple, un sanctuaire, une église ou tout autre lieu de culture. Il peut compter sur l’aide d’autres fidèles impliqués comme lui mais doit également rendre de nombreux services à son culte.",
+    "Skill": "Occultism",
+    "WealthRoll": "9d6",
+    "Features": [
+      {
+        "Id": "c17a1343-9c23-42e5-8140-6a0ee22eeae8",
+        "Name": "Révérend",
+        "Description": "En arborant les vertus de son culte et en accomplissant plusieurs tâches au sein de celui-ci, le personnage est désormais connu et peut compter sur l’aide de ses pairs. S’il n’a pas assez d’argent pour payer ses dépenses essentielles, il peut quérir le support de son culte et faire don de tout l’argent qu’il lui reste en échange du gîte et couvert. Son culte peut lui demander des faveurs en échange. S’il est découvert à tromper son culte sur l’argent qu’il possède réellement, il est expulsé de celui-ci jusqu’à ce qu’il ne se repente."
+      },
+      {
+        "Id": "340abc07-de0b-4792-9718-b0522b6e7451",
+        "Name": "Sujet",
+        "Description": "Sujet d’un seigneur quelconque, le personnage n’est victime d’aucune taxe imposée aux voyageurs étrangers. Il peut réduire ses dépenses essentielles de 10 % sur sa terre natale."
       }
     ]
   }

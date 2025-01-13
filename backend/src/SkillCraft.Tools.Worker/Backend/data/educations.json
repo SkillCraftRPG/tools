@@ -1,26 +1,82 @@
 ﻿[
   {
-    "Id": "64849d46-7793-480e-89e5-670464fc1a6b",
+    "Id": "02266486-4254-4ee7-8e19-ca7455ed61bd",
     "UniqueSlug": "apprenti-a-l-etranger",
     "DisplayName": "Apprenti à l’étranger",
     "Description": "L’éducation du personnage a été effectuée à l’étranger, dans une région différente de sa terre natale. Il y a appris une nouvelle langue ainsi que l’importance de s’ouvre aux autres cultures différentes de la sienne.",
     "Skill": "Linguistics",
-    "WealthMultiplier": 8.0
+    "WealthMultiplier": 8
   },
   {
-    "Id": "2b6f408e-2843-43a9-a016-7ee68a205927",
+    "Id": "9a09b500-ea38-4227-9897-35c070182c8b",
     "UniqueSlug": "apprenti-d-un-maitre",
     "DisplayName": "Apprenti d’un maître",
     "Description": "Le personnage a tout appris d’un maître partageant un art ou une profession avec lui. Ce maître lui a enseigné les subtilités qui permettront au personnage d’être éventuellement reconnu comme un maître lui aussi. Cet apprentissage a été effectué dans l’ordre et la discipline, sous la direction du maître.",
     "Skill": "Discipline",
-    "WealthMultiplier": 12.0
+    "WealthMultiplier": 12
   },
   {
-    "Id": "f33e6ec5-4372-4771-b5aa-aea504d73ec1",
+    "Id": "122b98ea-72ff-4070-9bc8-6e8273619c50",
     "UniqueSlug": "champs-de-bataille",
     "DisplayName": "Champs de bataille",
     "Description": "Le personnage est un enfant de la guerre, un fugitif d’un conflit ayant affecté les civils. Son enfance est maigre de moments heureux et aisés, ce a fait de lui une personne endurcie dotée d’une personnalité pragmatique.",
     "Skill": "Resistance",
-    "WealthMultiplier": 4.0
+    "WealthMultiplier": 4
+  },
+  {
+    "Id": "fab22dff-2453-4382-a05e-9b934979e992",
+    "UniqueSlug": "classique",
+    "DisplayName": "Classique",
+    "Description": "Peu peuvent se vanter d’avoir reçu une éducation traditionnelle comme celle du personnage. Il a suivi un parcours scolaire conforme et sans dérogation ayant mené à une instruction de haute qualité. Malgré son manque d’expériences personnelles, son grand savoir lui permet de se débrouiller même dans les situations les plus difficiles.",
+    "Skill": "Knowledge",
+    "WealthMultiplier": 12
+  },
+  {
+    "Id": "16fd1e0c-3936-46cf-bc06-6d1a3da6bd62",
+    "UniqueSlug": "dans-la-rue",
+    "DisplayName": "Dans la rue",
+    "Description": "Élevé dans la rue, le personnage est peut-être issu d’une famille de sans-abris. Il peut également avoir été élevé par d’autres clochards, n’ayant jamais connu ses parents. Recruté par un cirque ambulant ou esquivant les situations malencontreuses par ses prouesses physiques, ses mouvements sont prompts et souples.",
+    "Skill": "Acrobatics",
+    "WealthMultiplier": 4
+  },
+  {
+    "Id": "b5193241-246e-4396-8af3-72631115470f",
+    "UniqueSlug": "entreprise-familiale",
+    "DisplayName": "Entreprise familiale",
+    "Description": "Depuis sa tendre enfance, le personnage participe à l’activité principale de sa famille. Peu instruit, il a cependant développé une bonne intuition lui permettant de mener à bien ses tâches. Par la division du travail et la coopération avec sa fratrie, il a appris à collaborer et à partager.",
+    "Skill": "Insight",
+    "WealthMultiplier": 10
+  },
+  {
+    "Id": "28c49e8b-28c0-40d4-bbc2-a4945168999c",
+    "UniqueSlug": "judicieux",
+    "DisplayName": "Judicieux",
+    "Description": "Peu importe le mode de vie dans lequel il a été élevé, le personnage prend des décisions sensées et éclairées au moment opportun. Il saisit les opportunités et on lui demande souvent conseil. Il sait mettre en exécution des plans complexes et trier les informations pertinentes.",
+    "Skill": "Orientation",
+    "WealthMultiplier": 10
+  },
+  {
+    "Id": "20d051d2-a755-4105-ab0a-5011550f0ce0",
+    "UniqueSlug": "mentor-venerable",
+    "DisplayName": "Mentor vénérable",
+    "Description": "Le personnage a été confié à un vieux sage, par exemple ses grands-parents ou aux moines d’un sanctuaire. Il aura développé un tempérament serein pendant son enfance. Son mentor lui aura également enseigné à prendre le temps d’observer son environnement et à porter attention aux détails afin de poser des conclusions rationnelles.",
+    "Skill": "Perception",
+    "WealthMultiplier": 8
+  },
+  {
+    "Id": "6a3dd82d-6152-4bea-8943-b9647df50844",
+    "UniqueSlug": "rebelle",
+    "DisplayName": "Rebelle",
+    "Description": "Malgré les efforts de ses parents à tenter d’élever un enfant calme et discipliné, le personnage désirait voler de ses propres ailes et faire ses expériences. Il a pu se soustraire à la surveillance de ses parents en camouflant ses méfaits par le mensonge, dupant ses parents ou les adultes qui l’ont pris à effectuer un délit.",
+    "Skill": "Deception",
+    "WealthMultiplier": 6
+  },
+  {
+    "Id": "2ef24da0-bf0c-477b-a554-060ad059d402",
+    "UniqueSlug": "sous-contrainte",
+    "DisplayName": "Sous contrainte",
+    "Description": "Le personnage a vécu sous une supervision étroite au sein d’une famille stricte. Il s’est conformé aux demandes de ses parents et a coopéré lorsqu’il le jugeait nécessaire. Il a appris à dissimuler ses erreurs et fautes de parcours, et mène une double-vie dont ses parents n’en savent rien.",
+    "Skill": "Stealth",
+    "WealthMultiplier": 6
   }
 ]
