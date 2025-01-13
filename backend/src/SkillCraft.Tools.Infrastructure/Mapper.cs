@@ -40,7 +40,10 @@ internal class Mapper
       WealthRoll = source.WealthRoll
     };
 
-    // TODO(fpion): Features
+    foreach (KeyValuePair<Guid, FeatureModel> feature in source.GetFeatures())
+    {
+      destination.Features.Add(feature.Value);
+    }
 
     MapAggregate(source, destination);
 

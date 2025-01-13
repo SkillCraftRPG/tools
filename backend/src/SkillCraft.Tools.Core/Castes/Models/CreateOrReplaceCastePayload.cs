@@ -9,5 +9,5 @@ public record CreateOrReplaceCastePayload
   public Skill? Skill { get; set; }
   public string? WealthRoll { get; set; }
 
-  // TODO(fpion): Features
+  public List<FeaturePayload> Features { get; set; } = [];
 }

@@ -9,7 +9,7 @@ public class CasteModel : AggregateModel
   public Skill? Skill { get; set; }
   public string? WealthRoll { get; set; }
 
-  // TODO(fpion): Features
+  public List<FeatureModel> Features { get; set; } = [];
 
   public override string ToString() => $"{DisplayName ?? UniqueSlug} | {base.ToString()}";
 }

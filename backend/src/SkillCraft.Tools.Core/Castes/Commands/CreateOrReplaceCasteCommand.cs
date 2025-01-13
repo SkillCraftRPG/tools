@@ -89,7 +89,7 @@ internal class CreateOrReplaceCasteCommandHandler : IRequestHandler<CreateOrRepl
       caste.WealthRoll = wealthRoll;
     }
 
-    // TODO(fpion): Features
+    SetFeatures(caste, reference, payload);
 
     caste.Update(actorId);
 
@@ -97,5 +97,33 @@ internal class CreateOrReplaceCasteCommandHandler : IRequestHandler<CreateOrRepl
 
     CasteModel model = await _casteQuerier.ReadAsync(caste, cancellationToken);
     return new CreateOrReplaceCasteResult(model, created);
+  }
+
+  private static void SetFeatures(Caste caste, Caste reference, CreateOrReplaceCastePayload payload)
+  {
+    HashSet<Guid> featureIds = payload.Features.Where(x => x.Id.HasValue).Select(x => x.Id!.Value).ToHashSet();
+    foreach (Guid featureId in reference.Features.Keys)
+    {
+      if (!featureIds.Contains(featureId))
+      {
+        caste.RemoveFeature(featureId);
+      }
+    }
+
+    foreach (FeaturePayload featurePayload in payload.Features)
+    {
+      Feature feature = new(new DisplayName(featurePayload.Name), Description.TryCreate(featurePayload.Description));
+      if (featurePayload.Id.HasValue)
+      {
+        if (!reference.Features.TryGetValue(featurePayload.Id.Value, out Feature? existingFeature) || existingFeature != feature)
+        {
+          caste.SetFeature(featurePayload.Id.Value, feature);
+        }
+      }
+      else
+      {
+        caste.AddFeature(feature);
+      }
+    }
   }
 }

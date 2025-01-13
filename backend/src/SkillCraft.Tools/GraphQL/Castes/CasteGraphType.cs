@@ -1,4 +1,5 @@
-﻿using SkillCraft.Tools.Core.Castes.Models;
+﻿using GraphQL.Types;
+using SkillCraft.Tools.Core.Castes.Models;
 
 namespace SkillCraft.Tools.GraphQL.Castes;
 
@@ -18,6 +19,7 @@ internal class CasteGraphType : AggregateGraphType<CasteModel>
     Field(x => x.WealthRoll)
       .Description("The starting wealth roll of characters in this caste.");
 
-    // TODO(fpion): Features
+    Field(x => x.Features, type: typeof(NonNullGraphType<ListGraphType<NonNullGraphType<FeatureGraphType>>>))
+      .Description("The features granted to characters in this caste.");
   }
 }

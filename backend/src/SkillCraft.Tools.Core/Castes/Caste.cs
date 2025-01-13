@@ -81,7 +81,8 @@ public class Caste : AggregateRoot
     }
   }
 
-  // TODO(fpion): Features
+  private readonly Dictionary<Guid, Feature> _features = [];
+  public IReadOnlyDictionary<Guid, Feature> Features => _features.AsReadOnly();
 
   public Caste() : base()
   {
@@ -94,6 +95,26 @@ public class Caste : AggregateRoot
   protected virtual void Handle(CasteCreated @event)
   {
     _uniqueSlug = @event.UniqueSlug;
+  }
+
+  public void AddFeature(Feature feature)
+  {
+    SetFeature(Guid.NewGuid(), feature);
+  }
+  public void RemoveFeature(Guid id)
+  {
+    if (_features.Remove(id))
+    {
+      _updated.Features[id] = null;
+    }
+  }
+  public void SetFeature(Guid id, Feature feature)
+  {
+    if (!_features.TryGetValue(id, out Feature? existingFeature) || existingFeature != feature)
+    {
+      _features[id] = feature;
+      _updated.Features[id] = feature;
+    }
   }
 
   public void Update(ActorId? actorId = null)
@@ -128,7 +149,17 @@ public class Caste : AggregateRoot
       _wealthRoll = @event.WealthRoll.Value;
     }
 
-    // TODO(fpion): Features
+    foreach (KeyValuePair<Guid, Feature?> feature in @event.Features)
+    {
+      if (feature.Value == null)
+      {
+        _features.Remove(feature.Key);
+      }
+      else
+      {
+        _features[feature.Key] = feature.Value;
+      }
+    }
   }
 
   public override string ToString() => $"{DisplayName?.Value ?? UniqueSlug.Value} | {base.ToString()}";

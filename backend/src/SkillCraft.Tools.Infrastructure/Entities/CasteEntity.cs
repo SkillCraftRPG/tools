@@ -1,5 +1,7 @@
 ﻿using SkillCraft.Tools.Core;
+using SkillCraft.Tools.Core.Castes;
 using SkillCraft.Tools.Core.Castes.Events;
+using SkillCraft.Tools.Core.Castes.Models;
 using SkillCraft.Tools.Infrastructure.SkillCraftDb;
 
 namespace SkillCraft.Tools.Infrastructure.Entities;
@@ -60,7 +62,33 @@ internal class CasteEntity : AggregateEntity
       WealthRoll = @event.WealthRoll.Value?.Value;
     }
 
-    // TODO(fpion): Features
+    Dictionary<Guid, FeatureModel> features = GetFeatures();
+    foreach (KeyValuePair<Guid, Feature?> feature in @event.Features)
+    {
+      if (feature.Value == null)
+      {
+        features.Remove(feature.Key);
+      }
+      else
+      {
+        features[feature.Key] = new FeatureModel
+        {
+          Id = feature.Key,
+          Name = feature.Value.Name.Value,
+          Description = feature.Value.Description?.Value
+        };
+      }
+    }
+    SetFeatures(features);
+  }
+
+  public Dictionary<Guid, FeatureModel> GetFeatures()
+  {
+    return (Features == null ? null : JsonSerializer.Deserialize<Dictionary<Guid, FeatureModel>>(Features)) ?? [];
+  }
+  private void SetFeatures(Dictionary<Guid, FeatureModel> features)
+  {
+    Features = features.Count < 1 ? null : JsonSerializer.Serialize(features);
   }
 
   public override string ToString() => $"{DisplayName ?? UniqueSlug} | {base.ToString()}";

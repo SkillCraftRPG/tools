@@ -12,9 +12,9 @@ public record CasteUpdated : DomainEvent, INotification
   public Change<Skill?>? Skill { get; set; }
   public Change<Roll>? WealthRoll { get; set; }
 
-  // TODO(fpion): Features
+  public Dictionary<Guid, Feature?> Features { get; set; } = [];
 
   [JsonIgnore]
   public bool HasChanges => UniqueSlug != null || DisplayName != null || Description != null
-    || Skill != null || WealthRoll != null;
+    || Skill != null || WealthRoll != null || Features.Count > 0;
 }
