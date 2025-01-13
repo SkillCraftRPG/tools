@@ -6,8 +6,8 @@ public class LanguageModel : AggregateModel
   public string? DisplayName { get; set; }
   public string? Description { get; set; }
 
-  // TODO(fpion): Script
-  // TODO(fpion): TypicalSpeakers
+  public string? Script { get; set; }
+  public string? TypicalSpeakers { get; set; }
 
   public override string ToString() => $"{DisplayName ?? UniqueSlug} | {base.ToString()}";
 }

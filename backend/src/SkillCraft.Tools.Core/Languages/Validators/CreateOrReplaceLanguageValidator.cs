@@ -11,7 +11,7 @@ internal class CreateOrReplaceLanguageValidator : AbstractValidator<CreateOrRepl
     When(x => !string.IsNullOrWhiteSpace(x.DisplayName), () => RuleFor(x => x.DisplayName!).DisplayName());
     When(x => !string.IsNullOrWhiteSpace(x.Description), () => RuleFor(x => x.Description!).Description());
 
-    // TODO(fpion): Script
-    // TODO(fpion): TypicalSpeakers
+    When(x => !string.IsNullOrWhiteSpace(x.Script), () => RuleFor(x => x.Script!).Script());
+    When(x => !string.IsNullOrWhiteSpace(x.TypicalSpeakers), () => RuleFor(x => x.TypicalSpeakers!).TypicalSpeakers());
   }
 }

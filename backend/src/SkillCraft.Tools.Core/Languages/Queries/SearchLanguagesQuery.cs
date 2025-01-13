@@ -8,15 +8,15 @@ public record SearchLanguagesQuery(SearchLanguagesPayload Payload) : IRequest<Se
 
 internal class SearchLanguagesQueryHandler : IRequestHandler<SearchLanguagesQuery, SearchResults<LanguageModel>>
 {
-  private readonly ILanguageQuerier _casteQuerier;
+  private readonly ILanguageQuerier _languageQuerier;
 
-  public SearchLanguagesQueryHandler(ILanguageQuerier casteQuerier)
+  public SearchLanguagesQueryHandler(ILanguageQuerier languageQuerier)
   {
-    _casteQuerier = casteQuerier;
+    _languageQuerier = languageQuerier;
   }
 
   public async Task<SearchResults<LanguageModel>> Handle(SearchLanguagesQuery query, CancellationToken cancellationToken)
   {
-    return await _casteQuerier.SearchAsync(query.Payload, cancellationToken);
+    return await _languageQuerier.SearchAsync(query.Payload, cancellationToken);
   }
 }

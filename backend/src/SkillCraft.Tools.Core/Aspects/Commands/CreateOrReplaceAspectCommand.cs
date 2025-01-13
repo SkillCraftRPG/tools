@@ -3,7 +3,6 @@ using Logitar.EventSourcing;
 using MediatR;
 using SkillCraft.Tools.Core.Aspects.Models;
 using SkillCraft.Tools.Core.Aspects.Validators;
-using SkillCraft.Tools.Core.Customizations;
 
 namespace SkillCraft.Tools.Core.Aspects.Commands;
 
@@ -14,20 +13,17 @@ public record CreateOrReplaceAspectCommand(Guid? Id, CreateOrReplaceAspectPayloa
 internal class CreateOrReplaceAspectCommandHandler : IRequestHandler<CreateOrReplaceAspectCommand, CreateOrReplaceAspectResult>
 {
   private readonly IApplicationContext _applicationContext;
-  private readonly ICustomizationRepository _customizationRepository;
   private readonly IAspectManager _aspectManager;
   private readonly IAspectQuerier _aspectQuerier;
   private readonly IAspectRepository _aspectRepository;
 
   public CreateOrReplaceAspectCommandHandler(
     IApplicationContext applicationContext,
-    ICustomizationRepository customizationRepository,
     IAspectManager aspectManager,
     IAspectQuerier aspectQuerier,
     IAspectRepository aspectRepository)
   {
     _applicationContext = applicationContext;
-    _customizationRepository = customizationRepository;
     _aspectManager = aspectManager;
     _aspectQuerier = aspectQuerier;
     _aspectRepository = aspectRepository;

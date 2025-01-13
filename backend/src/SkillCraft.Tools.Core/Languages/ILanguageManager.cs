@@ -2,5 +2,5 @@
 
 public interface ILanguageManager
 {
-  Task SaveAsync(Language caste, CancellationToken cancellationToken = default);
+  Task SaveAsync(Language language, CancellationToken cancellationToken = default);
 }

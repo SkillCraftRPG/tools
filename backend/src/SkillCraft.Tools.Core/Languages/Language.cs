@@ -49,14 +49,38 @@ public class Language : AggregateRoot
     }
   }
 
-  // TODO(fpion): Script
-  // TODO(fpion): TypicalSpeakers
+  private Script? _script = null;
+  public Script? Script
+  {
+    get => _script;
+    set
+    {
+      if (_script != value)
+      {
+        _script = value;
+        _updated.Script = new Change<Script>(value);
+      }
+    }
+  }
+  private TypicalSpeakers? _typicalSpeakers = null;
+  public TypicalSpeakers? TypicalSpeakers
+  {
+    get => _typicalSpeakers;
+    set
+    {
+      if (_typicalSpeakers != value)
+      {
+        _typicalSpeakers = value;
+        _updated.TypicalSpeakers = new Change<TypicalSpeakers>(value);
+      }
+    }
+  }
 
   public Language() : base()
   {
   }
 
-  public Language(Slug uniqueSlug, ActorId? actorId = null, LanguageId? casteId = null) : base(casteId?.StreamId)
+  public Language(Slug uniqueSlug, ActorId? actorId = null, LanguageId? languageId = null) : base(languageId?.StreamId)
   {
     Raise(new LanguageCreated(uniqueSlug), actorId);
   }
@@ -88,8 +112,14 @@ public class Language : AggregateRoot
       _description = @event.Description.Value;
     }
 
-    // TODO(fpion): Script
-    // TODO(fpion): TypicalSpeakers
+    if (@event.Script != null)
+    {
+      _script = @event.Script.Value;
+    }
+    if (@event.TypicalSpeakers != null)
+    {
+      _typicalSpeakers = @event.TypicalSpeakers.Value;
+    }
   }
 
   public override string ToString() => $"{DisplayName?.Value ?? UniqueSlug.Value} | {base.ToString()}";

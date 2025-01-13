@@ -9,9 +9,10 @@ public record LanguageUpdated : DomainEvent, INotification
   public Change<DisplayName>? DisplayName { get; set; }
   public Change<Description>? Description { get; set; }
 
-  // TODO(fpion): Script
-  // TODO(fpion): TypicalSpeakers
+  public Change<Script>? Script { get; set; }
+  public Change<TypicalSpeakers>? TypicalSpeakers { get; set; }
 
   [JsonIgnore]
-  public bool HasChanges => UniqueSlug != null || DisplayName != null || Description != null;
+  public bool HasChanges => UniqueSlug != null || DisplayName != null || Description != null
+    || Script != null || TypicalSpeakers != null;
 }

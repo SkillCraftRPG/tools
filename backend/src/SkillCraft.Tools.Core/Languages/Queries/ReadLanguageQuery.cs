@@ -7,39 +7,39 @@ public record ReadLanguageQuery(Guid? Id, string? Slug) : IRequest<LanguageModel
 
 internal class ReadLanguageQueryHandler : IRequestHandler<ReadLanguageQuery, LanguageModel?>
 {
-  private readonly ILanguageQuerier _casteQuerier;
+  private readonly ILanguageQuerier _languageQuerier;
 
-  public ReadLanguageQueryHandler(ILanguageQuerier casteQuerier)
+  public ReadLanguageQueryHandler(ILanguageQuerier languageQuerier)
   {
-    _casteQuerier = casteQuerier;
+    _languageQuerier = languageQuerier;
   }
 
   public async Task<LanguageModel?> Handle(ReadLanguageQuery query, CancellationToken cancellationToken)
   {
-    Dictionary<Guid, LanguageModel> castes = new(capacity: 2);
+    Dictionary<Guid, LanguageModel> languages = new(capacity: 2);
 
     if (query.Id.HasValue)
     {
-      var caste = await _casteQuerier.ReadAsync(query.Id.Value, cancellationToken);
-      if (caste != null)
+      var language = await _languageQuerier.ReadAsync(query.Id.Value, cancellationToken);
+      if (language != null)
       {
-        castes[caste.Id] = caste;
+        languages[language.Id] = language;
       }
     }
     if (!string.IsNullOrWhiteSpace(query.Slug))
     {
-      var caste = await _casteQuerier.ReadAsync(query.Slug, cancellationToken);
-      if (caste != null)
+      var language = await _languageQuerier.ReadAsync(query.Slug, cancellationToken);
+      if (language != null)
       {
-        castes[caste.Id] = caste;
+        languages[language.Id] = language;
       }
     }
 
-    if (castes.Count > 1)
+    if (languages.Count > 1)
     {
-      throw TooManyResultsException<LanguageModel>.ExpectedSingle(castes.Count);
+      throw TooManyResultsException<LanguageModel>.ExpectedSingle(languages.Count);
     }
 
-    return castes.Values.SingleOrDefault();
+    return languages.Values.SingleOrDefault();
   }
 }

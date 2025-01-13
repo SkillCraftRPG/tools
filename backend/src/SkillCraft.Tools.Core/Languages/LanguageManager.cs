@@ -5,19 +5,19 @@ namespace SkillCraft.Tools.Core.Languages;
 
 internal class LanguageManager : ILanguageManager
 {
-  private readonly ILanguageQuerier _casteQuerier;
-  private readonly ILanguageRepository _casteRepository;
+  private readonly ILanguageQuerier _languageQuerier;
+  private readonly ILanguageRepository _languageRepository;
 
-  public LanguageManager(ILanguageQuerier casteQuerier, ILanguageRepository casteRepository)
+  public LanguageManager(ILanguageQuerier languageQuerier, ILanguageRepository languageRepository)
   {
-    _casteQuerier = casteQuerier;
-    _casteRepository = casteRepository;
+    _languageQuerier = languageQuerier;
+    _languageRepository = languageRepository;
   }
 
-  public async Task SaveAsync(Language caste, CancellationToken cancellationToken)
+  public async Task SaveAsync(Language language, CancellationToken cancellationToken)
   {
     Slug? uniqueSlug = null;
-    foreach (IEvent change in caste.Changes)
+    foreach (IEvent change in language.Changes)
     {
       if (change is LanguageCreated created)
       {
@@ -31,13 +31,13 @@ internal class LanguageManager : ILanguageManager
 
     if (uniqueSlug != null)
     {
-      LanguageId? conflictId = await _casteQuerier.FindIdAsync(uniqueSlug, cancellationToken);
-      if (conflictId.HasValue && !conflictId.Value.Equals(caste.Id))
+      LanguageId? conflictId = await _languageQuerier.FindIdAsync(uniqueSlug, cancellationToken);
+      if (conflictId.HasValue && !conflictId.Value.Equals(language.Id))
       {
-        throw new UniqueSlugAlreadyUsedException(caste, conflictId.Value);
+        throw new UniqueSlugAlreadyUsedException(language, conflictId.Value);
       }
     }
 
-    await _casteRepository.SaveAsync(caste, cancellationToken);
+    await _languageRepository.SaveAsync(language, cancellationToken);
   }
 }

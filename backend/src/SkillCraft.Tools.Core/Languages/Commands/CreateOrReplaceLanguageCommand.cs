@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
 using Logitar.EventSourcing;
 using MediatR;
-using SkillCraft.Tools.Core.Customizations;
 using SkillCraft.Tools.Core.Languages.Models;
 using SkillCraft.Tools.Core.Languages.Validators;
 
@@ -14,23 +13,20 @@ public record CreateOrReplaceLanguageCommand(Guid? Id, CreateOrReplaceLanguagePa
 internal class CreateOrReplaceLanguageCommandHandler : IRequestHandler<CreateOrReplaceLanguageCommand, CreateOrReplaceLanguageResult>
 {
   private readonly IApplicationContext _applicationContext;
-  private readonly ICustomizationRepository _customizationRepository;
-  private readonly ILanguageManager _casteManager;
-  private readonly ILanguageQuerier _casteQuerier;
-  private readonly ILanguageRepository _casteRepository;
+  private readonly ILanguageManager _languageManager;
+  private readonly ILanguageQuerier _languageQuerier;
+  private readonly ILanguageRepository _languageRepository;
 
   public CreateOrReplaceLanguageCommandHandler(
     IApplicationContext applicationContext,
-    ICustomizationRepository customizationRepository,
-    ILanguageManager casteManager,
-    ILanguageQuerier casteQuerier,
-    ILanguageRepository casteRepository)
+    ILanguageManager languageManager,
+    ILanguageQuerier languageQuerier,
+    ILanguageRepository languageRepository)
   {
     _applicationContext = applicationContext;
-    _customizationRepository = customizationRepository;
-    _casteManager = casteManager;
-    _casteQuerier = casteQuerier;
-    _casteRepository = casteRepository;
+    _languageManager = languageManager;
+    _languageQuerier = languageQuerier;
+    _languageRepository = languageRepository;
   }
 
   public async Task<CreateOrReplaceLanguageResult> Handle(CreateOrReplaceLanguageCommand command, CancellationToken cancellationToken)
@@ -38,55 +34,63 @@ internal class CreateOrReplaceLanguageCommandHandler : IRequestHandler<CreateOrR
     CreateOrReplaceLanguagePayload payload = command.Payload;
     new CreateOrReplaceLanguageValidator().ValidateAndThrow(payload);
 
-    LanguageId? casteId = null;
-    Language? caste = null;
+    LanguageId? languageId = null;
+    Language? language = null;
     if (command.Id.HasValue)
     {
-      casteId = new(command.Id.Value);
-      caste = await _casteRepository.LoadAsync(casteId.Value, cancellationToken);
+      languageId = new(command.Id.Value);
+      language = await _languageRepository.LoadAsync(languageId.Value, cancellationToken);
     }
 
     Slug uniqueSlug = new(payload.UniqueSlug);
     ActorId? actorId = _applicationContext.ActorId;
     bool created = false;
-    if (caste == null)
+    if (language == null)
     {
       if (command.Version.HasValue)
       {
         return new CreateOrReplaceLanguageResult();
       }
 
-      caste = new(uniqueSlug, actorId, casteId);
+      language = new(uniqueSlug, actorId, languageId);
       created = true;
     }
 
     Language reference = (command.Version.HasValue
-      ? await _casteRepository.LoadAsync(caste.Id, command.Version.Value, cancellationToken)
-      : null) ?? caste;
+      ? await _languageRepository.LoadAsync(language.Id, command.Version.Value, cancellationToken)
+      : null) ?? language;
 
     if (reference.UniqueSlug != uniqueSlug)
     {
-      caste.UniqueSlug = uniqueSlug;
+      language.UniqueSlug = uniqueSlug;
     }
     DisplayName? displayName = DisplayName.TryCreate(payload.DisplayName);
     if (reference.DisplayName != displayName)
     {
-      caste.DisplayName = displayName;
+      language.DisplayName = displayName;
     }
     Description? description = Description.TryCreate(payload.Description);
     if (reference.Description != description)
     {
-      caste.Description = description;
+      language.Description = description;
     }
 
-    // TODO(fpion): Script
-    // TODO(fpion): TypicalSpeakers
+    Script? script = Script.TryCreate(payload.Script);
+    if (reference.Script != script)
+    {
+      language.Script = script;
+    }
+    TypicalSpeakers? typicalSpeakers = TypicalSpeakers.TryCreate(payload.TypicalSpeakers);
+    if (reference.TypicalSpeakers != typicalSpeakers)
+    {
+      language.TypicalSpeakers = typicalSpeakers;
+    }
 
-    caste.Update(actorId);
+    language.Update(actorId);
 
-    await _casteManager.SaveAsync(caste, cancellationToken);
+    await _languageManager.SaveAsync(language, cancellationToken);
 
-    LanguageModel model = await _casteQuerier.ReadAsync(caste, cancellationToken);
+    LanguageModel model = await _languageQuerier.ReadAsync(language, cancellationToken);
     return new CreateOrReplaceLanguageResult(model, created);
   }
 }
