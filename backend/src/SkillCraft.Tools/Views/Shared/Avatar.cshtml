@@ -9,7 +9,7 @@
   };
   if (image.Src == null && Model.EmailAddress != null)
   {
-    // TODO(fpion): Gravatar; https://www.gravatar.com/avatar/{md5(props.emailAddress)}
+    // ISSUE: https://github.com/SkillCraftRPG/tools/issues/32
   }
   if (Model.DisplayName != null)
   {
@@ -33,7 +33,7 @@
   }
   else if (Model.Icon != null)
   {
-    // TODO(fpion): rounded-circle, icon, style: { width: `${height.value}px`, height: `${height.value}px` }
+    // ISSUE: https://github.com/SkillCraftRPG/tools/issues/32
     @(await Html.PartialAsync("Badge.cshtml", badge))
   }
 </span>
