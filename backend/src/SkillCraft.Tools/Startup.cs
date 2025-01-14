@@ -75,7 +75,7 @@ internal class Startup : StartupBase
     });
     services.AddDistributedMemoryCache();
 
-    services.AddControllers()
+    services.AddControllersWithViews()
       .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
     GraphQLSettings graphQLSettings = _configuration.GetSection(GraphQLSettings.SectionKey).Get<GraphQLSettings>() ?? new();

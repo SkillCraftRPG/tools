@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SkillCraft.Tools.Models.Index;
 
 namespace SkillCraft.Tools.Controllers;
 
-[ApiController]
 [Route("")]
-public class IndexController : ControllerBase
+public class IndexController : Controller
 {
   [HttpGet]
-  public ActionResult<ApiVersion> Get() => Ok(ApiVersion.Current);
+  public ActionResult Index()
+  {
+    return View();
+  }
 }

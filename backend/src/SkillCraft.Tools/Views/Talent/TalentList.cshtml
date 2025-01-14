@@ -1,0 +1,64 @@
+﻿@using Logitar.Portal.Contracts.Search;
+@using SkillCraft.Tools;
+@using SkillCraft.Tools.Core.Talents.Models;
+@using SkillCraft.Tools.Models.Components;
+@model SearchResults<TalentModel>
+
+@{
+  Layout = "_Layout";
+
+  ViewBag.Title = "Talents";
+
+  BreadcrumbModel breadcrumb = new("Talents");
+
+  IReadOnlyCollection<TalentModel> talents = Model.Items
+    .OrderBy(t => $"{t.Tier}_{t.DisplayName ?? t.UniqueSlug}")
+    .ToArray();
+}
+
+<div class="container">
+  <h1>Talents</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+  @if (talents.Count < 1)
+  {
+    <p>Cette liste est vide.</p>
+  }
+  else
+  {
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Tiers</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Talent requis</th>
+          <th scope="col">Compétence</th>
+          <th scope="col">Achats multiples</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (TalentModel talent in talents)
+        {
+          <tr>
+            <td>@(talent.Tier)</td>
+            <td>
+              <a href="/talents/@(talent.UniqueSlug)">@(talent.DisplayName ?? talent.UniqueSlug)</a>
+            </td>
+            <td>
+              @if (talent.RequiredTalent == null)
+              {
+                <span>—</span>
+              }
+              else
+              {
+                <a href="/talents/@(talent.RequiredTalent.UniqueSlug)">@(talent.RequiredTalent.DisplayName ?? talent.RequiredTalent.UniqueSlug)</a>
+              }
+            </td>
+            <td>@(talent.Skill.HasValue ? Translator.Translate(talent.Skill.Value) : "—")</td>
+            <td>@(talent.AllowMultiplePurchases ? "✓ Oui" : "✗ Non")</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <p class="float-end"><strong>@(talents.Count) @(talents.Count > 1 ? "talents" : "talent")</strong></p>
+  }
+</div>

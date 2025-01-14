@@ -1,4 +1,4 @@
-﻿using SkillCraft.Tools.Core.Search;
+﻿using Logitar.Portal.Contracts.Search;
 using SkillCraft.Tools.Core.Talents.Models;
 
 namespace SkillCraft.Tools.Core.Talents;

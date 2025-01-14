@@ -134,7 +134,7 @@
     "Tier": 0,
     "UniqueSlug": "formation-martiale",
     "DisplayName": "Formation martiale",
-    "Description": "Talent requis\u00A0: Mêlée. Forme le personnage au maniement des armes martiales. Il est également formé au port des armures moyennes et à l’utilisation des boucliers moyens. De plus, il n’est pas affligé de la pénalité à ses tests de _Furtivité_ et à sa régénération de Vitalité et d’Énergie lorsqu’il porte une armure légère ou moyenne.",
+    "Description": "Forme le personnage au maniement des armes martiales. Il est également formé au port des armures moyennes et à l’utilisation des boucliers moyens. De plus, il n’est pas affligé de la pénalité à ses tests de _Furtivité_ et à sa régénération de Vitalité et d’Énergie lorsqu’il porte une armure légère ou moyenne.",
     "AllowMultiplePurchases": false,
     "RequiredTalentId": "14a2449f-6438-4c69-af75-52a08ef7a4fc",
     "Skill": null
@@ -321,7 +321,7 @@
   },
   {
     "Id": "b5f0bf8c-3933-483c-a319-d7becaaf2cc6",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "ambidextre",
     "DisplayName": "Ambidextre",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Lorsqu’il effectue une attaque avec sa deuxième main, son test n’est plus affligé du désavantage.\\n- Lorsqu’il combat en maniant une arme dans chaque main et aucun bouclier, il se voit conférer un bonus de +1 à son Esquive.\\n- Lorsqu’il dégaine ou rengaine une arme, il peut rengainer ou dégainer une deuxième arme avec une autre main.",
@@ -331,7 +331,7 @@
   },
   {
     "Id": "aa1cbd0c-a1f2-453a-bd9d-6b7e29d381bd",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "armes-a-deux-mains",
     "DisplayName": "Armes à deux mains",
     "Description": "Lorsque le personnage réussit une attaque en maniant une arme de mêlée à deux mains ou une arme versatile en la tenant à deux mains, alors il peut relancer les dégâts de dégâts qui tombent sur les faces 1 et 2 du dé. Il doit conserver le nouveau résultat des dés relancés, même s’il est tombé sur les faces 1 et 2 du dé.",
@@ -341,7 +341,7 @@
   },
   {
     "Id": "0c2d6c23-e66d-43ff-ba6a-2745fd5b394b",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "armes-de-finesse",
     "DisplayName": "Armes de finesse",
     "Description": "Lorsque le personnage effectue une attaque en maniant une arme de finesse, alors il peut remplacer le test de _Mêlée_ par un test d’_Orientation_. Si l’attaque réussit, il ajoute sa Précision aux points de dégâts infligés plutôt que sa Force. Également, il se voit conférer un bonus de +2 aux points de dégâts infligés en maniant une arme de finesse lorsqu’il ne tient aucune autre arme.",
@@ -351,7 +351,7 @@
   },
   {
     "Id": "24d0b9d2-4eda-43b5-890e-9315770511b7",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "armes-de-jet",
     "DisplayName": "Armes de jet",
     "Description": "Lorsque le personnage effectue une attaque en lançant une arme de jet, alors il peut remplacer le test d’_Orientation_ par un test de _Mêlée_. Si l’attaque réussit, il ajoute sa Force aux points de dégâts infligés plutôt que sa Précision. Également, lorsqu’il lance une arme de jet, alors le bonus au test de l’attaque conféré par cette arme augmente à +5.",
@@ -361,7 +361,7 @@
   },
   {
     "Id": "dee5f069-7136-4681-9353-a1ee68e77200",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "armes-de-tir",
     "DisplayName": "Armes de tir",
     "Description": "Lorsque le personnage effectue une attaque en utilisant une arme possédant la propriété **Munition**, alors le bonus au test de l’attaque conféré par cette arme augmente à +10.",
@@ -371,7 +371,7 @@
   },
   {
     "Id": "0751afed-0854-4425-9727-4edae2b585c4",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "attaque-brutale",
     "DisplayName": "Attaque brutale",
     "Description": "Une fois par round et en effectuant une attaque de mêlée en maniant une arme à deux mains ou une arme versatile en la tenant à deux mains, le personnage peut dépenser des tranches de 15 points d’Énergie. Pour chaque tranche dépensée, il ajoute une pénalité de -1 à son test d’attaque, mais il ajoute aussi un dé aux points de dégâts infligés par l’attaque si elle réussit. De plus, si la taille de la cible est d’au plus une catégorie supérieure à celle du personnage, la cible est repoussée de 1,5 mètres par tranche dépensée. Le personnage peut dépenser un nombre maximal de tranches égal à son tiers de personnage.",
@@ -381,7 +381,7 @@
   },
   {
     "Id": "feea35a9-6da3-43cc-b2f9-4dd2be95c916",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "attaque-neutralisante",
     "DisplayName": "Attaque neutralisante",
     "Description": "Une fois par round et en effectuant une attaque de mêlée en maniant une arme effectuant du dégât contondant, permet au personnage de dépenser 5 points d’Énergie afin de réduire les points de dégâts de moitié et d’infliger des points de dégâts non létaux. Il peut dépenser 10 points d’Énergie au lieu de 5 afin d’annuler la réduction en points de dégâts. À la discrétion du maître de jeu, un personnage peut utiliser une arme non contondante, en autant qu’il frappe sa cible par une attaque de mêlée en utilisant une portion de l’arme s’apparentant à une arme contondante, par exemple le pommeau d’une épée ou la poignée d’une arme d’hast.",
@@ -391,7 +391,7 @@
   },
   {
     "Id": "1b7cc406-1e95-4bab-a94c-ef80d61e5c92",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "attaque-puissante",
     "DisplayName": "Attaque puissante",
     "Description": "Une fois par round et en effectuant une attaque de mêlée en maniant une arme à une main ou une arme versatile en la tenant à une main, le personnage peut dépenser des tranches de 10 points d’Énergie. Pour chaque tranche dépensée, il ajoute une pénalité de -1 à son test d’attaque, mais il remplace un dé de dégâts par sa valeur maximale si l’attaque réussit. Le personnage peut dépenser un nombre maximal de tranches égal à son tiers de personnage.",
@@ -401,7 +401,7 @@
   },
   {
     "Id": "8628bc7c-c2ed-49ce-904a-2e0276761a14",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "attaque-sournoise",
     "DisplayName": "Attaque sournoise",
     "Description": "Une fois par round, permet au personnage d’ajouter 1d6 aux points de dégâts infligés par une attaque. Afin d’utiliser cette capacité, l’attaque doit être effectuée par un test d’_Orientation_. Il peut donc l’utiliser lorsqu’il effectue une attaque à distance ou en maniant une arme de finesse, s’il a acquis le talent <u>Armes de finesse</u>. De plus, le test de l’attaque doit être effectué avec avantage (par exemple si le personnage est dissimulé aux yeux de la cible), ou un allié du personnage qui n’est pas incapable doit se trouver dans une case adjacente à celle de la cible.",
@@ -411,7 +411,7 @@
   },
   {
     "Id": "a0f1cff9-f5f7-4e62-a339-811e716b5930",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "barriere-mentale",
     "DisplayName": "Barrière mentale",
     "Description": "Lorsque le personnage est victime d’un pouvoir, il peut utiliser sa réaction afin de tenter un test de _Discipline_ de degré de difficulté égal au nombre de points d’Énergie dépensés afin de canaliser le pouvoir. En cas de réussite du test, si le pouvoir inflige des points de dégâts, ceux-ci sont réduits de moitié ; sinon, c’est la durée du pouvoir qui est réduite de moitié.",
@@ -421,7 +421,7 @@
   },
   {
     "Id": "2d3b88db-4455-4e71-8475-ba15aa4f0331",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "bris",
     "DisplayName": "Bris",
     "Description": "Lorsque le personnage tente de briser un objet en maniant une arme improvisée, alors il se voit conférer l’avantage à son test d’attaque. Également, lorsqu’il brise une arme improvisée en attaquant une créature, celle-ci doit effectuer un jet de sauvegarde de _Résistance_ de degré de difficulté égal au résultat du test de l’attaque. Si la cible échoue le test, elle est étourdie jusqu’au début de son prochain tour.",
@@ -431,7 +431,7 @@
   },
   {
     "Id": "cbc0f2fe-9411-4c93-9997-d5b2cad0ee7a",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "charge",
     "DisplayName": "Charge",
     "Description": "Lorsque le personnage effectue l’activité **Course** pendant son tour, il peut effectuer une attaque de mêlée en action libre s’il court en ligne droite sur une distance d’au moins 3 mètres directement avant d’effectuer cette attaque. Si l’attaque réussit, le personnage ajoute un bonus de +5 aux points de dégâts infligés. De plus, si la taille de la cible est d’au plus une catégorie supérieure à celle du personnage, elle est repoussée de 3 mètres.",
@@ -441,7 +441,7 @@
   },
   {
     "Id": "c94722f5-7a99-4959-a552-0fcfff178671",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "costaud",
     "DisplayName": "Costaud",
     "Description": "Le personnage acquiert une vitesse de nage et d’escalade égale à sa vitesse de marche. Également, il se voit conférer un bonus de +5 à ses tests de _Discipline_ afin de continuer à effectuer une action épuisante, par exemple une marche forcée.",
@@ -451,7 +451,7 @@
   },
   {
     "Id": "ba7761d7-24af-4506-8b2d-e611b65ccdce",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "coup-de-bouclier",
     "DisplayName": "Coup de bouclier",
     "Description": "Lorsque le personnage effectue l’activité **Bousculade**, il peut le faire en donnant un coup avec son bouclier, ce qui ajoute à son test d’_Athlétisme_ un bonus égal au bonus de Défense de son bouclier. Également, lorsqu’il porte un bouclier moyen ou lourd et qu’il voit une créature attaquer un allié situé à 1,5 mètres de sa position, alors il peut utiliser sa réaction afin d’infliger le désavantage au test de l’attaque.",
@@ -461,7 +461,7 @@
   },
   {
     "Id": "fe481362-8fe1-4765-b356-e9fe57d5c7ab",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "critique-accru",
     "DisplayName": "Critique accru",
     "Description": "Le personnage obtient désormais un coup critique lorsque la somme des dés de son test d’attaque égale 17. Les probabilités qu’il inflige un coup critique sont désormais de 13 %, ou de 17 % si son score de Coordination est supérieur ou égal à 20.\\n\\nÉgalement, lorsqu’une attaque du personnage déclenche un coup critique, le joueur peut tenter de confirmer le coup critique en relançant les dés de l’attaque. Si la somme de ces dés égale une des valeurs déclenchant un coup critique, alors le coup critique est confirmé. Il roule une seconde fois les dés de dégâts et ajoute le résultat aux points de dégâts infligés.",
@@ -471,7 +471,7 @@
   },
   {
     "Id": "35c4ad2d-661b-40d8-a8db-9ac67847809b",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "cuirasse",
     "DisplayName": "Cuirassé",
     "Description": "Le personnage acquiert les capacités suivantes :\\r\\n\\r\\n- Il est formé au port des armures lourdes et à l’utilisation des boucliers lourds.\\r\\n- Il est formé au port de deux couches d’armure.\\r\\n- Lorsqu’il porte une armure complète, il se voit conférer un bonus de +1 à sa Défense.",
@@ -481,7 +481,7 @@
   },
   {
     "Id": "ca01face-00e8-41bf-8308-a1302c9da73f",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "culbutes",
     "DisplayName": "Culbutes",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Au cours d’un déplacement, permet au personnage de traverser une case occupée par une créature hostile, même si la taille de celle-ci n’est pas inférieure ou supérieure à la taille du personnage de deux catégories de taille ou plus. Pour se faire, le personnage doit réussir un test d’_Acrobaties_ de difficulté facile (10) si la différence de taille du personnage est d’une seule catégorie, ou moyen (15) si elles sont dans la même catégorie. En cas d’échec, le personnage n’arrive pas à traverser la case et il doit attendre à son prochain tour afin de réessayer. S’il n’a pas assez de points de mouvement afin de ne pas s’arrêter dans une case occupée par une autre créature, il échoue automatiquement le test.\\n- Lorsque le personnage réussit un test d’_Acrobaties_ afin d’amortir sa chute, le nombre de dés de dégâts retirés et le nombre de dés de dégâts convertis en dégâts non létaux est doublé.\\n- Bonus permanent d’un point de mouvement.",
@@ -491,7 +491,7 @@
   },
   {
     "Id": "3502c221-d96c-4824-8981-8913e7fc7879",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "distraction",
     "DisplayName": "Distraction",
     "Description": "Permet au personnage d’effectuer l’activité **Aider** afin de distraire une créature et ses alliés situés à 1,5 mètres de la cible. Chaque créature ciblée doit effectuer un test d’_Intuition_ opposé à un test de _Performance_ du personnage. Le test de la première attaque dirigée contre chaque créature ayant échoué le test opposé se voit conférer l’avantage jusqu’au début du prochain tour du personnage.\\n\\nÉgalement, le personnage sélectionne un type d’arme de mêlée ou de jet. Il devient formé avec ce type d’arme s’il ne l’est pas déjà. Lorsqu’il effectue un test de _Mêlée_ ou d’_Orientation_ avec une arme de ce type, il peut substituer son modificateur d’Agilité ou de Coordination par son modificateur de Présence. Lorsqu’il passe au tiers 2 et au tiers 3, il acquiert une spécialisation supplémentaire avec un autre type d’arme de mêlée ou de jet.",
@@ -501,7 +501,7 @@
   },
   {
     "Id": "74a31d36-02f6-419c-b09f-f21b982179d9",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "emboiter-le-pas",
     "DisplayName": "Emboîter le pas",
     "Description": "Lorsque le personnage effectue une action, il se voit conférer l’avantage à ses tests de _Diplomatie_ afin de persuader d’autres créatures d’effectuer la même action. Par exemple, s’il tente de convaincre la milice locale de s’en prendre à un de ses ennemis et qu’il attaque cet ennemi, alors son test de _Diplomatie_ afin de convaincre la milice locale d’appréhender cet ennemi se voit conférer l’avantage.\\n\\nÉgalement, lorsqu’il effectue l’activité **Aider**, il peut dépenser 15 points d’Énergie afin de permettre à la créature aidée d’ajouter la moitié du rang de compétence du personnage à son ou ses prochains tests recevant son aide. Par exemple, si la créature reçoit son aide pour un test de _Survie_ et que le rang de _Survie_ du personnage est 9, alors la créature ajoute un bonus de 4 à son test de _Survie_, en plus de se voir conférer l’avantage. Le personnage peut utiliser cette capacité un nombre de fois égal à son tiers de personnage et doit compléter une nuit de sommeil afin de récupérer ces utilisations.",
@@ -511,7 +511,7 @@
   },
   {
     "Id": "c8b02ffe-e57b-41e6-b4a3-ac13d874f691",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "endurance-accrue",
     "DisplayName": "Endurance accrue",
     "Description": "Confère au personnage un bonus permanent de 10 points d’Énergie. Également, lorsque le personnage est victime de points de dégâts létaux en provenance d’une source non magique, il peut utiliser sa réaction afin de convertir la moitié des points de dégâts létaux en dégâts non létaux. Il peut utiliser cette capacité un nombre de fois égal à son modificateur d’Esprit (minimum 1) et doit compléter une nuit de sommeil afin de récupérer ces utilisations.",
@@ -521,7 +521,7 @@
   },
   {
     "Id": "d19141b1-c838-4726-b007-354a15803dd9",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "enqueteur",
     "DisplayName": "Enquêteur",
     "Description": "Lorsque le personnage trouve une créature dissimulée par l’activité **Chercher**, ses attaques subséquentes dirigées contre cette créature se voient conférer l’avantage au test jusqu’à la fin de son tour. Également, lorsqu’il effectue un test de _Connaissance_ ou de _Linguistique_, s’il n’est pas formé pour cette compétence mais qu’il possède du matériel pouvant l’aider dans son test, alors il peut ajouter la moitié de son rang d’_Investigation_ au test.",
@@ -531,7 +531,7 @@
   },
   {
     "Id": "94813250-d63a-4514-8080-f9576f6b787e",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "entrainement-ii",
     "DisplayName": "Entraînement II",
     "Description": "Augmente de manière permanente de +2 le score d’un attribut du personnage dont le score était inférieur ou égal à 13 avant l’acquisition de ce talent.",
@@ -541,7 +541,7 @@
   },
   {
     "Id": "63805a8d-a2ae-443e-834e-ca7569713b70",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "expertise-artisanale",
     "DisplayName": "Expertise artisanale",
     "Description": "Le personnage désigne un type d’outils d’artisan de son choix parmi ceux qu’il formé à utiliser et développe une expertise avec le type d’outils choisi. Lorsqu’il utilise ce type d’outils, il peut conférer l’avantage à son test d’_Artisanat_ ou ajouter une seconde fois son modificateur de Coordination à ce test.\\n\\nÉgalement, si le personnage possède des outils de bricoleur, alors il peut convertir des outils d’une spécialité d’artisanat à une autre spécialité. Par exemple, il peut transformer des outils de forgeron en outils de maçon. Cette conversion nécessite une heure et peut être effectuée pendant une halte.",
@@ -551,7 +551,7 @@
   },
   {
     "Id": "21eaa87c-f23b-4611-8c90-5c3bcffd9c9b",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "frappe-puissante",
     "DisplayName": "Frappe puissante",
     "Description": "Le personnage inflige désormais 1d6 points de dégâts contondants non létaux lorsqu’il effectue une attaque avec un membre de son corps. Également, une fois par round et en effectuant une attaque avec un membre de son corps, il peut dépenser des tranches de 10 points d’Énergie. Pour chaque tranche dépensée, il ajoute une pénalité de -1 à son test d’attaque, mais il remplace un dé de dégâts par sa valeur maximale si l’attaque réussit. Le personnage peut dépenser un nombre maximal de tranches égal à son tiers de personnage.",
@@ -561,7 +561,7 @@
   },
   {
     "Id": "d90a7854-802b-4051-bb30-3912becfd9ad",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "herboristerie",
     "DisplayName": "Herboristerie",
     "Description": "Le personnage acquiert les capacités suivantes\u00A0:\\n\\n- Il est formé à l’utilisation de la trousse d’herboristerie, qui lui permet de concocter des remèdes à partir de ressources naturelles telles des herbes médicinales qu’il peut acheter, cultiver ou trouver dans la nature.\\n- Il est également formé à l’utilisation de la trousse d’empoisonneur, qui lui permet de concocter des poisons à partir de ressources naturelles telles du venin ou des plantes vénéneuses qu’il peut acheter, cultiver ou récolter dans la nature. L’acquisition de ce talent ne lui permet pas d’extraire le venin d’une créature morte ou vivante.\\n- Il peut désormais apprendre les remèdes et poisons de base. Cette liste est définie dans les ouvrages spécifiques aux univers.\\n- Il apprend un nombre de remèdes et de poisons égal à son rang de _Médecine_. Chaque fois que son rang de _Médecine_ augmente d’un point, il peut apprendre un remède ou poison supplémentaire de son choix parmi la liste fournie.\\n- Il peut identifier un remède ou un poison qu’il connait par un test de _Médecine_ de difficulté facile\u00A0(10). S’il ne connait pas le remède ou le poison, la difficulté augmente à difficile (20). Il peut également tenter d’identifier les herbes médicinales et vénéneuses, ainsi que les créatures venimeuses.",
@@ -571,7 +571,7 @@
   },
   {
     "Id": "03c40ec8-a204-404a-8fab-dcded7055d9c",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "initiative-accrue",
     "DisplayName": "Initiative accrue",
     "Description": "Confère un bonus permanent de +2 à l’Initiative du personnage. Également, lorsque le personnage effectue un test d’Initiative, si le dé tombe sur une face dont la valeur est inférieure à son modificateur de Sensibilité (minimum 2), alors le dé est remplacé par son modificateur de Sensibilité lors du calcul du résultat de son test d’Initiative.",
@@ -581,7 +581,7 @@
   },
   {
     "Id": "465ba8c9-8d78-41aa-af1c-0ad166921bc8",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "lancer-brutal",
     "DisplayName": "Lancer brutal",
     "Description": "Une fois par round et en effectuant une attaque en lançant une arme de jet par un test de _Mêlée_, le personnage peut dépenser des tranches de 15 points d’Énergie. Pour chaque tranche dépensée, il ajoute une pénalité de -1 à son test d’attaque, mais il ajoute un dé aux points de dégâts infligés par l’attaque, si celle-ci réussit. De plus, si la taille de la cible est d’au plus une catégorie supérieure à celle du personnage, la cible est repoussée de 1,5 mètres par tranche dépensée. Le personnage peut dépenser un nombre maximal de tranches égal à son tiers de personnage.",
@@ -591,7 +591,7 @@
   },
   {
     "Id": "4e8f8023-dabf-4b7d-b515-2874c47f95f9",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "lutte",
     "DisplayName": "Lutte",
     "Description": "Lorsque le personnage est agrippé par une créature dont la taille est d’au plus une catégorie supérieure à la sienne, il peut tenter de de renverser la situation. Par une action, il effectue un test d’_Athlétisme_ opposé à un test d’_Athlétisme_ de la cible. S’il échoue le test, rien ne se produit. S’il réussit le test, il n’est plus agrippé par la créature, et celle-ci est maintenant agrippée par le personnage.\\n\\nÉgalement, il peut tenter d’entrer en situation de lutte avec une créature qu’il agrippe. Il effectue un test d’_Athlétisme_ oppose à un test d’_Acrobaties_ ou d’_Athlétisme_ de la cible. S’il échoue le test, rien ne se produit. S’il réussit le test, la créature est restreinte par le personnage. Les jets de sauvegarde d’_Acrobaties_ et d’_Orientation_ de la créature sont affligés du désavantage, tout comme ses attaques, et les tests des attaques dirigées contre la créature se voient conférer l’avantage.",
@@ -601,7 +601,7 @@
   },
   {
     "Id": "357f7bb9-6610-4746-bae5-2c18271a13a8",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "magie-puissante",
     "DisplayName": "Magie puissante",
     "Description": "Permet au personnage de canaliser un pouvoir à un niveau de plus que le niveau de base, ce qui augmente la dépense en points d’Énergie. Également, lorsqu’il atteint le tiers 2, il peut désormais canaliser un pouvoir au niveau maximal, c’est-à-dire à deux niveaux de plus que le niveau de base. Il peut donc canaliser tous les niveaux d’un pouvoir.",
@@ -611,7 +611,7 @@
   },
   {
     "Id": "2a19d2d1-0a77-42f7-9034-8788041976e0",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "manoeuvres-de-combat",
     "DisplayName": "Manœuvres de combat",
     "Description": "Le personnage apprend trois manœuvres de combat parmi une liste de manœuvres. Cette liste est définie dans les ouvrages spécifiques aux univers.",
@@ -621,7 +621,7 @@
   },
   {
     "Id": "74a7a2b6-4805-497d-bb7a-b6cdfa302228",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "maraudage",
     "DisplayName": "Maraudage",
     "Description": "Lorsqu’il est dissimulé, le personnage peut se déplacer au plus à la moitié de sa vitesse sans révéler sa position, en autant qu’il débute et termine son déplacement dans une zone au moins légèrement obscurcie. Également, il ne révèle pas sa position lorsqu’il échoue une attaque à distance en étant dissimulé.",
@@ -631,7 +631,7 @@
   },
   {
     "Id": "72ba6fbc-4bd5-44a2-bf71-f7eadbab9abf",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "medecine-animale",
     "DisplayName": "Médecine animale",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Il peut désormais apprivoiser et dresser une bête de niveau 1/4 ou moins.\\n- Il se voit conférer l’avantage à ses tests de _Survie_ afin d’apprivoiser et de calmer une bête en détresse ou souffrante.\\n- Il peut substituer ses tests de Médecine par un test de _Survie_ lorsqu’il tente de prodiguer des soins à une bête ou de stabiliser une bête agonisante.",
@@ -641,7 +641,7 @@
   },
   {
     "Id": "3dc1f37e-d38c-4af5-a0ee-4dda35da0b9d",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "meditation",
     "DisplayName": "Méditation",
     "Description": "Permet au personnage de méditer pendant une halte. Il reste conscient pendant qu’il médite, ce qui lui permet d’effectuer des tests passifs de _Perception_. La méditation double sa régénération d’Énergie à chaque heure de halte. Il récupère donc autant de points d’Énergie en méditant qu’en dormant, mais il doit toujours compléter une nuit de sommeil afin de récupérer ses capacités et ne pas accumuler de fatigue.",
@@ -651,7 +651,7 @@
   },
   {
     "Id": "71489d9c-1560-4e1b-9624-53fe1bfcdec0",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "mefait-feutre",
     "DisplayName": "Méfait feutré",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Lorsqu’il effectue l’activité **Bousculade**, il peut remplacer le test d’_Athlétisme_ par un test de _Roublardise_.\\n- Lorsqu’il est dissimulé d’une créature, il se voit conférer l’avantage à ses tests de _Roublardise_ dirigés contre cette créature.\\n- Il peut prendre le double du temps nécessaire afin d’accomplir une tâche nécessitant un test de _Roublardise_, par exemple crocheter une serrure, activer ou désamorcer un piège, ou encore saboter un mécanisme. Cela lui permet de dissimuler le méfait, ce qui afflige du désavantage les tests de _Perception_ et d’_Investigation_ effectués afin de découvrir le méfait.",
@@ -661,7 +661,7 @@
   },
   {
     "Id": "0183dff3-56a2-41a0-a7fa-00ec83a417c5",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "naturalisme",
     "DisplayName": "Naturalisme",
     "Description": "Le personnage possède de vastes connaissances à propos des créatures naturelles, par exemple les animaux, les plantes, les limons, les dragons et les monstruosités. Il se voit conférer l’avantage à ses tests de _Connaissance_ envers ces créatures et reçoit de l’information supplémentaire lorsqu’il réussit un de ces tests. Cette information correspond généralement aux habiletés de cette créature, à quel point celle-ci est dangereuse pour son groupe, la signification de ses comportements, les dangers naturels de son habitat, et quelles ressources de valeur peuvent être récoltées sur cette créature.\\n\\nÉgalement, il possède de vastes connaissances à propos des matériaux. Il reconnait instantanément la majorité des matériaux ainsi que leur rareté, sans nécessiter de test de _Connaissance_, à la discrétion du maître de jeu. Il se voit conférer l’avantage à ses tests de _Connaissance_ afin de recevoir de l’information supplémentaire à propos de ces matériaux.",
@@ -671,7 +671,7 @@
   },
   {
     "Id": "b04e701f-68f3-47d1-8358-e43bab3339cd",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "observateur",
     "DisplayName": "Observateur",
     "Description": "Le personnage ne peut être surpris lorsqu’il est conscient. Également, permet au personnage de comprendre ce qu’une créature dit seulement en interprétant les mouvements de sa bouche. Celle-ci doit parler une langue que le personnage comprend.",
@@ -681,7 +681,7 @@
   },
   {
     "Id": "b190ffb5-83f8-4ecb-bccc-2974dfea43e8",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "parade",
     "DisplayName": "Parade",
     "Description": "Lorsque le personnage manie une arme de finesse, qu’il ne manie aucune autre arme et qu’il est victime d’une attaque, alors il peut utiliser sa réaction afin d’ajouter à son Esquive le bonus conféré par cette arme aux tests d’attaque.",
@@ -691,7 +691,7 @@
   },
   {
     "Id": "ebe9fa7b-db1d-4d8e-bd35-c4d30a4e1c15",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "philologie",
     "DisplayName": "Philologie",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Le personnage peut désormais apprendre les langues anciennes.\\n- Il apprend une langue de son choix.\\n- Lorsqu’il écoute une discussion effectuée dans une langue qu’il ne connait pas, il identifie néanmoins cette langue si elle appartient à la même famille linguistique qu’une des langues qu’il connait. Il peut également analyser un texte rédigé dans une langue qu’il ne connait pas pendant au moins une minute. S’il connait une langue partageant son alphabet avec la langue de rédaction de ce texte, alors il identifie la langue de rédaction du texte.",
@@ -701,7 +701,7 @@
   },
   {
     "Id": "e83ac9be-35b9-42b0-972e-b58d6da0abcc",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "presence-terrifiante",
     "DisplayName": "Présence terrifiante",
     "Description": "Par une action, permet au personnage d’effectuer un test de _Performance_. Toute créature qu’il peut atteindre par une attaque de mêlée doit effectuer un test opposé d’_Intuition_. Lorsqu’une créature échoue le test opposé, les cases que le personnage peut atteindre par une attaque de mêlée sont considérées comme du terrain difficile pour cette créature jusqu’au début du prochain tour du personnage. Les créatures immunisées à la peur ou au terrain difficile ne sont pas affectées par cette capacité.\\n\\nÉgalement, lorsque le personnage inflige des points de dégâts à une créature pendant son tour, alors ses tests de _Performance_ contre cette créature se voient conférer l’avantage jusqu’à la fin de son prochain tour.",
@@ -711,7 +711,7 @@
   },
   {
     "Id": "529612a6-f0ad-4397-8304-e63b0172c554",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "robustesse-accrue",
     "DisplayName": "Robustesse accrue",
     "Description": "Confère au personnage un bonus permanent de 10 points de Vitalité. Lorsque le personnage ne porte aucune armure, il ajoute le tiers (33 %) de son rang de _Résistance_ à son Esquive. Il peut bénéficier de cette capacité tout en utilisant un bouclier.",
@@ -721,7 +721,7 @@
   },
   {
     "Id": "6650c2e8-a16e-4ca6-82ab-7bc367078b48",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "societe",
     "DisplayName": "Société",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Il se voit conférer l’avantage à ses tests de _Connaissance_ lorsqu’il tente de reconnaître un élément historique ou culturel, par exemple un symbole religieux, un blason ou une insigne identifiant une entité géopolitique telle un ordre, une nation, une guilde, une entreprise, etc.\\n- Il se voit conférer l’avantage à ses tests de _Tromperie_ lorsqu’il tente d’utiliser cet élément au sein d’un déguisement et d’agir comme un membre de cette société ou de cet ordre religieux.\\n- Lorsqu’il entend une créature parler une langue qu’il connait, il peut déterminer d’où cette créature. Il se voit conférer l’avantage à ses tests de _Connaissance_ afin de détermine la provenance approximative d’une créature qu’il entend parler une langue qu’il ne connait pas.",
@@ -731,7 +731,7 @@
   },
   {
     "Id": "551c5475-edaf-4f7b-b310-d1c8fa2a9968",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "survivalisme",
     "DisplayName": "Survivalisme",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Il réussit automatiquement ses tests de _Survie_ lorsqu’il effectue une tâche banale sans posséder les outils nécessaires et en utilisant les ressources du milieu naturel et sauvage dans lequel il se trouve, par exemple allumer un feu, fabriquer un abri ou cuisiner.\\n- Il se voit conférer l’avantage à ses tests de _Survie_ afin de déterminer l’espèce d’une créature en examinant les traces de celle-ci.\\n- Pendant une halte, il peut utiliser des outils de bricoleur afin d’améliorer un objet de type piège, par exemple des billes, des chausse-trapes ou un piège de chasse. Il doit utiliser des matériaux d’une valeur égale à celle de l’objet afin de l’améliorer. Le personnage choisit un nombre compris entre 1 et son rang de _Survie_, et doit réussir un test de _Survie_ de degré de difficulté égal au double de ce nombre. Si le test est réussi, le nombre choisi est ajouté au degré de difficulté de l’objet.",
@@ -741,7 +741,7 @@
   },
   {
     "Id": "8d037c1c-515f-4689-99b0-fb689f81cada",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "suspicion",
     "DisplayName": "Suspicion",
     "Description": "Lorsque le personnage effectue un test d’_Intuition_ afin de déterminer si une créature dit la vérité, avant d’en connaître le résultat, le joueur peut rejouer le test et il doit utiliser le nouveau résultat.\\n\\nÉgalement, le personnage peut observer ou interagir avec une créature pendant une minute afin de déterminer son humeur, ou si elle est influencée par un effet surnaturel. Il peut également utiliser cette capacité par une action s’il peut examiner de près la cible en la tâtant et en sentant son odeur.",
@@ -751,7 +751,7 @@
   },
   {
     "Id": "b3afc61d-6481-4687-85f4-67e0a5e532b5",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "tir-rapide",
     "DisplayName": "Tir rapide",
     "Description": "Permet au personnage d’effectuer l’activité **Viser et tirer** au coût d’une seule action plutôt que deux lorsqu’il utilise une arme possédant la propriété **Munition**. Également, grâce à la rapidité de ses tirs, il ne déclenche pas d’attaque d’opportunité lorsqu’il effectue une attaque à distance en utilisant une de ces armes.",
@@ -761,7 +761,7 @@
   },
   {
     "Id": "a6799aa2-2621-4290-9f84-125d54e9f9a0",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "tissu-de-mensonges",
     "DisplayName": "Tissu de mensonges",
     "Description": "Lorsque le personnage échoue un test de _Tromperie_, si le test n’avait pas été effectué avec désavantage, alors il peut réessayer le test et doit utiliser le nouveau résultat. Également, lorsqu’il tente de faire croire à une créature qu’il est en train d’accomplir une tâche, son test de _Tromperie_ se voit conférer un bonus égal à la moitié du rang de la compétence associée à cette tâche.",
@@ -771,7 +771,7 @@
   },
   {
     "Id": "cd1ea46d-28a5-41e9-a518-e503ef7eb6a4",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "tolerance-a-l-alcool-ii",
     "DisplayName": "Tolérance à l’alcool II",
     "Description": "Augmente de manière permanente de +1 le seuil de tolérance à l’alcool du personnage. La durée de ses gueules de bois est également réduite de moitié.",
@@ -781,7 +781,7 @@
   },
   {
     "Id": "9a6c2ba3-040b-4bdc-86ad-0b4631b353dd",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "acceleration",
     "DisplayName": "Accélération",
     "Description": "Confère au personnage un bonus permanent de 2 points de mouvement",
@@ -791,7 +791,7 @@
   },
   {
     "Id": "f8e4819e-aeaa-4fd5-98f0-44fb1e57a177",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "apothicairerie",
     "DisplayName": "Apothicairerie",
     "Description": "Le personnage peut désormais apprendre les remèdes avancés. Cette liste est définie dans les ouvrages spécifiques aux univers.\\n\\nÉgalement, permet au personnage de remplacer un remède par des charges d’une trousse de premiers soins afin de soigner une condition temporaire affligeant une créature. Il doit compléter une nuit de sommeil afin de réutiliser cette capacité. Par une action, en dépensant 15 points d’Énergie et 5 charges d’une trousse de premiers soins, il peut produire les effets d’un remède de base. Par deux actions, en dépensant 30 points d’Énergie et les 10 charges d’une trousse de premiers soins, il peut produire les effets d’un remède avancé.",
@@ -801,7 +801,7 @@
   },
   {
     "Id": "52ec3557-cc83-4d7d-b512-cb66ea45af6e",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "astuce",
     "DisplayName": "Astuce",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Lorsqu’il peut effectuer une attaque d’opportunité en réaction, alors il peut substituer cette attaque par l’activité **Objet**.\\n- Il peut tenter de dérober un objet tenu par une autre créature, ou porté librement par celle-ci. Il doit être dissimulé aux yeux de cette créature. Il effectue un test de _Roublardise_ opposé à un test de _Roublardise_ de cette créature. Le test du personnage est affligé du désavantage s’il tente de lui dérober un objet qu’elle tient dans sa main, telle une arme ou un bouclier. Si le test du personnage réussit, la créature lâche l’objet. Si le personnage a une main libre, il peut s’emparer de l’objet, sinon celui-ci tombe simplement au sol.\\n- Il peut tenter de dérober le focus ou les composantes matérielles d’une créature en train de canaliser un pouvoir en réaction située à 1,5 mètres de sa position. Il effectue un test de _Roublardise_ opposé au test d’_Occultisme_ de la créature en train de canaliser. Le test de _Roublardise_ est affligé du désavantage si la créature voit le personnage. Si le test de _Roublardise_ réussit, l’incantation échoue et le pouvoir n’est pas canalisé. La créature perd les actions utilisées afin de canaliser le pouvoir et les points d’Énergie dépensés. Le personnage doit compléter une nuit de sommeil afin de réutiliser cette capacité.",
@@ -811,7 +811,7 @@
   },
   {
     "Id": "2ae4d68b-1e8b-41d9-b998-d07789b9da84",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "attaque-incapacitante",
     "DisplayName": "Attaque incapacitante",
     "Description": "Lorsque le personnage tente une attaque neutralisante, il peut dépenser 20 points d’Énergie plutôt que 10. Si l’attaque réussit, la cible doit effectuer un jet de sauvegarde de _Résistance_ de degré de difficulté égal au résultat du test de l’attaque réussie. Si la cible possède déjà un niveau de Fatigue ou plus, le degré de difficulté réduit de 5 par niveau de Fatigue. Si elle possède déjà trois niveaux de Fatigue ou plus, elle réussit automatiquement son jet de sauvegarde.",
@@ -821,7 +821,7 @@
   },
   {
     "Id": "9afeeaeb-bfa0-49c0-923a-330271aac9a8",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "attaque-magique",
     "DisplayName": "Attaque magique",
     "Description": "Permet au personnage d’infuser son arme d’énergie magique par une action afin d’ajouter des points de dégâts magiques infligés par la prochaine attaque réussie en maniant cette arme. Le nombre de points de dégâts ajoutés doit être compris entre 1 et la Puissance du personnage, et il doit dépenser un nombre de points d’Énergie égal au nombre de points de dégâts ajoutés.",
@@ -831,7 +831,7 @@
   },
   {
     "Id": "eb3c4b6d-6569-46e4-9aab-7e5d426bb977",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "attaque-precise",
     "DisplayName": "Attaque précise",
     "Description": "Lorsque le personnage effectue une attaque de mêlée en maniant une arme à une main ou une arme versatile en la tenant à une main, il peut le faire en utilisant deux actions plutôt qu’une. Il choisit une des options suivantes : il confère l’avantage à son test d’attaque ou ajoute un bonus de +5 aux points de dégâts infligés si l’attaque réussit. Il ne peut utiliser cette capacité s’il a effectué l’activité **Déplacement** pendant le même tour, et il ne peut effectuer cette activité pendant le même tour après avoir utilisé cette capacité. Il peut tout de même effectuer un **Pas prudent**.",
@@ -841,7 +841,7 @@
   },
   {
     "Id": "e3c63955-253f-4cc0-ba8a-c506df45c567",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "attaque-sanglante",
     "DisplayName": "Attaque sanglante",
     "Description": "Ajoute 1d6 points de dégâts supplémentaires aux attaques sournoises du personnage. De plus, lorsqu’il réussit une attaque sournoise, la cible est affligée d’une hémorragie. Au début de chacun de ses tours, la cible doit effectuer un jet de sauvegarde de _Résistance_ de degré de difficulté égal au résultat du test de l’attaque réussie (-1 cumulable pour chaque tour subséquent). Si elle réussit le test, alors l’hémorragie cesse, sinon elle reçoit 2d6 points de dégâts létaux. L’effet d’hémorragie n’est pas cumulable.",
@@ -851,7 +851,7 @@
   },
   {
     "Id": "df8aeb6c-ccef-4a20-b99d-9f895d1845fe",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "attaques-multiples",
     "DisplayName": "Attaques multiples",
     "Description": "Permet au personnage d’effectuer plusieurs attaques avec le même membre pendant son tour. S’il possède le talent <u>Tir rapide</u>, il peut effectuer plusieurs fois l’activité **Viser et tirer** pendant son tour. La pénalité cumulative de -5 aux attaques subséquentes à la première s’applique autant aux attaques de mêlée qu’aux attaques à distance.",
@@ -861,7 +861,7 @@
   },
   {
     "Id": "838915a4-23c1-4cd2-96b2-0ef4f8487897",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "bricolage-naturel",
     "DisplayName": "Bricolage naturel",
     "Description": "Lorsqu’il se trouve en milieu naturel et sauvage, le personnage peut fabriquer un camouflage en utilisant les ressources du milieu en 10 minutes. S’il utilise une trousse de déguisement, il n’a besoin que d’une minute afin de fabriquer le camouflage. Il se voit conférer l’avantage à ses tests de _Furtivité_ lorsqu’il porte le camouflage en se trouvant dans le milieu depuis lequel les ressources du camouflage proviennent.\\n\\nÉgalement, s’il possède le temps et les ressources nécessaires, il peut utiliser des outils de bricoleur afin d’améliorer les fortifications d’un lieu tel un campement, un champ de bataille ou un bastion. Il choisit un nombre compris entre 1 et son rang de _Survie_, et doit réussir un test de _Survie_ de degré de difficulté égal au double de ce nombre. Si le test est réussi, le nombre choisi est ajouté à la Défense des fortifications du lieu. Les fortifications se voient également conférer un nombre de points de Résistance temporaires égal au score de la Sensibilité du personnage. Enfin, si ces fortifications nécessitent un test afin d’être brisées, ce nombre est ajouté au degré de difficulté du test.",
@@ -871,7 +871,7 @@
   },
   {
     "Id": "6168339a-4e9a-4c45-b012-97192d93cc6e",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "chargement-rapide",
     "DisplayName": "Chargement rapide",
     "Description": "Permet au personnage d’effectuer l’activité **Chargement** au coût d’une seule action plutôt que deux lorsqu’il charge une arme possédant la propriété **Munition**. Également, lorsqu’une charge une arme, il ne déclenche pas d’attaque d’opportunité.",
@@ -881,7 +881,7 @@
   },
   {
     "Id": "61c8b075-341f-4123-97c1-33e23f0505a5",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "chasse-mage",
     "DisplayName": "Chasse-mage",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Lorsqu’il blesse une créature se concentrant sur un pouvoir, alors le jet de sauvegarde de _Discipline_ de celle-ci afin de maintenir sa concentration est affligé du désavantage.\\n- Ses jets de sauvegarde de _Discipline_ contre les pouvoirs canalisés par une créature qu’il peut atteindre par une attaque de mêlée se voient conférer l’avantage.\\n- Lorsqu’une créature qu’il peut atteindre par une attaque de mêlée canalise un pouvoir, alors celle-ci déclenche une attaque d’opportunité de la part du personnage.",
@@ -891,7 +891,7 @@
   },
   {
     "Id": "bd13589c-f6c2-4ea2-a11f-c23bf80cdff9",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "critique-superieur",
     "DisplayName": "Critique supérieur",
     "Description": "Le personnage obtient désormais un coup critique lorsque la somme des dés de son test d’attaque égale 16. Les probabilités qu’il inflige un coup critique sont désormais de 17 %, ou de 21 % si son score de Coordination est supérieur ou égal à 20.\\n\\nÉgalement, lorsqu’un coup critique du personnage est confirmé, on ajoute une seconde fois sa Force (test de _Mêlée_), sa Précision (test d’_Orientation_) ou sa Puissance (test d’_Occultisme_) aux points de dégâts infligés, ce qui double effectivement les dégâts.",
@@ -901,7 +901,7 @@
   },
   {
     "Id": "48f8909f-b955-404d-8c86-5094a2217f57",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "derobade",
     "DisplayName": "Dérobade",
     "Description": "Lorsque le personnage utilise sa réaction afin d’ajouter à son Esquive le bonus conféré par cette arme aux tests d’attaque et que l’attaque le ciblant réussit, les points de dégâts reçus sont réduits de moitié. Également, il peut utiliser sa réaction afin d’ajouter le bonus conféré aux tests d’attaque par son arme à ses jets de sauvegarde d’_Acrobaties_.",
@@ -911,7 +911,7 @@
   },
   {
     "Id": "d3939a6e-69a0-4540-99f3-02533fbc9d49",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "destruction",
     "DisplayName": "Destruction",
     "Description": "Une fois par round, en effectuant une attaque en maniant arme improvisée, permet au personnage de dépenser 10 points d’Énergie afin de doubler les points de Résistance perdus par son arme, ce qui lui permet de la briser plus rapidement. Également, lorsque le personnage utilise cette capacité et qu’il brise une arme improvisée sur une créature alors celle-ci est assommée jusqu’à la fin de son prochain tour si elle échoue le jet de sauvegarde de _Résistance_.",
@@ -921,7 +921,7 @@
   },
   {
     "Id": "c6f870d9-5460-4cf9-bbe9-afc32fe99c12",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "discernement",
     "DisplayName": "Discernement",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Lorsqu’il réussit un test d’_Intuition_ afin de déterminer si une créature dit la vérité, ses tests d’Intellect, de Présence et de Sensibilité contre cette créature se voient conférer l’avantage pendant la prochaine minute, tant qu’il peut voir les yeux et la bouche de la créature.\\n- Une fois par jour, en discutant pendant 10 minutes avec une créature affectée par un effet ou un pouvoir la contraignant à agir d’une certaine manière ou ayant modifié sa mémoire, le personnage permet à la créature de réessayer le jet de sauvegarde contre l’effet ou le pouvoir.",
@@ -931,7 +931,7 @@
   },
   {
     "Id": "e58ab7a1-163f-413f-b36a-2a6eeb3d29dd",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "double-attaque",
     "DisplayName": "Double attaque",
     "Description": "Lorsqu’il effectue une attaque avec sa deuxième main, il peut ajouter la totalité de sa Force ou de sa Précision aux points de dégâts infligés plutôt que seulement la moitié. Également, lorsqu’il effectue deux attaques subséquentes, par exemple avec sa main principale puis sa deuxième main (ou l’inverse), alors la pénalité affligeant le test de sa deuxième attaque est de -2 plutôt que de -5. S’il effectue une troisième attaque, alors la pénalité affligeant le test de cette troisième attaque est de -5 plutôt que de -10.",
@@ -941,7 +941,7 @@
   },
   {
     "Id": "a0a45290-9014-4213-a161-7e253f786bfe",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "embuscade",
     "DisplayName": "Embuscade",
     "Description": "Lorsque le personnage réussit une attaque en étant dissimulé, il peut rouler deux fois les dégâts et conserver le résultat de son choix. Également, lorsque le personnage ou une créature effectue un test de _Furtivité_, le personnage peut utiliser sa réaction afin d’effectuer immédiatement l’activité **Pas prudent** en action libre. Il se déplace en direction de la créature et se jette au sol en position renversée. Si la créature voit le personnage faire, elle peut également se jeter au sol en action libre. Les créatures et personnages se jetant au sol peuvent ensuite rejouer leur test de _Furtivité_ et conserver le résultat de leur choix.",
@@ -951,7 +951,7 @@
   },
   {
     "Id": "73a8e8dc-d6ac-4650-bcd2-61a54f9a1e06",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "endurance-superieure",
     "DisplayName": "Endurance supérieure",
     "Description": "Confère au personnage un bonus permanent de 15 points d’Énergie. Également, lorsque les points de Vitalité du personnage chutent à 0, alors il peut utiliser sa réaction afin de réajuster ses points de Vitalité à 1 et recevoir le double de l’excédent en points de dégâts non létaux. Il doit avoir moins de trois niveaux de Fatigue afin d’utiliser cette capacité et acquiert instantanément trois niveaux de Fatigue en l’utilisant. Il doit compléter une nuit de sommeil afin de réutiliser cette capacité.",
@@ -961,7 +961,7 @@
   },
   {
     "Id": "d1eb3585-3262-4d5d-b517-f0b58f96e0ca",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "entrainement-iii",
     "DisplayName": "Entraînement III",
     "Description": "Augmente de manière permanente de +2 le score d’un attribut du personnage dont le score était inférieur ou égal à 15 avant l’acquisition de ce talent.",
@@ -971,7 +971,7 @@
   },
   {
     "Id": "529cd0a9-c28b-43bf-ba64-b97582f4906c",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "erudition",
     "DisplayName": "Érudition",
     "Description": "Lorsque le personnage réussit un test de _Connaissance_ à propos d’une créature naturelle, il acquiert les capacités suivantes jusqu’à la fin de la journée. Il peut également acquérir ces capacités contre une créature construite en réussissant un test de _Connaissance_ à propos de cette créature.\\n\\n- Il ne peut être surpris par cette créature ou par une autre créature de la même espèce.\\n- Lorsqu’il est victime d’un coup critique de cette créature ou d’une autre créature de la même espèce, il peut utiliser sa réaction afin de transformer cette attaque en réussite non critique.\\n- Une fois par round, lorsqu’il réussit une attaque dirigée contre cette créature ou une autre créature de la même espèce, il ajoute à son attaque un nombre de points de dégâts égal à son modificateur d’Intellect (minimum 1).\\n\\nIl peut également examiner une structure ou un objet inanimé pendant 10 minutes. S’il réussit un test de _Connaissance_ à propos de cette structure ou de cet objet, il peut discerner grossièrement l’âge de celui-ci ainsi que les points faibles des matériaux le composant. Lorsqu’il endommage cet objet ou cette structure, que cela soit en attaquant ses points faibles ou en utilisant une substance (par exemple, de l’acide sur du métal), il maximise les dégâts infligés en remplaçant les dés de dégâts par leur valeur maximale.",
@@ -981,7 +981,7 @@
   },
   {
     "Id": "5430282f-a8de-4941-8325-48ddd98ec95c",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "extraction-du-poison",
     "DisplayName": "Extraction du poison",
     "Description": "Le personnage acquiert les capacités suivantes. Il doit posséder du charbon de bois activé afin de pouvoir utiliser ces capacités.\\n\\n- Il peut extraire un poison naturel affligeant une créature empoisonnée. Il traite la créature pendant une minute et consomme une charge d’une trousse de premiers soins. Il effectue un test de _Médecine_ contre le degré de difficulté du poison et dépense 15 points d’Énergie. S’il réussit le test, le poison est extrait et détruit, et la créature est soignée du poison.\\n- S’il a acquis le talent <u>Apothicairerie</u>, il peut consommer une charge supplémentaire de sa trousse de premiers soins afin de concocter un antidote à usage unique contre le poison extrait.\\n- S’il a acquis le talent <u>Toxicologie</u> et qu’il possède une fiole vide, alors il peut extraire la dose de poison dans cette fiole. La dose n’est pas détruite et le personnage peut réutiliser le poison par la même méthode qu’il a été utilisé à l’origine.\\n- S’il possède une trousse d’empoisonneur et une fiole vide, il peut extraire le venin d’une créature venimeuse. Par une action, il effectue un test de _Médecine_ contre le degré de difficulté du poison et dépense 15 points d’Énergie. S’il réussit le test, le venin est extrait dans cette fiole, ce qui lui permet de l’utiliser.",
@@ -991,7 +991,7 @@
   },
   {
     "Id": "0b26870f-ef7c-4f39-8506-08a9ad67130c",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "focus",
     "DisplayName": "Focus",
     "Description": "Permet au personnage d’entrer en état de focus par une action. Il peut revenir à son état normal à tout moment par une action libre. En état de focus, s’il n’est pas aveuglé, il peut ajouter 1d4+1 à ses jets de sauvegarde d’_Acrobaties_ ainsi qu’à ses tests de _Perception_. À la fin de chaque tour passé en état de focus, il dépense un nombre de points d’Énergie égal au total des bonus ajoutés à ses jets. Également, lorsqu’il est en état de focus, les attaques des créatures dissimulées dirigées vers le personnage ne se voient pas conférer l’avantage.",
@@ -1001,7 +1001,7 @@
   },
   {
     "Id": "da4c2a53-1407-4a7e-9ccb-822ba8cda6c6",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "force-incroyable",
     "DisplayName": "Force incroyable",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Lorsqu’il est dans l’eau, le personnage peut traîner une autre créature avec lui sans subir de pénalité à sa vitesse de nage. La taille de la créature doit être d’au plus une catégorie supérieure à celle du personnage.\\n- Permet au personnage d’escalader des surfaces horizontales, tel un plafond, comme si elles étaient verticales.\\n- Lorsque le personnage manie une arme versatile à une main, il peut rouler les dégâts comme s’il maniait l’arme à deux mains. Lorsqu’il effectue l’activité **Attaque** pendant son tour, il peut dépenser 5 points d’Énergie afin d’utiliser l’arme comme si elle était tenue à deux mains, ce qui lui permet par exemple d’effectuer une <u>Attaque brutale</u> en maniant une arme versatile à une seule main lorsqu’il en fait ainsi. Cela lui empêche en revanche par exemple d’effectuer une <u>Attaque précise</u>, puisque l’arme est considérée comme une arme à deux mains.\\n- Le personnage peut combattre en maniant plusieurs armes n’étant pas des armes légères sans subir de pénalité à ses tests d’attaque.",
@@ -1011,7 +1011,7 @@
   },
   {
     "Id": "8b15a325-2337-48fb-8bfc-5caf9888f0d3",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "fourberie",
     "DisplayName": "Fourberie",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Lorsqu’il doit effectuer un test d’_Intuition_ opposé à un test de _Tromperie_, il peut substituer son rang d’_Intuition_ par son rang de _Tromperie_.\\n- Il se voit conférer l’avantage à ses tests d’_Intuition_ opposés à un test de _Tromperie_.\\n- Par une action, il peut tenter une feinte en combat en dépensant 15 points d’Énergie. Si la cible échoue un test d’_Intuition_ opposé au test de _Tromperie_ du personnage, alors elle déclenche une attaque d’opportunité de la part des alliés du personnage. Elle est ensuite immunisée contre cette capacité pendant les 24 prochaines heures.",
@@ -1021,7 +1021,7 @@
   },
   {
     "Id": "6a6dd229-9fd8-47da-9356-3e2a445ac41f",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "frappe-precise",
     "DisplayName": "Frappe précise",
     "Description": "Le personnage inflige désormais 1d8 points de dégâts contondants non létaux lorsqu’il effectue une attaque avec un membre de son corps. Également, lorsqu’il effectue une attaque avec un membre de son corps, il peut le faire en utilisant deux actions plutôt qu’une. Il choisit une des options suivantes : il confère l’avantage à son test d’attaque ou ajoute un bonus de +5 aux points de dégâts infligés si l’attaque réussit. Il ne peut utiliser cette capacité s’il a effectué l’activité **Déplacement** pendant le même tour, et il ne peut effectuer cette activité pendant le même tour après avoir utilisé cette capacité. Il peut tout de même effectuer un **Pas prudent**.",
@@ -1031,7 +1031,7 @@
   },
   {
     "Id": "1c767248-a600-4e8a-be74-cfa796b31912",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "initiative-superieure",
     "DisplayName": "Initiative supérieure",
     "Description": "Confère un bonus permanent de +3 à l’Initiative du personnage. Également, le personnage se voit conférer l’avantage à ses tests d’Initiative.",
@@ -1041,7 +1041,7 @@
   },
   {
     "Id": "5cb294f1-e353-48c5-8cdf-6a25ac4c1cd7",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "interrogateur",
     "DisplayName": "Interrogateur",
     "Description": "Lorsque le personnage réussit un test de _Performance_ afin d’intimider une créature, alors lui et ses alliés se voient conférer l’avantage à leurs tests de _Diplomatie_, d’_Intuition_ et de _Tromperie_ contre cette créature pendant la prochaine minute.\\n\\nÉgalement, lorsqu’il fait chuter à 0 les points de Vitalité d’une créature, permet au personnage d’effectuer un test de _Performance_ par une action et en dépensant 15 points d’Énergie. Toute créature ennemie située à 3 mètres de cette créature doit effectuer un test opposé d’_Intuition_. Une créature échouant le test opposé est apeurée par le personnage jusqu’à la fin du prochain tour du personnage.",
@@ -1051,7 +1051,7 @@
   },
   {
     "Id": "7d56ce13-3471-47fe-b159-04f4399a1378",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "lancer-precis",
     "DisplayName": "Lancer précis",
     "Description": "Permet au personnage de dégainer une arme de jet par une action libre lorsqu’il effectue l’activité **Attaque**. Également, lorsqu’il effectue une attaque en lançant une arme de jet, il peut le faire en utilisant deux actions plutôt qu’une. Il choisit une des options suivantes : il confère l’avantage à son test d’attaque ou ajoute un bonus de +5 aux points de dégâts infligés si l’attaque réussit. Il ne peut utiliser cette capacité s’il a effectué l’activité **Déplacement** pendant le même tour, et il ne peut effectuer cette activité pendant le même tour après avoir utilisé cette capacité. Il peut tout de même effectuer un **Pas prudent**.",
@@ -1061,7 +1061,7 @@
   },
   {
     "Id": "9ef95957-fa21-4091-91d7-9716cbfa8c45",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "magie-guerriere",
     "DisplayName": "Magie guerrière",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Il se voit conférer l’avantage à ses jets de sauvegarde de _Discipline_ afin de maintenir sa concentration.\\n- Lorsqu’une créature hostile provoque une attaque d’opportunité de la part du personnage, alors celui-ci peut substituer l’attaque de mêlée par l’activité **Canaliser** afin de canaliser un pouvoir nécessitant une ou deux actions contre cette créature.\\n- Le personnage n’a plus besoin d’avoir une main libre afin de d’exécuter la composante somatique d’un pouvoir. Cela lui permet par exemple de canaliser un pouvoir ne nécessitant qu’une composante somatique, ou une composante somatique et verbale, tout en maniant une arme dans une main et en tenant un bouclier dans l’autre. Toutefois, il a encore besoin d’avoir une main de libre afin d’exécuter la composante matérielle ou focus d’un pouvoir.",
@@ -1071,7 +1071,7 @@
   },
   {
     "Id": "a049c1cc-db23-469e-9e28-678bc676ef18",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "magie-precise",
     "DisplayName": "Magie précise",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- La portée des pouvoirs de lancer qu’il canalise est doublée.\\n- Lorsqu’il canalise un pouvoir de lancer, le pouvoir ignore le demi-abri et l’abri aux trois-quarts des créatures ciblées.\\n- En canalisant un pouvoir de lancer, le personnage peut dépenser des tranches de 10 points d’Énergie supplémentaires. Pour chaque tranche dépensée, il remplace un dé de dégâts par sa valeur maximale. Il peut dépenser un nombre maximal de tranches égal à son tiers de personnage.",
@@ -1081,7 +1081,7 @@
   },
   {
     "Id": "ce5f4389-e3cb-46cf-8063-9785e4273d09",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "maitre-artisan",
     "DisplayName": "Maître-artisan",
     "Description": "Le personnage désigne deux types d’outils d’artisan supplémentaires de son choix parmi ceux qu’il est formé à utiliser et développe une expertise avec les types d’outils choisis. Lorsqu’il utilise ces types d’outils, il peut conférer l’avantage à son test d’_Artisanat_ ou ajouter une seconde fois son modificateur de Coordination à son test.\\n\\nLe personnage peut également désigner un apprenti. Cet apprenti doit être une créature intelligente dont le modificateur de Coordination est supérieur à 0. Le personnage ne peut avoir qu’un seul apprenti, et l’apprenti ne peut avoir qu’un seul maître. Si une des deux parties brise le lien, alors l’autre en est également libérée.\\n\\nLorsque l’apprenti aide son maître à effectuer un test d’_Artisanat_, il confère l’avantage ainsi qu’un bonus de +2 au test de son maître. Lorsque le maître aide son apprenti à effectuer un test d’_Artisanat_, il confère l’avantage ainsi qu’un bonus égal à la moitié de son rang d’_Artisanat_ au test de son apprenti.",
@@ -1091,7 +1091,7 @@
   },
   {
     "Id": "15dbf502-b52c-4706-8cd3-830ea114ecb3",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "mener-par-l-exemple",
     "DisplayName": "Mener par l’exemple",
     "Description": "Après avoir effectué une action, le personnage peut utiliser une action afin d’inspirer d’autres créatures à effectuer la même action que lui. Il sélectionne un nombre de créatures inférieur ou égal à son modificateur de Sensibilité (minimum 1) qu’il peut voir situées à 9 mètres ou moins de sa position. Ces créatures se voient conférer l’avantage à leur prochain test afin d’effectuer la même action que le personnage, par exemple attaquer un ennemi commun ou traverser un gouffre. Il dépense 5 points d’Énergie par créature sélectionnée.\\n\\nÉgalement, il peut interagir de manière continue pendant 10 minutes avec une autre créature qui peut l’entendre et la comprendre afin de la charmer. Si celle-ci échoue un jet de sauvegarde d’_Intuition_ opposé à un test de _Diplomatie_ du personnage, alors celle-ci est charmée par celui-ci pendant un nombre de minutes égal au modificateur de Sensibilité du personnage (minimum 1 minute). L’effet prend fin si le personnage ou un allié effectue une action hostile contre la créature. Lorsque l’effet cesse, la créature ne sait pas qu’elle a été charmée. Si elle réussit le test ou lorsque l’effet cesse, elle est immunisée à cette capacité pendant les 24 prochaines heures.",
@@ -1101,7 +1101,7 @@
   },
   {
     "Id": "1fe38b6c-ea46-4188-8e46-9de387c0ff01",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "monture-de-combat",
     "DisplayName": "Monture de combat",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Lorsqu’il combat sur une monture, il se voit conférer l’avantage à ses tests d’attaques de mêlée dirigées contre toute créature n’étant pas sur une monture et dont la catégorie de taille est inférieure à celle de sa monture.\\n- Si la monture du personnage est affectée par un effet nécessitant un jet de sauvegarde d’_Acrobaties_ afin de réduire de moitié les dégâts reçus, la monture ne reçoit aucun dégât si elle réussit le test, et ne reçoit que la moitié des dégâts si elle l’échoue.\\n- Lorsqu’une créature ennemie cible la monture du personnage par une attaque ou un pouvoir, le personnage peut utiliser sa réaction afin d’épargner sa monture en devenant la cible de l’attaque ou du pouvoir.\\n- Lorsque le personnage est ciblé par un pouvoir bénéfique, il peut également faire bénéficier sa monture des effets de ce pouvoir, si applicable (à la discrétion du maître de jeu).",
@@ -1111,7 +1111,7 @@
   },
   {
     "Id": "90ae0b7c-fcde-4bf0-a11c-1858fe8a9121",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "mythologie",
     "DisplayName": "Mythologie",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Lorsqu’il voit un artéfact magique, il reconnait la rareté de cet objet. S’il s’agit d’un objet légendaire, alors il identifie le nom de l’objet ainsi que son précédent propriétaire, à la discrétion du maître de jeu. Il se voit également conférer l’avantage à ses tests de _Connaissance_ afin d’obtenir plus d’informations au sujet de cet objet. Il peut aussi utiliser cette capacité sans voir l’objet, si l’objet est évoqué ou décrit de manière qu’il puisse se constituer un modèle mental fidèle à l’objet.\\n- Il possède un savoir détaillé à propos des créatures issues d’une autre réalité ou dimension. Lorsqu’il fait appel à ses connaissances, il peut apprendre certaines capacités d’une de ces créatures, par exemple ses habiletés, ses attaques habituelles et si elle est considérée dangereuse pour lui et son groupe.\\n- En étudiant un portail ouvert pendant une minute, il peut identifier si le portail mène vers une autre dimension ou non. Si le portail mène vers une autre dimension et qu’il connait celle-ci, il peut également l’identifier. S’il ne connait pas cette dimension, il se voit conférer l’avantage à ses tests de _Connaissance_ afin de l’identifier.",
@@ -1121,7 +1121,7 @@
   },
   {
     "Id": "fbaf3f0c-4bdb-406a-8533-7bf7f2e47384",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "obeissance-animale",
     "DisplayName": "Obéissance animale",
     "Description": "Le personnage peut désormais apprivoiser et dresser une bête de niveau 1/2 ou moins. Également, il peut lui apprendre des tours complexes tels trouver un objet précis dans un sac, surveiller un lieu, suivre une piste, etc.",
@@ -1131,7 +1131,7 @@
   },
   {
     "Id": "361e24f7-2a20-4f51-91c4-261e9a66ce12",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "onde-de-choc",
     "DisplayName": "Onde de choc",
     "Description": "Lorsque le personnage réussit une attaque brutale, la cible et toute créature se trouvant dans une case adjacente à l’impact (excluant le personnage) doit effectuer un jet de sauvegarde de _Résistance_ de degré de difficulté égal au résultat du test de l’attaque. Si une cible échoue le test, elle est renversée et étourdie jusqu’au début de son prochain tour. Si une créature située dans une case adjacente à l’impact échoue le test, elle reçoit également un nombre de points de dégâts non létaux égal à la moitié des points de dégâts reçus par la cible de l’attaque. Si l’attaque est un coup critique, que la cible obtient un échec critique à son jet de sauvegarde ou qu’elle échoue d’une différence de 5 ou plus le jet de sauvegarde, elle est assommée jusqu’à la fin de son prochain tour. Afin d’être affectée par cette capacité, la taille d’une créature doit être d’au plus d’une catégorie supérieure à la taille du personnage.",
@@ -1141,7 +1141,7 @@
   },
   {
     "Id": "d1a01a57-0d38-4fe0-8880-b65c8540a4ef",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "optimisation-magique",
     "DisplayName": "Optimisation magique",
     "Description": "Lorsque le personnage canalise un pouvoir, le degré de difficulté de son test d’_Occultisme_ est réduit de moitié. La dépense en points d’Énergie reste la même.",
@@ -1151,7 +1151,7 @@
   },
   {
     "Id": "bfac8572-62a0-4aea-b849-bf18cdf51f35",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "otage",
     "DisplayName": "Otage",
     "Description": "Lorsque le personnage agrippe une créature, les tests de ses attaques dirigées contre cette créature se voient conférer l’avantage. Les tests des attaques de cette créature dirigées contre le personnage sont affligés du désavantage. Également, lorsqu’il se trouve en situation de lutte avec une créature qu’il agrippe, il peut utiliser sa réaction afin de rediriger contre cette créature une attaque dirigée contre lui.",
@@ -1161,7 +1161,7 @@
   },
   {
     "Id": "b5d67a83-0b9f-4ad4-ab94-1459f1a0db73",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "poigne-de-fer",
     "DisplayName": "Poigne de fer",
     "Description": "Le personnage acquiert les capacités suivantes :\\r\\n- Lorsqu’il tente de désarmer un adversaire, son test se voit conférer l’avantage.\\r\\n- Lorsqu’il est ciblé par une tentative de désarmement, le test de son adversaire est affligé du désavantage.\\r\\n- Lorsqu’une créature qu’il agrippe tente de s’échapper, il peut utiliser sa réaction afin d’infliger le désavantage au test de cette créature.",
@@ -1171,7 +1171,7 @@
   },
   {
     "Id": "e88f5ba8-1509-46f7-9ea2-5dae93e22196",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "prediction",
     "DisplayName": "Prédiction",
     "Description": "Lorsque le personnage est victime d’une attaque, avant de savoir si celle-ci touche, il peut utiliser sa réaction et dépenser 15 points d’Énergie afin de tenter de prédire l’endroit où l’attaque touchera. Si le résultat de l’attaque est un succès, l’attaquant doit rejouer le test d’attaque et utiliser le nouveau résultat. Il peut utiliser cette capacité un nombre de fois égal à son modificateur d’Intellect (minimum 1) et doit compléter une nuit de sommeil afin de récupérer ces utilisations.",
@@ -1181,7 +1181,7 @@
   },
   {
     "Id": "8e01d2ca-d94d-4a68-ad72-fa4e6e670873",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "protection",
     "DisplayName": "Protection",
     "Description": "Lorsque le personnage porte un bouclier moyen ou lourd, il peut utiliser sa réaction afin d’ajouter à un de ses jets de sauvegarde d’_Acrobaties_ le bonus de Défense conféré par son bouclier. Lorsqu’il en fait ainsi en portant un bouclier lourd afin de réduire de moitié les points de dégâts reçus, il ne reçoit aucun point de dégâts s’il réussit le jet de sauvegarde, ou réduit de moitié les points de dégâts reçus s’il l’échoue.",
@@ -1191,7 +1191,7 @@
   },
   {
     "Id": "f3a9f04b-4503-47df-871b-f10f212244e8",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "provocation",
     "DisplayName": "Provocation",
     "Description": "Permet au personnage de provoquer des créatures situées à 9 mètres ou moins de sa position qui peuvent le voir et l’entendre par une action. Il peut cibler un nombre de créature égal à son modificateur de Présence (minimum 1). Chaque cible doit effectuer un test de _Discipline_ opposé à un test de _Performance_ du personnage. En cas d’échec du test de _Discipline_, une créature se voit affligée du désavantage à ses tests des attaques dirigées contre une cible autre que le personnage jusqu’à début du prochain tour du personnage. Les créatures immunisées aux charmes ne sont pas affectées par cette capacité.\\n\\nÉgalement, lorsque le personnage effectue une attaque avec une arme d’un type pour lequel il s’est spécialisé tel que décrit par le talent <u>Distraction</u>, il peut remplacer le test de _Mêlée_ ou d’_Orientation_ par un test de _Performance_. S’il obtient un coup critique en attaquant avec une arme d’un de ces types, il peut effectuer l’activité **Aider** en action libre immédiatement après l’attaque.",
@@ -1201,7 +1201,7 @@
   },
   {
     "Id": "a4eaa203-8705-4295-a66f-e211fc32243e",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "repli-defensif",
     "DisplayName": "Repli défensif",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Une fois par tour, lorsqu’il effectue l’activité **Défense**, il peut effectuer immédiatement ensuite l’activité **Pas prudent** en action libre.\\n- Lorsqu’il effectue l’activité **Attaque** pendant son tour, il ne provoque aucune attaque d’opportunité de la part de sa cible jusqu’à la fin de son tour.\\n- Bonus permanent d’un point de mouvement.",
@@ -1211,7 +1211,7 @@
   },
   {
     "Id": "376a2005-1cbd-4e4d-acd9-be47eeec49a7",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "resilience",
     "DisplayName": "Résilience",
     "Description": "Lorsque le personnage effectue un test de _Discipline_ en réaction afin d’atténuer les effets d’un pouvoir, il peut choisir de réduire le degré de difficulté. Celui-ci est alors réduit de 25% (multiplié par ¾). S’il décide de ne pas réduire le degré de difficulté et qu’il réussit tout de même le test, alors le personnage n’est tout simplement pas affecté par le pouvoir.",
@@ -1221,7 +1221,7 @@
   },
   {
     "Id": "642f3d54-ab28-4dbd-9ec3-33655365cd39",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "robustesse-superieure",
     "DisplayName": "Robustesse supérieure",
     "Description": "Confère au personnage un bonus permanent de 15 points de Vitalité. Également, lorsqu’il porte un bouclier lourd ou une armure lourde, il se voit conférer l’avantage à ses tests et jets de sauvegarde contre les effets le déplaçant contre son gré, le repoussant ou le renversant au sol.",
@@ -1231,7 +1231,7 @@
   },
   {
     "Id": "5257ba1b-290a-4f21-a8c4-aed4fba23d85",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "sentinelle",
     "DisplayName": "Sentinelle",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Lorsqu’une créature effectue l’activité **Pas prudent** afin de s’éloigner du personnage, celle-ci déclenche une attaque d’opportunité de la part du personnage si elle n’a pas acquis ce talent.\\n- Lorsqu’une créature attaque un ennemi du personnage et que celui-ci peut l’atteindre par une attaque de mêlée, cette créature déclenche une attaque d’opportunité de la part du personnage si elle n’a pas acquis ce talent.\\n- Lorsque le personnage touche une créature par une attaque d’opportunité, celle-ci perd sa vitesse restante si elle était en déplacement.",
@@ -1241,7 +1241,7 @@
   },
   {
     "Id": "d71cc109-b89f-465d-8906-ca0f3e6a0018",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "synergie-alphabetique",
     "DisplayName": "Synergie alphabétique",
     "Description": "Le personnage apprend une langue de son choix partageant son alphabet avec celui d’une langue qu’il connait déjà. Cette langue peut être une langue exotique ou ancienne. Également, lorsqu’il acquiert le talent <u>Langue supplémentaire</u>, si la langue qu’il désire apprendre partage son alphabet avec celui d’une langue qu’il connait déjà, alors il peut acquérir le talent à rabais. Cette capacité ne s’applique pas aux langues anciennes, et le maître de jeu décide si elle s’applique aux langues exotiques en fonction de l’historique du personnage et de son contexte actuel.",
@@ -1251,7 +1251,7 @@
   },
   {
     "Id": "6378efce-6c12-474c-ba37-fef4dc51221c",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "tir-precis",
     "DisplayName": "Tir précis",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Lorsqu’il effectue une attaque en utilisant une arme possédant la propriété **Munition**, son test n’est pas affligé du désavantage si la cible se trouve entre la courte portée et la longue portée de l’arme.\\n- Lorsqu’il effectue une attaque en utilisant une de ces armes, il ignore le demi-abri et l’abri aux trois-quarts de sa cible.\\n- Lorsqu’il effectue une attaque en utilisant une de ces armes, il peut le faire en utilisant deux actions plutôt qu’une. Il choisit une des options suivantes : il confère l’avantage à son test d’attaque ou ajoute un bonus de +5 aux points de dégâts infligés si l’attaque réussit. Il ne peut utiliser cette capacité s’il a effectué l’activité **Déplacement** pendant le même tour, et il ne peut effectuer cette activité pendant le même tour après avoir utilisé cette capacité. Il peut tout de même effectuer un **Pas prudent**.",
@@ -1261,7 +1261,7 @@
   },
   {
     "Id": "0aed5703-bea9-4d3d-90a7-8fe18af48617",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "tolerance-a-l-alcool-iii",
     "DisplayName": "Tolérance à l’alcool III",
     "Description": "Augmente de manière permanente de +1 le seuil de tolérance à l’alcool du personnage. Lorsqu’il entre en deuxième et en troisième phase d’ébriété, il se voit conférer l’avantage aux tests de _Résistance_ effectués afin d’éviter de subir des dégâts.",
@@ -1271,7 +1271,7 @@
   },
   {
     "Id": "136d04ac-4cf1-4cfd-9708-c953a0055d92",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "toxicologie",
     "DisplayName": "Toxicologie",
     "Description": "Le personnage peut désormais apprendre les poisons avancés. Cette liste est définie dans les ouvrages spécifiques aux univers.\\n\\nÉgalement, un personnage peut modifier un poison à l’aide d’une trousse d’empoisonneur. Pour se faire, il utilise les composantes de sa trousse d’empoisonneur en manipulant le poison pendant 10 minutes. Il choisit un nombre de propriétés parmi la liste suivante. Ce nombre doit être plus petit ou égal à son modificateur de Sensibilité (minimum 1). Il doit ensuite réussir un test de _Médecine_ de degré de difficulté égal à 5 multiplié par le nombre de propriétés sélectionnées, additionné de 10. Il dépense un nombre de points d’Énergie égal au degré de difficulté du test. S’il réussit le test, les propriétés sélectionnées sont ajoutées au poison. S’il échoue, les points d’Énergie sont dépensés et le poison reste intact.\\n\\n- **Débilitant.** Si la créature ciblée par le poison obtient un échec avec Damnation ou un échec critique à son jet de sauvegarde contre le poison, elle ne peut prendre aucune réaction pendant la durée du poison.\\n- **Différé.** Un certain temps s’écoule avant que le poison ne commence à faire effet. Ce temps doit être au plus 72 heures.\\n- **Dissimulé.** Le degré de difficulté afin de détecter la présence du poison augmente d’une valeur égale à la moitié du rang de _Médecine_ du personnage.\\n- **Non identifié.** Le personnage brouille les indices permettant d’identifier le poison. Cela afflige du désavantage les tests effectués afin d’identifier le poison pendant les 24 prochaines heures après le début de ses effets.",
@@ -1281,7 +1281,7 @@
   },
   {
     "Id": "4d165611-3e4c-4101-afc8-fdcf22f8ed91",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "ame-de-diamant",
     "DisplayName": "Âme de diamant",
     "Description": "Lorsque le personnage effectue un test de _Discipline_ en réaction afin d’atténuer les effets d’un pouvoir, il peut choisir de réduire de moitié le degré de difficulté (multiplié par ½). S’il décide de ne pas réduire le degré de difficulté et qu’il réussit tout de même le test, alors le personnage n’est tout simplement pas affecté par le pouvoir.",
@@ -1291,7 +1291,7 @@
   },
   {
     "Id": "7b1d317d-2e64-4e7d-a7b6-0918d31dad5f",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "artisan-virtuose",
     "DisplayName": "Artisan virtuose",
     "Description": "Le personnage désigne trois types d’outils d’artisan supplémentaires de son choix parmi ceux qu’il est formé à utiliser et développe une expertise avec les types d’outils choisis. Lorsqu’il utilise ces types d’outils, il peut conférer l’avantage à son test d’_Artisanat_ ou ajouter une seconde fois son modificateur de Coordination à son test.\\n\\nLe personnage est capable de fabriquer des objets d’une qualité s’approchant de la perfection. En doublant la quantité de matériaux et la durée requise afin d’accomplir sa tâche, l’objet qu’il fabrique possède des caractéristiques hors-normes, et sa valeur est bien plus grande que les autres objets semblables. Par exemple, l’objet peut être plus résistant, mieux accomplir sa tâche, ou être beaucoup plus plaisant au regard.",
@@ -1301,7 +1301,7 @@
   },
   {
     "Id": "de0c6577-14ee-441c-a1d7-017031630568",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "attaque-mortelle",
     "DisplayName": "Attaque mortelle",
     "Description": "Ajoute 1d6 points de dégâts supplémentaires aux attaques sournoises du personnage. De plus, lorsqu’il réussit une attaque sournoise contre une créature prise au dépourvue, alors l’attaque est considérée comme un coup critique.",
@@ -1311,7 +1311,7 @@
   },
   {
     "Id": "f127fabf-31d0-4446-86f5-ede9b7a9f386",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "colosse",
     "DisplayName": "Colosse",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Il peut utiliser une action afin de se libérer de toute contrainte physique sans nécessiter de test, par exemple être agrippé.\\n- Il se voit conférer l’avantage à ses tests afin de se libérer de toute contrainte surnaturelle, par exemple un pouvoir d’empêtrement invoquant des herbes et des vignes saisissantes.\\n- La taille du personnage est considérée d’une catégorie supérieure lorsqu’il manipule un poids ou agrippe une autre créature.\\n- Lorsqu’il réussit une bousculade, il inflige à sa cible un nombre de points de dégâts contondants non létaux égal à son modificateur de Vigueur, pour un minimum d’un point de dégâts.",
@@ -1321,7 +1321,7 @@
   },
   {
     "Id": "541b2f7c-3106-479a-8e12-b91776bd4ce9",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "commandement",
     "DisplayName": "Commandement",
     "Description": "Le personnage acquiert les capacités suivantes :\\r\\n\\r\\n- Si son modificateur d’Intellect est supérieur à son modificateur de Sensibilité, alors il ajoute un bonus égal à la différence entre ces modificateurs à ses tests d’Initiative.\\r\\n- Par une action, le personnage ordonne à un allié d’effectuer une attaque. L’allié utilise sa réaction afin d’effectuer l’activité **Attaque**.\\r\\n- Par une action, le personnage ordonne à un allié de se déplacer. L’allié utilise sa réaction afin d’effectuer l’activité **Déplacement** à la moitié de sa vitesse, ou il effectue l’activité **Pas prudent**. Les attaques d’opportunité déclenchées par ce déplacement sont affligées du désavantage.\\r\\n- Par une action, le personnage ordonne à un allié situé dans une case adjacente à la sienne d’échanger de position. L’allié utilise sa réaction afin d’effectuer l’activité **Pas prudent** en même temps que le personnage, qui l’effectue en action libre.\\r\\n- Par une action, le personnage ordonne à deux alliés n’ayant pas encore joué leur tour pendant le round actuel d’échanger leur valeur d’Initiative.",
@@ -1331,7 +1331,7 @@
   },
   {
     "Id": "32f6bf6e-1b84-48e5-93d4-0ea8cb46d41f",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "compagnon-animal",
     "DisplayName": "Compagnon animal",
     "Description": "Le personnage peut désormais apprivoiser et dresser une bête de niveau 1 ou moins. Également, il peut désigner une des bêtes qu’il a dressées comme son compagnon animal en s’entraînant avec celle-ci pendant une heure à chaque jour. Il peut effectuer cet entraînement pendant une halte. Les points de Vitalité de cette bête augmentent d’une valeur égale au rang de Survie du personnage additionné à son modificateur de Sensibilité (minimum 1). Ces points de Vitalité sont conférés à la bête pendant les 24 prochaines heures et peuvent être soignés.",
@@ -1341,7 +1341,7 @@
   },
   {
     "Id": "1d627e03-19ae-463b-9ef9-09d2fedb8363",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "conjecture",
     "DisplayName": "Conjecture",
     "Description": "Le personnage se voit conférer l’avantage à ses tests contre les effets et pouvoirs le contraignant à agir d’une certaine manière, ou qui modifiant le contenu de sa mémoire. Également, une fois par round, il peut effectuer une attaque d’opportunité par une action libre.",
@@ -1351,7 +1351,7 @@
   },
   {
     "Id": "fcf8d604-0e4f-4c8e-ad06-eb043b1cb0ab",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "critique-extraordinaire",
     "DisplayName": "Critique extraordinaire",
     "Description": "Le personnage obtient désormais un coup critique lorsque la somme des dés de son test d’attaque égale 15. Les probabilités qu’il inflige un coup critique sont désormais de 23 %, ou de 27 % si son score de Coordination est supérieur ou égal à 20.\\n\\nÉgalement, lorsqu’un coup critique est confirmé, le joueur peut tenter de confirmer le coup critique une seconde fois en relançant les dés de l’attaque. Si la somme de ces dés égale une des valeurs déclenchant un coup critique, alors le coup critique est confirmé deux fois. Dans ce cas, les points de dégâts sont effectivement triplés : le joueur roule trois fois les dés de dégâts et y ajoute trois fois la Force (test de _Mêlée_), la Précision (test d’_Orientation_) ou la Puissance (test d’_Occultisme_) du personnage au points de dégâts infligés.",
@@ -1361,7 +1361,7 @@
   },
   {
     "Id": "32cc3e4b-edfd-4698-ab00-7f1914164d74",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "desarconnement",
     "DisplayName": "Désarçonnement",
     "Description": "Lorsque le personnage effectue une première attaque pendant son tour, s’il effectue celle-ci avec sa seconde main, il surprend son adversaire par son style de combat non conventionnel et se voit conférer l’avantage au test de cette attaque. Également, lorsqu’il combat en maniant plusieurs armes dans différentes mains et qu’il ne porte aucun bouclier, il se voit conférer un bonus de +1 à sa Défense par arme maniée, pour un maximum de 4 armes.",
@@ -1371,7 +1371,7 @@
   },
   {
     "Id": "df441e37-f574-4cf6-bd9f-1d88d25e7fdf",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "disparition",
     "DisplayName": "Disparition",
     "Description": "Lorsqu’une créature située à 9 mètres ou moins du personnage s’éloigne de celui-ci, reçoit des points de dégâts d’une source différente de celui-ci, ou effectue une attaque ou canalise un pouvoir sur une cible différente de celui-ci, alors le personnage peut utiliser sa réaction afin d’effectuer l’activité **Camouflage**. Il peut également se déplacer au plus à la moitié de sa vitesse en dépensant 5 points d’Énergie par case traversée.",
@@ -1381,7 +1381,7 @@
   },
   {
     "Id": "cf887e52-7e12-434d-8d73-d064861a976c",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "endurance-extraordinaire",
     "DisplayName": "Endurance extraordinaire",
     "Description": "Confère au personnage un bonus permanent de 20 points d’Énergie. Également, ses tests de _Discipline_ afin de ne pas augmenter son niveau de Fatigue se voient conférer l’avantage.",
@@ -1391,7 +1391,7 @@
   },
   {
     "Id": "c9375c05-93d0-4c2d-bd38-4e763fa6c718",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "entrainement-iv",
     "DisplayName": "Entraînement IV",
     "Description": "Augmente de manière permanente de +2 le score d’un attribut du personnage dont le score était inférieur ou égal à 17 avant l’acquisition de ce talent.",
@@ -1401,7 +1401,7 @@
   },
   {
     "Id": "f212a3c5-9df7-4dad-9660-d1011fb1a4b1",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "escamotage",
     "DisplayName": "Escamotage",
     "Description": "Lorsque le personnage effectue l’activité **Objet** ou une action requérant un test de _Roublardise_, alors il peut effectuer en action libre une action **Objet** ou requérant un test de _Roublardise_. Également, il se voit conférer l’avantage aux tests de _Roublardise_ des actions définies par le talent <u>Astuce</u>.",
@@ -1411,7 +1411,7 @@
   },
   {
     "Id": "be718c77-e620-453a-b8ef-814ba064c01d",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "evasion",
     "DisplayName": "Évasion",
     "Description": "Lorsque le personnage réussit un jet de sauvegarde d’_Acrobaties_ afin de réduire de moitié les dégâts reçus par un effet, alors il ne reçoit aucun point de dégâts. S’il échoue le jet de sauvegarde et qu’il a utilisé sa réaction afin d’ajouter au jet de sauvegarde le bonus conféré aux tests d’attaque par son arme, alors il ne reçoit que la moitié des points de dégâts.\\n\\nÉgalement, lorsque le personnage est ciblé par une attaque à distance et qu’il utilise sa réaction afin d’ajouter à son Esquive le bonus conféré aux tests d’attaque par son arme, ce bonus augmente à +5. Si l’attaque échoue et que le personnage a une main de libre, alors il peut attraper au vol le projectile ou l’arme lancée, même si le résultat de l’attaque est supérieur à son Esquive.",
@@ -1421,7 +1421,7 @@
   },
   {
     "Id": "eaeece80-b02e-471a-b266-bc5fc31e5444",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "frenesie",
     "DisplayName": "Frénésie",
     "Description": "Le personnage n’est plus affecté par aucune pénalité cumulative lorsqu’il effectue plusieurs attaques pendant le même tour.",
@@ -1431,7 +1431,7 @@
   },
   {
     "Id": "1967a2a2-40ea-4def-8a4f-abbccaf77b74",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "initiative-extraordinaire",
     "DisplayName": "Initiative extraordinaire",
     "Description": "Confère un bonus permanent de +4 à l’Initiative du personnage. Lorsque le personnage ne débute pas un combat en étant surpris, il n’effectue pas de test d’Initiative. Il peut prendre son tour à n’importe quel moment pendant le round, à condition de ne pas interrompre le tour d’une autre créature. S’il débute un combat en étant surpris, il doit effectuer un test d’Initiative et ne peut bénéficier de cette capacité.",
@@ -1441,7 +1441,7 @@
   },
   {
     "Id": "d86b6107-5442-487f-a492-95276c0596b7",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "interprete",
     "DisplayName": "Interprète",
     "Description": "Lorsque le personnage écoute une discussion dans une langue qu’il ne connait pas pendant une minute, si cette langue est dans la même famille linguistique qu’une des langues qu’il connait, alors il peut comprendre approximativement le sens de la discussion. Il continue à comprendre la discussion tant que la langue et le sujet discuté ne changent pas.\\n\\nÉgalement, il peut lire un texte rédigé dans une langue qu’il ne connait pas, mais qui utilise le même alphabet et qui se trouve dans la même famille linguistique qu’une des langues qu’il connait. Il peut lire le texte à la vitesse d’un mot par seconde et en saisit approximativement la signification.",
@@ -1451,7 +1451,7 @@
   },
   {
     "Id": "460984f5-4742-4b28-b4d3-1713e2bb4215",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "intrepide",
     "DisplayName": "Intrépide",
     "Description": "Le personnage est immunisé aux effets de peur. Également, lorsqu’une créature tente de l’apeurer, le prochain test d’attaque du personnage contre cette créature se voit conférer l’avantage.",
@@ -1461,7 +1461,7 @@
   },
   {
     "Id": "6156b409-912c-4d33-bbdd-2956050cf885",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "langue-d-argent",
     "DisplayName": "Langue d’argent",
     "Description": "Par une action et en dépensant 30 points d’Énergie, permet au personnage de suggérer une suite d’actions raisonnable en une phrase ou deux afin d’influencer subtilement une créature pouvant l’entendre et la comprendre située à 9 mètres ou moins de sa position. Si celle-ci échoue un jet de sauvegarde d’_Intuition_ opposé à un test de _Diplomatie_ du personnage, alors elle est charmée par le personnage et est contrainte à accomplir la suite d’actions suggérée. L’effet prend fin après un nombre d’heures égal au modificateur de Sensibilité du personnage (minimum 1 heure). Le personnage doit compléter une nuit de sommeil afin de réutiliser cette capacité. Cette capacité n’a aucun effet si elle cause directement du tort à la créature, par exemple si le personnage lui demande de se mutiler ou de se jeter dans un gouffre. Il peut néanmoins lui suggérer une suite d’actions la mettant indirectement en danger, par exemple d’emboîter le pas dans un corridor piégé si elle n’est pas au courant de la présence des pièges.",
@@ -1471,7 +1471,7 @@
   },
   {
     "Id": "9244c61a-4e14-4c30-9b03-4d286d6a4184",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "maximisation-magique",
     "DisplayName": "Maximisation magique",
     "Description": "Le personnage se voit conférer un bonus permanent de +5 à ses tests d’_Occultisme_ afin de canaliser un pouvoir. Également, lorsqu’il canalise un pouvoir et avant d’effectuer le test, il peut multiplier par 1,5 la durée de l’incantation (par exemple, utiliser 3 actions plutôt que 2, ou canaliser pendant 15 minutes un pouvoir nécessitant d’incanter pendant 10 minutes). Lorsqu’il en fait ainsi, il peut bénéficier d’une des options suivantes au choix :\\n\\n- Il ajoute +5 au résultat de son test d’_Occultisme_, cumulable avec le bonus conféré par ce talent.\\n- Le niveau canalisé du pouvoir est réduit de 1, si le pouvoir n’est pas canalisé au niveau minimal, lors du calcul des points d’Énergie dépensés.",
@@ -1481,7 +1481,7 @@
   },
   {
     "Id": "515fc068-f197-4647-b01a-b2f576ba91d0",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "mythomane",
     "DisplayName": "Mythomane",
     "Description": "Le personnage se voit conférer l’avantage à ses jets de sauvegarde contre les effets de charme et les effets l’obligeant à dire la vérité. Également, il peut remplacer le jet de sauvegarde contre ces effets par un test de _Tromperie_ afin de faire semblant d’être affecté par l’effet. Lorsqu’il en fait ainsi, la créature ne sait pas qu’il feint d’être affecté tant qu’il ne compromet pas sa ruse par des paroles ou actions contraires à ce que l’effet le contraindrait de faire ou de dire.",
@@ -1491,7 +1491,7 @@
   },
   {
     "Id": "075fba38-a514-4091-9d05-8fca13aa2098",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "ovation",
     "DisplayName": "Ovation",
     "Description": "Permet au personnage de débuter une performance spectaculaire d’une durée maximale d’une minute par une action. À chaque tour subséquent, il doit utiliser une action afin de maintenir le spectacle. Il sélectionne un nombre de cibles égal à son modificateur de Présence (minimum 1) et effectue un test de _Performance_. Chaque cible doit réussir un test opposé de _Discipline_ afin de ne pas être envoûtée par le personnage. Une créature échouant le test devient incapable et ne peut effectuer aucune action ni réaction, ne peut parler et ses tests de _Perception_ afin de détecter une créature autre que le personnage se voient affligés du désavantage. Une créature envoûtée peut répéter le jet de sauvegarde à la fin de chacun de ses tours. Si une créature envoûtée reçoit des points de dégâts, elle est libérée de l’emprise du personnage. Une créature immunisée aux charmes n’est pas affectée par cet effet. Le personnage doit compléter une nuit de sommeil afin de réutiliser cette capacité.",
@@ -1501,7 +1501,7 @@
   },
   {
     "Id": "e024a519-5424-498f-ad5e-f536835d0729",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "parkour",
     "DisplayName": "Parkour",
     "Description": "Lorsque le personnage effectue l’activité **Course** pendant son tour, il peut se déplacer sur des surfaces verticales s’il ne porte aucune armure ou qu’une armure légère. S’il arrête sa course sur une surface verticale, il tombe et subit une chute. Également, lorsque le personnage effectue l’activité **Course** pendant son tour, il ignore les pénalités infligées par le terrain difficile.",
@@ -1511,7 +1511,7 @@
   },
   {
     "Id": "69edfb46-d6a4-45aa-a365-c360d1aaead5",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "perception-extrasensorielle",
     "DisplayName": "Perception extrasensorielle",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Après avoir effectué une heure de méditation, si le personnage continue à méditer, alors il peut détecter la présence de la magie à une distance de 9 mètres.\\n- Également, lorsqu’il bénéficie de cette capacité, il peut effectuer un test d’_Occultisme_ par heure de méditation afin de tenter d’identifier un artéfact magique avec lequel il a été en contact ininterrompu pendant la dernière heure. Le degré de difficulté varie en fonction de la rareté de l’artéfact : Commun (faible (10)), Peu commun (moyen (15)), Rare (élevé (20)), Très rare (très élevé (25)) ou Légendaire (extraordinaire (30)). S’il réussit le test, il identifie les propriétés de l’objet, comment l’utiliser, quelles les restrictions d’harmonisation de l’objet ainsi que le nombre de charges (si l’objet en a). Il identifie également les pouvoirs affectant présentement l’objet et par quel pouvoir l’objet a été fabriqué (s’il a été fabriqué par un pouvoir).\\n- En effectuant l’activité **Jugement**, il peut sentir la présence d’illusions, de créatures métamorphes et de magie trompant les sens à une portée de 9 mètres s’il n’est pas aveuglé ni assourdi. Il ne détecte que la présence de ces effets et non leur source. Il doit compléter une heure de méditation afin de réutiliser cette capacité.",
@@ -1521,7 +1521,7 @@
   },
   {
     "Id": "dc6b7fa1-bb88-490c-9452-02fffaa1c7d9",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "point-de-conscience",
     "DisplayName": "Point de conscience",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Il inflige désormais 1d10 points de dégâts contondants non létaux lorsqu’il effectue une attaque avec un membre de son corps.\\n- Une fois par round, lorsqu’il effectue une attaque avec un membre de son corps, il peut dépenser 10 points d’Énergie. Si l’attaque réussit, la cible est étourdie jusqu’au début de son prochain tour.\\n- Une fois par round, lorsqu’il effectue une attaque avec un membre de son corps, il peut dépenser 30 points d’Énergie. Si l’attaque réussit, la cible doit effectuer un jet de sauvegarde de _Résistance_ de degré de difficulté égal au résultat du test de l’attaque. Si la cible échoue le test, elle est assommée jusqu’à la fin de son prochain tour.\\n- Lorsque le personnage réussit une frappe précise contre une créature prise au dépourvue, alors l’attaque est considérée comme un coup critique.",
@@ -1531,7 +1531,7 @@
   },
   {
     "Id": "2abf305d-2bb6-42cc-b337-da94aa97a052",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "reanimation",
     "DisplayName": "Réanimation",
     "Description": "Permet au personnage de tenter de ramener à la vie une créature décédée dans les dix dernières minutes. Pour se faire, il doit dépenser 25 points d’Énergie et utiliser des bandages, remèdes et autre matériel médical pour une valeur minimale de 250 unités monétaires. Il doit posséder ces matériaux avant de commencer la réanimation et ces matériaux sont consommés. Une créature ne peut être réanimée que si elle n’est pas morte de vieillesse, son corps possède encore ses fonctions vitales, et son âme désire retourner dans son corps. Pour chaque minute suivant le décès, la réanimation a un potentiel d’échec de 10% cumulatif. Le joueur lance donc 1d10 et la réanimation échoue si le résultat obtenu est inférieur ou égal au nombre de minutes écoulées depuis le décès. Si la réanimation réussit, le maître de jeu et le joueur déterminent ensuite une séquelle grave qui affligera la créature réanimée de manière permanente. Par exemple, cette séquelle pourrait être un handicap. La créature réanimée reprendra conscience après un minimum d’une heure de repos, lorsque ses points d’Énergie et de Vitalité seront supérieurs à 0.",
@@ -1541,7 +1541,7 @@
   },
   {
     "Id": "57663757-ab72-4e16-b111-55926ef106c9",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "rescape",
     "DisplayName": "Rescapé",
     "Description": "Le personnage acquiert les capacités suivantes :\\n\\n- Lorsqu’il est à l’agonie et qu’il obtient un résultat de Damnation, il peut ignorer ce résultat. Il doit compléter une nuit de sommeil afin de réutiliser cette capacité.\\n- Lorsqu’il est à l’agonie, il reste conscient tant qu’il n’échoue pas un test de _Survie_ de difficulté très élevée (25). Ce test est effectué en début de tour. Lorsqu’il est instable, il ne peut rien faire pendant son tour. Lorsqu’il est stable, il peut effectuer une seule action et peut se déplacer en rampant à la moitié de sa vitesse.\\n- Une fois par jour, lorsqu’il est instable et à l’agonie, s’il obtient une réussite critique au test de _Survie_ effectué en début de tour afin de rester conscient, alors ses points de Vitalité remontent à 1 et il n’est plus agonisant.",
@@ -1551,7 +1551,7 @@
   },
   {
     "Id": "58f587a4-9746-41fe-9d8b-0f9bda21c81b",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "rigueur-mentale",
     "DisplayName": "Rigueur mentale",
     "Description": "Permet au personnage de dépenser 20 points d’Énergie afin de Faire 20 à un test d’_Investigation_ même lorsque la situation ne le permet pas. Cette capacité n’a aucun effet si le test est impossible à réussir. Il doit compléter une nuit de sommeil afin de réutiliser cette capacité.\\n\\nÉgalement, permet au personnage d’analyser une compétence ou des outils pour lesquels il n’est pas formé. Il peut effectuer cette analyse pendant une halte. Pendant un nombre d’heures égal au double de son modificateur d’Intellect (minimum 2 heures) suivant cette analyse, il peut ajouter la moitié de son rang d’_Investigation_ aux tests de cette compétence ou aux tests effectués avec ces outils. Il doit compléter une nuit de sommeil afin de réutiliser cette capacité.",
@@ -1561,7 +1561,7 @@
   },
   {
     "Id": "e737f35e-75e7-48b9-9743-f2dcf68a1b48",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "robustesse-extraordinaire",
     "DisplayName": "Robustesse extraordinaire",
     "Description": "Confère au personnage un bonus permanent de 20 points de Vitalité. Également, lorsqu’il est affligé de la Fatigue, il peut dépasser ses capacités normales et recevoir 15 points de dégâts létaux afin d’annuler le désavantage à un test.",
@@ -1571,7 +1571,7 @@
   },
   {
     "Id": "f29c8a35-e236-4cfc-b6c3-e4191c3d164a",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "savoir-legendaire",
     "DisplayName": "Savoir légendaire",
     "Description": "Lorsque le personnage entre ou se prépare à entrer dans un lieu historique, telle une cité, des ruines, un champ de bataille ou une forteresse, il peut régaler ses compagnons de faits historiques et de mythes fictifs en lien avec cet endroit pendant 10 minutes. Il désigne ensuite un nombre de créatures égal à son modificateur d’Intellect (minimum 0). Pendant les 24 prochaines heures ou jusqu’à ce qu’une cible s’endorme ou perde conscience, le personnage et les créatures désignées se voient conférer l’avantage à leurs tests d’Initiative effectués dans ce lieu historique. Ils peuvent également ajouter 1d10 à un test de leur choix effectué en ces lieux. Une créature ne peut bénéficier simultanément de plusieurs utilisations de cette capacité. Le personnage doit compléter une nuit de sommeil afin de réutiliser cette capacité.",
@@ -1581,7 +1581,7 @@
   },
   {
     "Id": "740c00ca-389e-48a2-b7b5-47db2cc76fe6",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "surveillance",
     "DisplayName": "Surveillance",
     "Description": "Lorsqu’il entre en état de focus, le personnage devient immunisé à l’assourdissement et à l’aveuglement, puisque ses autres sens viennent combler ces lacunes. Par une action ou en entrant en état de focus, il peut observer une créature qu’il peut voir et qui se situe à 36 mètres ou moins de sa position. Pendant la prochaine minute, la créature ne peut se cacher physiquement du personnage. Si elle se cache magiquement, le personnage se voit conférer l’avantage à ses tests de _Perception_ afin de localiser cette créature. Il ne peut observer qu’une seule créature à la fois en bénéficiant de cette capacité.",
@@ -1591,7 +1591,7 @@
   },
   {
     "Id": "315e89b5-dc24-4771-9124-321f9fc59de7",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "tolerance-a-l-alcool-iv",
     "DisplayName": "Tolérance à l’alcool IV",
     "Description": "Augmente de manière permanente de +1 le seuil de tolérance à l’alcool du personnage. Le personnage se voit conférer l’avantage à ses tests de _Résistance_ afin de ne pas passer à une phase d’ébriété subséquente.",
@@ -1661,7 +1661,7 @@
   },
   {
     "Id": "414ab8eb-15bb-41c9-86a5-46d1ec0489d8",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "infusions-magiques",
     "DisplayName": "Infusions magiques",
     "Description": "Le personnage peut désormais acquérir les bricolages magiques de tiers 1. S’il acquiert le talent <u>Magie puissante</u>, il ne peut canaliser les bricolages magiques de tiers 1 à un niveau supérieur tant qu’il n’a pas acquis la spécialisation _Bricoleur_. Il apprend trois infusions magiques parmi une liste fournie en annexe à cet ouvrage. Il ne peut acquérir plusieurs fois ce talent que s’il a acquis la spécialisation _Bricoleur_.",
@@ -1671,7 +1671,7 @@
   },
   {
     "Id": "a6bb0bc0-d734-4659-bd35-3d00e184e95d",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "initiation-magique",
     "DisplayName": "Initiation magique",
     "Description": "Ce talent n’a aucun effet si le personnage n’a pas acquis la spécialisation _Astromancien_. Il sélectionne un des cinq cercles de magie et acquiert une capacité spécifique à ce cercle.\\n\\n**Cercle d’Abjuration**\\n_Garde magique._ Lorsque le personnage canalise un pouvoir du cercle d’Abjuration, il peut créer une garde magique sur lui-même. Cette garde lui confère un nombre de points de Vitalité temporaires égal au double de son rang d’_Occultisme_ additionné de son modificateur d’Esprit (minimum 1). Cette garde persiste même si tous les points de Vitalité temporaires sont perdus. Lorsque le personnage canalise à nouveau un pouvoir du cercle d’Abjuration, il récupère un nombre de points de Vitalité temporaires égal au niveau du pouvoir canalisé. Il ne peut récupérer plus de points de Vitalité temporaires que le nombre conféré initialement. Cette garde disparaît si le personnage devient incapable ou qu’il tombe inconscient, ou s’il complète une nuit de sommeil.\\n\\n**Cercle de Divination**\\n_Prédiction._ Lorsque le personnage voit une créature ou un autre personnage se préparer à effectuer une action, il peut prédire une partie du résultat avant que le test ne soit joué. Il choisit une option parmi la liste suivante, le test est ensuite joué, et cette option est appliquée au résultat du test, remplaçant le résultat initial : Réussite, Échec, Espérance, ou Damnation. Il peut utiliser cette capacité deux fois et doit compléter une nuit de sommeil afin de récupérer ces utilisations. Il ne peut sélectionner qu’une option par utilisation de cette capacité, et il ne peut réutiliser cette option avant de compléter une nuit de sommeil.\\n\\n**Cercle d’Envoûtement**\\n_Regard hypnotique._ Permet au personnage d’hypnotiser une créature qui peut le voir ou l’entendre située à 1,5 mètres ou moins de sa position. Le personnage effectue un test d’_Occultisme_ par une action et la cible doit effectuer un jet de sauvegarde de _Discipline_ opposé à ce test. Si elle échoue le test, elle est charmée par le personnage jusqu’à la fin du prochain tour de celui-ci. La cible devient incapable et elle semble visiblement étourdie. Pendant ses tours subséquents, le personnage peut utiliser une action afin d’étendre la durée du charme jusqu’à la fin de son prochain tour. L’effet s’arrête si le personnage s’éloigne de la cible, si celle-ci ne peut plus voir ni entendre le personnage, ou si elle reçoit des points de dégâts. Lorsque l’effet s’arrête, ou si la cible réussit le jet de sauvegarde, elle est immunisée contre cette capacité pendant les 24 prochaines heures.\\n\\n**Cercle d’Invocation**\\n_Invocation mineure._ Le personnage peut invoquer un objet inanimé à un endroit libre situé à 3 mètres ou moins de sa position par une action. L’objet doit entrer dans un cube d’un mètre de côté et ne peut peser plus de 5 kilogrammes. Sa forme doit être celle d’un objet non magique que le personnage a déjà vu. L’objet apparait magique, dégageant une faible clarté de pénombre dans un rayon de 1,5 mètres. Il disparaît après une heure, ou si le personnage réutilise cette capacité, ou s’il reçoit des points de dégâts.\\n\\n**Cercle de Transmutation**\\n_Alchimie précaire._ Permet au personnage de changer la composition d’un objet non magique. Le matériau d’origine et le matériau de destination de l’objet doivent figurer parmi la liste suivante : bois, pierre (excluant les gemmes), fer, cuivre ou argent. Il peut transformer un cube de 30 centimètres de côté pour chaque période de dix minutes passées à transformer l’objet. Il doit maintenir sa concentration sur l’objet. S’il perd sa concentration, ou après une heure, l’objet reprend sa composition d’origine.",
@@ -1681,7 +1681,7 @@
   },
   {
     "Id": "b302424c-439d-4732-8597-3c625dd90fa1",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "meta-magie",
     "DisplayName": "Méta-magie",
     "Description": "Ce talent n’a aucun effet si le personnage n’a pas acquis les talents <u>Astrologie</u> et <u>Élémentarisme</u> pour l’élément Esprit. Lorsqu’il acquiert ce talent, il sélectionne 3 capacités parmi la liste suivante. Lorsque son tiers de personnage augmente, il peut remplacer une ou plusieurs capacités qu’il a acquise par une autre capacité dans cette liste. Il ne peut utiliser une ou plusieurs de ces capacités que sur une seule activité **Canaliser** par tour.\\n\\n- _Accéléré._ Le personnage dépense 20 points d’Énergie supplémentaires en canalisant un pouvoir. Si l’incantation du pouvoir est de 2 actions, il canalise celui-ci en une seule action. Sinon, cette capacité échoue et les points d’Énergie sont perdus.\\n- _Dédoublement._ Le personnage dépense un nombre de points d’Énergie supplémentaires en canalisant un pouvoir égal à 10 multiplié par le tiers du pouvoir canalisé (minimum 10). Si le pouvoir a une portée différente de soi et qu’il ne cible qu’une seule créature, il peut cibler une deuxième créature par le même pouvoir. Sinon, cette capacité échoue et les points d’Énergie sont perdus.\\n- _Désagrément._ Le personnage dépense 30 points d’Énergie supplémentaires en canalisant un pouvoir ciblant une ou plusieurs créatures. Il sélectionne une cible et le premier jet de sauvegarde de celle-ci contre le pouvoir se voit affligé du désavantage. Si le pouvoir n’exige aucun jet de sauvegarde, cette capacité échoue et les points d’Énergie sont perdus.\\n- _Intériorité._ Le personnage dépense 10 points d’Énergie supplémentaires en canalisant un pouvoir afin de ne pas avoir besoin de satisfaire les composantes Somatiques et Verbales. Si le pouvoir ne nécessite aucune de ces composantes, cette capacité échoue et les points d’Énergie sont perdus.\\n- _Longévité._ Le personnage dépense 10 points d’Énergie supplémentaires en canalisant un pouvoir afin de doubler sa durée, jusqu’à un maximum de 24 heures. Si la durée du pouvoir est instantanée ou supérieure ou égale à 24 heures, cette capacité échoue et les points d’Énergie sont perdus.\\n- _Longue distance._ Lorsque le personnage canalise un pouvoir dont la portée est supérieure ou égale à 2 (3 mètres), il peut dépenser 10 points d’Énergie supplémentaires afin de doubler la portée. Il peut augmenter la portée d’un pouvoir dont la portée est toucher à 6 (9 mètres) en dépensant 20 points d’Énergie supplémentaires. Si la portée du pouvoir est soi, cette capacité échoue et les points d’Énergie sont perdus.\\n- _Mutation._ Le personnage dépense 10 ou 20 points d’Énergie supplémentaires en canalisant un pouvoir. Si le pouvoir n’inflige aucun point de dégâts, cette capacité échoue et les points d’Énergie sont perdus. S’il n’a dépensé que 10 points d’Énergie supplémentaires, le type des points de dégâts infligés est déterminé par 1d8. Sinon, s’il a dépensé 20 points d’Énergie supplémentaires, il peut sélectionner le type de dégâts de son choix parmi la table ci-dessous. Cette capacité n’ajoute pas de points de dégâts, elle change le type des points de dégâts infligés.\\n- _Prudence._ Le personnage dépense 10 points d’Énergie supplémentaires en canalisant un pouvoir et sélectionne un nombre de créatures affectées qu’il peut voir inférieur ou égal à son modificateur d’Esprit (minimum 1). Si le pouvoir exige un jet de sauvegarde, les créatures sélectionnées réussissent automatiquement celui-ci, sinon cette capacité échoue et les points d’Énergie sont perdus.\\n- _Surpuissance._ Le personnage dépense 10 points d’Énergie supplémentaire en canalisant un pouvoir afin de jeter un nombre de dés supplémentaires égal à son modificateur d’Esprit (minimum 1). L’effet n’augmente pas les points de dégâts infligés, mais il permet de choisir les dés ayant la valeur la plus élevée parmi les dés jetés afin de maximiser les points de dégâts. Si le pouvoir n’effectue aucun point de dégâts ou si les points de dégâts infligés ne sont pas déterminés par un jet de dés, cette capacité échoue et les points d’Énergie sont perdus. Cette capacité peut être combinée avec une autre capacité de cette liste.\\n- _Tête chercheuse._ Lorsque le test d’une attaque d’un pouvoir canalisé par le personnage échoue, il peut dépenser 20 points d’Énergie supplémentaires afin de retenter le test. Il doit utiliser le nouveau résultat et peut combiner cette capacité avec une autre capacité de cette liste.\\n\\n| 1d8 | Type des dégâts | 1d8 | Type des dégâts |\\n| --- | --------------- | --- | --------------- |\\n| 1   | Poison          | 5   | Froid           |\\n| 2   | Acide           | 6   | Tonnerre        |\\n| 3   | Électricité     | 7   | Psychique       |\\n| 4   | Feu             | 8   | Force           |",
@@ -1691,7 +1691,7 @@
   },
   {
     "Id": "83dac7fd-7f02-489c-8dc7-e2e0f0b69f8a",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "pareidolie",
     "DisplayName": "Paréidolie",
     "Description": "Ce talent n’a aucun effet si le personnage n’a pas acquis une des spécialisations suivantes : _Astromancien_ ou _Ménestrel_. Il peut désormais acquérir les illusions de tiers 1 et apprend gratuitement une de ces illusions.",
@@ -1701,7 +1701,7 @@
   },
   {
     "Id": "bf4129d0-ce0a-43b2-aa3c-0472ee475332",
-    "Tier": 0,
+    "Tier": 1,
     "UniqueSlug": "renvoi-des-morts-vivants",
     "DisplayName": "Renvoi des morts-vivants",
     "Description": "Ce talent n’a aucun effet si le personnage n’a pas acquis la spécialisation _Clerc_. Permet au personnage d’utiliser son pouvoir divin par une action afin de présenter son symbole divin en récitant une prière blâmant les morts-vivants. Toute créature morte-vivante située à 9 mètres ou moins du personnage et entendant ou voyant celui-ci doit effectuer un jet de sauvegarde de _Discipline_ opposé à un test d’_Occultisme_ du personnage.\\n\\nEn cas d’échec du jet de sauvegarde, une créature est prise au dépourvu et doit utiliser toutes ses actions afin de fuir le personnage. Si elle ne peut fuir, alors elle ne peut qu’effectuer l’activité **Défense**. L’effet dure 1 minute ou jusqu’à ce que la créature reçoive des points de dégâts. De plus, si le niveau de la créature est inférieur ou égal au tiers du personnage, elle est instantanément détruite si elle échoue le jet de sauvegarde.",
@@ -1711,7 +1711,7 @@
   },
   {
     "Id": "0ef46949-399e-4cbc-bb72-379092e659b3",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "alchimie",
     "DisplayName": "Alchimie",
     "Description": "Le personnage peut produire un élixir expérimental parmi la table ci-dessous par 2 actions et en dépensant 15 points d’Énergie. Il doit posséder un contenant vide approprié, par exemple une flasque, ainsi que des fournitures d’alchimiste. L’élixir peut être bu ou administré à une créature incapable en effectuant l’activité **Objet** (une action). Un élixir s’évapore s’il n’est pas consommé après 24 heures.\\n\\nLe personnage peut également produire un élixir une fois par jour, pendant une nuit de sommeil, en action libre et en ne dépensant aucun point d’Énergie. Ce nombre augmente à 2 s’il a acquis la spécialisation _Bricoleur_ et à 3 s’il a acquis la spécialisation _Alchimiste_. Chaque élixir requiert son propre contenant. L’effet d’un élixir créé de cette manière est déterminé aléatoirement au moment où il est consommé.\\n\\n| 1d6 | Effet |\\n| --- | ----- |\\n| 1 | **Guérison.** La cible récupère 4d4 points de Vitalité additionnés au modificateur d’Intellect du personnage. |\\n| 2 | **Rapidité.** La vitesse de la cible augmente de 2 cases (3 mètres) pendant la prochaine heure. |\\n| 3 | **Solidité.** L’Esquive de la cible augmente de +2 pendant les 10 prochaines minutes. |\\n| 4 | **Audace.** La cible peut ajouter 1d6 à tout test d’attaque et tout jet de sauvegarde qu’elle effectue pendant la prochaine minute. |\\n| 5 | **Vol.** La cible acquiert une vitesse de vol de 2 cases (3 mètres) pendant les 10 prochains minutes. |\\n| 6 | **Transformation.** La cible applique une des options du niveau 2 du pouvoir <u>Polymorphisme</u> sur son corps. La cible choisit l’effet, celui-ci dure 10 minutes et il ne requiert pas la concentration. |",
@@ -1721,7 +1721,7 @@
   },
   {
     "Id": "ef571440-dea1-48cd-a917-5533b571f837",
-    "Tier": 0,
+    "Tier": 2,
     "UniqueSlug": "artillerie",
     "DisplayName": "Artillerie",
     "Description": "Afin d’utiliser toute capacité de ce talent, le personnage doit être formé avec les outils de bricoleur, les outils de forgeron et les outils de sculpteur du bois. Il doit également posséder tous ces outils et pouvoir les utiliser.\\n\\nPar deux actions et en dépensant 15 points d’Énergie, il crée un canon de taille minuscule ou petite dans une case inoccupée et adjacente de son choix qu’il peut voir, ou sur une surface horizontale. Un canon de petite taille occupe cet espace et est doté de pattes mécaniques, tandis qu’un canon de taille minuscule peut être tenu à une main. Il ne peut avoir qu’un seul canon existant à la fois, et s’il tente de créer un canon alors qu’un existe déjà, les points d’Énergie sont perdus.\\n\\nLe canon est considéré comme un objet magique. Il est doté d’une Esquive de 10, une Défense de 20, et d’un nombre de points de Vitalité égal à la Puissance du personnage multipliée par 5. Il est immunisé aux dégâts psychiques et de poison. S’il doit effectuer un jet de sauvegarde, ses scores sont de 10 et ses modificateurs sont de 0. S’il est réparé magiquement, par exemple par les pouvoirs <u>Habiletés féériques</u>, <u>Prestidigitation</u> ou <u>Thaumaturgie</u>, il récupère 3d6 points de Vitalité. Le canon disparaît si ses points de Vitalité chutent à 0 ou après une heure. Le personnage peut également le détruire par une action.\\n\\nLe canon appartient à un des types suivants, sélectionné par le personnage au moment de la création du canon. Une fois par tour, par une action et en dépensant 5 points d’Énergie, le personnage peut activer le canon s’il le tient à une main (taille minuscule) ou s’il se trouve à 18 mètres ou moins de sa position (petite taille). Si le canon est doté de pattes mécaniques, il peut se déplacer de 3 cases (4,5 mètres). Il peut se déplacer sur des surfaces verticales ou sous un plafond.\\n\\nPar une action et en dépensant 15 points d’Énergie, il peut faire détoner le canon s’il se trouve à 18 mètres ou moins de sa position. Le canon est détruit et toute créature située à 6 mètres ou moins du canon doit effectuer un jet de sauvegarde d’_Acrobaties_. L’explosion inflige 3d8 points de dégâts de feu additionnés à la Puissance du personnage en cas d’échec ou la moitié en cas de réussite.\\n\\n| Canon | Activation |\\n| ----- | ---------- |\\n| Baliste de force | Le canon effectue une attaque à distance contre une cible située à 36 mètres ou moins de sa position par un test d’_Occultisme_ du personnage. L’attaque inflige 2d8 points de dégâts de force additionnés à la moitié de la Puissance du personnage. Si la cible est une créature, celle-ci est repoussée de 1,5 mètres en direction opposée du canon. |\\n| Lance-flammes | Le canon exhale un cône de flammes à une distance de 4,5 mètres. Toute créature dans la zone doit effectuer un jet de sauvegarde d’_Acrobaties_ contre un test d’_Occultisme_ du personnage. Il inflige 2d8 points de dégâts de feu additionnés à la moitié de la Puissance du personnage en cas d’échec du jet de sauvegarde ou la moitié en cas de réussite. Les objets inflammables dans la zone qui ne sont pas tenus ni portés prennent feu. |\\n| Protecteur | Le canon émet une vague d’énergie positive conférant 2d8 points de Vitalité temporaires additionnés à la moitié de la Puissance du personnage à toute créature située à 3 mètres ou moins du canon, incluant celui-ci. Il confère également le demi-abri à toute créature située à 3 mètres ou moins de sa position jusqu’au début du prochain tour du personnage. |",
@@ -1731,7 +1731,7 @@
   },
   {
     "Id": "cba7103b-646f-43e0-986e-d1430f272fe0",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "entreposage-magique",
     "DisplayName": "Entreposage magique",
     "Description": "À la fin d’une nuit de sommeil, le personnage peut entreposer un pouvoir de son choix, du niveau de son choix, dans une arme ou dans des outils de bricoleur. Il effectue un test d’_Occultisme_ et le résultat est entreposé dans l’objet avec le pouvoir. Le pouvoir doit être incanté en deux actions ou moins. Cette capacité ne coûte aucun point d’Énergie au personnage. Pendant que le pouvoir est entreposé dans l’objet, le personnage ne peut le canaliser sans utiliser l’objet. Si le pouvoir nécessite des composantes Focus ou Matériel, elles doivent être fournies afin d’entreposer le pouvoir dans l’objet. Elles doivent être fournies qu’une seule fois même si l’objet permet de canaliser le pouvoir plusieurs fois.\\n\\nUne créature peut activer l’objet par l’activité **Objet** (une action) afin de produire l’effet du pouvoir au niveau entreposé. Si le pouvoir requiert la concentration, la créature activant l’objet doit se concentrer sur le pouvoir. La créature utilise les caractéristiques du personnage lorsqu’elle active l’objet et le résultat du test entreposé. Le pouvoir reste entreposé dans l’objet jusqu’à ce que le personnage réutilise cette capacité sur un autre objet, ou jusqu’à ce que l’objet soit activé un nombre de fois égal au double du modificateur d’Intellect du personnage (minimum 1).",
@@ -1741,7 +1741,7 @@
   },
   {
     "Id": "eb5a0f92-e696-45d0-b033-1b23d7226d3b",
-    "Tier": 0,
+    "Tier": 3,
     "UniqueSlug": "fermete-elementaire",
     "DisplayName": "Fermeté élémentaire",
     "Description": "Lorsque le personnage subit une brûlure élémentaire, il applique un des effets suivants au choix.\\n\\n- Il reçoit tout de même les points de dégâts létaux, mais il acquiert quand même le nombre de points d’essence élémentaire convoité au moment où il a tenté d’effectuer la conversion.\\n- Il annule le désavantage affligeant son test d’_Occultisme_ lorsqu’il tente de créer un nombre de points d’essence élémentaire supérieur à son tiers de personnage.\\n- S’il a acquis la spécialisation _Élémentariste_ pour l’élément pour lequel il tente de créer des points d’essence élémentaire, il réduit les points de dégâts de moitié.\\n\\nÉgalement, s’il a acquis la spécialisation _Élémentariste_, il devient résistant aux dégâts du type associé à cet élément.",
