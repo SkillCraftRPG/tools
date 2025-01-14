@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Nothing yet.
 
+## [0.3.0] - 2025-01-14
+
+### Added
+
+- Talent Views.
+
 ## [0.2.0] - 2025-01-13
 
 ### Added
@@ -23,6 +29,7 @@ Nothing yet.
 - Seed for aspects, castes, customizations, educations, languages, natures, and talents.
 - Basic identity management.
 
-[unreleased]: https://github.com/Logitar/Portal/compare/v0.2.0...HEAD
+[unreleased]: https://github.com/Logitar/Portal/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/SkillCraftRPG/tools/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/SkillCraftRPG/tools/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/SkillCraftRPG/tools/releases/tag/v0.1.0
