@@ -1,0 +1,17 @@
+﻿@using Logitar.Portal.Contracts.Search;
+@using SkillCraft.Tools.Core.Talents.Models;
+@using SkillCraft.Tools.Models.Components;
+@model SearchResults<TalentModel>
+
+@{
+  Layout = "_Layout";
+
+  ViewBag.Title = "Talents";
+
+  BreadcrumbModel breadcrumb = new("Talents");
+}
+
+<div class="container">
+  <h1>Talents</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+</div>

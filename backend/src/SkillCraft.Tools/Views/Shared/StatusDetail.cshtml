@@ -1,0 +1,14 @@
+﻿@using Logitar.Portal.Contracts;
+@using SkillCraft.Tools.Models.Components;
+@model AggregateModel
+
+@{
+  StatusModel created = new("Création", Model.CreatedBy, Model.CreatedOn);
+  StatusModel updated = new("Dernière modification", Model.UpdatedBy, Model.UpdatedOn);
+}
+
+<p>
+  @(await Html.PartialAsync("StatusInfo.cshtml", created))
+  <br />
+  @(await Html.PartialAsync("StatusInfo.cshtml", updated))
+</p>

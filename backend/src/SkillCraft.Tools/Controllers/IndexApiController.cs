@@ -4,8 +4,8 @@ using SkillCraft.Tools.Models.Index;
 namespace SkillCraft.Tools.Controllers;
 
 [ApiController]
-[Route("")]
-public class IndexController : ControllerBase
+[Route("api")]
+public class IndexApiController : ControllerBase
 {
   [HttpGet]
   public ActionResult<ApiVersion> Get() => Ok(ApiVersion.Current);

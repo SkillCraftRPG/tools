@@ -31,6 +31,7 @@ internal class ConvertTalentsCommandHandler : IRequestHandler<ConvertTalentsComm
       TalentPayload talent = new()
       {
         Id = input.Id,
+        Tier = input.Tier,
         UniqueSlug = input.UniqueSlug.Trim(),
         DisplayName = input.DisplayName?.CleanTrim(),
         Description = input.Description?.CleanTrim(),

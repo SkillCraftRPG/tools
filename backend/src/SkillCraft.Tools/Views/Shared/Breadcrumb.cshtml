@@ -1,0 +1,23 @@
+﻿@using SkillCraft.Tools.Models.Components;
+@model BreadcrumbModel
+
+<nav style="--bs-breadcrumb-divider: '›';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    @if (Model.IsHome)
+    {
+      <li class="breadcrumb-item active" aria-current="page">Accueil</li>
+    }
+    else
+    {
+      <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+    }
+    @foreach (LinkModel link in Model.Links)
+    {
+      <li class="breadcrumb-item"><a href="@(link.Href)">@(link.Text)</a></li>
+    }
+    @if (Model.Current != null)
+    {
+      <li class="breadcrumb-item active" aria-current="page">@(Model.Current)</li>
+    }
+  </ol>
+</nav>

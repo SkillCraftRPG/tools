@@ -1,19 +1,13 @@
-﻿using MediatR;
-using Microsoft.AspNetCore.Authorization;
+﻿using Logitar.Portal.Contracts.Search;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using SkillCraft.Tools.Constants;
-using SkillCraft.Tools.Core.Search;
-using SkillCraft.Tools.Core.Talents.Commands;
 using SkillCraft.Tools.Core.Talents.Models;
 using SkillCraft.Tools.Core.Talents.Queries;
-using SkillCraft.Tools.Models.Talent;
 
 namespace SkillCraft.Tools.Controllers;
 
-[ApiController]
-[Authorize(Policy = Policies.IsAdmin)]
-[Route("api/talents")]
-public class TalentController : ControllerBase
+[Route("talents")]
+public class TalentController : Controller
 {
   private readonly IMediator _mediator;
 
@@ -22,59 +16,27 @@ public class TalentController : ControllerBase
     _mediator = mediator;
   }
 
-  [HttpPost]
-  public async Task<ActionResult<TalentModel>> CreateAsync([FromBody] CreateOrReplaceTalentPayload payload, CancellationToken cancellationToken)
-  {
-    CreateOrReplaceTalentCommand command = new(Id: null, payload, Version: null);
-    CreateOrReplaceTalentResult result = await _mediator.Send(command, cancellationToken);
-    return ToActionResult(result);
-  }
-
-  [HttpGet("{id}")]
-  public async Task<ActionResult<TalentModel>> ReadAsync(Guid id, CancellationToken cancellationToken)
-  {
-    ReadTalentQuery query = new(id, Slug: null);
-    TalentModel? talent = await _mediator.Send(query, cancellationToken);
-    return talent == null ? NotFound() : Ok(talent);
-  }
-
-  [HttpGet("slug:{slug}")]
-  public async Task<ActionResult<TalentModel>> ReadAsync(string slug, CancellationToken cancellationToken)
-  {
-    ReadTalentQuery query = new(Id: null, slug);
-    TalentModel? talent = await _mediator.Send(query, cancellationToken);
-    return talent == null ? NotFound() : Ok(talent);
-  }
-
-  [HttpPut("{id}")]
-  public async Task<ActionResult<TalentModel>> ReplaceAsync(Guid id, [FromBody] CreateOrReplaceTalentPayload payload, long? version, CancellationToken cancellationToken)
-  {
-    CreateOrReplaceTalentCommand command = new(id, payload, version);
-    CreateOrReplaceTalentResult result = await _mediator.Send(command, cancellationToken);
-    return ToActionResult(result);
-  }
-
   [HttpGet]
-  public async Task<ActionResult<SearchResults<TalentModel>>> SearchAsync([FromQuery] SearchTalentsParameters parameters, CancellationToken cancellationToken)
+  public async Task<ActionResult> TalentList(CancellationToken cancellationToken)
   {
-    SearchTalentsQuery query = new(parameters.ToPayload());
+    SearchTalentsPayload payload = new();
+    SearchTalentsQuery query = new(payload);
     SearchResults<TalentModel> talents = await _mediator.Send(query, cancellationToken);
-    return Ok(talents);
+
+    return View(talents);
   }
 
-  private ActionResult<TalentModel> ToActionResult(CreateOrReplaceTalentResult result)
+  [HttpGet("{idOrSlug}")]
+  public async Task<ActionResult> TalentView(string idOrSlug, CancellationToken cancellationToken)
   {
-    TalentModel? talent = result.Talent;
+    bool parsed = Guid.TryParse(idOrSlug, out Guid id);
+    ReadTalentQuery query = new(parsed ? id : null, idOrSlug);
+    TalentModel? talent = await _mediator.Send(query, cancellationToken);
     if (talent == null)
     {
       return NotFound();
     }
-    else if (!result.Created)
-    {
-      return Ok(talent);
-    }
 
-    Uri uri = new($"{Request.Scheme}://{Request.Host}/api/talents/{talent.Id}", UriKind.Absolute);
-    return Created(uri, talent);
+    return View(talent);
   }
 }

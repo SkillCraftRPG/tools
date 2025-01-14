@@ -1,0 +1,39 @@
+﻿@using SkillCraft.Tools.Models.Components;
+@model AvatarModel
+
+@{
+  ImageModel image = new()
+  {
+    IsCircle = true,
+    Src = Model.Url
+  };
+  if (image.Src == null && Model.EmailAddress != null)
+  {
+    // TODO(fpion): Gravatar; https://www.gravatar.com/avatar/{md5(props.emailAddress)}
+  }
+  if (Model.DisplayName != null)
+  {
+    image.Alt = $"{Model.DisplayName}'s Avatar";
+  }
+  if (Model.Size.HasValue)
+  {
+    image.Height = Model.Size.Value;
+  }
+
+  BadgeModel badge = new()
+  {
+    Variant = Model.Variant
+  };
+}
+
+<span>
+  @if (image.Src != null)
+  {
+    @(await Html.PartialAsync("Image.cshtml", image))
+  }
+  else if (Model.Icon != null)
+  {
+    // TODO(fpion): rounded-circle, icon, style: { width: `${height.value}px`, height: `${height.value}px` }
+    @(await Html.PartialAsync("Badge.cshtml", badge))
+  }
+</span>
