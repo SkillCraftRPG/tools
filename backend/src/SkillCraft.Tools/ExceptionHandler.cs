@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using SkillCraft.Tools.Core;
+using SkillCraft.Tools.Core.Logging;
 
 namespace SkillCraft.Tools;
 
@@ -54,7 +55,13 @@ internal class ExceptionHandler : IExceptionHandler
       ProblemDetails = problemDetails,
       Exception = exception
     };
-    return await _problemDetailsService.TryWriteAsync(context);
+    bool result = await _problemDetailsService.TryWriteAsync(context);
+    if (result)
+    {
+      ILoggingService loggingService = httpContext.RequestServices.GetRequiredService<ILoggingService>();
+      loggingService.Report(exception);
+    }
+    return result;
   }
 
   private static string FormatToTitle(string code)

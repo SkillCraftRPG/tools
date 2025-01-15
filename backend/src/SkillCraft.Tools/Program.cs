@@ -6,7 +6,7 @@ internal class Program
   {
     WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-    Startup startup = new(builder.Configuration);
+    Startup startup = new(builder.Configuration, builder.Environment);
     startup.ConfigureServices(builder.Services);
 
     WebApplication application = builder.Build();
