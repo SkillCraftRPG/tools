@@ -1,4 +1,4 @@
-﻿namespace SkillCraft.Tools.Core.Search;
+﻿namespace SkillCraft.Tools.Core;
 
 public record TierFilter
 {

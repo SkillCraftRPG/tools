@@ -1,6 +1,6 @@
-﻿using MediatR;
+﻿using Logitar.Portal.Contracts.Search;
+using MediatR;
 using SkillCraft.Tools.Core.Languages.Models;
-using SkillCraft.Tools.Core.Search;
 
 namespace SkillCraft.Tools.Core.Languages.Queries;
 

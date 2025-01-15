@@ -1,5 +1,5 @@
 ﻿using GraphQL.Types;
-using SkillCraft.Tools.Core.Search;
+using SkillCraft.Tools.Core;
 
 namespace SkillCraft.Tools.GraphQL.Search;
 

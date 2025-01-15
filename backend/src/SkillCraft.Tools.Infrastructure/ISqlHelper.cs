@@ -1,5 +1,5 @@
 ﻿using Logitar.Data;
-using SkillCraft.Tools.Core.Search;
+using Logitar.Portal.Contracts.Search;
 
 namespace SkillCraft.Tools.Infrastructure;
 

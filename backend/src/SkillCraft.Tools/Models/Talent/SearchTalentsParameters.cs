@@ -1,5 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using SkillCraft.Tools.Core.Search;
+﻿using Logitar.Portal.Contracts.Search;
+using Microsoft.AspNetCore.Mvc;
+using SkillCraft.Tools.Core;
 using SkillCraft.Tools.Core.Talents.Models;
 using SkillCraft.Tools.Models.Search;
 

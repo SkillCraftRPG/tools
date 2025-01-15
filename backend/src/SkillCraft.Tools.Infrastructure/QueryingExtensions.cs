@@ -1,6 +1,7 @@
 ﻿using Logitar.Data;
+using Logitar.Portal.Contracts.Search;
 using Microsoft.EntityFrameworkCore;
-using SkillCraft.Tools.Core.Search;
+using SkillCraft.Tools.Core;
 
 namespace SkillCraft.Tools.Infrastructure;
 
