@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using SkillCraft.Tools.Core;
-using SkillCraft.Tools.Core.Logging;
 
 namespace SkillCraft.Tools;
 
@@ -17,13 +16,11 @@ internal class ExceptionHandler : IExceptionHandler
     _serializerOptions.Converters.Add(new JsonStringEnumConverter());
   }
 
-  private readonly ILoggingService _loggingService;
   private readonly ProblemDetailsFactory _problemDetailsFactory;
   private readonly IProblemDetailsService _problemDetailsService;
 
-  public ExceptionHandler(ILoggingService loggingService, ProblemDetailsFactory problemDetailsFactory, IProblemDetailsService problemDetailsService)
+  public ExceptionHandler(ProblemDetailsFactory problemDetailsFactory, IProblemDetailsService problemDetailsService)
   {
-    _loggingService = loggingService;
     _problemDetailsFactory = problemDetailsFactory;
     _problemDetailsService = problemDetailsService;
   }
@@ -57,12 +54,7 @@ internal class ExceptionHandler : IExceptionHandler
       ProblemDetails = problemDetails,
       Exception = exception
     };
-    bool result = await _problemDetailsService.TryWriteAsync(context);
-    if (result)
-    {
-      _loggingService.Report(exception);
-    }
-    return result;
+    return await _problemDetailsService.TryWriteAsync(context);
   }
 
   private static string FormatToTitle(string code)

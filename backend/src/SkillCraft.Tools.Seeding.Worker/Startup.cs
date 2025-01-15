@@ -1,5 +1,6 @@
 ﻿using Logitar.Portal.Client;
 using SkillCraft.Tools.Core;
+using SkillCraft.Tools.Core.Logging;
 using SkillCraft.Tools.Infrastructure;
 using SkillCraft.Tools.Infrastructure.PostgreSQL;
 using SkillCraft.Tools.Infrastructure.SqlServer;
@@ -40,5 +41,6 @@ internal class Startup
         throw new DatabaseProviderNotSupportedException(databaseProvider);
     }
     services.AddSingleton<IApplicationContext, WorkerApplicationContext>();
+    services.AddSingleton<ILogRepository, SeedingLogRepository>();
   }
 }
