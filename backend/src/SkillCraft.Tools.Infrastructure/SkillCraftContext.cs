@@ -9,7 +9,6 @@ public class SkillCraftContext : DbContext
   {
   }
 
-  internal DbSet<ActorEntity> Actors => Set<ActorEntity>();
   internal DbSet<AspectEntity> Aspects => Set<AspectEntity>();
   internal DbSet<CasteEntity> Castes => Set<CasteEntity>();
   internal DbSet<CustomizationEntity> Customizations => Set<CustomizationEntity>();

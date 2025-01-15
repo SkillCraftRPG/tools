@@ -21,62 +21,6 @@ namespace SkillCraft.Tools.Infrastructure.PostgreSQL.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("SkillCraft.Tools.Infrastructure.Entities.ActorEntity", b =>
-                {
-                    b.Property<int>("ActorId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ActorId"));
-
-                    b.Property<string>("DisplayName")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("character varying(255)");
-
-                    b.Property<string>("EmailAddress")
-                        .HasMaxLength(255)
-                        .HasColumnType("character varying(255)");
-
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uuid");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("Key")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("character varying(255)");
-
-                    b.Property<string>("PictureUrl")
-                        .HasMaxLength(2048)
-                        .HasColumnType("character varying(2048)");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("character varying(255)");
-
-                    b.HasKey("ActorId");
-
-                    b.HasIndex("DisplayName");
-
-                    b.HasIndex("EmailAddress");
-
-                    b.HasIndex("Id")
-                        .IsUnique();
-
-                    b.HasIndex("IsDeleted");
-
-                    b.HasIndex("Key")
-                        .IsUnique();
-
-                    b.HasIndex("Type");
-
-                    b.ToTable("Actors", (string)null);
-                });
-
             modelBuilder.Entity("SkillCraft.Tools.Infrastructure.Entities.AspectEntity", b =>
                 {
                     b.Property<int>("AspectId")
