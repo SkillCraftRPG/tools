@@ -1,10 +1,14 @@
 ﻿using Logitar.EventSourcing;
+using Logitar.Portal.Contracts.Configurations;
+using MediatR;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SkillCraft.Tools.Core.Aspects;
 using SkillCraft.Tools.Core.Castes;
 using SkillCraft.Tools.Core.Customizations;
 using SkillCraft.Tools.Core.Educations;
 using SkillCraft.Tools.Core.Languages;
+using SkillCraft.Tools.Core.Logging;
 using SkillCraft.Tools.Core.Natures;
 using SkillCraft.Tools.Core.Talents;
 
@@ -17,6 +21,9 @@ public static class DependencyInjectionExtensions
     return services
       .AddLogitarEventSourcing()
       .AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()))
+      .AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>))
+      .AddSingleton<ILoggingSettings>(InitializeLoggingSettings)
+      .AddScoped<ILoggingService, LoggingService>()
       .AddManagers();
   }
 
@@ -30,5 +37,11 @@ public static class DependencyInjectionExtensions
       .AddTransient<ILanguageManager, LanguageManager>()
       .AddTransient<INatureManager, NatureManager>()
       .AddTransient<ITalentManager, TalentManager>();
+  }
+
+  private static LoggingSettings InitializeLoggingSettings(IServiceProvider serviceProvider)
+  {
+    IConfiguration configuration = serviceProvider.GetRequiredService<IConfiguration>();
+    return configuration.GetSection("ApplicationLogging").Get<LoggingSettings>() ?? new();
   }
 }

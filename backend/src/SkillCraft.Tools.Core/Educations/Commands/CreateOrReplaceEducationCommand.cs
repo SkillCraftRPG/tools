@@ -8,7 +8,7 @@ namespace SkillCraft.Tools.Core.Educations.Commands;
 
 public record CreateOrReplaceEducationResult(EducationModel? Education = null, bool Created = false);
 
-public record CreateOrReplaceEducationCommand(Guid? Id, CreateOrReplaceEducationPayload Payload, long? Version) : IRequest<CreateOrReplaceEducationResult>;
+public record CreateOrReplaceEducationCommand(Guid? Id, CreateOrReplaceEducationPayload Payload, long? Version) : Activity, IRequest<CreateOrReplaceEducationResult>;
 
 internal class CreateOrReplaceEducationCommandHandler : IRequestHandler<CreateOrReplaceEducationCommand, CreateOrReplaceEducationResult>
 {

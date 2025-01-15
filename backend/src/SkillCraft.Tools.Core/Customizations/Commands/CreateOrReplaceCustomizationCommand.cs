@@ -8,7 +8,7 @@ namespace SkillCraft.Tools.Core.Customizations.Commands;
 
 public record CreateOrReplaceCustomizationResult(CustomizationModel? Customization = null, bool Created = false);
 
-public record CreateOrReplaceCustomizationCommand(Guid? Id, CreateOrReplaceCustomizationPayload Payload, long? Version) : IRequest<CreateOrReplaceCustomizationResult>;
+public record CreateOrReplaceCustomizationCommand(Guid? Id, CreateOrReplaceCustomizationPayload Payload, long? Version) : Activity, IRequest<CreateOrReplaceCustomizationResult>;
 
 internal class CreateOrReplaceCustomizationCommandHandler : IRequestHandler<CreateOrReplaceCustomizationCommand, CreateOrReplaceCustomizationResult>
 {

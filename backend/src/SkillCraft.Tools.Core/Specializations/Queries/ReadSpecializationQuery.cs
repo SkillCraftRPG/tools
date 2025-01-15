@@ -3,7 +3,7 @@ using SkillCraft.Tools.Core.Specializations.Models;
 
 namespace SkillCraft.Tools.Core.Specializations.Queries;
 
-public record ReadSpecializationQuery(Guid? Id, string? Slug) : IRequest<SpecializationModel?>;
+public record ReadSpecializationQuery(Guid? Id, string? Slug) : Activity, IRequest<SpecializationModel?>;
 
 internal class ReadSpecializationQueryHandler : IRequestHandler<ReadSpecializationQuery, SpecializationModel?>
 {

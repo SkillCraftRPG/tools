@@ -12,9 +12,11 @@ using SkillCraft.Tools.Authorization;
 using SkillCraft.Tools.Constants;
 using SkillCraft.Tools.Core;
 using SkillCraft.Tools.Extensions;
+using SkillCraft.Tools.Filters;
 using SkillCraft.Tools.GraphQL;
 using SkillCraft.Tools.Infrastructure;
 using SkillCraft.Tools.Infrastructure.Commands;
+using SkillCraft.Tools.Infrastructure.MongoDB;
 using SkillCraft.Tools.Infrastructure.PostgreSQL;
 using SkillCraft.Tools.Infrastructure.SqlServer;
 using SkillCraft.Tools.Middlewares;
@@ -38,10 +40,6 @@ internal class Startup : StartupBase
   public override void ConfigureServices(IServiceCollection services)
   {
     base.ConfigureServices(services);
-
-    services.AddSkillCraftToolsCore();
-    services.AddSkillCraftToolsInfrastructure();
-    services.AddSingleton<IApplicationContext, HttpApplicationContext>();
 
     services.AddSingleton(_corsSettings);
     services.AddCors();
@@ -77,7 +75,7 @@ internal class Startup : StartupBase
     });
     services.AddDistributedMemoryCache();
 
-    services.AddControllersWithViews()
+    services.AddControllersWithViews(options => options.Filters.Add<OperationLogging>())
       .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
     GraphQLSettings graphQLSettings = _configuration.GetSection(GraphQLSettings.SectionKey).Get<GraphQLSettings>() ?? new();
@@ -94,6 +92,11 @@ internal class Startup : StartupBase
     IHealthChecksBuilder healthChecks = services.AddHealthChecks();
 
     services.AddOpenApi();
+
+    services.AddSkillCraftToolsCore();
+    services.AddSkillCraftToolsInfrastructure();
+    services.AddSkillCraftToolsInfrastructureMongoDB(_configuration);
+    services.AddSingleton<IApplicationContext, HttpApplicationContext>();
 
     DatabaseProvider databaseProvider = _configuration.GetValue<DatabaseProvider?>("DatabaseProvider") ?? DatabaseProvider.SqlServer;
     switch (databaseProvider)
@@ -150,6 +153,7 @@ internal class Startup : StartupBase
     application.UseStaticFiles();
     application.UseExceptionHandler();
     application.UseSession();
+    application.UseMiddleware<Logging>();
     application.UseMiddleware<RenewSession>();
     application.UseAuthentication();
     application.UseAuthorization();

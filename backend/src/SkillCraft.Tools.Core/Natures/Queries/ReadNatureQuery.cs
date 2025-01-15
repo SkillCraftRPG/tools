@@ -3,7 +3,7 @@ using SkillCraft.Tools.Core.Natures.Models;
 
 namespace SkillCraft.Tools.Core.Natures.Queries;
 
-public record ReadNatureQuery(Guid? Id, string? Slug) : IRequest<NatureModel?>;
+public record ReadNatureQuery(Guid? Id, string? Slug) : Activity, IRequest<NatureModel?>;
 
 internal class ReadNatureQueryHandler : IRequestHandler<ReadNatureQuery, NatureModel?>
 {

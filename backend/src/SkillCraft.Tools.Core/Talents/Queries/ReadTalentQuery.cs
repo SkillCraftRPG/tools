@@ -3,7 +3,7 @@ using SkillCraft.Tools.Core.Talents.Models;
 
 namespace SkillCraft.Tools.Core.Talents.Queries;
 
-public record ReadTalentQuery(Guid? Id, string? Slug) : IRequest<TalentModel?>;
+public record ReadTalentQuery(Guid? Id, string? Slug) : Activity, IRequest<TalentModel?>;
 
 internal class ReadTalentQueryHandler : IRequestHandler<ReadTalentQuery, TalentModel?>
 {

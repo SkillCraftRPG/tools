@@ -3,7 +3,7 @@ using SkillCraft.Tools.Core.Customizations.Models;
 
 namespace SkillCraft.Tools.Core.Customizations.Queries;
 
-public record ReadCustomizationQuery(Guid? Id, string? Slug) : IRequest<CustomizationModel?>;
+public record ReadCustomizationQuery(Guid? Id, string? Slug) : Activity, IRequest<CustomizationModel?>;
 
 internal class ReadCustomizationQueryHandler : IRequestHandler<ReadCustomizationQuery, CustomizationModel?>
 {

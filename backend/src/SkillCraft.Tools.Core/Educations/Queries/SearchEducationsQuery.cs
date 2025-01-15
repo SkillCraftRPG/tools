@@ -4,7 +4,7 @@ using SkillCraft.Tools.Core.Educations.Models;
 
 namespace SkillCraft.Tools.Core.Educations.Queries;
 
-public record SearchEducationsQuery(SearchEducationsPayload Payload) : IRequest<SearchResults<EducationModel>>;
+public record SearchEducationsQuery(SearchEducationsPayload Payload) : Activity, IRequest<SearchResults<EducationModel>>;
 
 internal class SearchEducationsQueryHandler : IRequestHandler<SearchEducationsQuery, SearchResults<EducationModel>>
 {

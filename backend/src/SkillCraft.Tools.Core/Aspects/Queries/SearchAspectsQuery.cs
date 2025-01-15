@@ -4,7 +4,7 @@ using SkillCraft.Tools.Core.Aspects.Models;
 
 namespace SkillCraft.Tools.Core.Aspects.Queries;
 
-public record SearchAspectsQuery(SearchAspectsPayload Payload) : IRequest<SearchResults<AspectModel>>;
+public record SearchAspectsQuery(SearchAspectsPayload Payload) : Activity, IRequest<SearchResults<AspectModel>>;
 
 internal class SearchAspectsQueryHandler : IRequestHandler<SearchAspectsQuery, SearchResults<AspectModel>>
 {

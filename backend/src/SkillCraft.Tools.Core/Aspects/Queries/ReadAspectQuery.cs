@@ -3,7 +3,7 @@ using SkillCraft.Tools.Core.Aspects.Models;
 
 namespace SkillCraft.Tools.Core.Aspects.Queries;
 
-public record ReadAspectQuery(Guid? Id, string? Slug) : IRequest<AspectModel?>;
+public record ReadAspectQuery(Guid? Id, string? Slug) : Activity, IRequest<AspectModel?>;
 
 internal class ReadAspectQueryHandler : IRequestHandler<ReadAspectQuery, AspectModel?>
 {
