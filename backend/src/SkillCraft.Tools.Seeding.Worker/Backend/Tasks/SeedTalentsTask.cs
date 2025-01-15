@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using SkillCraft.Tools.Core.Talents;
 using SkillCraft.Tools.Core.Talents.Commands;
 using SkillCraft.Tools.Core.Talents.Models;
 using SkillCraft.Tools.Seeding.Worker.Backend.Payloads;
@@ -28,21 +27,36 @@ internal class SeedTalentsTaskHandler : INotificationHandler<SeedTalentsTask>
     IEnumerable<TalentPayload>? payloads = SeedingSerializer.Deserialize<IEnumerable<TalentPayload>>(json);
     if (payloads != null)
     {
-      foreach (TalentPayload payload in payloads)
+      await SeedAsync(payloads, seededIds: [], cancellationToken);
+    }
+  }
+
+  private async Task SeedAsync(IEnumerable<TalentPayload> payloads, HashSet<Guid> seededIds, CancellationToken cancellationToken)
+  {
+    int count = payloads.Count();
+    if (count < 1)
+    {
+      return;
+    }
+
+    List<TalentPayload> notSeeded = new(capacity: count);
+    foreach (TalentPayload payload in payloads)
+    {
+      if (!payload.RequiredTalentId.HasValue || seededIds.Contains(payload.RequiredTalentId.Value))
       {
-        try
-        {
-          CreateOrReplaceTalentCommand command = new(payload.Id, payload, Version: null);
-          CreateOrReplaceTalentResult result = await _mediator.Send(command, cancellationToken);
-          TalentModel talent = result.Talent ?? throw new InvalidOperationException("The talent model should not be null.");
-          string status = result.Created ? "created" : "updated";
-          _logger.LogInformation("The talent '{Name}' has been {Status} (Id={Id}).", talent.DisplayName ?? talent.UniqueSlug, status, talent.Id);
-        }
-        catch (TalentNotFoundException exception)
-        {
-          _logger.LogWarning(exception, "The specified talent could not be found.");
-        }
+        CreateOrReplaceTalentCommand command = new(payload.Id, payload, Version: null);
+        CreateOrReplaceTalentResult result = await _mediator.Send(command, cancellationToken);
+        TalentModel talent = result.Talent ?? throw new InvalidOperationException("The talent model should not be null.");
+        string status = result.Created ? "created" : "updated";
+        _logger.LogInformation("The talent '{Name}' has been {Status} (Id={Id}).", talent.DisplayName ?? talent.UniqueSlug, status, talent.Id);
+
+        seededIds.Add(talent.Id);
+      }
+      else
+      {
+        notSeeded.Add(payload);
       }
     }
+    await SeedAsync(notSeeded, seededIds, cancellationToken);
   }
 }
