@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Logitar.Portal.Contracts.Search;
+using Microsoft.AspNetCore.Mvc;
 using SkillCraft.Tools.Core.Customizations;
 using SkillCraft.Tools.Core.Customizations.Models;
-using SkillCraft.Tools.Core.Search;
 using SkillCraft.Tools.Models.Search;
 
 namespace SkillCraft.Tools.Models.Customization;

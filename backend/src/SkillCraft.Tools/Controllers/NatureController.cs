@@ -1,11 +1,11 @@
-﻿using MediatR;
+﻿using Logitar.Portal.Contracts.Search;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SkillCraft.Tools.Constants;
 using SkillCraft.Tools.Core.Natures.Commands;
 using SkillCraft.Tools.Core.Natures.Models;
 using SkillCraft.Tools.Core.Natures.Queries;
-using SkillCraft.Tools.Core.Search;
 using SkillCraft.Tools.Models.Nature;
 
 namespace SkillCraft.Tools.Controllers;

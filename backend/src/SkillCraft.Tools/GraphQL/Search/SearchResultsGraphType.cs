@@ -1,5 +1,5 @@
 ﻿using GraphQL.Types;
-using SkillCraft.Tools.Core.Search;
+using Logitar.Portal.Contracts.Search;
 
 namespace SkillCraft.Tools.GraphQL.Search;
 

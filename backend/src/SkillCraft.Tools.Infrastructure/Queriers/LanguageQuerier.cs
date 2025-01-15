@@ -1,12 +1,12 @@
 ﻿using Logitar.Data;
 using Logitar.EventSourcing;
 using Logitar.Portal.Contracts.Actors;
+using Logitar.Portal.Contracts.Search;
 using Microsoft.EntityFrameworkCore;
 using SkillCraft.Tools.Core;
 using SkillCraft.Tools.Core.Actors;
 using SkillCraft.Tools.Core.Languages;
 using SkillCraft.Tools.Core.Languages.Models;
-using SkillCraft.Tools.Core.Search;
 using SkillCraft.Tools.Infrastructure.Entities;
 using SkillCraft.Tools.Infrastructure.SkillCraftDb;
 
