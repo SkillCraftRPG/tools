@@ -3,5 +3,5 @@
 internal static class Api
 {
   public const string Title = "SkillCraft Tools API";
-  public static readonly Version Version = new(0, 3, 0);
+  public static readonly Version Version = new(0, 4, 0);
 }
