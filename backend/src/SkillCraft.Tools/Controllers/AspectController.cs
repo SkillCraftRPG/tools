@@ -1,19 +1,13 @@
 ﻿using Logitar.Portal.Contracts.Search;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SkillCraft.Tools.Constants;
-using SkillCraft.Tools.Core.Aspects.Commands;
 using SkillCraft.Tools.Core.Aspects.Models;
 using SkillCraft.Tools.Core.Aspects.Queries;
-using SkillCraft.Tools.Models.Aspect;
 
 namespace SkillCraft.Tools.Controllers;
 
-[ApiController]
-[Authorize(Policy = Policies.IsAdmin)]
-[Route("api/aspects")]
-public class AspectController : ControllerBase
+[Route("aspects")]
+public class AspectController : Controller
 {
   private readonly IMediator _mediator;
 
@@ -22,59 +16,28 @@ public class AspectController : ControllerBase
     _mediator = mediator;
   }
 
-  [HttpPost]
-  public async Task<ActionResult<AspectModel>> CreateAsync([FromBody] CreateOrReplaceAspectPayload payload, CancellationToken cancellationToken)
-  {
-    CreateOrReplaceAspectCommand command = new(Id: null, payload, Version: null);
-    CreateOrReplaceAspectResult result = await _mediator.Send(command, cancellationToken);
-    return ToActionResult(result);
-  }
-
-  [HttpGet("{id}")]
-  public async Task<ActionResult<AspectModel>> ReadAsync(Guid id, CancellationToken cancellationToken)
-  {
-    ReadAspectQuery query = new(id, Slug: null);
-    AspectModel? aspect = await _mediator.Send(query, cancellationToken);
-    return aspect == null ? NotFound() : Ok(aspect);
-  }
-
-  [HttpGet("slug:{slug}")]
-  public async Task<ActionResult<AspectModel>> ReadAsync(string slug, CancellationToken cancellationToken)
-  {
-    ReadAspectQuery query = new(Id: null, slug);
-    AspectModel? aspect = await _mediator.Send(query, cancellationToken);
-    return aspect == null ? NotFound() : Ok(aspect);
-  }
-
-  [HttpPut("{id}")]
-  public async Task<ActionResult<AspectModel>> ReplaceAsync(Guid id, [FromBody] CreateOrReplaceAspectPayload payload, long? version, CancellationToken cancellationToken)
-  {
-    CreateOrReplaceAspectCommand command = new(id, payload, version);
-    CreateOrReplaceAspectResult result = await _mediator.Send(command, cancellationToken);
-    return ToActionResult(result);
-  }
-
   [HttpGet]
-  public async Task<ActionResult<SearchResults<AspectModel>>> SearchAsync([FromQuery] SearchAspectsParameters parameters, CancellationToken cancellationToken)
+  public async Task<ActionResult> AspectList(CancellationToken cancellationToken)
   {
-    SearchAspectsQuery query = new(parameters.ToPayload());
+    SearchAspectsPayload payload = new();
+    payload.Sort.Add(new AspectSortOption(AspectSort.DisplayName));
+    SearchAspectsQuery query = new(payload);
     SearchResults<AspectModel> aspects = await _mediator.Send(query, cancellationToken);
-    return Ok(aspects);
+
+    return View(aspects);
   }
 
-  private ActionResult<AspectModel> ToActionResult(CreateOrReplaceAspectResult result)
+  [HttpGet("{idOrSlug}")]
+  public async Task<ActionResult> AspectView(string idOrSlug, CancellationToken cancellationToken)
   {
-    AspectModel? aspect = result.Aspect;
+    bool parsed = Guid.TryParse(idOrSlug, out Guid id);
+    ReadAspectQuery query = new(parsed ? id : null, idOrSlug);
+    AspectModel? aspect = await _mediator.Send(query, cancellationToken);
     if (aspect == null)
     {
       return NotFound();
     }
-    else if (!result.Created)
-    {
-      return Ok(aspect);
-    }
 
-    Uri uri = new($"{Request.Scheme}://{Request.Host}/api/aspects/{aspect.Id}", UriKind.Absolute);
-    return Created(uri, aspect);
+    return View(aspect);
   }
 }

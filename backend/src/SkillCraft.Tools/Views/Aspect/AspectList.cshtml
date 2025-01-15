@@ -1,0 +1,88 @@
+﻿@using Logitar.Portal.Contracts.Search;
+@using SkillCraft.Tools;
+@using SkillCraft.Tools.Core.Aspects.Models;
+@using SkillCraft.Tools.Models.Components;
+@model SearchResults<AspectModel>
+
+@{
+  Layout = "_Layout";
+
+  ViewBag.Title = "Aspects";
+
+  BreadcrumbModel breadcrumb = new("Aspects");
+}
+
+<div class="container">
+  <h1>Aspects</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+  @if (Model.Items.Count < 1)
+  {
+    <p>Cette liste est vide.</p>
+  }
+  else
+  {
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Nom</th>
+          <th scope="col">Attributs obligatoires</th>
+          <th scope="col">Attributs facultatifs</th>
+          <th scope="col">Compétences</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (AspectModel aspect in Model.Items)
+        {
+          <tr>
+            <td>
+              <a href="/aspects/@(aspect.UniqueSlug)">@(aspect.DisplayName ?? aspect.UniqueSlug)</a>
+            </td>
+            <td>
+              @if (aspect.Attributes.Mandatory1.HasValue)
+              {
+                @(Translator.Translate(aspect.Attributes.Mandatory1.Value))
+                @if (aspect.Attributes.Mandatory2.HasValue)
+                {
+                  <br />
+                }
+              }
+              @if (aspect.Attributes.Mandatory2.HasValue)
+              {
+                @(Translator.Translate(aspect.Attributes.Mandatory2.Value))
+              }
+            </td>
+            <td>
+              @if (aspect.Attributes.Optional1.HasValue)
+              {
+                @(Translator.Translate(aspect.Attributes.Optional1.Value))
+                @if (aspect.Attributes.Optional2.HasValue)
+                {
+                  <br />
+                }
+              }
+              @if (aspect.Attributes.Optional2.HasValue)
+              {
+                @(Translator.Translate(aspect.Attributes.Optional2.Value))
+              }
+            </td>
+            <td>
+              @if (aspect.Skills.Discounted1.HasValue)
+              {
+                @(Translator.Translate(aspect.Skills.Discounted1.Value))
+                @if (aspect.Skills.Discounted2.HasValue)
+                {
+                  <br />
+                }
+              }
+              @if (aspect.Skills.Discounted2.HasValue)
+              {
+                @(Translator.Translate(aspect.Skills.Discounted2.Value))
+              }
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <p class="float-end"><strong>@(Model.Items.Count) @(Model.Items.Count > 1 ? "aspects" : "aspect")</strong></p>
+  }
+</div>
