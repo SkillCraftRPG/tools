@@ -145,6 +145,7 @@ internal class Startup : StartupBase
 
     application.UseHttpsRedirection();
     application.UseCors(_corsSettings);
+    application.UseStaticFiles();
     application.UseExceptionHandler();
     application.UseSession();
     application.UseMiddleware<RenewSession>();
