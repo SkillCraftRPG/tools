@@ -1,5 +1,6 @@
 ﻿using Logitar.Portal.Contracts;
 using Logitar.Portal.Contracts.ApiKeys;
+using Logitar.Portal.Contracts.Search;
 using SkillCraft.Tools.Core.Identity;
 
 namespace SkillCraft.Tools.Infrastructure.Identity;
@@ -19,5 +20,14 @@ internal class ApiKeyService : IApiKeyService
     RequestContext context = new(cancellationToken);
     ApiKeyModel apiKey = await _apiKeyClient.AuthenticateAsync(payload, context);
     return apiKey;
+  }
+
+  public async Task<IReadOnlyCollection<ApiKeyModel>> FindAsync(IEnumerable<Guid> ids, CancellationToken cancellationToken)
+  {
+    SearchApiKeysPayload payload = new();
+    payload.Ids.AddRange(ids);
+    RequestContext context = new(cancellationToken);
+    SearchResults<ApiKeyModel> apiKeys = await _apiKeyClient.SearchAsync(payload, context);
+    return apiKeys.Items.AsReadOnly();
   }
 }

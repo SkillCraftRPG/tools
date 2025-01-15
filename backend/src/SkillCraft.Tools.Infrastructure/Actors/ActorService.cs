@@ -1,21 +1,24 @@
 ﻿using Logitar.EventSourcing;
 using Logitar.Portal.Contracts.Actors;
-using Microsoft.EntityFrameworkCore;
+using Logitar.Portal.Contracts.ApiKeys;
+using Logitar.Portal.Contracts.Users;
 using SkillCraft.Tools.Core.Actors;
 using SkillCraft.Tools.Core.Caching;
-using SkillCraft.Tools.Infrastructure.Entities;
+using SkillCraft.Tools.Core.Identity;
 
 namespace SkillCraft.Tools.Infrastructure.Actors;
 
 internal class ActorService : IActorService
 {
+  private readonly IApiKeyService _apiKeyService;
   private readonly ICacheService _cacheService;
-  private readonly SkillCraftContext _context;
+  private readonly IUserService _userService;
 
-  public ActorService(ICacheService cacheService, SkillCraftContext context)
+  public ActorService(IApiKeyService apiKeyService, ICacheService cacheService, IUserService userService)
   {
+    _apiKeyService = apiKeyService;
     _cacheService = cacheService;
-    _context = context;
+    _userService = userService;
   }
 
   public async Task<IReadOnlyCollection<ActorModel>> FindAsync(IEnumerable<ActorId> ids, CancellationToken cancellationToken)
@@ -43,17 +46,31 @@ internal class ActorService : IActorService
 
     if (missingIds.Count > 0)
     {
-      ActorEntity[] entities = await _context.Actors.AsNoTracking()
-        .Where(a => missingIds.Contains(a.Id))
-        .ToArrayAsync(cancellationToken);
-
-      foreach (ActorEntity entity in entities)
+      IReadOnlyCollection<UserModel> users = await _userService.FindAsync(missingIds, cancellationToken);
+      foreach (UserModel user in users)
       {
-        ActorModel actor = Mapper.ToActor(entity);
-        ActorId id = new(entity.Id);
-
-        actors[id] = actor;
+        ActorModel actor = new(user);
         _cacheService.SetActor(actor);
+
+        ActorId actorId = new(actor.Id);
+        actors[actorId] = actor;
+
+        missingIds.Remove(actor.Id);
+      }
+    }
+
+    if (missingIds.Count > 0)
+    {
+      IReadOnlyCollection<ApiKeyModel> apiKeys = await _apiKeyService.FindAsync(missingIds, cancellationToken);
+      foreach (ApiKeyModel apiKey in apiKeys)
+      {
+        ActorModel actor = new(apiKey);
+        _cacheService.SetActor(actor);
+
+        ActorId actorId = new(actor.Id);
+        actors[actorId] = actor;
+
+        missingIds.Remove(actor.Id);
       }
     }
 
