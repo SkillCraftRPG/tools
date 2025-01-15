@@ -1,0 +1,72 @@
+﻿@using Microsoft.FeatureManagement
+@using SkillCraft.Tools.Constants
+@using SkillCraft.Tools.Models.Components
+
+@inject IFeatureManager _featureManager
+
+@{
+  string environment = (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production").ToLowerInvariant();
+
+  string? scalarUrl = null;
+  if (await _featureManager.IsEnabledAsync(Features.UseScalarUI))
+  {
+    scalarUrl = "/scalar/v1";
+  }
+
+  List<LinkModel> graphQLLinks = new(capacity: 2);
+  if (await _featureManager.IsEnabledAsync(Features.UseGraphQLGraphiQL))
+  {
+    graphQLLinks.Add(new LinkModel("/ui/graphiql", "GraphiQL"));
+  }
+  if (await _featureManager.IsEnabledAsync(Features.UseGraphQLVoyager))
+  {
+    graphQLLinks.Add(new LinkModel("/ui/voyager", "Voyager"));
+  }
+}
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a href="/" class="navbar-brand">
+      <img src="/img/logo.png" alt="SkillCraftRPG Logo" height="32" /> SkillCraftRPG
+      @if (environment != "production")
+      {
+        <span class="badge text-bg-warning">@(environment)</span>
+      }
+    </a>
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        @if (scalarUrl != null)
+        {
+          <li class="nav-item">
+            <a class="nav-link" href="@(scalarUrl)" target="_blank"> <font-awesome-icon icon="fas fa-vial" /> Scalar</a>
+          </li>
+        }
+        @if (graphQLLinks.Count > 0)
+        {
+          <li class="nav-item dropdown d-none d-lg-block">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="/img/graphql.png" alt="GraphQL Logo" height="16" /> GraphQL
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              @foreach (LinkModel link in graphQLLinks)
+              {
+                <li>
+                  <a class="dropdown-item" href="@(link.Href)" target="_blank">@(link.Text)</a>
+                </li>
+              }
+            </ul>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</nav>
