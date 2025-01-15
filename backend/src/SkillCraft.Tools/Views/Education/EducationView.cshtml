@@ -1,0 +1,45 @@
+﻿@using Logitar;
+@using MarkdownSharp;
+@using SkillCraft.Tools;
+@using SkillCraft.Tools.Core.Educations.Models;
+@using SkillCraft.Tools.Models.Components;
+@model EducationModel
+
+@{
+  Layout = "_Layout";
+
+  string title = Model.DisplayName ?? Model.UniqueSlug;
+  ViewBag.Title = title;
+
+  BreadcrumbModel breadcrumb = new(title, [new LinkModel("/educations", "Educations")]);
+
+  string? description = null;
+  if (Model.Description != null)
+  {
+    Markdown markdown = new();
+    description = markdown.Transform(Model.Description.Replace("\\r", "\r").Replace("\\n", "\n").Remove("\r"));
+  }
+}
+
+<div class="container">
+  <h1>@(title)</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+  @(await Html.PartialAsync("~/Views/Shared/StatusDetail.cshtml", Model))
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <th scope="row">Compétence</th>
+        <td>@(Model.Skill.HasValue ? Translator.Translate(Model.Skill.Value) : "—")</td>
+      </tr>
+      <tr>
+        <th scope="row">Richesse initiale (multiplicateur)</th>
+        <td>@(Model.WealthMultiplier.HasValue ? $"×{Model.WealthMultiplier.Value}" : "—")</td>
+      </tr>
+    </tbody>
+  </table>
+  @if (description != null)
+  {
+    <h3>Description</h3>
+    <div>@(Html.Raw(description))</div>
+  }
+</div>
