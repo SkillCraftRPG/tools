@@ -1,6 +1,6 @@
-﻿namespace SkillCraft.Tools;
+﻿namespace SkillCraft.Tools.Constants;
 
-internal static class FeatureFlags
+internal static class Features
 {
   public const string MigrateDatabase = "MigrateDatabase";
   public const string UseGraphQLGraphiQL = "UseGraphQLGraphiQL";

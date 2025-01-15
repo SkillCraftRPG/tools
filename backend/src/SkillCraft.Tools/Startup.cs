@@ -2,6 +2,7 @@
 using GraphQL.Execution;
 using Logitar.EventSourcing.EntityFrameworkCore.Relational;
 using Logitar.Portal.Client;
+using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.FeatureManagement;
@@ -13,6 +14,7 @@ using SkillCraft.Tools.Core;
 using SkillCraft.Tools.Extensions;
 using SkillCraft.Tools.GraphQL;
 using SkillCraft.Tools.Infrastructure;
+using SkillCraft.Tools.Infrastructure.Commands;
 using SkillCraft.Tools.Infrastructure.PostgreSQL;
 using SkillCraft.Tools.Infrastructure.SqlServer;
 using SkillCraft.Tools.Middlewares;
@@ -128,17 +130,17 @@ internal class Startup : StartupBase
   {
     IFeatureManager featureManager = application.Services.GetRequiredService<IFeatureManager>();
 
-    if (await featureManager.IsEnabledAsync(FeatureFlags.UseScalarUI))
+    if (await featureManager.IsEnabledAsync(Features.UseScalarUI))
     {
       application.MapOpenApi();
       application.MapScalarApiReference();
     }
 
-    if (await featureManager.IsEnabledAsync(FeatureFlags.UseGraphQLGraphiQL))
+    if (await featureManager.IsEnabledAsync(Features.UseGraphQLGraphiQL))
     {
       application.UseGraphQLGraphiQL();
     }
-    if (await featureManager.IsEnabledAsync(FeatureFlags.UseGraphQLVoyager))
+    if (await featureManager.IsEnabledAsync(Features.UseGraphQLVoyager))
     {
       application.UseGraphQLVoyager();
     }
@@ -155,5 +157,12 @@ internal class Startup : StartupBase
     application.UseGraphQL<SkillCraftSchema>("/graphql", options => options.AuthenticationSchemes.AddRange(_authenticationSchemes));
 
     application.MapControllers();
+
+    if (await featureManager.IsEnabledAsync(Features.MigrateDatabase))
+    {
+      using IServiceScope scope = application.Services.CreateScope();
+      IMediator mediator = scope.ServiceProvider.GetRequiredService<IMediator>();
+      await mediator.Send(new MigrateDatabaseCommand());
+    }
   }
 }
