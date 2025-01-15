@@ -1,0 +1,47 @@
+﻿@using Logitar.Portal.Contracts.Search;
+@using SkillCraft.Tools;
+@using SkillCraft.Tools.Core.Languages.Models;
+@using SkillCraft.Tools.Models.Components;
+@model SearchResults<LanguageModel>
+
+@{
+  Layout = "_Layout";
+
+  ViewBag.Title = "Langues";
+
+  BreadcrumbModel breadcrumb = new("Langues");
+}
+
+<div class="container">
+  <h1>Langues</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+  @if (Model.Items.Count < 1)
+  {
+    <p>Cette liste est vide.</p>
+  }
+  else
+  {
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Nom</th>
+          <th scope="col">Alphabet</th>
+          <th scope="col">Locuteurs typiques</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (LanguageModel language in Model.Items)
+        {
+          <tr>
+            <td>
+              <a href="/langues/@(language.UniqueSlug)">@(language.DisplayName ?? language.UniqueSlug)</a>
+            </td>
+            <td>@(language.Script ?? "—")</td>
+            <td>@(language.TypicalSpeakers ?? "—")</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <p class="float-end"><strong>@(Model.Items.Count) @(Model.Items.Count > 1 ? "langues" : "langue")</strong></p>
+  }
+</div>
