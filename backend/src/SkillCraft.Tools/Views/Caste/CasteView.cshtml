@@ -1,0 +1,62 @@
+﻿@using Logitar;
+@using MarkdownSharp;
+@using SkillCraft.Tools;
+@using SkillCraft.Tools.Core.Castes.Models;
+@using SkillCraft.Tools.Models.Components;
+@model CasteModel
+
+@{
+  Layout = "_Layout";
+
+  string title = Model.DisplayName ?? Model.UniqueSlug;
+  ViewBag.Title = title;
+
+  BreadcrumbModel breadcrumb = new(title, [new LinkModel("/castes", "Castes")]);
+
+  Markdown markdown = new();
+
+  string? description = null;
+  if (Model.Description != null)
+  {
+    description = markdown.Transform(Model.Description.Replace("\\r", "\r").Replace("\\n", "\n").Remove("\r"));
+  }
+}
+
+<div class="container">
+  <h1>@(title)</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+  @(await Html.PartialAsync("~/Views/Shared/StatusDetail.cshtml", Model))
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <th scope="row">Compétence</th>
+        <td>@(Model.Skill.HasValue ? Translator.Translate(Model.Skill.Value) : "—")</td>
+      </tr>
+      <tr>
+        <th scope="row">Richesse initiale (jet)</th>
+        <td>@(Model.WealthRoll ?? "—")</td>
+      </tr>
+    </tbody>
+  </table>
+  @if (description != null)
+  {
+    <h3>Description</h3>
+    <div>@(Html.Raw(description))</div>
+  }
+  @if (Model.Features.Count > 0)
+  {
+    <h3>Particularités</h3>
+    <ul>
+      @foreach (FeatureModel feature in Model.Features)
+      {
+        <li>
+          <strong>@(feature.Name).</strong>
+          @if (feature.Description != null)
+          {
+            @(Html.Raw(markdown.Transform(feature.Description).Remove("<p>").Remove("</p>")))
+          }
+        </li>
+      }
+    </ul>
+  }
+</div>
