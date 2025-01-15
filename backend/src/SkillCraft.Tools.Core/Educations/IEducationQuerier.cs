@@ -1,5 +1,5 @@
-﻿using SkillCraft.Tools.Core.Educations.Models;
-using SkillCraft.Tools.Core.Search;
+﻿using Logitar.Portal.Contracts.Search;
+using SkillCraft.Tools.Core.Educations.Models;
 
 namespace SkillCraft.Tools.Core.Educations;
 
