@@ -71,6 +71,7 @@ public static class DependencyInjectionExtensions
       .AddScoped<IEducationRepository, EducationRepository>()
       .AddScoped<ILanguageRepository, LanguageRepository>()
       .AddScoped<INatureRepository, NatureRepository>()
+      .AddScoped<ISpecializationRepository, SpecializationRepository>()
       .AddScoped<ITalentRepository, TalentRepository>();
   }
 

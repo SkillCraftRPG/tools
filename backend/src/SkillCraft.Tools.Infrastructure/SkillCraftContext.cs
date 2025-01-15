@@ -15,6 +15,7 @@ public class SkillCraftContext : DbContext
   internal DbSet<EducationEntity> Educations => Set<EducationEntity>();
   internal DbSet<LanguageEntity> Languages => Set<LanguageEntity>();
   internal DbSet<NatureEntity> Natures => Set<NatureEntity>();
+  internal DbSet<SpecializationEntity> Specializations => Set<SpecializationEntity>();
   internal DbSet<TalentEntity> Talents => Set<TalentEntity>();
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
