@@ -81,8 +81,23 @@ internal class CreateOrReplaceSpecializationCommandHandler : IRequestHandler<Cre
     }
 
     await SetTalentsAsync(specialization, reference, payload, cancellationToken);
-    // TODO(fpion): OtherRequirements
-    // TODO(fpion): OtherOptions
+
+    IEnumerable<OtherRequirement> otherRequirements = payload.OtherRequirements
+      .Where(x => !string.IsNullOrWhiteSpace(x))
+      .Select(x => new OtherRequirement(x));
+    if (reference.OtherRequirements != otherRequirements)
+    {
+      specialization.SetOtherRequirements(otherRequirements);
+    }
+
+    IEnumerable<OtherOption> otherOptions = payload.OtherOptions
+      .Where(x => !string.IsNullOrWhiteSpace(x))
+      .Select(x => new OtherOption(x));
+    if (reference.OtherOptions != otherOptions)
+    {
+      specialization.SetOtherOptions(otherOptions);
+    }
+
     ReservedTalent? reservedTalent = ToReservedTalent(payload.ReservedTalent);
     if (reference.ReservedTalent != reservedTalent)
     {
@@ -154,10 +169,11 @@ internal class CreateOrReplaceSpecializationCommandHandler : IRequestHandler<Cre
     }
 
     DisplayName name = new(reservedTalent.Name);
-    Description[] descriptions = reservedTalent.Descriptions
+    IReadOnlyCollection<Description> descriptions = reservedTalent.Descriptions
       .Where(description => !string.IsNullOrWhiteSpace(description))
       .Select(description => new Description(description))
-      .ToArray();
+      .ToList()
+      .AsReadOnly();
     return new ReservedTalent(name, descriptions);
   }
 }

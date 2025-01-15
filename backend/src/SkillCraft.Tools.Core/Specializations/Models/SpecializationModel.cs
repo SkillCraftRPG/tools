@@ -12,9 +12,11 @@ public class SpecializationModel : AggregateModel
   public string? Description { get; set; }
 
   public TalentModel? RequiredTalent { get; set; }
+  public List<string> OtherRequirements { get; set; } = [];
+
   public List<TalentModel> OptionalTalents { get; set; } = [];
-  // TODO(fpion): OtherRequirements
-  // TODO(fpion): OtherOptions
+  public List<string> OtherOptions { get; set; } = [];
+
   public ReservedTalentModel? ReservedTalent { get; set; }
 
   public override string ToString() => $"{DisplayName ?? UniqueSlug} | {base.ToString()}";

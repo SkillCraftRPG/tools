@@ -1,4 +1,5 @@
-﻿using Logitar.EventSourcing;
+﻿using Logitar;
+using Logitar.EventSourcing;
 using SkillCraft.Tools.Core.Specializations.Events;
 using SkillCraft.Tools.Core.Talents;
 
@@ -53,10 +54,14 @@ public class Specialization : AggregateRoot
   }
 
   public TalentId? RequiredTalentId { get; private set; }
+  private readonly HashSet<OtherRequirement> _otherRequirements = [];
+  public IReadOnlyCollection<OtherRequirement> OtherRequirements => _otherRequirements.ToList().AsReadOnly();
+
   private readonly HashSet<TalentId> _optionalTalentIds = [];
   public IReadOnlyCollection<TalentId> OptionalTalentIds => _optionalTalentIds.ToList().AsReadOnly();
-  // TODO(fpion): OtherRequirements
-  // TODO(fpion): OtherOptions
+  private readonly HashSet<OtherOption> _otherOptions = [];
+  public IReadOnlyCollection<OtherOption> OtherOptions => _otherOptions.ToList().AsReadOnly();
+
   private ReservedTalent? _reservedTalent = null;
   public ReservedTalent? ReservedTalent
   {
@@ -119,6 +124,30 @@ public class Specialization : AggregateRoot
     }
   }
 
+  public void SetOtherOptions(IEnumerable<OtherOption> otherOptions)
+  {
+    otherOptions = otherOptions.Distinct();
+    if (!_otherOptions.SequenceEqual(otherOptions))
+    {
+      _otherOptions.Clear();
+      _otherOptions.AddRange(otherOptions);
+
+      _updated.OtherOptions = otherOptions.ToList().AsReadOnly();
+    }
+  }
+
+  public void SetOtherRequirements(IEnumerable<OtherRequirement> otherRequirements)
+  {
+    otherRequirements = otherRequirements.Distinct();
+    if (!_otherRequirements.SequenceEqual(otherRequirements))
+    {
+      _otherRequirements.Clear();
+      _otherRequirements.AddRange(otherRequirements);
+
+      _updated.OtherRequirements = otherRequirements.ToList().AsReadOnly();
+    }
+  }
+
   public void SetRequiredTalent(Talent? requiredTalent)
   {
     if (requiredTalent != null && requiredTalent.Tier >= Tier)
@@ -160,6 +189,12 @@ public class Specialization : AggregateRoot
     {
       RequiredTalentId = @event.RequiredTalentId.Value;
     }
+    if (@event.OtherRequirements != null)
+    {
+      _otherRequirements.Clear();
+      _otherRequirements.AddRange(@event.OtherRequirements);
+    }
+
     foreach (KeyValuePair<TalentId, bool> optionalTalentId in @event.OptionalTalentIds)
     {
       if (optionalTalentId.Value)
@@ -171,8 +206,12 @@ public class Specialization : AggregateRoot
         _optionalTalentIds.Remove(optionalTalentId.Key);
       }
     }
-    // TODO(fpion): OtherRequirements
-    // TODO(fpion): OtherOptions
+    if (@event.OtherOptions != null)
+    {
+      _otherOptions.Clear();
+      _otherOptions.AddRange(@event.OtherOptions);
+    }
+
     if (@event.ReservedTalent != null)
     {
       _reservedTalent = @event.ReservedTalent.Value;

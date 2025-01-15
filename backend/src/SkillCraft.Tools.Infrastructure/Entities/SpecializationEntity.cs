@@ -24,8 +24,10 @@ internal class SpecializationEntity : AggregateEntity
 
   public TalentEntity? RequiredTalent { get; private set; }
   public int? RequiredTalentId { get; private set; }
-  // TODO(fpion): OtherRequirements
-  // TODO(fpion): OtherOptions
+  public string? OtherRequirements { get; private set; }
+
+  public string? OtherOptions { get; private set; }
+
   public string? ReservedTalentName { get; private set; }
   public string? ReservedTalentDescriptions { get; private set; }
 
@@ -69,6 +71,11 @@ internal class SpecializationEntity : AggregateEntity
       RequiredTalent = requiredTalent;
       RequiredTalentId = requiredTalent?.RequiredTalentId;
     }
+    if (@event.OtherRequirements != null)
+    {
+      SetOtherRequirements(@event.OtherRequirements);
+    }
+
     foreach (KeyValuePair<TalentId, bool> optionalTalentId in @event.OptionalTalentIds)
     {
       TalentEntity talent = talents[optionalTalentId.Key.ToGuid()];
@@ -81,12 +88,33 @@ internal class SpecializationEntity : AggregateEntity
         OptionalTalents.Remove(talent);
       }
     }
-    // TODO(fpion): OtherRequirements
-    // TODO(fpion): OtherOptions
+    if (@event.OtherOptions != null)
+    {
+      SetOtherOptions(@event.OtherOptions);
+    }
+
     if (@event.ReservedTalent != null)
     {
       SetReservedTalent(@event.ReservedTalent.Value);
     }
+  }
+
+  public IReadOnlyCollection<string> GetOtherRequirements()
+  {
+    return (OtherRequirements == null ? null : JsonSerializer.Deserialize<IReadOnlyCollection<string>>(OtherRequirements)) ?? [];
+  }
+  private void SetOtherRequirements(IReadOnlyCollection<OtherRequirement> otherRequirements)
+  {
+    OtherRequirements = otherRequirements.Count < 1 ? null : JsonSerializer.Serialize(otherRequirements.Select(x => x.Value));
+  }
+
+  public IReadOnlyCollection<string> GetOtherOptions()
+  {
+    return (OtherOptions == null ? null : JsonSerializer.Deserialize<IReadOnlyCollection<string>>(OtherOptions)) ?? [];
+  }
+  private void SetOtherOptions(IReadOnlyCollection<OtherOption> otherOptions)
+  {
+    OtherOptions = otherOptions.Count < 1 ? null : JsonSerializer.Serialize(otherOptions.Select(x => x.Value));
   }
 
   public ReservedTalentModel? GetReservedTalent()

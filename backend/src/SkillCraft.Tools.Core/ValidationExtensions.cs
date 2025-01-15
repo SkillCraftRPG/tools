@@ -15,6 +15,16 @@ internal static class ValidationExtensions
     return ruleBuilder.NotEmpty().MaximumLength(Core.DisplayName.MaximumLength);
   }
 
+  public static IRuleBuilderOptions<T, string> OtherOption<T>(this IRuleBuilder<T, string> ruleBuilder)
+  {
+    return ruleBuilder.NotEmpty();
+  }
+
+  public static IRuleBuilderOptions<T, string> OtherRequirement<T>(this IRuleBuilder<T, string> ruleBuilder)
+  {
+    return ruleBuilder.NotEmpty();
+  }
+
   public static IRuleBuilderOptions<T, string> Roll<T>(this IRuleBuilder<T, string> ruleBuilder)
   {
     return ruleBuilder.NotEmpty().MaximumLength(Core.Roll.MaximumLength).SetValidator(new RollValidator<T>());

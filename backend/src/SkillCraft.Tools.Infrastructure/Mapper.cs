@@ -144,8 +144,6 @@ internal class Mapper
       UniqueSlug = source.UniqueSlug,
       DisplayName = source.DisplayName,
       Description = source.Description,
-      // TODO(fpion): OtherRequirements
-      // TODO(fpion): OtherOptions
       ReservedTalent = source.GetReservedTalent()
     };
 
@@ -153,10 +151,13 @@ internal class Mapper
     {
       destination.RequiredTalent = ToTalent(source.RequiredTalent);
     }
+    destination.OtherRequirements.AddRange(source.GetOtherRequirements());
+
     foreach (TalentEntity optionalTalent in source.OptionalTalents)
     {
       destination.OptionalTalents.Add(ToTalent(optionalTalent));
     }
+    destination.OtherOptions.AddRange(source.GetOtherOptions());
 
     MapAggregate(source, destination);
 

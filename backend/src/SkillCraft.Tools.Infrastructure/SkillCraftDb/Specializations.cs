@@ -17,6 +17,8 @@ internal static class Specializations
   public static readonly ColumnId Description = new(nameof(SpecializationEntity.Description), Table);
   public static readonly ColumnId DisplayName = new(nameof(SpecializationEntity.DisplayName), Table);
   public static readonly ColumnId Id = new(nameof(SpecializationEntity.Id), Table);
+  public static readonly ColumnId OtherOptions = new(nameof(SpecializationEntity.OtherOptions), Table);
+  public static readonly ColumnId OtherRequirements = new(nameof(SpecializationEntity.OtherRequirements), Table);
   public static readonly ColumnId RequiredTalentId = new(nameof(SpecializationEntity.RequiredTalentId), Table);
   public static readonly ColumnId ReservedTalentDescriptions = new(nameof(SpecializationEntity.ReservedTalentDescriptions), Table);
   public static readonly ColumnId ReservedTalentName = new(nameof(SpecializationEntity.ReservedTalentName), Table);
@@ -24,6 +26,4 @@ internal static class Specializations
   public static readonly ColumnId Tier = new(nameof(SpecializationEntity.Tier), Table);
   public static readonly ColumnId UniqueSlug = new(nameof(SpecializationEntity.UniqueSlug), Table);
   public static readonly ColumnId UniqueSlugNormalized = new(nameof(SpecializationEntity.UniqueSlugNormalized), Table);
-  // TODO(fpion): OtherRequirements
-  // TODO(fpion): OtherOptions
 }
