@@ -1,0 +1,45 @@
+﻿@using Logitar;
+@using MarkdownSharp;
+@using SkillCraft.Tools;
+@using SkillCraft.Tools.Core.Languages.Models;
+@using SkillCraft.Tools.Models.Components;
+@model LanguageModel
+
+@{
+  Layout = "_Layout";
+
+  string title = Model.DisplayName ?? Model.UniqueSlug;
+  ViewBag.Title = title;
+
+  BreadcrumbModel breadcrumb = new(title, [new LinkModel("/langues", "Langues")]);
+
+  string? description = null;
+  if (Model.Description != null)
+  {
+    Markdown markdown = new();
+    description = markdown.Transform(Model.Description.Replace("\\r", "\r").Replace("\\n", "\n").Remove("\r"));
+  }
+}
+
+<div class="container">
+  <h1>@(title)</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+  @(await Html.PartialAsync("~/Views/Shared/StatusDetail.cshtml", Model))
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <th scope="row">Alphabet</th>
+        <td>@(Model.Script ?? "—")</td>
+      </tr>
+      <tr>
+        <th scope="row">Locuteurs typiques</th>
+        <td>@(Model.TypicalSpeakers ?? "—")</td>
+      </tr>
+    </tbody>
+  </table>
+  @if (description != null)
+  {
+    <h3>Description</h3>
+    <div>@(Html.Raw(description))</div>
+  }
+</div>
