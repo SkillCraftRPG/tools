@@ -1,9 +1,9 @@
 ﻿@using Logitar;
 @using MarkdownSharp;
 @using SkillCraft.Tools;
-@using SkillCraft.Tools.Core.Educations.Models;
+@using SkillCraft.Tools.Core.Customizations.Models;
 @using SkillCraft.Tools.Models.Components;
-@model EducationModel
+@model CustomizationModel
 
 @{
   Layout = "_Layout";
@@ -11,7 +11,7 @@
   string title = Model.DisplayName ?? Model.UniqueSlug;
   ViewBag.Title = title;
 
-  BreadcrumbModel breadcrumb = new(title, [new LinkModel("/educations", "Éducations")]);
+  BreadcrumbModel breadcrumb = new(title, [new LinkModel("/dons-handicaps", "Dons & Handicaps")]);
 
   string? description = null;
   if (Model.Description != null)
@@ -28,12 +28,8 @@
   <table class="table table-striped">
     <tbody>
       <tr>
-        <th scope="row">Compétence</th>
-        <td>@(Model.Skill.HasValue ? Translator.Translate(Model.Skill.Value) : "—")</td>
-      </tr>
-      <tr>
-        <th scope="row">Richesse initiale (multiplicateur)</th>
-        <td>@(Model.WealthMultiplier.HasValue ? $"×{Model.WealthMultiplier.Value}" : "—")</td>
+        <th scope="row">Type</th>
+        <td>@(Translator.Translate(Model.Type))</td>
       </tr>
     </tbody>
   </table>

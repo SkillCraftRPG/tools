@@ -1,4 +1,5 @@
 ﻿using SkillCraft.Tools.Core;
+using SkillCraft.Tools.Core.Customizations;
 
 namespace SkillCraft.Tools;
 
@@ -13,6 +14,11 @@ public static class Translator
     [Ability.Sensitivity] = "Sensibilité",
     [Ability.Spirit] = "Esprit",
     [Ability.Vigor] = "Vigueur"
+  };
+  private static readonly Dictionary<CustomizationType, string> _customizationTypes = new()
+  {
+    [CustomizationType.Disability] = "Handicap",
+    [CustomizationType.Gift] = "Don"
   };
   private static readonly Dictionary<Skill, string> _skills = new()
   {
@@ -39,5 +45,6 @@ public static class Translator
   };
 
   public static string Translate(Ability attribute) => _attributes.TryGetValue(attribute, out string? translation) ? translation : attribute.ToString();
+  public static string Translate(CustomizationType type) => _customizationTypes.TryGetValue(type, out string? translation) ? translation : type.ToString();
   public static string Translate(Skill skill) => _skills.TryGetValue(skill, out string? translation) ? translation : skill.ToString();
 }
