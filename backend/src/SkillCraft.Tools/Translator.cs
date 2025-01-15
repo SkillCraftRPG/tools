@@ -4,6 +4,16 @@ namespace SkillCraft.Tools;
 
 public static class Translator
 {
+  private static readonly Dictionary<Ability, string> _attributes = new()
+  {
+    [Ability.Agility] = "Agilité",
+    [Ability.Coordination] = "Coordination",
+    [Ability.Intellect] = "Intellect",
+    [Ability.Presence] = "Présence",
+    [Ability.Sensitivity] = "Sensibilité",
+    [Ability.Spirit] = "Esprit",
+    [Ability.Vigor] = "Vigueur"
+  };
   private static readonly Dictionary<Skill, string> _skills = new()
   {
     [Skill.Acrobatics] = "Acrobaties",
@@ -28,5 +38,6 @@ public static class Translator
     [Skill.Thievery] = "Roublardise"
   };
 
+  public static string Translate(Ability attribute) => _attributes.TryGetValue(attribute, out string? translation) ? translation : attribute.ToString();
   public static string Translate(Skill skill) => _skills.TryGetValue(skill, out string? translation) ? translation : skill.ToString();
 }
