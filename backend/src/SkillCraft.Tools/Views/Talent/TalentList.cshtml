@@ -12,7 +12,7 @@
   BreadcrumbModel breadcrumb = new("Talents");
 
   IReadOnlyCollection<TalentModel> talents = Model.Items
-    .OrderBy(t => $"{t.Tier}_{t.DisplayName ?? t.UniqueSlug}")
+    .OrderBy(talent => $"{talent.Tier}_{talent.DisplayName ?? talent.UniqueSlug}")
     .ToArray();
 }
 
