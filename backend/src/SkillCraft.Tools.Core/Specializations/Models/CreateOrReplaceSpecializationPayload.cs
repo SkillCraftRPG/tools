@@ -8,7 +8,7 @@ public record CreateOrReplaceSpecializationPayload
   public string? DisplayName { get; set; }
   public string? Description { get; set; }
 
-  // TODO(fpion): RequiredTalentId
+  public Guid? RequiredTalentId { get; set; }
   // TODO(fpion): OtherRequirements
   // TODO(fpion): OptionalTalentIds
   // TODO(fpion): OtherOptions

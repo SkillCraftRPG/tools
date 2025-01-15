@@ -47,6 +47,7 @@ internal class SpecializationQuerier : ISpecializationQuerier
     string streamId = specializationId.Value;
 
     SpecializationEntity? specialization = await _specializations.AsNoTracking()
+      .Include(x => x.RequiredTalent)
       .SingleOrDefaultAsync(x => x.StreamId == streamId, cancellationToken);
 
     return specialization == null ? null : await MapAsync(specialization, cancellationToken);
@@ -54,6 +55,7 @@ internal class SpecializationQuerier : ISpecializationQuerier
   public async Task<SpecializationModel?> ReadAsync(Guid id, CancellationToken cancellationToken)
   {
     SpecializationEntity? specialization = await _specializations.AsNoTracking()
+      .Include(x => x.RequiredTalent)
       .SingleOrDefaultAsync(x => x.Id == id, cancellationToken);
 
     return specialization == null ? null : await MapAsync(specialization, cancellationToken);
@@ -63,6 +65,7 @@ internal class SpecializationQuerier : ISpecializationQuerier
     string uniqueSlugNormalized = Helper.Normalize(uniqueSlug);
 
     SpecializationEntity? specialization = await _specializations.AsNoTracking()
+      .Include(x => x.RequiredTalent)
       .SingleOrDefaultAsync(x => x.UniqueSlugNormalized == uniqueSlugNormalized, cancellationToken);
 
     return specialization == null ? null : await MapAsync(specialization, cancellationToken);
@@ -76,7 +79,8 @@ internal class SpecializationQuerier : ISpecializationQuerier
 
     // TODO(fpion): other filters
 
-    IQueryable<SpecializationEntity> query = _specializations.FromQuery(builder).AsNoTracking();
+    IQueryable<SpecializationEntity> query = _specializations.FromQuery(builder).AsNoTracking()
+      .Include(x => x.RequiredTalent);
 
     long total = await query.LongCountAsync(cancellationToken);
 

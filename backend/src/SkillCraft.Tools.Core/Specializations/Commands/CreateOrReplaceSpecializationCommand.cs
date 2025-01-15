@@ -3,6 +3,7 @@ using Logitar.EventSourcing;
 using MediatR;
 using SkillCraft.Tools.Core.Specializations.Models;
 using SkillCraft.Tools.Core.Specializations.Validators;
+using SkillCraft.Tools.Core.Talents;
 
 namespace SkillCraft.Tools.Core.Specializations.Commands;
 
@@ -16,17 +17,20 @@ internal class CreateOrReplaceSpecializationCommandHandler : IRequestHandler<Cre
   private readonly ISpecializationManager _specializationManager;
   private readonly ISpecializationQuerier _specializationQuerier;
   private readonly ISpecializationRepository _specializationRepository;
+  private readonly ITalentRepository _talentRepository;
 
   public CreateOrReplaceSpecializationCommandHandler(
     IApplicationContext applicationContext,
     ISpecializationManager specializationManager,
     ISpecializationQuerier specializationQuerier,
-    ISpecializationRepository specializationRepository)
+    ISpecializationRepository specializationRepository,
+    ITalentRepository talentRepository)
   {
     _applicationContext = applicationContext;
     _specializationManager = specializationManager;
     _specializationQuerier = specializationQuerier;
     _specializationRepository = specializationRepository;
+    _talentRepository = talentRepository;
   }
 
   public async Task<CreateOrReplaceSpecializationResult> Handle(CreateOrReplaceSpecializationCommand command, CancellationToken cancellationToken)
@@ -75,7 +79,7 @@ internal class CreateOrReplaceSpecializationCommandHandler : IRequestHandler<Cre
       specialization.Description = description;
     }
 
-    // TODO(fpion): RequiredTalentId
+    await SetRequiredTalentAsync(specialization, reference, payload, cancellationToken);
     // TODO(fpion): OtherRequirements
     // TODO(fpion): OptionalTalentIds
     // TODO(fpion): OtherOptions
@@ -91,6 +95,21 @@ internal class CreateOrReplaceSpecializationCommandHandler : IRequestHandler<Cre
 
     SpecializationModel model = await _specializationQuerier.ReadAsync(specialization, cancellationToken);
     return new CreateOrReplaceSpecializationResult(model, created);
+  }
+
+  private async Task SetRequiredTalentAsync(Specialization specialization, Specialization reference, CreateOrReplaceSpecializationPayload payload, CancellationToken cancellationToken)
+  {
+    TalentId? requiredTalentId = payload.RequiredTalentId.HasValue ? new(payload.RequiredTalentId.Value) : null;
+    if (reference.RequiredTalentId != requiredTalentId)
+    {
+      Talent? talent = null;
+      if (requiredTalentId.HasValue)
+      {
+        talent = await _talentRepository.LoadAsync(requiredTalentId.Value, cancellationToken)
+          ?? throw new TalentNotFoundException(requiredTalentId.Value, nameof(payload.RequiredTalentId));
+      }
+      specialization.SetRequiredTalent(talent);
+    }
   }
 
   private static ReservedTalent? ToReservedTalent(ReservedTalentModel? reservedTalent)

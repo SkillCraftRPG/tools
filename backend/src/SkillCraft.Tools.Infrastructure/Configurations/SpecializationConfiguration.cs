@@ -18,7 +18,7 @@ internal class SpecializationConfiguration : AggregateConfiguration<Specializati
     builder.HasIndex(x => x.UniqueSlug);
     builder.HasIndex(x => x.UniqueSlugNormalized).IsUnique();
     builder.HasIndex(x => x.DisplayName);
-    // TODO(fpion): RequiredTalentId
+    builder.HasIndex(x => x.RequiredTalentId);
     // TODO(fpion): OtherRequirements
     // TODO(fpion): OptionalTalentIds
     // TODO(fpion): OtherOptions
@@ -27,10 +27,13 @@ internal class SpecializationConfiguration : AggregateConfiguration<Specializati
     builder.Property(x => x.UniqueSlug).HasMaxLength(byte.MaxValue);
     builder.Property(x => x.UniqueSlugNormalized).HasMaxLength(byte.MaxValue);
     builder.Property(x => x.DisplayName).HasMaxLength(byte.MaxValue);
-    // TODO(fpion): RequiredTalentId
     // TODO(fpion): OtherRequirements
     // TODO(fpion): OptionalTalentIds
     // TODO(fpion): OtherOptions
     builder.Property(x => x.ReservedTalentName).HasMaxLength(byte.MaxValue);
+
+    builder.HasOne(x => x.RequiredTalent).WithMany(x => x.RequiringSpecializations)
+      .HasPrincipalKey(x => x.TalentId).HasForeignKey(x => x.RequiredTalentId)
+      .OnDelete(DeleteBehavior.Restrict);
   }
 }

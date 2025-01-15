@@ -26,6 +26,8 @@ internal class TalentEntity : AggregateEntity
   public List<TalentEntity> RequiringTalents { get; private set; } = [];
   public Skill? Skill { get; private set; }
 
+  public List<SpecializationEntity> RequiringSpecializations { get; private set; } = [];
+
   public TalentEntity(TalentCreated @event) : base(@event)
   {
     Id = @event.StreamId.ToGuid();

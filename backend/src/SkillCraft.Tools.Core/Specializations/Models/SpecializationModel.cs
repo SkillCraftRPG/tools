@@ -1,4 +1,5 @@
 ﻿using Logitar.Portal.Contracts;
+using SkillCraft.Tools.Core.Talents.Models;
 
 namespace SkillCraft.Tools.Core.Specializations.Models;
 
@@ -10,7 +11,7 @@ public class SpecializationModel : AggregateModel
   public string? DisplayName { get; set; }
   public string? Description { get; set; }
 
-  // TODO(fpion): RequiredTalent
+  public TalentModel? RequiredTalent { get; set; }
   // TODO(fpion): OtherRequirements
   // TODO(fpion): OptionalTalents
   // TODO(fpion): OtherOptions

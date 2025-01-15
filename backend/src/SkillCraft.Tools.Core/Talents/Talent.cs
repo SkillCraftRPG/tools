@@ -106,12 +106,9 @@ public class Talent : AggregateRoot
 
   public void SetRequiredTalent(Talent? requiredTalent)
   {
-    if (requiredTalent != null)
+    if (requiredTalent != null && requiredTalent.Tier > Tier)
     {
-      if (requiredTalent.Tier > Tier)
-      {
-        throw new RequiredTalentTierCannotExceedRequiringTalentTierException(this, requiredTalent, nameof(RequiredTalentId));
-      }
+      throw new NotImplementedException(); // TODO(fpion): typed exception
     }
 
     if (RequiredTalentId != requiredTalent?.Id)

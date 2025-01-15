@@ -34,7 +34,15 @@ internal class SpecializationEvents : INotificationHandler<SpecializationCreated
       .SingleOrDefaultAsync(x => x.StreamId == @event.StreamId.Value, cancellationToken);
     if (specialization != null && specialization.Version == (@event.Version - 1))
     {
-      specialization.Update(@event);
+      TalentEntity? requiredTalent = null;
+      if (@event.RequiredTalentId?.Value != null)
+      {
+        requiredTalent = await _context.Talents
+          .SingleOrDefaultAsync(x => x.StreamId == @event.RequiredTalentId.Value.Value.Value, cancellationToken)
+          ?? throw new InvalidOperationException($"The talent entity 'StreamId={@event.RequiredTalentId.Value}' could not be found.");
+      }
+
+      specialization.Update(requiredTalent, @event);
 
       await _context.SaveChangesAsync(cancellationToken);
     }

@@ -21,7 +21,8 @@ internal class SpecializationEntity : AggregateEntity
   public string? DisplayName { get; private set; }
   public string? Description { get; private set; }
 
-  // TODO(fpion): RequiredTalentId
+  public TalentEntity? RequiredTalent { get; private set; }
+  public int? RequiredTalentId { get; private set; }
   // TODO(fpion): OtherRequirements
   // TODO(fpion): OptionalTalentIds
   // TODO(fpion): OtherOptions
@@ -41,7 +42,7 @@ internal class SpecializationEntity : AggregateEntity
   {
   }
 
-  public void Update(SpecializationUpdated @event)
+  public void Update(TalentEntity? requiredTalent, SpecializationUpdated @event)
   {
     base.Update(@event);
 
@@ -58,7 +59,11 @@ internal class SpecializationEntity : AggregateEntity
       Description = @event.Description.Value?.Value;
     }
 
-    // TODO(fpion): RequiredTalentId
+    if (@event.RequiredTalentId != null)
+    {
+      RequiredTalent = requiredTalent;
+      RequiredTalentId = requiredTalent?.RequiredTalentId;
+    }
     // TODO(fpion): OtherRequirements
     // TODO(fpion): OptionalTalentIds
     // TODO(fpion): OtherOptions

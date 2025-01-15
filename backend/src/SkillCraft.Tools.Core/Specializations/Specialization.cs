@@ -1,5 +1,6 @@
 ﻿using Logitar.EventSourcing;
 using SkillCraft.Tools.Core.Specializations.Events;
+using SkillCraft.Tools.Core.Talents;
 
 namespace SkillCraft.Tools.Core.Specializations;
 
@@ -51,7 +52,7 @@ public class Specialization : AggregateRoot
     }
   }
 
-  // TODO(fpion): RequiredTalentId
+  public TalentId? RequiredTalentId { get; private set; }
   // TODO(fpion): OtherRequirements
   // TODO(fpion): OptionalTalentIds
   // TODO(fpion): OtherOptions
@@ -89,6 +90,20 @@ public class Specialization : AggregateRoot
     _uniqueSlug = @event.UniqueSlug;
   }
 
+  public void SetRequiredTalent(Talent? requiredTalent)
+  {
+    if (requiredTalent != null && requiredTalent.Tier >= Tier)
+    {
+      throw new NotImplementedException(); // TODO(fpion): typed exception
+    }
+
+    if (RequiredTalentId != requiredTalent?.Id)
+    {
+      RequiredTalentId = requiredTalent?.Id;
+      _updated.RequiredTalentId = new Change<TalentId?>(requiredTalent?.Id);
+    }
+  }
+
   public void Update(ActorId? actorId = null)
   {
     if (_updated.HasChanges)
@@ -112,7 +127,10 @@ public class Specialization : AggregateRoot
       _description = @event.Description.Value;
     }
 
-    // TODO(fpion): RequiredTalentId
+    if (@event.RequiredTalentId != null)
+    {
+      RequiredTalentId = @event.RequiredTalentId.Value;
+    }
     // TODO(fpion): OtherRequirements
     // TODO(fpion): OptionalTalentIds
     // TODO(fpion): OtherOptions
