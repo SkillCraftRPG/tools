@@ -7,7 +7,7 @@ internal class CreateOrReplaceSpecializationValidator : AbstractValidator<Create
 {
   public CreateOrReplaceSpecializationValidator()
   {
-    RuleFor(x => x.Tier).InclusiveBetween(0, 3);
+    RuleFor(x => x.Tier).InclusiveBetween(1, 3);
 
     RuleFor(x => x.UniqueSlug).Slug();
     When(x => !string.IsNullOrWhiteSpace(x.DisplayName), () => RuleFor(x => x.DisplayName!).DisplayName());

@@ -76,7 +76,7 @@ public class Specialization : AggregateRoot
 
   public Specialization(int tier, Slug uniqueSlug, ActorId? actorId = null, SpecializationId? specializationId = null) : base(specializationId?.StreamId)
   {
-    if (tier < 0 || tier > 3)
+    if (tier < 1 || tier > 3)
     {
       throw new ArgumentOutOfRangeException(nameof(tier));
     }
