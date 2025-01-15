@@ -4,7 +4,7 @@ using SkillCraft.Tools.Core.Customizations.Models;
 
 namespace SkillCraft.Tools.Core.Customizations.Queries;
 
-public record SearchCustomizationsQuery(SearchCustomizationsPayload Payload) : IRequest<SearchResults<CustomizationModel>>;
+public record SearchCustomizationsQuery(SearchCustomizationsPayload Payload) : Activity, IRequest<SearchResults<CustomizationModel>>;
 
 internal class SearchCustomizationsQueryHandler : IRequestHandler<SearchCustomizationsQuery, SearchResults<CustomizationModel>>
 {

@@ -8,7 +8,7 @@ namespace SkillCraft.Tools.Core.Castes.Commands;
 
 public record CreateOrReplaceCasteResult(CasteModel? Caste = null, bool Created = false);
 
-public record CreateOrReplaceCasteCommand(Guid? Id, CreateOrReplaceCastePayload Payload, long? Version) : IRequest<CreateOrReplaceCasteResult>;
+public record CreateOrReplaceCasteCommand(Guid? Id, CreateOrReplaceCastePayload Payload, long? Version) : Activity, IRequest<CreateOrReplaceCasteResult>;
 
 internal class CreateOrReplaceCasteCommandHandler : IRequestHandler<CreateOrReplaceCasteCommand, CreateOrReplaceCasteResult>
 {

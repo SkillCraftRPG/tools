@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.Seeding.Wo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.Infrastructure.PostgreSQL", "src\SkillCraft.Tools.Infrastructure.PostgreSQL\SkillCraft.Tools.Infrastructure.PostgreSQL.csproj", "{406AA84A-0033-4F52-9F99-18402D4BC89C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.Infrastructure.MongoDB", "src\SkillCraft.Tools.Infrastructure.MongoDB\SkillCraft.Tools.Infrastructure.MongoDB.csproj", "{E044ED18-54B7-470D-A817-62016F53BDC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,10 @@ Global
 		{406AA84A-0033-4F52-9F99-18402D4BC89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{406AA84A-0033-4F52-9F99-18402D4BC89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{406AA84A-0033-4F52-9F99-18402D4BC89C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E044ED18-54B7-470D-A817-62016F53BDC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E044ED18-54B7-470D-A817-62016F53BDC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E044ED18-54B7-470D-A817-62016F53BDC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E044ED18-54B7-470D-A817-62016F53BDC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

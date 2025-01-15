@@ -9,7 +9,7 @@ namespace SkillCraft.Tools.Core.Natures.Commands;
 
 public record CreateOrReplaceNatureResult(NatureModel? Nature = null, bool Created = false);
 
-public record CreateOrReplaceNatureCommand(Guid? Id, CreateOrReplaceNaturePayload Payload, long? Version) : IRequest<CreateOrReplaceNatureResult>;
+public record CreateOrReplaceNatureCommand(Guid? Id, CreateOrReplaceNaturePayload Payload, long? Version) : Activity, IRequest<CreateOrReplaceNatureResult>;
 
 internal class CreateOrReplaceNatureCommandHandler : IRequestHandler<CreateOrReplaceNatureCommand, CreateOrReplaceNatureResult>
 {

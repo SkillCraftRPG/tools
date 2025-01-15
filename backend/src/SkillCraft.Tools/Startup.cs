@@ -1,5 +1,4 @@
 ﻿using GraphQL;
-using GraphQL.Execution;
 using Logitar.EventSourcing.EntityFrameworkCore.Relational;
 using Logitar.Portal.Client;
 using MediatR;
@@ -12,9 +11,11 @@ using SkillCraft.Tools.Authorization;
 using SkillCraft.Tools.Constants;
 using SkillCraft.Tools.Core;
 using SkillCraft.Tools.Extensions;
+using SkillCraft.Tools.Filters;
 using SkillCraft.Tools.GraphQL;
 using SkillCraft.Tools.Infrastructure;
 using SkillCraft.Tools.Infrastructure.Commands;
+using SkillCraft.Tools.Infrastructure.MongoDB;
 using SkillCraft.Tools.Infrastructure.PostgreSQL;
 using SkillCraft.Tools.Infrastructure.SqlServer;
 using SkillCraft.Tools.Middlewares;
@@ -27,21 +28,19 @@ internal class Startup : StartupBase
   private readonly string[] _authenticationSchemes;
   private readonly IConfiguration _configuration;
   private readonly CorsSettings _corsSettings;
+  private readonly IHostEnvironment _environment;
 
-  public Startup(IConfiguration configuration)
+  public Startup(IConfiguration configuration, IHostEnvironment environment)
   {
     _authenticationSchemes = Schemes.GetEnabled(configuration);
     _configuration = configuration;
     _corsSettings = configuration.GetSection(CorsSettings.SectionKey).Get<CorsSettings>() ?? new();
+    _environment = environment;
   }
 
   public override void ConfigureServices(IServiceCollection services)
   {
     base.ConfigureServices(services);
-
-    services.AddSkillCraftToolsCore();
-    services.AddSkillCraftToolsInfrastructure();
-    services.AddSingleton<IApplicationContext, HttpApplicationContext>();
 
     services.AddSingleton(_corsSettings);
     services.AddCors();
@@ -77,23 +76,29 @@ internal class Startup : StartupBase
     });
     services.AddDistributedMemoryCache();
 
-    services.AddControllersWithViews()
+    services.AddControllersWithViews(options => options.Filters.Add<OperationLogging>())
       .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
-    GraphQLSettings graphQLSettings = _configuration.GetSection(GraphQLSettings.SectionKey).Get<GraphQLSettings>() ?? new();
-    services.AddSingleton(graphQLSettings);
     services.AddGraphQL(builder => builder
       .AddAuthorizationRule()
       .AddSchema<SkillCraftSchema>()
       .AddSystemTextJson()
-      .AddErrorInfoProvider(new ErrorInfoProvider(options => options.ExposeExceptionDetails = graphQLSettings.ExposeExceptionDetails))
       .AddGraphTypes(Assembly.GetExecutingAssembly())
-      .ConfigureExecutionOptions(options => options.EnableMetrics = graphQLSettings.EnableMetrics));
+      .ConfigureExecutionOptions(options =>
+      {
+        options.EnableMetrics = !_environment.IsProduction();
+        options.ThrowOnUnhandledException = true;
+      }));
 
     services.AddApplicationInsightsTelemetry();
     IHealthChecksBuilder healthChecks = services.AddHealthChecks();
 
     services.AddOpenApi();
+
+    services.AddSkillCraftToolsCore();
+    services.AddSkillCraftToolsInfrastructure();
+    services.AddSkillCraftToolsInfrastructureMongoDB(_configuration);
+    services.AddSingleton<IApplicationContext, HttpApplicationContext>();
 
     DatabaseProvider databaseProvider = _configuration.GetValue<DatabaseProvider?>("DatabaseProvider") ?? DatabaseProvider.SqlServer;
     switch (databaseProvider)
@@ -150,6 +155,7 @@ internal class Startup : StartupBase
     application.UseStaticFiles();
     application.UseExceptionHandler();
     application.UseSession();
+    application.UseMiddleware<Logging>();
     application.UseMiddleware<RenewSession>();
     application.UseAuthentication();
     application.UseAuthorization();

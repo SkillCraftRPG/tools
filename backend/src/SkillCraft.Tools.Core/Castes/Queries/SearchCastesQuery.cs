@@ -4,7 +4,7 @@ using SkillCraft.Tools.Core.Castes.Models;
 
 namespace SkillCraft.Tools.Core.Castes.Queries;
 
-public record SearchCastesQuery(SearchCastesPayload Payload) : IRequest<SearchResults<CasteModel>>;
+public record SearchCastesQuery(SearchCastesPayload Payload) : Activity, IRequest<SearchResults<CasteModel>>;
 
 internal class SearchCastesQueryHandler : IRequestHandler<SearchCastesQuery, SearchResults<CasteModel>>
 {

@@ -4,7 +4,7 @@ using SkillCraft.Tools.Core.Natures.Models;
 
 namespace SkillCraft.Tools.Core.Natures.Queries;
 
-public record SearchNaturesQuery(SearchNaturesPayload Payload) : IRequest<SearchResults<NatureModel>>;
+public record SearchNaturesQuery(SearchNaturesPayload Payload) : Activity, IRequest<SearchResults<NatureModel>>;
 
 internal class SearchNaturesQueryHandler : IRequestHandler<SearchNaturesQuery, SearchResults<NatureModel>>
 {

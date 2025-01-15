@@ -8,7 +8,7 @@ namespace SkillCraft.Tools.Core.Languages.Commands;
 
 public record CreateOrReplaceLanguageResult(LanguageModel? Language = null, bool Created = false);
 
-public record CreateOrReplaceLanguageCommand(Guid? Id, CreateOrReplaceLanguagePayload Payload, long? Version) : IRequest<CreateOrReplaceLanguageResult>;
+public record CreateOrReplaceLanguageCommand(Guid? Id, CreateOrReplaceLanguagePayload Payload, long? Version) : Activity, IRequest<CreateOrReplaceLanguageResult>;
 
 internal class CreateOrReplaceLanguageCommandHandler : IRequestHandler<CreateOrReplaceLanguageCommand, CreateOrReplaceLanguageResult>
 {

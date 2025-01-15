@@ -8,7 +8,7 @@ namespace SkillCraft.Tools.Core.Talents.Commands;
 
 public record CreateOrReplaceTalentResult(TalentModel? Talent = null, bool Created = false);
 
-public record CreateOrReplaceTalentCommand(Guid? Id, CreateOrReplaceTalentPayload Payload, long? Version) : IRequest<CreateOrReplaceTalentResult>;
+public record CreateOrReplaceTalentCommand(Guid? Id, CreateOrReplaceTalentPayload Payload, long? Version) : Activity, IRequest<CreateOrReplaceTalentResult>;
 
 internal class CreateOrReplaceTalentCommandHandler : IRequestHandler<CreateOrReplaceTalentCommand, CreateOrReplaceTalentResult>
 {

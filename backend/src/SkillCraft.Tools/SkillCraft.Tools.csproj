@@ -45,6 +45,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SkillCraft.Tools.Infrastructure.MongoDB\SkillCraft.Tools.Infrastructure.MongoDB.csproj" />
     <ProjectReference Include="..\SkillCraft.Tools.Infrastructure.PostgreSQL\SkillCraft.Tools.Infrastructure.PostgreSQL.csproj" />
     <ProjectReference Include="..\SkillCraft.Tools.Infrastructure.SqlServer\SkillCraft.Tools.Infrastructure.SqlServer.csproj" />
   </ItemGroup>

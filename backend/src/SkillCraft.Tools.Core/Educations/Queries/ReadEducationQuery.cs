@@ -3,7 +3,7 @@ using SkillCraft.Tools.Core.Educations.Models;
 
 namespace SkillCraft.Tools.Core.Educations.Queries;
 
-public record ReadEducationQuery(Guid? Id, string? Slug) : IRequest<EducationModel?>;
+public record ReadEducationQuery(Guid? Id, string? Slug) : Activity, IRequest<EducationModel?>;
 
 internal class ReadEducationQueryHandler : IRequestHandler<ReadEducationQuery, EducationModel?>
 {

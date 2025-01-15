@@ -4,6 +4,7 @@ using Logitar.Portal.Contracts.Sessions;
 using Logitar.Portal.Contracts.Users;
 using Microsoft.Extensions.Primitives;
 using SkillCraft.Tools.Constants;
+using SkillCraft.Tools.Core.Logging;
 using SkillCraft.Tools.Settings;
 
 namespace SkillCraft.Tools.Extensions;
@@ -55,14 +56,17 @@ internal static class HttpContextExtensions
   public static void SetApiKey(this HttpContext context, ApiKeyModel? apiKey)
   {
     context.SetItem(ApiKeyKey, apiKey);
+    context.GetLoggingService().SetApiKey(apiKey);
   }
   public static void SetSession(this HttpContext context, SessionModel? session)
   {
     context.SetItem(SessionKey, session);
+    context.GetLoggingService().SetSession(session);
   }
   public static void SetUser(this HttpContext context, UserModel? user)
   {
     context.SetItem(UserKey, user);
+    context.GetLoggingService().SetUser(user);
   }
   private static void SetItem(this HttpContext context, object key, object? value)
   {
@@ -75,6 +79,8 @@ internal static class HttpContextExtensions
       context.Items[key] = value;
     }
   }
+
+  private static ILoggingService GetLoggingService(this HttpContext context) => context.RequestServices.GetRequiredService<ILoggingService>();
 
   public static Guid? GetSessionId(this HttpContext context)
   {

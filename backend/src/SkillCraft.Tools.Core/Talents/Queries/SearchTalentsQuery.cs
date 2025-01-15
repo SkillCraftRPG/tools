@@ -4,7 +4,7 @@ using SkillCraft.Tools.Core.Talents.Models;
 
 namespace SkillCraft.Tools.Core.Talents.Queries;
 
-public record SearchTalentsQuery(SearchTalentsPayload Payload) : IRequest<SearchResults<TalentModel>>;
+public record SearchTalentsQuery(SearchTalentsPayload Payload) : Activity, IRequest<SearchResults<TalentModel>>;
 
 internal class SearchTalentsQueryHandler : IRequestHandler<SearchTalentsQuery, SearchResults<TalentModel>>
 {

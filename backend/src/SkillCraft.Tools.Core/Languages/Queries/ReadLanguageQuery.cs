@@ -3,7 +3,7 @@ using SkillCraft.Tools.Core.Languages.Models;
 
 namespace SkillCraft.Tools.Core.Languages.Queries;
 
-public record ReadLanguageQuery(Guid? Id, string? Slug) : IRequest<LanguageModel?>;
+public record ReadLanguageQuery(Guid? Id, string? Slug) : Activity, IRequest<LanguageModel?>;
 
 internal class ReadLanguageQueryHandler : IRequestHandler<ReadLanguageQuery, LanguageModel?>
 {

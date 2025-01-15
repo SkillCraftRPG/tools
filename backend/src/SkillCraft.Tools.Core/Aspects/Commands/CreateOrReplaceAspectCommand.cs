@@ -8,7 +8,7 @@ namespace SkillCraft.Tools.Core.Aspects.Commands;
 
 public record CreateOrReplaceAspectResult(AspectModel? Aspect = null, bool Created = false);
 
-public record CreateOrReplaceAspectCommand(Guid? Id, CreateOrReplaceAspectPayload Payload, long? Version) : IRequest<CreateOrReplaceAspectResult>;
+public record CreateOrReplaceAspectCommand(Guid? Id, CreateOrReplaceAspectPayload Payload, long? Version) : Activity, IRequest<CreateOrReplaceAspectResult>;
 
 internal class CreateOrReplaceAspectCommandHandler : IRequestHandler<CreateOrReplaceAspectCommand, CreateOrReplaceAspectResult>
 {

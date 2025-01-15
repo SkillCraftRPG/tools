@@ -3,7 +3,7 @@ using SkillCraft.Tools.Core.Castes.Models;
 
 namespace SkillCraft.Tools.Core.Castes.Queries;
 
-public record ReadCasteQuery(Guid? Id, string? Slug) : IRequest<CasteModel?>;
+public record ReadCasteQuery(Guid? Id, string? Slug) : Activity, IRequest<CasteModel?>;
 
 internal class ReadCasteQueryHandler : IRequestHandler<ReadCasteQuery, CasteModel?>
 {
