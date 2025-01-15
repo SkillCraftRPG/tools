@@ -1,19 +1,13 @@
-﻿using MediatR;
-using Microsoft.AspNetCore.Authorization;
+﻿using Logitar.Portal.Contracts.Search;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using SkillCraft.Tools.Constants;
-using SkillCraft.Tools.Core.Castes.Commands;
 using SkillCraft.Tools.Core.Castes.Models;
 using SkillCraft.Tools.Core.Castes.Queries;
-using SkillCraft.Tools.Core.Search;
-using SkillCraft.Tools.Models.Caste;
 
 namespace SkillCraft.Tools.Controllers;
 
-[ApiController]
-[Authorize(Policy = Policies.IsAdmin)]
-[Route("api/castes")]
-public class CasteController : ControllerBase
+[Route("castes")]
+public class CasteController : Controller
 {
   private readonly IMediator _mediator;
 
@@ -22,59 +16,28 @@ public class CasteController : ControllerBase
     _mediator = mediator;
   }
 
-  [HttpPost]
-  public async Task<ActionResult<CasteModel>> CreateAsync([FromBody] CreateOrReplaceCastePayload payload, CancellationToken cancellationToken)
-  {
-    CreateOrReplaceCasteCommand command = new(Id: null, payload, Version: null);
-    CreateOrReplaceCasteResult result = await _mediator.Send(command, cancellationToken);
-    return ToActionResult(result);
-  }
-
-  [HttpGet("{id}")]
-  public async Task<ActionResult<CasteModel>> ReadAsync(Guid id, CancellationToken cancellationToken)
-  {
-    ReadCasteQuery query = new(id, Slug: null);
-    CasteModel? caste = await _mediator.Send(query, cancellationToken);
-    return caste == null ? NotFound() : Ok(caste);
-  }
-
-  [HttpGet("slug:{slug}")]
-  public async Task<ActionResult<CasteModel>> ReadAsync(string slug, CancellationToken cancellationToken)
-  {
-    ReadCasteQuery query = new(Id: null, slug);
-    CasteModel? caste = await _mediator.Send(query, cancellationToken);
-    return caste == null ? NotFound() : Ok(caste);
-  }
-
-  [HttpPut("{id}")]
-  public async Task<ActionResult<CasteModel>> ReplaceAsync(Guid id, [FromBody] CreateOrReplaceCastePayload payload, long? version, CancellationToken cancellationToken)
-  {
-    CreateOrReplaceCasteCommand command = new(id, payload, version);
-    CreateOrReplaceCasteResult result = await _mediator.Send(command, cancellationToken);
-    return ToActionResult(result);
-  }
-
   [HttpGet]
-  public async Task<ActionResult<SearchResults<CasteModel>>> SearchAsync([FromQuery] SearchCastesParameters parameters, CancellationToken cancellationToken)
+  public async Task<ActionResult> CasteList(CancellationToken cancellationToken)
   {
-    SearchCastesQuery query = new(parameters.ToPayload());
+    SearchCastesPayload payload = new();
+    payload.Sort.Add(new CasteSortOption(CasteSort.DisplayName));
+    SearchCastesQuery query = new(payload);
     SearchResults<CasteModel> castes = await _mediator.Send(query, cancellationToken);
-    return Ok(castes);
+
+    return View(castes);
   }
 
-  private ActionResult<CasteModel> ToActionResult(CreateOrReplaceCasteResult result)
+  [HttpGet("{idOrSlug}")]
+  public async Task<ActionResult> CasteView(string idOrSlug, CancellationToken cancellationToken)
   {
-    CasteModel? caste = result.Caste;
+    bool parsed = Guid.TryParse(idOrSlug, out Guid id);
+    ReadCasteQuery query = new(parsed ? id : null, idOrSlug);
+    CasteModel? caste = await _mediator.Send(query, cancellationToken);
     if (caste == null)
     {
       return NotFound();
     }
-    else if (!result.Created)
-    {
-      return Ok(caste);
-    }
 
-    Uri uri = new($"{Request.Scheme}://{Request.Host}/api/castes/{caste.Id}", UriKind.Absolute);
-    return Created(uri, caste);
+    return View(caste);
   }
 }
