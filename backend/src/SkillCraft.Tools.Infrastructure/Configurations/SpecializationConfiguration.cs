@@ -20,7 +20,6 @@ internal class SpecializationConfiguration : AggregateConfiguration<Specializati
     builder.HasIndex(x => x.DisplayName);
     builder.HasIndex(x => x.RequiredTalentId);
     // TODO(fpion): OtherRequirements
-    // TODO(fpion): OptionalTalentIds
     // TODO(fpion): OtherOptions
     builder.HasIndex(x => x.ReservedTalentName);
 
@@ -28,12 +27,17 @@ internal class SpecializationConfiguration : AggregateConfiguration<Specializati
     builder.Property(x => x.UniqueSlugNormalized).HasMaxLength(byte.MaxValue);
     builder.Property(x => x.DisplayName).HasMaxLength(byte.MaxValue);
     // TODO(fpion): OtherRequirements
-    // TODO(fpion): OptionalTalentIds
     // TODO(fpion): OtherOptions
     builder.Property(x => x.ReservedTalentName).HasMaxLength(byte.MaxValue);
 
     builder.HasOne(x => x.RequiredTalent).WithMany(x => x.RequiringSpecializations)
       .HasPrincipalKey(x => x.TalentId).HasForeignKey(x => x.RequiredTalentId)
       .OnDelete(DeleteBehavior.Restrict);
+    builder.HasMany(x => x.OptionalTalents).WithMany(x => x.OptionalSpecializations)
+      .UsingEntity<SpecializationOptionalTalentEntity>(builder =>
+      {
+        builder.ToTable(SkillCraftDb.SpecializationOptionalTalents.Table.Table ?? string.Empty, SkillCraftDb.SpecializationOptionalTalents.Table.Schema);
+        builder.HasKey(x => new { x.SpecializationId, x.TalentId });
+      });
   }
 }

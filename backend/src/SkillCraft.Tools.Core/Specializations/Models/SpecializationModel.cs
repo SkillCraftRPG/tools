@@ -12,8 +12,8 @@ public class SpecializationModel : AggregateModel
   public string? Description { get; set; }
 
   public TalentModel? RequiredTalent { get; set; }
+  public List<TalentModel> OptionalTalents { get; set; } = [];
   // TODO(fpion): OtherRequirements
-  // TODO(fpion): OptionalTalents
   // TODO(fpion): OtherOptions
   public ReservedTalentModel? ReservedTalent { get; set; }
 

@@ -53,8 +53,9 @@ public class Specialization : AggregateRoot
   }
 
   public TalentId? RequiredTalentId { get; private set; }
+  private readonly HashSet<TalentId> _optionalTalentIds = [];
+  public IReadOnlyCollection<TalentId> OptionalTalentIds => _optionalTalentIds.ToList().AsReadOnly();
   // TODO(fpion): OtherRequirements
-  // TODO(fpion): OptionalTalentIds
   // TODO(fpion): OtherOptions
   private ReservedTalent? _reservedTalent = null;
   public ReservedTalent? ReservedTalent
@@ -88,6 +89,34 @@ public class Specialization : AggregateRoot
     Tier = @event.Tier;
 
     _uniqueSlug = @event.UniqueSlug;
+  }
+
+  public void AddOptionalTalent(Talent talent)
+  {
+    if (talent.Tier >= Tier)
+    {
+      throw new NotImplementedException(); // TODO(fpion): typed exception
+    }
+
+    if (_optionalTalentIds.Add(talent.Id))
+    {
+      _updated.OptionalTalentIds[talent.Id] = true;
+    }
+  }
+
+  public bool HasOptionalTalent(Talent talent) => HasOptionalTalent(talent.Id);
+  public bool HasOptionalTalent(TalentId talentId) => _optionalTalentIds.Contains(talentId);
+
+  public void RemoveOptionalTalent(Talent talent)
+  {
+    RemoveOptionalTalent(talent.Id);
+  }
+  public void RemoveOptionalTalent(TalentId talentId)
+  {
+    if (_optionalTalentIds.Remove(talentId))
+    {
+      _updated.OptionalTalentIds[talentId] = false;
+    }
   }
 
   public void SetRequiredTalent(Talent? requiredTalent)
@@ -131,8 +160,18 @@ public class Specialization : AggregateRoot
     {
       RequiredTalentId = @event.RequiredTalentId.Value;
     }
+    foreach (KeyValuePair<TalentId, bool> optionalTalentId in @event.OptionalTalentIds)
+    {
+      if (optionalTalentId.Value)
+      {
+        _optionalTalentIds.Add(optionalTalentId.Key);
+      }
+      else
+      {
+        _optionalTalentIds.Remove(optionalTalentId.Key);
+      }
+    }
     // TODO(fpion): OtherRequirements
-    // TODO(fpion): OptionalTalentIds
     // TODO(fpion): OtherOptions
     if (@event.ReservedTalent != null)
     {

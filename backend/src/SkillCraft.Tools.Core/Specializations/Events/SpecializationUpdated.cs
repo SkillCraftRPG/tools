@@ -11,12 +11,12 @@ public record SpecializationUpdated : DomainEvent, INotification
   public Change<Description>? Description { get; set; }
 
   public Change<TalentId?>? RequiredTalentId { get; set; }
+  public Dictionary<TalentId, bool> OptionalTalentIds { get; set; } = [];
   // TODO(fpion): OtherRequirements
-  // TODO(fpion): OptionalTalentIds
   // TODO(fpion): OtherOptions
   public Change<ReservedTalent>? ReservedTalent { get; set; }
 
   [JsonIgnore]
   public bool HasChanges => UniqueSlug != null || DisplayName != null || Description != null
-    || ReservedTalent != null;
+    || RequiredTalentId != null || OptionalTalentIds.Count > 0 || ReservedTalent != null;
 }

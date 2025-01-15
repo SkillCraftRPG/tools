@@ -1,6 +1,7 @@
 ﻿using SkillCraft.Tools.Core.Specializations;
 using SkillCraft.Tools.Core.Specializations.Events;
 using SkillCraft.Tools.Core.Specializations.Models;
+using SkillCraft.Tools.Core.Talents;
 using SkillCraft.Tools.Infrastructure.SkillCraftDb;
 
 namespace SkillCraft.Tools.Infrastructure.Entities;
@@ -24,10 +25,11 @@ internal class SpecializationEntity : AggregateEntity
   public TalentEntity? RequiredTalent { get; private set; }
   public int? RequiredTalentId { get; private set; }
   // TODO(fpion): OtherRequirements
-  // TODO(fpion): OptionalTalentIds
   // TODO(fpion): OtherOptions
   public string? ReservedTalentName { get; private set; }
   public string? ReservedTalentDescriptions { get; private set; }
+
+  public List<TalentEntity> OptionalTalents { get; private set; } = [];
 
   public SpecializationEntity(SpecializationCreated @event) : base(@event)
   {
@@ -42,7 +44,7 @@ internal class SpecializationEntity : AggregateEntity
   {
   }
 
-  public void Update(TalentEntity? requiredTalent, SpecializationUpdated @event)
+  public void Update(Dictionary<Guid, TalentEntity> talents, SpecializationUpdated @event)
   {
     base.Update(@event);
 
@@ -61,11 +63,25 @@ internal class SpecializationEntity : AggregateEntity
 
     if (@event.RequiredTalentId != null)
     {
+      TalentEntity? requiredTalent = @event.RequiredTalentId.Value.HasValue
+        ? talents[@event.RequiredTalentId.Value.Value.ToGuid()]
+        : null;
       RequiredTalent = requiredTalent;
       RequiredTalentId = requiredTalent?.RequiredTalentId;
     }
+    foreach (KeyValuePair<TalentId, bool> optionalTalentId in @event.OptionalTalentIds)
+    {
+      TalentEntity talent = talents[optionalTalentId.Key.ToGuid()];
+      if (optionalTalentId.Value)
+      {
+        OptionalTalents.Add(talent);
+      }
+      else
+      {
+        OptionalTalents.Remove(talent);
+      }
+    }
     // TODO(fpion): OtherRequirements
-    // TODO(fpion): OptionalTalentIds
     // TODO(fpion): OtherOptions
     if (@event.ReservedTalent != null)
     {

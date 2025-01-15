@@ -1,4 +1,5 @@
-﻿using SkillCraft.Tools.Core.Specializations.Models;
+﻿using GraphQL.Types;
+using SkillCraft.Tools.Core.Specializations.Models;
 using SkillCraft.Tools.GraphQL.Talents;
 
 namespace SkillCraft.Tools.GraphQL.Specializations;
@@ -19,8 +20,9 @@ internal class SpecializationGraphType : AggregateGraphType<SpecializationModel>
 
     Field(x => x.RequiredTalent, type: typeof(TalentGraphType))
       .Description("The talent required to acquire this specialization.");
+    Field(x => x.OptionalTalents, type: typeof(NonNullGraphType<ListGraphType<NonNullGraphType<TalentGraphType>>>))
+      .Description("The optional talents to acquire this specialization.");
     // TODO(fpion): OtherRequirements
-    // TODO(fpion): OptionalTalents
     // TODO(fpion): OtherOptions
     Field(x => x.ReservedTalent, type: typeof(ReservedTalentGraphType))
       .Description("The reserved talent of the specialization.");

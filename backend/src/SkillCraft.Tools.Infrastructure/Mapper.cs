@@ -145,7 +145,6 @@ internal class Mapper
       DisplayName = source.DisplayName,
       Description = source.Description,
       // TODO(fpion): OtherRequirements
-      // TODO(fpion): OptionalTalentIds
       // TODO(fpion): OtherOptions
       ReservedTalent = source.GetReservedTalent()
     };
@@ -153,6 +152,10 @@ internal class Mapper
     if (source.RequiredTalent != null)
     {
       destination.RequiredTalent = ToTalent(source.RequiredTalent);
+    }
+    foreach (TalentEntity optionalTalent in source.OptionalTalents)
+    {
+      destination.OptionalTalents.Add(ToTalent(optionalTalent));
     }
 
     MapAggregate(source, destination);

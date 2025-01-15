@@ -9,8 +9,8 @@ public record CreateOrReplaceSpecializationPayload
   public string? Description { get; set; }
 
   public Guid? RequiredTalentId { get; set; }
+  public List<Guid> OptionalTalentIds { get; set; } = [];
   // TODO(fpion): OtherRequirements
-  // TODO(fpion): OptionalTalentIds
   // TODO(fpion): OtherOptions
   public ReservedTalentModel? ReservedTalent { get; set; }
 }

@@ -25,6 +25,5 @@ internal static class Specializations
   public static readonly ColumnId UniqueSlug = new(nameof(SpecializationEntity.UniqueSlug), Table);
   public static readonly ColumnId UniqueSlugNormalized = new(nameof(SpecializationEntity.UniqueSlugNormalized), Table);
   // TODO(fpion): OtherRequirements
-  // TODO(fpion): OptionalTalentIds
   // TODO(fpion): OtherOptions
 }

@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using Logitar;
 using Logitar.EventSourcing;
 using MediatR;
 using SkillCraft.Tools.Core.Specializations.Models;
@@ -79,9 +80,8 @@ internal class CreateOrReplaceSpecializationCommandHandler : IRequestHandler<Cre
       specialization.Description = description;
     }
 
-    await SetRequiredTalentAsync(specialization, reference, payload, cancellationToken);
+    await SetTalentsAsync(specialization, reference, payload, cancellationToken);
     // TODO(fpion): OtherRequirements
-    // TODO(fpion): OptionalTalentIds
     // TODO(fpion): OtherOptions
     ReservedTalent? reservedTalent = ToReservedTalent(payload.ReservedTalent);
     if (reference.ReservedTalent != reservedTalent)
@@ -97,19 +97,53 @@ internal class CreateOrReplaceSpecializationCommandHandler : IRequestHandler<Cre
     return new CreateOrReplaceSpecializationResult(model, created);
   }
 
-  private async Task SetRequiredTalentAsync(Specialization specialization, Specialization reference, CreateOrReplaceSpecializationPayload payload, CancellationToken cancellationToken)
+  private async Task SetTalentsAsync(Specialization specialization, Specialization reference, CreateOrReplaceSpecializationPayload payload, CancellationToken cancellationToken)
   {
-    TalentId? requiredTalentId = payload.RequiredTalentId.HasValue ? new(payload.RequiredTalentId.Value) : null;
+    HashSet<TalentId> talentIds = new(capacity: 1 + payload.OptionalTalentIds.Count);
+    TalentId? requiredTalentId = null;
+    if (payload.RequiredTalentId.HasValue)
+    {
+      requiredTalentId = new(payload.RequiredTalentId.Value);
+      talentIds.Add(requiredTalentId.Value);
+    }
+    HashSet<TalentId> optionalTalentIds = payload.OptionalTalentIds.Select(id => new TalentId(id)).ToHashSet();
+    talentIds.AddRange(optionalTalentIds);
+    Dictionary<TalentId, Talent> talents = (await _talentRepository.LoadAsync(talentIds, cancellationToken))
+      .ToDictionary(x => x.Id, x => x);
+
+    IEnumerable<TalentId> missingTalents = optionalTalentIds.Except(talents.Keys).Distinct();
+    if (missingTalents.Any())
+    {
+      throw new NotImplementedException(); // TODO(fpion): typed exception
+    }
+
     if (reference.RequiredTalentId != requiredTalentId)
     {
-      Talent? talent = null;
-      if (requiredTalentId.HasValue)
+      Talent? requiredTalent = null;
+      if (requiredTalentId.HasValue && !talents.TryGetValue(requiredTalentId.Value, out requiredTalent))
       {
-        talent = await _talentRepository.LoadAsync(requiredTalentId.Value, cancellationToken)
-          ?? throw new TalentNotFoundException(requiredTalentId.Value, nameof(payload.RequiredTalentId));
+        throw new TalentNotFoundException(requiredTalentId.Value, nameof(payload.RequiredTalentId));
       }
-      specialization.SetRequiredTalent(talent);
+      specialization.SetRequiredTalent(requiredTalent);
     }
+
+    foreach (TalentId optionalTalentId in reference.OptionalTalentIds)
+    {
+      if (!optionalTalentIds.Contains(optionalTalentId))
+      {
+        specialization.RemoveOptionalTalent(optionalTalentId);
+      }
+    }
+    foreach (TalentId optionalTalentId in optionalTalentIds)
+    {
+      Talent optionalTalent = talents[optionalTalentId];
+      if (!reference.HasOptionalTalent(optionalTalent))
+      {
+        specialization.AddOptionalTalent(optionalTalent);
+      }
+    }
+
+    // TODO(fpion): should we throw a BadRequest exception for each talent (where Tier >= Specialization.Tier), or for a list?
   }
 
   private static ReservedTalent? ToReservedTalent(ReservedTalentModel? reservedTalent)
