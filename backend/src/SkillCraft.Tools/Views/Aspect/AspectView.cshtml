@@ -1,0 +1,89 @@
+﻿@using Logitar;
+@using MarkdownSharp;
+@using SkillCraft.Tools;
+@using SkillCraft.Tools.Core.Aspects.Models;
+@using SkillCraft.Tools.Models.Components;
+@model AspectModel
+
+@{
+  Layout = "_Layout";
+
+  string title = Model.DisplayName ?? Model.UniqueSlug;
+  ViewBag.Title = title;
+
+  BreadcrumbModel breadcrumb = new(title, [new LinkModel("/aspects", "Aspects")]);
+
+  Markdown markdown = new();
+
+  string? description = null;
+  if (Model.Description != null)
+  {
+    description = markdown.Transform(Model.Description.Replace("\\r", "\r").Replace("\\n", "\n").Remove("\r"));
+  }
+}
+
+<div class="container">
+  <h1>@(title)</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+  @(await Html.PartialAsync("~/Views/Shared/StatusDetail.cshtml", Model))
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <th scope="row">Attributs obligatoires</th>
+        <td>
+          @if (Model.Attributes.Mandatory1.HasValue)
+          {
+            @(Translator.Translate(Model.Attributes.Mandatory1.Value))
+            @if (Model.Attributes.Mandatory2.HasValue)
+            {
+              <br />
+            }
+          }
+          @if (Model.Attributes.Mandatory2.HasValue)
+          {
+            @(Translator.Translate(Model.Attributes.Mandatory2.Value))
+          }
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Attributs facultatifs</th>
+        <td>
+          @if (Model.Attributes.Optional1.HasValue)
+          {
+            @(Translator.Translate(Model.Attributes.Optional1.Value))
+            @if (Model.Attributes.Optional2.HasValue)
+            {
+              <br />
+            }
+          }
+          @if (Model.Attributes.Optional2.HasValue)
+          {
+            @(Translator.Translate(Model.Attributes.Optional2.Value))
+          }
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Compétences</th>
+        <td>
+          @if (Model.Skills.Discounted1.HasValue)
+          {
+            @(Translator.Translate(Model.Skills.Discounted1.Value))
+            @if (Model.Skills.Discounted2.HasValue)
+            {
+              <br />
+            }
+          }
+          @if (Model.Skills.Discounted2.HasValue)
+          {
+            @(Translator.Translate(Model.Skills.Discounted2.Value))
+          }
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  @if (description != null)
+  {
+    <h3>Description</h3>
+    <div>@(Html.Raw(description))</div>
+  }
+</div>
