@@ -10,6 +10,7 @@ using SkillCraft.Tools.Core.Educations;
 using SkillCraft.Tools.Core.Languages;
 using SkillCraft.Tools.Core.Logging;
 using SkillCraft.Tools.Core.Natures;
+using SkillCraft.Tools.Core.Specializations;
 using SkillCraft.Tools.Core.Talents;
 
 namespace SkillCraft.Tools.Core;
@@ -36,6 +37,7 @@ public static class DependencyInjectionExtensions
       .AddTransient<IEducationManager, EducationManager>()
       .AddTransient<ILanguageManager, LanguageManager>()
       .AddTransient<INatureManager, NatureManager>()
+      .AddTransient<ISpecializationManager, SpecializationManager>()
       .AddTransient<ITalentManager, TalentManager>();
   }
 
