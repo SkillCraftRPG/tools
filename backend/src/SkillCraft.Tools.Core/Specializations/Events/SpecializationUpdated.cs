@@ -13,8 +13,9 @@ public record SpecializationUpdated : DomainEvent, INotification
   // TODO(fpion): OtherRequirements
   // TODO(fpion): OptionalTalentIds
   // TODO(fpion): OtherOptions
-  // TODO(fpion): ReservedTalent
+  public Change<ReservedTalent>? ReservedTalent { get; set; }
 
   [JsonIgnore]
-  public bool HasChanges => UniqueSlug != null || DisplayName != null || Description != null;
+  public bool HasChanges => UniqueSlug != null || DisplayName != null || Description != null
+    || ReservedTalent != null;
 }

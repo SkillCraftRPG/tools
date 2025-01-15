@@ -55,7 +55,19 @@ public class Specialization : AggregateRoot
   // TODO(fpion): OtherRequirements
   // TODO(fpion): OptionalTalentIds
   // TODO(fpion): OtherOptions
-  // TODO(fpion): ReservedTalent
+  private ReservedTalent? _reservedTalent = null;
+  public ReservedTalent? ReservedTalent
+  {
+    get => _reservedTalent;
+    set
+    {
+      if (_reservedTalent != value)
+      {
+        _reservedTalent = value;
+        _updated.ReservedTalent = new Change<ReservedTalent>(value);
+      }
+    }
+  }
 
   public Specialization() : base()
   {
@@ -104,7 +116,10 @@ public class Specialization : AggregateRoot
     // TODO(fpion): OtherRequirements
     // TODO(fpion): OptionalTalentIds
     // TODO(fpion): OtherOptions
-    // TODO(fpion): ReservedTalent
+    if (@event.ReservedTalent != null)
+    {
+      _reservedTalent = @event.ReservedTalent.Value;
+    }
   }
 
   public override string ToString() => $"{DisplayName?.Value ?? UniqueSlug.Value} | {base.ToString()}";

@@ -79,7 +79,11 @@ internal class CreateOrReplaceSpecializationCommandHandler : IRequestHandler<Cre
     // TODO(fpion): OtherRequirements
     // TODO(fpion): OptionalTalentIds
     // TODO(fpion): OtherOptions
-    // TODO(fpion): ReservedTalent
+    ReservedTalent? reservedTalent = ToReservedTalent(payload.ReservedTalent);
+    if (reference.ReservedTalent != reservedTalent)
+    {
+      specialization.ReservedTalent = reservedTalent;
+    }
 
     specialization.Update(actorId);
 
@@ -87,5 +91,20 @@ internal class CreateOrReplaceSpecializationCommandHandler : IRequestHandler<Cre
 
     SpecializationModel model = await _specializationQuerier.ReadAsync(specialization, cancellationToken);
     return new CreateOrReplaceSpecializationResult(model, created);
+  }
+
+  private static ReservedTalent? ToReservedTalent(ReservedTalentModel? reservedTalent)
+  {
+    if (reservedTalent == null)
+    {
+      return null;
+    }
+
+    DisplayName name = new(reservedTalent.Name);
+    Description[] descriptions = reservedTalent.Descriptions
+      .Where(description => !string.IsNullOrWhiteSpace(description))
+      .Select(description => new Description(description))
+      .ToArray();
+    return new ReservedTalent(name, descriptions);
   }
 }

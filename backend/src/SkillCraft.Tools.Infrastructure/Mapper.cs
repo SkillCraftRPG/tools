@@ -143,12 +143,12 @@ internal class Mapper
       Tier = source.Tier,
       UniqueSlug = source.UniqueSlug,
       DisplayName = source.DisplayName,
-      Description = source.Description
+      Description = source.Description,
       // TODO(fpion): RequiredTalentId
       // TODO(fpion): OtherRequirements
       // TODO(fpion): OptionalTalentIds
       // TODO(fpion): OtherOptions
-      // TODO(fpion): ReservedTalent
+      ReservedTalent = source.GetReservedTalent()
     };
 
     MapAggregate(source, destination);

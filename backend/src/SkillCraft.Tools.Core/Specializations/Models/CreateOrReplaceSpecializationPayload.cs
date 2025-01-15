@@ -12,5 +12,5 @@ public record CreateOrReplaceSpecializationPayload
   // TODO(fpion): OtherRequirements
   // TODO(fpion): OptionalTalentIds
   // TODO(fpion): OtherOptions
-  // TODO(fpion): ReservedTalent
+  public ReservedTalentModel? ReservedTalent { get; set; }
 }

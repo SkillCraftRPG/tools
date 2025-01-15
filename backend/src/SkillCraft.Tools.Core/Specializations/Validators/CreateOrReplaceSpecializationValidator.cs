@@ -17,6 +17,6 @@ internal class CreateOrReplaceSpecializationValidator : AbstractValidator<Create
     // TODO(fpion): OtherRequirements
     // TODO(fpion): OptionalTalentIds
     // TODO(fpion): OtherOptions
-    // TODO(fpion): ReservedTalent
+    When(x => x.ReservedTalent != null, () => RuleFor(x => x.ReservedTalent!).SetValidator(new ReservedTalentValidator()));
   }
 }

@@ -20,6 +20,7 @@ internal class SpecializationGraphType : AggregateGraphType<SpecializationModel>
     // TODO(fpion): OtherRequirements
     // TODO(fpion): OptionalTalents
     // TODO(fpion): OtherOptions
-    // TODO(fpion): ReservedTalent
+    Field(x => x.ReservedTalent, type: typeof(ReservedTalentGraphType))
+      .Description("The reserved talent of the specialization.");
   }
 }

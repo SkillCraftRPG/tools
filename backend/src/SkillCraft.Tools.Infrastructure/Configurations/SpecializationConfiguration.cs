@@ -22,7 +22,7 @@ internal class SpecializationConfiguration : AggregateConfiguration<Specializati
     // TODO(fpion): OtherRequirements
     // TODO(fpion): OptionalTalentIds
     // TODO(fpion): OtherOptions
-    // TODO(fpion): ReservedTalent
+    builder.HasIndex(x => x.ReservedTalentName);
 
     builder.Property(x => x.UniqueSlug).HasMaxLength(byte.MaxValue);
     builder.Property(x => x.UniqueSlugNormalized).HasMaxLength(byte.MaxValue);
@@ -31,6 +31,6 @@ internal class SpecializationConfiguration : AggregateConfiguration<Specializati
     // TODO(fpion): OtherRequirements
     // TODO(fpion): OptionalTalentIds
     // TODO(fpion): OtherOptions
-    // TODO(fpion): ReservedTalent
+    builder.Property(x => x.ReservedTalentName).HasMaxLength(byte.MaxValue);
   }
 }

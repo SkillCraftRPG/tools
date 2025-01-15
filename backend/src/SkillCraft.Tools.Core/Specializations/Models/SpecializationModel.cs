@@ -14,7 +14,7 @@ public class SpecializationModel : AggregateModel
   // TODO(fpion): OtherRequirements
   // TODO(fpion): OptionalTalents
   // TODO(fpion): OtherOptions
-  // TODO(fpion): ReservedTalent
+  public ReservedTalentModel? ReservedTalent { get; set; }
 
   public override string ToString() => $"{DisplayName ?? UniqueSlug} | {base.ToString()}";
 }

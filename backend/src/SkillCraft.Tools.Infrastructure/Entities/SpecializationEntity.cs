@@ -1,4 +1,6 @@
-﻿using SkillCraft.Tools.Core.Specializations.Events;
+﻿using SkillCraft.Tools.Core.Specializations;
+using SkillCraft.Tools.Core.Specializations.Events;
+using SkillCraft.Tools.Core.Specializations.Models;
 using SkillCraft.Tools.Infrastructure.SkillCraftDb;
 
 namespace SkillCraft.Tools.Infrastructure.Entities;
@@ -23,7 +25,8 @@ internal class SpecializationEntity : AggregateEntity
   // TODO(fpion): OtherRequirements
   // TODO(fpion): OptionalTalentIds
   // TODO(fpion): OtherOptions
-  // TODO(fpion): ReservedTalent
+  public string? ReservedTalentName { get; private set; }
+  public string? ReservedTalentDescriptions { get; private set; }
 
   public SpecializationEntity(SpecializationCreated @event) : base(@event)
   {
@@ -59,7 +62,36 @@ internal class SpecializationEntity : AggregateEntity
     // TODO(fpion): OtherRequirements
     // TODO(fpion): OptionalTalentIds
     // TODO(fpion): OtherOptions
-    // TODO(fpion): ReservedTalent
+    if (@event.ReservedTalent != null)
+    {
+      SetReservedTalent(@event.ReservedTalent.Value);
+    }
+  }
+
+  public ReservedTalentModel? GetReservedTalent()
+  {
+    if (ReservedTalentName == null)
+    {
+      return null;
+    }
+
+    IEnumerable<string>? descriptions = ReservedTalentDescriptions == null ? null : JsonSerializer.Deserialize<IEnumerable<string>>(ReservedTalentDescriptions);
+    return new ReservedTalentModel(ReservedTalentName, descriptions);
+  }
+  private void SetReservedTalent(ReservedTalent? reservedTalent)
+  {
+    if (reservedTalent == null)
+    {
+      ReservedTalentName = null;
+      ReservedTalentDescriptions = null;
+    }
+    else
+    {
+      ReservedTalentName = reservedTalent.Name.Value;
+      ReservedTalentDescriptions = reservedTalent.Descriptions.Count < 1
+        ? null
+        : JsonSerializer.Serialize(reservedTalent.Descriptions.Select(description => description.Value).Distinct());
+    }
   }
 
   public override string ToString() => $"{DisplayName ?? UniqueSlug} | {base.ToString()}";
