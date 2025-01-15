@@ -1,16 +1,13 @@
-﻿using MediatR;
-using Microsoft.AspNetCore.Authorization;
+﻿using Logitar.Portal.Contracts.Search;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using SkillCraft.Tools.Constants;
 using SkillCraft.Tools.Core.Specializations.Models;
 using SkillCraft.Tools.Core.Specializations.Queries;
 
 namespace SkillCraft.Tools.Controllers;
 
-[ApiController]
-[Authorize(Policy = Policies.IsAdmin)]
-[Route("api/specializations")]
-public class SpecializationController : ControllerBase
+[Route("specializations")]
+public class SpecializationController : Controller
 {
   private readonly IMediator _mediator;
 
@@ -19,19 +16,27 @@ public class SpecializationController : ControllerBase
     _mediator = mediator;
   }
 
-  [HttpGet("{id}")]
-  public async Task<ActionResult<SpecializationModel>> ReadAsync(Guid id, CancellationToken cancellationToken)
+  [HttpGet]
+  public async Task<ActionResult> SpecializationList(CancellationToken cancellationToken)
   {
-    ReadSpecializationQuery query = new(id, Slug: null);
-    SpecializationModel? specialization = await _mediator.Send(query, cancellationToken);
-    return specialization == null ? NotFound() : Ok(specialization);
+    SearchSpecializationsPayload payload = new();
+    SearchSpecializationsQuery query = new(payload);
+    SearchResults<SpecializationModel> specializations = await _mediator.Send(query, cancellationToken);
+
+    return View(specializations);
   }
 
-  [HttpGet("slug:{slug}")]
-  public async Task<ActionResult<SpecializationModel>> ReadAsync(string slug, CancellationToken cancellationToken)
+  [HttpGet("{idOrSlug}")]
+  public async Task<ActionResult> SpecializationView(string idOrSlug, CancellationToken cancellationToken)
   {
-    ReadSpecializationQuery query = new(Id: null, slug);
+    bool parsed = Guid.TryParse(idOrSlug, out Guid id);
+    ReadSpecializationQuery query = new(parsed ? id : null, idOrSlug);
     SpecializationModel? specialization = await _mediator.Send(query, cancellationToken);
-    return specialization == null ? NotFound() : Ok(specialization);
+    if (specialization == null)
+    {
+      return NotFound();
+    }
+
+    return View(specialization);
   }
 }
