@@ -1,11 +1,9 @@
 ﻿using Logitar.Portal.Contracts.Users;
-using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
 using SkillCraft.Tools.Constants;
 using SkillCraft.Tools.Core.Identity;
-using SkillCraft.Tools.Core.Identity.Events;
 using SkillCraft.Tools.Extensions;
 
 namespace SkillCraft.Tools.Authentication;
@@ -14,13 +12,11 @@ internal class BasicAuthenticationOptions : AuthenticationSchemeOptions;
 
 internal class BasicAuthenticationHandler : AuthenticationHandler<BasicAuthenticationOptions>
 {
-  private readonly IMediator _mediator;
   private readonly IUserService _userService;
 
-  public BasicAuthenticationHandler(IMediator mediator, IUserService userService, IOptionsMonitor<BasicAuthenticationOptions> options, ILoggerFactory logger, UrlEncoder encoder)
+  public BasicAuthenticationHandler(IUserService userService, IOptionsMonitor<BasicAuthenticationOptions> options, ILoggerFactory logger, UrlEncoder encoder)
     : base(options, logger, encoder)
   {
-    _mediator = mediator;
     _userService = userService;
   }
 
@@ -49,7 +45,6 @@ internal class BasicAuthenticationHandler : AuthenticationHandler<BasicAuthentic
           try
           {
             UserModel user = await _userService.AuthenticateAsync(uniqueName: credentials[..index], password: credentials[(index + 1)..]);
-            await _mediator.Publish(new UserAuthenticated(user));
 
             Context.SetUser(user);
 
