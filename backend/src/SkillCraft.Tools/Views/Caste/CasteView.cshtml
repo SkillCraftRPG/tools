@@ -20,6 +20,8 @@
   {
     description = markdown.Transform(Model.Description.Replace("\\r", "\r").Replace("\\n", "\n").Remove("\r"));
   }
+
+  string RenderInline(string value) => markdown.Transform(value).Remove("<p>").Remove("</p>");
 }
 
 <div class="container">
@@ -53,7 +55,7 @@
           <strong>@(feature.Name).</strong>
           @if (feature.Description != null)
           {
-            @(Html.Raw(markdown.Transform(feature.Description).Remove("<p>").Remove("</p>")))
+            @(Html.Raw(RenderInline(feature.Description)))
           }
         </li>
       }

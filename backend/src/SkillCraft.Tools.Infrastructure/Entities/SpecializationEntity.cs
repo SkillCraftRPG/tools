@@ -69,7 +69,7 @@ internal class SpecializationEntity : AggregateEntity
         ? talents[@event.RequiredTalentId.Value.Value.ToGuid()]
         : null;
       RequiredTalent = requiredTalent;
-      RequiredTalentId = requiredTalent?.RequiredTalentId;
+      RequiredTalentId = requiredTalent?.TalentId;
     }
     if (@event.OtherRequirements != null)
     {

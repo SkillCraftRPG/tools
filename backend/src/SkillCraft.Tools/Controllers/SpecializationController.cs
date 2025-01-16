@@ -6,7 +6,7 @@ using SkillCraft.Tools.Core.Specializations.Queries;
 
 namespace SkillCraft.Tools.Controllers;
 
-[Route("specializations")]
+[Route("specialisations")]
 public class SpecializationController : Controller
 {
   private readonly IMediator _mediator;

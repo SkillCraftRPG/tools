@@ -254,5 +254,341 @@
         "**Escarmouche.** Lorsqu’une créature ennemie termine son tour dans une case adjacente à celle du personnage, alors celui-ci peut utiliser sa réaction afin d’effectuer l’activité **Déplacement** à la moitié de sa vitesse, ou il effectue l’activité **Pas prudent**. Les attaques d’opportunité déclenchées par ce déplacement sont affligées du désavantage."
       ]
     }
+  },
+  {
+    "Id": "3bc04b8c-0e82-46c1-b03e-e91599ac63cf",
+    "Tier": 2,
+    "UniqueSlug": "bricoleur",
+    "DisplayName": "Bricoleur",
+    "Description": "À l’aide de son imagination débordante et de ses outils rudimentaires ou improvisés, le bricoleur répare tout et invente des appareils hors du commun. Il voit chaque problème comme une opportunité de création et utilise ses mains expertes et son esprit vif afin d’apporter de solutions brillantes aux problèmes du quotidien, améliorant ainsi la vie de tous. Bien sûr, il bénéficie d’un peu d’aide magique afin de l’aider à accomplir ces prouesses.",
+    "RequiredTalent": "Expertise artisanale",
+    "OtherRequirements": [
+      "Le personnage doit avoir acquis les talents <u>Trousses</u> et <u>Infusions magiques</u>.",
+      "Il doit également avoir acquis un bricolage magique de tiers 1. Les bricolages magiques acquis gratuitement ne satisfont pas cette condition."
+    ],
+    "OptionalTalents": [
+      "Armes de finesse",
+      "Armes de tir",
+      "Attaque sournoise",
+      "Culbutes",
+      "Distraction",
+      "Endurance accrue",
+      "Enquêteur",
+      "Infusions magiques",
+      "Magie puissante",
+      "Maraudage",
+      "Méfait feutré",
+      "Naturalisme",
+      "Parade",
+      "Société",
+      "Tir rapide",
+      "Tissu de mensonges"
+    ],
+    "OtherOptions": [ "un bricolage magique de tiers 1" ],
+    "ReservedTalent": {
+      "Name": "Ingéniosité magique",
+      "Descriptions": [
+        "Il peut acquérir les bricolages magiques de tiers 2 et apprend gratuitement un de ces bricolages magiques. Afin de canaliser ces bricolages magiques à un niveau supérieur, il doit avoir acquis le talent <u>Magie puissante</u> ainsi qu’une des spécialisations suivantes : _Alchimiste_ ou _Artificier_.",
+        "**Adepte d’artéfacts.** Le nombre maximal d’artéfacts magiques auxquels le personnage peut être harmonisé en même temps augmente à 4. Lorsque son tiers de personnage atteint 3, ce nombre augmente à 5 et il ignore les requis de spécialisations et d’espèces lorsqu’il s’harmonise à un artéfact magique. Également, lorsqu’il fabrique un objet non magique de rareté commune ou peu fréquente, il n’a besoin que du quart du temps de fabrication et réduit de 25 % la quantité de matériel requise.",
+        "**Éclair de génie.** Lorsque le personnage voit un allié situé à 9 mètres ou moins de sa position effectuer un test de compétence, il peut utiliser sa réaction afin d’ajouter au test un bonus égal à son modificateur d’Intellect (minimum 1). Il peut utiliser cette capacité un nombre de fois égal à son modificateur d’Intellect (minimum 1) et doit compléter une nuit de sommeil afin de récupérer ces utilisations.",
+        "**Escamotage magique.** Lorsque le personnage canalise le niveau 1 du pouvoir <u>Main magique</u>, il peut effectuer des actions supplémentaires avec la main. Il peut effectuer ces actions de manière furtive en effectuant un test de _Furtivité_ ou de _Roublardise_ au choix. Il peut ranger un objet dans un conteneur porté ou tenu par une autre créature, récupérer un objet d’un conteneur porté ou tenu par une autre créature, et utiliser des outils de voleur à distance afin de crocheter une serrure ou désamorcer un piège. Il peut également distraire une créature jusqu’à la fin de son tour, ce qui lui confère l’avantage au test de ses attaques dirigées contre cette créature."
+      ]
+    }
+  },
+  {
+    "Id": "7559e28c-93fb-4e00-a18e-601899620a89",
+    "Tier": 2,
+    "UniqueSlug": "brigand",
+    "DisplayName": "Brigand",
+    "Description": "Le brigand est souvent vu comme une racaille, un bandit des grands chemins, un cruel tyran et un malfrat. En réalité, il s’agit plutôt d’un être naturellement chaotique, utilisant les moyens du bord et doté d’audace afin de parvenir à ses fins. Son utilisation de stratégies non conventionnelles, une chance fabuleuse et une bravoure sans limite lui permettent de se tirer de la plupart des situations fâcheuses et lui valent une certaine réputation.",
+    "RequiredTalent": "Bris",
+    "OtherRequirements": [],
+    "OptionalTalents": [
+      "Armes de finesse",
+      "Armes de jet",
+      "Attaque sournoise",
+      "Charge",
+      "Costaud",
+      "Coup de bouclier",
+      "Critique accru",
+      "Distraction",
+      "Enquêteur",
+      "Herboristerie",
+      "Lancer brutal",
+      "Maraudage",
+      "Parade",
+      "Présence terrifiante",
+      "Robustesse accrue",
+      "Survivalisme",
+      "Tolérance à l’alcool II"
+    ],
+    "OtherOptions": [],
+    "ReservedTalent": {
+      "Name": "Sournoiseries",
+      "Descriptions": [
+        "Il peut acquérir à rabais les talents <u<Attaque sanglante</u>, <u>Destruction</u> et <u>Lancer précis</u>.",
+        "**Exploits.** La chance et la bravoure du personnage lui permettent parfois d’accomplir des exploits. Lorsqu’il désire accomplir un exploit, il doit dépenser 20 points d’Énergie avant de savoir si le test est réussi ou échoué. Il peut également piger un point d’Espérance dans la banque commune afin de réduire cette dépense à 10 points d’Énergie, ou utiliser un point d’Espérance qu’il possède en Momentum afin de ne dépenser aucun point d’Énergie.\n\n- _Bagarre._ Il confère l’avantage à un de ses tests d’Initiative.\n- _Cascade._ Lorsqu’il voit une créature effectuer une attaque dirigée en sa direction, alors il peut utiliser sa réaction afin d’effectuer l’activité **Pas prudent** ou de se jeter au sol en position renversée dans une case adjacente à la sienne. Lorsqu’il en fait ainsi, son Esquive augmente de +2 s’il a effectué un **Pas prudent** ou de +5 s’il s’est jeté au sol, à partir de l’attaque pour laquelle il a utilisé cette capacité et jusqu’au début de son prochain tour.\n- _Contre-attaque._ Lorsqu’il voit une créature échouer une attaque de mêlée dirigée vers lui, alors il peut utiliser sa réaction afin d’effectuer une attaque d’opportunité contre cette créature.\n- _Point faible._ Il peut effectuer une Attaque sournoise, même si son test d’attaque ne bénéficie pas de l’avantage et qu’aucune créature alliée ne se trouve dans une case adjacente à celle de sa cible.",
+        "**Guet-apens.** Lorsqu’il attaque une créature prise au dépourvu, alors il se voit conférer l’avantage à son test d’attaque. Également, il fait 20 à la première attaque qu’il effectue contre une créature surprise (automatiquement une réussite critique).",
+        "**Pensées intrusives.** Lorsqu’il réussit une attaque en maniant une arme improvisée, le ou les dés de dégâts sont remplacés par des d8. Également, lorsqu’il tente une attaque en maniant une arme improvisée, il peut décider si les dégâts infligés sont létaux ou non avant de connaître le résultat du test. Enfin, il peut utiliser une arme d’une manière non conventionnelle afin que celle-ci soit considérée comme une arme improvisée, par exemple le pommeau d’une épée, le manche d’une hache, ou encore le corps d’un arc. Lorsqu’il en fait ainsi, il peut utiliser les talents <u>Bris</u> et <u>Destruction</u> avec cette arme, et il peut décider si les dégâts infligés sont létaux ou non en effectuant une attaque en maniant cette arme."
+      ]
+    }
+  },
+  {
+    "Id": "43c3fb80-d719-4da6-b01c-94780fd6bb77",
+    "Tier": 2,
+    "UniqueSlug": "brute",
+    "DisplayName": "Brute",
+    "Description": "Dépourvu des subtilités tactiques, la brute compense par un courage et une fougue inébranlable. Tel un titan, il émerge des affrontements, des cicatrices s’ajoutant comme trophées sur son physique imposant, insufflant la terreur dans le cœur de ses ennemis. Sa présence sur le champ de bataille rappelle brutalement que la force pure peut parfois être la tactique la plus redoutable.",
+    "RequiredTalent": "Charge",
+    "OtherRequirements": [],
+    "OptionalTalents": [
+      "Ambidextre",
+      "Armes à deux mains",
+      "Armes de jet",
+      "Armes de tir",
+      "Attaque brutale",
+      "Attaque puissante",
+      "Bris",
+      "Costaud",
+      "Frappe puissante",
+      "Initiative accrue",
+      "Lancer brutal",
+      "Lutte",
+      "Observateur",
+      "Présence terrifiante",
+      "Robustesse accrue",
+      "Survivalisme",
+      "Suspicion"
+    ],
+    "OtherOptions": [],
+    "ReservedTalent": {
+      "Name": "Impétuosité",
+      "Descriptions": [
+        "Il peut acquérir à rabais les talents <u>Double attaque</u>, <u>Force incroyable</u> et <u>Onde de choc</u>.",
+        "**Bagarreur.** Il se voit conférer l’avantage à ses tests d’Initiative.",
+        "**Rigide.** Lorsqu’il ne porte pas d’armure, il ajoute son modificateur de Vigueur à sa Défense (minimum 1). S’il ne porte qu’une armure légère, il ajoute seulement la moitié de son modificateur de Vigueur à sa Défense. Il peut bénéficier de cette capacité tout en utilisant un bouclier.",
+        "**Témérité.** En situation de combat, permet au personnage d’entrer en état de témérité au début de son tour par une action libre. Il ne doit pas porter d’armure lourde ni de bouclier lourd afin de bénéficier de cette capacité. En état de témérité, ses tests d’attaques de mêlée se voient conférer l’avantage, tout comme les tests des attaques dirigées contre lui. Sa vitesse augmente de 3 mètres, il inflige 1d6 points de dégâts supplémentaires lorsqu’il réussit une attaque de mêlée et il peut ajouter 1d6 à ses jets de sauvegarde. Ces effets durent jusqu’au début de son prochain tour."
+      ]
+    }
+  },
+  {
+    "Id": "51c4a2cb-f8a8-4652-82c6-ee8f8a0ab88f",
+    "Tier": 2,
+    "UniqueSlug": "catalyste",
+    "DisplayName": "Catalyste",
+    "Description": "La puissance du Catalyste provient de son contrôle de plusieurs éléments et de sa capacité à combiner ces éléments afin de produire des pouvoirs et effets surnaturels inhabituels. Parfois, cette combinaison est harmonieuse, particulièrement lorsque deux éléments similaires sont combinés. En revanche, lorsque deux éléments sont opposés, soit l’Air et la Terre ou l’Eau et le Feu, cette combinaison peut être dévastatrice et causer d’importants cataclysmes.",
+    "RequiredTalent": "Barrière mentale",
+    "OtherRequirements": [
+      "Le personnage doit avoir acquis la spécialisation _Élémentariste_.",
+      "Il doit avoir acquis le talent <u>Combinaison élémentaire</u>.",
+      "Il doit avoir acquis le talent <u>Élémentarisme</u> pour un second élément. Ces deux éléments doivent figurer parmi la liste suivante : Air, Eau, Feu et Terre.",
+      "Il doit également avoir acquis deux pouvoirs issus d’une combinaison élémentaire. Les pouvoirs acquis gratuitement ne satisfont pas cette condition. Ces deux pouvoirs sont inclus dans les talents optionnels de cette spécialisation."
+    ],
+    "OptionalTalents": [
+      "Armes de jet",
+      "Attaque neutralisante",
+      "Combinaison élémentaire",
+      "Cuirassé",
+      "Endurance accrue",
+      "Enquêteur",
+      "Expertise artisanale",
+      "Frappe puissante",
+      "Lancer brutal",
+      "Lutte",
+      "Magie puissante",
+      "Méditation",
+      "Observateur",
+      "Robustesse accrue",
+      "Société",
+      "Survivalisme"
+    ],
+    "OtherOptions": [ "deux pouvoirs issus d’une combinaison élémentaire" ],
+    "ReservedTalent": {
+      "Name": "Fusion élémentaire",
+      "Descriptions": [
+        "Il peut acquérir à rabais les talents <u>Magie guerrière</u> et <u>Résilience</u>.",
+        "Il peut acquérir les pouvoirs de tiers 2 de son élément pour lequel il a acquis la spécialisation _Élémentariste_, de son second élément ainsi que de sa combinaison élémentaire. Il apprend gratuitement un pouvoir issu de sa combinaison élémentaire et peut acquérir un pouvoir à rabais associé à un de ces deux éléments.",
+        "Il peut désormais utiliser de puissantes capacités élémentaires de tiers 2. Ces capacités sont détaillées en annexe à cet ouvrage.",
+        "**Attaque élémentaire.** Lorsque le personnage utilise le talent <u>Attaque magique</u>, il peut remplacer les dégâts magiques par les dégâts élémentaires associés à sa combinaison élémentaire."
+      ]
+    }
+  },
+  {
+    "Id": "da908adf-4ddb-47e0-b844-02c30fa9ee47",
+    "Tier": 2,
+    "UniqueSlug": "druide",
+    "DisplayName": "Druide",
+    "Description": "Le druide est un animiste ayant réussi un rite de passage afin d’être accepté dans un cercle d’un culte spirituel voué à un ou plusieurs éléments naturels. L’appartenance à ce culte lui a permis d’accéder aux secrets de ce culte, notamment un langage clandestin et des pouvoirs de puissance supérieure. Ces pouvoirs sont accompagnés de nouvelles responsabilités : il doit respecter les préceptes du cercle l’ayant accepté afin de conserver le droit de les utiliser.",
+    "RequiredTalent": "Magie puissante",
+    "OtherRequirements": [
+      "Le personnage doit avoir acquis la spécialisation _Animiste_.",
+      "Il ne doit pas avoir acquis la spécialisation _Chaman_.",
+      "Il doit avoir sélectionné un domaine d’animisme naturel lorsqu’il a acquis le talent <u>Spiritualité</u>."
+    ],
+    "OptionalTalents": [
+      "Armes de jet",
+      "Barrière mentale",
+      "Bris",
+      "Endurance accrue",
+      "Enquêteur",
+      "Herboristerie",
+      "Médecine animale",
+      "Méditation",
+      "Naturalisme",
+      "Observateur",
+      "Survivalisme"
+    ],
+    "OtherOptions": [ "pouvoirs de tiers 1 de son domaine d’animisme" ],
+    "ReservedTalent": {
+      "Name": "Druidisme",
+      "Descriptions": [
+        "Il peut acquérir les pouvoirs de tiers 2 de son domaine d’animisme et apprend gratuitement un de ces pouvoirs.",
+        "Il acquiert une capacité de tiers 2 spécifique à son domaine d’animisme.",
+        "Il peut maintenant assumer sa forme sauvage deux fois par jour. Il doit compléter une nuit de sommeil afin de récupérer ces utilisations. Également, il peut maintenant prendre la forme d’une bête de niveau inférieur ou égal à 1 et celle-ci peut voler.",
+        "**Druidique.** Le personnage apprend le langage secret et mystique des druides. Il est impossible d’apprendre cette langue sans devenir Druide. Un mystérieux voile surnaturel l’empêche de l’apprendre à un non-Druide. Ce voile permet à un pouvoir d’identifier qu’il s’agit du langage secret, mais pas de le comprendre ni de le parler."
+      ]
+    }
+  },
+  {
+    "Id": "42871b8d-4d1b-466f-8cba-ac3238ae7fa9",
+    "Tier": 2,
+    "UniqueSlug": "haruspice",
+    "DisplayName": "Haruspice",
+    "Description": "Dans les profondeurs de son repaire obscur et caché loin des regards, l’haruspice pratique de sombres rituels incorporant du sang, des entrailles de bêtes et d’anciens symboles gravés dans la pierre. Les murmures des esprits guident ses mains, lui révélant des visions d’avenir, des secrets du passé et des réalités du présent. Bien qu’il soit craint par la populace et la noblesse, les prédictions de l’haruspice ne sont pas toujours teintées de mort et de désespoir.",
+    "RequiredTalent": "Naturalisme",
+    "OtherRequirements": [
+      "Le personnage doit avoir acquis la spécialisation _Élémentariste_ pour l’élément Esprit.",
+      "Il ne doit pas avoir acquis la spécialisation _Augure_."
+    ],
+    "OptionalTalents": [
+      "Barrière mentale",
+      "Bris",
+      "Endurance accrue",
+      "Enquêteur",
+      "Herboristerie",
+      "Magie puissante",
+      "Méditation",
+      "Observateur",
+      "Présence terrifiante",
+      "Survivalisme",
+      "Tissu de mensonges"
+    ],
+    "OtherOptions": [ "pouvoirs de tiers 1 associés à l’élément Esprit et à la Nécromancie" ],
+    "ReservedTalent": {
+      "Name": "Hiéroscopie",
+      "Descriptions": [
+        "Il peut acquérir à rabais les talents <u>Érudition</u>, <u>Extraction du poison</u> et <u>Magie guerrière</u>.",
+        "Il peut acquérir les pouvoirs de tiers 2 associés à l’élément Esprit et à la Nécromancie, et apprend gratuitement un de ces pouvoirs.",
+        "Il peut désormais utiliser de puissantes capacités élémentaires de tiers 2. Ces capacités sont détaillées en annexe à cet ouvrage.",
+        "**Attaque élémentaire.** Lorsque le personnage utilise le talent <u>Attaque magique</u>, il peut remplacer les dégâts magiques par des dégâts nécrotiques."
+      ]
+    }
+  },
+  {
+    "Id": "0fd25d3f-7378-4cca-aa1b-1484967bc8c5",
+    "Tier": 2,
+    "UniqueSlug": "mage",
+    "DisplayName": "Mage",
+    "Description": "Le terme mage désigne les Astromanciens en général, mais le titre de Mage n’est décerné qu’aux plus brillants de ceux-ci. En réussissant une série de tests complexes et éprouvants, un Astromancien prouve sa valeur à une Tour de Magie. Il se spécialise ensuite dans un Cercle de Magie en étudiant le corpus de ses collègues.",
+    "RequiredTalent": "Initiation magique",
+    "OtherRequirements": [
+      "Le personnage doit avoir acquis la spécialisation _Astromancien_.",
+      "Il ne doit pas avoir acquis la spécialisation _Magelame_."
+    ],
+    "OptionalTalents": [
+      "Barrière mentale",
+      "Emboîter le pas",
+      "Endurance accrue",
+      "Enquêteur",
+      "Herboristerie",
+      "Magie puissante",
+      "Méditation",
+      "Naturalisme",
+      "Philologie",
+      "Société",
+      "Suspicion"
+    ],
+    "OtherOptions": [ "pouvoirs de tiers 1 d’astromancie" ],
+    "ReservedTalent": {
+      "Name": "Magie raffinée",
+      "Descriptions": [
+        "Il peut acquérir à rabais les talents <u>Magie guerrière</u>, <u>Magie précise</u> et <u>Optimisation magique. Ces rabais ne sont pas cumulables avec les rabais conférés par la spécialisation _Sorcier_.",
+        "Il peut acquérir les pouvoirs de tiers 2 d’astromancie et apprend gratuitement un de ces pouvoirs.",
+        "Il sélectionne un cercle de magie pour lequel il a acquis le talent <u>Initiation magique</u> et il acquiert la capacité de tiers 2 spécifique à ce cercle de magie."
+      ]
+    }
+  },
+  {
+    "Id": "c4cf223e-f628-4a84-819c-f68b508abc8a",
+    "Tier": 2,
+    "UniqueSlug": "pretre",
+    "DisplayName": "Prêtre",
+    "Description": "Le prêtre est un clerc ayant progressé au sein de son clergé. Il est non seulement reconnu par ses pairs comme un important ambassadeur de sa divinité par un échelon plus élevé, il est également reconnu par sa divinité en recevant des pouvoirs plus puissants de la part de celle-ci.",
+    "RequiredTalent": "Magie puissante",
+    "OtherRequirements": [
+      "Le personnage doit avoir acquis la spécialisation _Clerc_.",
+      "Il ne doit pas avoir acquis la spécialisation _Champion_."
+    ],
+    "OptionalTalents": [
+      "Barrière mentale",
+      "Distraction",
+      "Emboîter le pas",
+      "Endurance accrue",
+      "Herboristerie",
+      "Méditation",
+      "Philologie",
+      "Présence terrifiante",
+      "Renvoi des morts-vivants",
+      "Société",
+      "Suspicion"
+    ],
+    "OtherOptions": [ "pouvoirs de tiers 1 du domaine de sa divinité" ],
+    "ReservedTalent": {
+      "Name": "Prêtrise",
+      "Descriptions": [
+        "Il peut acquérir les pouvoirs de tiers 2 du domaine de sa divinité et apprend gratuitement un de ces pouvoirs.",
+        "Il acquiert une capacité de tiers 2 spécifique au domaine de sa divinité.",
+        "Il peut maintenant invoquer un pouvoir divin spécifique au domaine de sa divinité deux fois par jour. Il doit compléter une nuit de sommeil afin de récupérer ces utilisations.",
+        "**Attaque divine.** Lorsque le personnage effectue une <u>Attaque magique</u>, il peut substituer les dégâts magiques par des dégâts du type associé au domaine de sa divinité."
+      ]
+    }
+  },
+  {
+    "Id": "e6bbc6b6-47b9-4168-b6be-8287b24219ac",
+    "Tier": 2,
+    "UniqueSlug": "soldat",
+    "DisplayName": "Soldat",
+    "Description": "Le soldat est un professionnel hautement discipliné entraîné au combat, ardent défenseur des intérêts de l’armée qu’il a intégrée. Il est vêtu d’une armure forgée avec précision et d’armes sélectionnées avec discernement, paré de son fidèle bouclier, sans oublier son arc de prédilection ou quelques javelots. Sa force ou sa précision légendaire, son regard scrutateur, sa résilience et sa loyauté indéfectible en font un allié remarquable.",
+    "RequiredTalent": "Manœuvres de combat",
+    "OtherRequirements": [
+      "Ambidextre",
+      "Armes à deux mains",
+      "Armes de finesse",
+      "Armes de jet",
+      "Armes de tir",
+      "Attaque neutralisante",
+      "Attaque puissante",
+      "Coup de bouclier",
+      "Cuirassé",
+      "Culbutes",
+      "Distraction",
+      "Expertise artisanale",
+      "Initiative accrue",
+      "Lutte",
+      "Observateur",
+      "Robustesse accrue",
+      "Suspicion"
+    ],
+    "OptionalTalents": [],
+    "OtherOptions": [],
+    "ReservedTalent": {
+      "Name": "Entraînement militaire",
+      "Descriptions": [
+        "Il peut acquérir à rabais les talents <u>Attaque précise</u>, <u>Attaques multiples</u> et <u>Poigne de fer</u>.",
+        "**Ardeur au combat.** En situation de combat, permet au personnage de dépenser 15, 30 ou 45 points d’Énergie à la fin de son tour. Pour chaque tranche de 15 points d’Énergie dépensés, il peut effectuer une action supplémentaire pendant ce tour. Il peut utiliser cette capacité un nombre de fois égal à son tiers de personnage et doit compléter une nuit de sommeil afin de récupérer ces utilisations.",
+        "**Athlète remarquable.** Lorsqu’il effectue un test de compétence d’une des compétences suivantes, il remplace le rang de cette compétence par son tiers de personnage si celui-ci est plus élevé que le rang de cette compétence : _Acrobaties_, _Artisanat_, _Athlétisme_, _Furtivité_, _Mêlée_, _Orientation_, _Résistance_ et _Roublardise_.",
+        "**Déduction guerrière.** Lorsqu’il n’est pas en situation de combat, le personnage peut observer ou interagir avec une créature pendant une minute. Cela lui permet de déterminer si les caractéristiques suivantes de cette créature sont supérieures, inférieures ou égales aux siennes, à la discrétion du maître de jeu : scores d’Agilité, de Coordination et de Vigueur, Défense, Esquive, et points de Vitalité et d’Énergie actuels."
+      ]
+    }
   }
 ]
