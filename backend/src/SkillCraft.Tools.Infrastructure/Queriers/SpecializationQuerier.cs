@@ -80,7 +80,10 @@ internal class SpecializationQuerier : ISpecializationQuerier
       .ApplyIdFilter(payload, Specializations.Id);
     _sqlHelper.ApplyTextSearch(builder, payload.Search, Specializations.UniqueSlug, Specializations.DisplayName);
 
-    // TODO(fpion): other filters
+    if (payload.TalentId.HasValue)
+    {
+      // TODO(fpion): TalentId Filter
+    }
 
     IQueryable<SpecializationEntity> query = _specializations.FromQuery(builder).AsNoTracking()
       .Include(x => x.RequiredTalent);

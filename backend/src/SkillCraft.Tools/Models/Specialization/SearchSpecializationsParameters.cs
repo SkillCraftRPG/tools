@@ -8,7 +8,8 @@ namespace SkillCraft.Tools.Models.Specialization;
 
 public record SearchSpecializationsParameters : SearchParameters
 {
-  // TODO(fpion): Filters; Talents
+  [FromQuery(Name = "talent")]
+  public Guid? TalentId { get; set; }
 
   [FromQuery(Name = "tiers")]
   public IEnumerable<int>? TierValues { get; set; }
@@ -18,7 +19,10 @@ public record SearchSpecializationsParameters : SearchParameters
 
   public SearchSpecializationsPayload ToPayload()
   {
-    SearchSpecializationsPayload payload = new();
+    SearchSpecializationsPayload payload = new()
+    {
+      TalentId = TalentId
+    };
     if (TierValues != null)
     {
       payload.Tier = new TierFilter(TierOperator ?? string.Empty, TierValues);

@@ -8,7 +8,7 @@ internal class SearchSpecializationsPayloadGraphType : SearchPayloadInputGraphTy
 {
   public SearchSpecializationsPayloadGraphType() : base()
   {
-    // TODO(fpion): Filters; Talents
+    // TODO(fpion): TalentId Filter
     Field(x => x.Tier, type: typeof(TierFilterGraphType))
       .Description("When specified, only specializations matching the filter will match.");
 
