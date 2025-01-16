@@ -574,6 +574,124 @@ namespace SkillCraft.Tools.Infrastructure.SqlServer.Migrations
                     b.ToTable("Natures", (string)null);
                 });
 
+            modelBuilder.Entity("SkillCraft.Tools.Infrastructure.Entities.SpecializationEntity", b =>
+                {
+                    b.Property<int>("SpecializationId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SpecializationId"));
+
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DisplayName")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("OtherOptions")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OtherRequirements")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("RequiredTalentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ReservedTalentDescriptions")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReservedTalentName")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("StreamId")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("Tier")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UniqueSlug")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("UniqueSlugNormalized")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<DateTime>("UpdatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("Version")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("SpecializationId");
+
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("CreatedOn");
+
+                    b.HasIndex("DisplayName");
+
+                    b.HasIndex("Id")
+                        .IsUnique();
+
+                    b.HasIndex("RequiredTalentId");
+
+                    b.HasIndex("ReservedTalentName");
+
+                    b.HasIndex("StreamId")
+                        .IsUnique();
+
+                    b.HasIndex("Tier");
+
+                    b.HasIndex("UniqueSlug");
+
+                    b.HasIndex("UniqueSlugNormalized")
+                        .IsUnique();
+
+                    b.HasIndex("UpdatedBy");
+
+                    b.HasIndex("UpdatedOn");
+
+                    b.HasIndex("Version");
+
+                    b.ToTable("Specializations", (string)null);
+                });
+
+            modelBuilder.Entity("SkillCraft.Tools.Infrastructure.Entities.SpecializationOptionalTalentEntity", b =>
+                {
+                    b.Property<int>("SpecializationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TalentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("SpecializationId", "TalentId");
+
+                    b.HasIndex("TalentId");
+
+                    b.ToTable("SpecializationOptionalTalents", (string)null);
+                });
+
             modelBuilder.Entity("SkillCraft.Tools.Infrastructure.Entities.TalentEntity", b =>
                 {
                     b.Property<int>("TalentId")
@@ -683,6 +801,31 @@ namespace SkillCraft.Tools.Infrastructure.SqlServer.Migrations
                     b.Navigation("Gift");
                 });
 
+            modelBuilder.Entity("SkillCraft.Tools.Infrastructure.Entities.SpecializationEntity", b =>
+                {
+                    b.HasOne("SkillCraft.Tools.Infrastructure.Entities.TalentEntity", "RequiredTalent")
+                        .WithMany("RequiringSpecializations")
+                        .HasForeignKey("RequiredTalentId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("RequiredTalent");
+                });
+
+            modelBuilder.Entity("SkillCraft.Tools.Infrastructure.Entities.SpecializationOptionalTalentEntity", b =>
+                {
+                    b.HasOne("SkillCraft.Tools.Infrastructure.Entities.SpecializationEntity", null)
+                        .WithMany()
+                        .HasForeignKey("SpecializationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SkillCraft.Tools.Infrastructure.Entities.TalentEntity", null)
+                        .WithMany()
+                        .HasForeignKey("TalentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("SkillCraft.Tools.Infrastructure.Entities.TalentEntity", b =>
                 {
                     b.HasOne("SkillCraft.Tools.Infrastructure.Entities.TalentEntity", "RequiredTalent")
@@ -700,6 +843,8 @@ namespace SkillCraft.Tools.Infrastructure.SqlServer.Migrations
 
             modelBuilder.Entity("SkillCraft.Tools.Infrastructure.Entities.TalentEntity", b =>
                 {
+                    b.Navigation("RequiringSpecializations");
+
                     b.Navigation("RequiringTalents");
                 });
 #pragma warning restore 612, 618

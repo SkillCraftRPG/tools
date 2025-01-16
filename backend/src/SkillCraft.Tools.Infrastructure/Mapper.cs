@@ -8,6 +8,7 @@ using SkillCraft.Tools.Core.Customizations.Models;
 using SkillCraft.Tools.Core.Educations.Models;
 using SkillCraft.Tools.Core.Languages.Models;
 using SkillCraft.Tools.Core.Natures.Models;
+using SkillCraft.Tools.Core.Specializations.Models;
 using SkillCraft.Tools.Core.Talents.Models;
 using SkillCraft.Tools.Infrastructure.Entities;
 
@@ -129,6 +130,34 @@ internal class Mapper
     {
       destination.Gift = ToCustomization(source.Gift);
     }
+
+    MapAggregate(source, destination);
+
+    return destination;
+  }
+
+  public SpecializationModel ToSpecialization(SpecializationEntity source)
+  {
+    SpecializationModel destination = new()
+    {
+      Tier = source.Tier,
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description,
+      ReservedTalent = source.GetReservedTalent()
+    };
+
+    if (source.RequiredTalent != null)
+    {
+      destination.RequiredTalent = ToTalent(source.RequiredTalent);
+    }
+    destination.OtherRequirements.AddRange(source.GetOtherRequirements());
+
+    foreach (TalentEntity optionalTalent in source.OptionalTalents)
+    {
+      destination.OptionalTalents.Add(ToTalent(optionalTalent));
+    }
+    destination.OtherOptions.AddRange(source.GetOtherOptions());
 
     MapAggregate(source, destination);
 

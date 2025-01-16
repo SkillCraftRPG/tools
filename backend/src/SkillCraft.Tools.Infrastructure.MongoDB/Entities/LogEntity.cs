@@ -4,8 +4,6 @@ using Microsoft.Extensions.Logging;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using SkillCraft.Tools.Core.Logging;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace SkillCraft.Tools.Infrastructure.MongoDB.Entities;
 

@@ -20,7 +20,7 @@ internal class ReadSpecializationQueryHandler : IRequestHandler<ReadSpecializati
 
     if (query.Id.HasValue)
     {
-      SpecializationModel? specialization = await _specializationQuerier.ReadAsync(query.Id.Value, cancellationToken);
+      var specialization = await _specializationQuerier.ReadAsync(query.Id.Value, cancellationToken);
       if (specialization != null)
       {
         specializations[specialization.Id] = specialization;
@@ -28,7 +28,7 @@ internal class ReadSpecializationQueryHandler : IRequestHandler<ReadSpecializati
     }
     if (!string.IsNullOrWhiteSpace(query.Slug))
     {
-      SpecializationModel? specialization = await _specializationQuerier.ReadAsync(query.Slug, cancellationToken);
+      var specialization = await _specializationQuerier.ReadAsync(query.Slug, cancellationToken);
       if (specialization != null)
       {
         specializations[specialization.Id] = specialization;

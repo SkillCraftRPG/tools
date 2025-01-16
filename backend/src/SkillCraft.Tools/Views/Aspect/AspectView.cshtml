@@ -13,11 +13,10 @@
 
   BreadcrumbModel breadcrumb = new(title, [new LinkModel("/aspects", "Aspects")]);
 
-  Markdown markdown = new();
-
   string? description = null;
   if (Model.Description != null)
   {
+    Markdown markdown = new();
     description = markdown.Transform(Model.Description.Replace("\\r", "\r").Replace("\\n", "\n").Remove("\r"));
   }
 }
