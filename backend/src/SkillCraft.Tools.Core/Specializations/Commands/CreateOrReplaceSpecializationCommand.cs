@@ -129,7 +129,7 @@ internal class CreateOrReplaceSpecializationCommandHandler : IRequestHandler<Cre
     IEnumerable<TalentId> missingTalents = optionalTalentIds.Except(talents.Keys).Distinct();
     if (missingTalents.Any())
     {
-      throw new NotImplementedException(); // TODO(fpion): typed exception
+      throw new NotImplementedException(); // ISSUE #56: https://github.com/SkillCraftRPG/tools/issues/56
     }
 
     if (reference.RequiredTalentId != requiredTalentId)
@@ -158,7 +158,7 @@ internal class CreateOrReplaceSpecializationCommandHandler : IRequestHandler<Cre
       }
     }
 
-    // TODO(fpion): should we throw a BadRequest exception for each talent (where Tier >= Specialization.Tier), or for a list?
+    // ISSUE #56: https://github.com/SkillCraftRPG/tools/issues/56; should we throw a BadRequest exception for each talent (where Tier >= Specialization.Tier), or for a list?
   }
 
   private static ReservedTalent? ToReservedTalent(ReservedTalentModel? reservedTalent)

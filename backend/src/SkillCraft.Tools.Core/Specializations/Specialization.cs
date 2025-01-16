@@ -100,7 +100,7 @@ public class Specialization : AggregateRoot
   {
     if (talent.Tier >= Tier)
     {
-      throw new NotImplementedException(); // TODO(fpion): typed exception
+      throw new NotImplementedException(); // ISSUE #56: https://github.com/SkillCraftRPG/tools/issues/56
     }
 
     if (_optionalTalentIds.Add(talent.Id))
@@ -152,7 +152,7 @@ public class Specialization : AggregateRoot
   {
     if (requiredTalent != null && requiredTalent.Tier >= Tier)
     {
-      throw new NotImplementedException(); // TODO(fpion): typed exception
+      throw new NotImplementedException(); // ISSUE #56: https://github.com/SkillCraftRPG/tools/issues/56
     }
 
     if (RequiredTalentId != requiredTalent?.Id)
