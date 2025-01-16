@@ -78,7 +78,7 @@ internal class SpecializationQuerier : ISpecializationQuerier
   {
     IQueryBuilder builder = _sqlHelper.QueryFrom(Specializations.Table).SelectAll(Specializations.Table)
       .ApplyIdFilter(payload, Specializations.Id);
-    _sqlHelper.ApplyTextSearch(builder, payload.Search, Specializations.UniqueSlug, Specializations.DisplayName);
+    _sqlHelper.ApplyTextSearch(builder, payload.Search, Specializations.UniqueSlug, Specializations.DisplayName, Specializations.ReservedTalentName);
 
     if (payload.TalentId.HasValue)
     {
