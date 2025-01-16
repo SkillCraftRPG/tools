@@ -1,8 +1,6 @@
 ﻿using MongoDB.Driver;
 using SkillCraft.Tools.Core.Logging;
 using SkillCraft.Tools.Infrastructure.MongoDB.Entities;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace SkillCraft.Tools.Infrastructure.MongoDB.Repositories;
 
