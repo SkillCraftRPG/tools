@@ -7,6 +7,6 @@ internal static class SpecializationOptionalTalents
 {
   public static readonly TableId Table = new(nameof(SkillCraftContext.SpecializationOptionalTalents));
 
-  public static readonly ColumnId SpecializationId = new(nameof(SpecializationOptionalTalentEntity.SpecializationId));
-  public static readonly ColumnId TalentId = new(nameof(SpecializationOptionalTalentEntity.TalentId));
+  public static readonly ColumnId SpecializationId = new(nameof(SpecializationOptionalTalentEntity.SpecializationId), Table);
+  public static readonly ColumnId TalentId = new(nameof(SpecializationOptionalTalentEntity.TalentId), Table);
 }

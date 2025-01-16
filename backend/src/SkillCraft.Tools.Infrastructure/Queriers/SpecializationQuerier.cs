@@ -82,7 +82,21 @@ internal class SpecializationQuerier : ISpecializationQuerier
 
     if (payload.TalentId.HasValue)
     {
-      // TODO(fpion): TalentId Filter
+      TableId requiredTalent = new(Talents.Table.Schema, Talents.Table.Table ?? string.Empty, "RequiredTalent");
+      ColumnId requiredTalentId = new(nameof(TalentEntity.TalentId), requiredTalent);
+      ColumnId requiredTalentUid = new(nameof(TalentEntity.Id), requiredTalent);
+
+      TableId optionalTalent = new(Talents.Table.Schema, Talents.Table.Table ?? string.Empty, "OptionalTalent");
+      ColumnId optionalTalentId = new(nameof(TalentEntity.TalentId), optionalTalent);
+      ColumnId optionalTalentUid = new(nameof(TalentEntity.Id), optionalTalent);
+
+      builder.LeftJoin(requiredTalentId, Specializations.RequiredTalentId)
+        .LeftJoin(SpecializationOptionalTalents.SpecializationId, Specializations.SpecializationId)
+        .LeftJoin(optionalTalentId, SpecializationOptionalTalents.TalentId)
+        .WhereOr(
+          new OperatorCondition(requiredTalentUid, Operators.IsEqualTo(payload.TalentId.Value)),
+          new OperatorCondition(optionalTalentUid, Operators.IsEqualTo(payload.TalentId.Value))
+        );
     }
 
     IQueryable<SpecializationEntity> query = _specializations.FromQuery(builder).AsNoTracking()
