@@ -23,7 +23,7 @@ internal static class CasteQueries
       .Authorize()
       .Description("Searches a list of castes.")
       .Arguments(
-      new QueryArgument<NonNullGraphType<SearchCastesPayloadGraphType>>() { Name = "payload", Description = "The caste search parameters." })
+        new QueryArgument<NonNullGraphType<SearchCastesPayloadGraphType>>() { Name = "payload", Description = "The caste search parameters." })
       .ResolveAsync(async context => await context.ExecuteAsync(new SearchCastesQuery(
         context.GetArgument<SearchCastesPayload>("payload"))));
   }

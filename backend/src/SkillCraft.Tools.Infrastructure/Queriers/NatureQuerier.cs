@@ -15,14 +15,14 @@ namespace SkillCraft.Tools.Infrastructure.Queriers;
 internal class NatureQuerier : INatureQuerier
 {
   private readonly IActorService _actorService;
-  private readonly ISqlHelper _sqlHelper;
   private readonly DbSet<NatureEntity> _natures;
+  private readonly ISqlHelper _sqlHelper;
 
   public NatureQuerier(IActorService actorService, SkillCraftContext context, ISqlHelper sqlHelper)
   {
     _actorService = actorService;
-    _sqlHelper = sqlHelper;
     _natures = context.Natures;
+    _sqlHelper = sqlHelper;
   }
 
   public async Task<NatureId?> FindIdAsync(Slug uniqueSlug, CancellationToken cancellationToken)

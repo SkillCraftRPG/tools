@@ -1,0 +1,22 @@
+﻿@using Logitar;
+@using SkillCraft.Tools.Core.Castes.Models;
+@using SkillCraft.Tools.Models;
+@model IEnumerable<FeatureModel>
+
+@{
+  IOrderedEnumerable<FeatureModel> features = Model.OrderBy(feature => feature.Name);
+}
+
+<h3>Particularités</h3>
+<ul>
+  @foreach (FeatureModel feature in features)
+  {
+    <li>
+      <strong>@(feature.Name).</strong>
+      @if (feature.Description != null)
+      {
+        @(Html.Raw(MarkdownHelper.RenderInline(feature.Description)))
+      }
+    </li>
+  }
+</ul>

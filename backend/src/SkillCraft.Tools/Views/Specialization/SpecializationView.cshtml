@@ -3,6 +3,7 @@
 @using SkillCraft.Tools;
 @using SkillCraft.Tools.Core.Specializations.Models;
 @using SkillCraft.Tools.Core.Talents.Models;
+@using SkillCraft.Tools.Models;
 @using SkillCraft.Tools.Models.Components;
 @model SpecializationModel
 
@@ -30,8 +31,6 @@
       Model.OptionalTalents.OrderBy(talent => talent.DisplayName ?? talent.UniqueSlug)
         .Select(talent => $"<a href=\"/talents/{talent.UniqueSlug}\">{talent.DisplayName ?? talent.UniqueSlug}</a>"));
   }
-
-  string RenderInline(string value) => markdown.Transform(value).Remove("<p>").Remove("</p>");
 }
 
 <div class="container">
@@ -50,14 +49,14 @@
         <strong>Requis.</strong>
         @if (Model.OtherRequirements.Count == 1)
         {
-          @(Html.Raw(RenderInline(Model.OtherRequirements.Single())))
+          @(Html.Raw(MarkdownHelper.RenderInline(Model.OtherRequirements.Single())))
         }
         else
         {
           <ul>
             @foreach (string otherRequirement in Model.OtherRequirements)
             {
-              <li>@(Html.Raw(RenderInline(otherRequirement)))</li>
+              <li>@(Html.Raw(MarkdownHelper.RenderInline(otherRequirement)))</li>
             }
           </ul>
         }
@@ -82,14 +81,14 @@
         <strong>Autres options.</strong>
         @if (Model.OtherOptions.Count == 1)
         {
-          @(Html.Raw(RenderInline(Model.OtherOptions.Single())))
+          @(Html.Raw(MarkdownHelper.RenderInline(Model.OtherOptions.Single())))
         }
         else
         {
           <ul>
             @foreach (string otherOption in Model.OtherOptions)
             {
-              <li>@(Html.Raw(RenderInline(otherOption)))</li>
+              <li>@(Html.Raw(MarkdownHelper.RenderInline(otherOption)))</li>
             }
           </ul>
         }
@@ -115,7 +114,7 @@
       <ul>
         @foreach (string reservedDescription in Model.ReservedTalent.Descriptions)
         {
-          <li>@(Html.Raw(RenderInline(reservedDescription)))</li>
+          <li>@(Html.Raw(MarkdownHelper.RenderInline(reservedDescription)))</li>
         }
       </ul>
     }

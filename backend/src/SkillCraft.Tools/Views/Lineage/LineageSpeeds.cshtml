@@ -1,0 +1,76 @@
+﻿@using SkillCraft.Tools.Core.Lineages.Models;
+@using System.Globalization;
+@model SpeedsModel
+
+@{
+  CultureInfo culture = CultureInfo.GetCultureInfo("fr");
+  string Format(double value) => value.ToString(culture);
+}
+
+<h3>Vitesse</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Vitesse</th>
+      <th scope="col">Cases par action</th>
+      <th scope="col">Mètres par action</th>
+      <th scope="col">Mètres par seconde</th>
+    </tr>
+  </thead>
+  <tbody>
+    @if (Model.Walk > 0)
+    {
+      <tr>
+        <td>Marche</td>
+        <td>@(Model.Walk)</td>
+        <td>@(Format(Model.Walk * 1.5))</td>
+        <td>@(Format(Model.Walk * 1.5 / 6.0))</td>
+      </tr>
+    }
+    @if (Model.Climb > 0)
+    {
+      <tr>
+        <td>Escalade</td>
+        <td>@(Model.Climb)</td>
+        <td>@(Format(Model.Climb * 1.5))</td>
+        <td>@(Format(Model.Climb * 1.5 / 6.0))</td>
+      </tr>
+    }
+    @if (Model.Swim > 0)
+    {
+      <tr>
+        <td>Nage</td>
+        <td>@(Model.Swim)</td>
+        <td>@(Format(Model.Swim * 1.5))</td>
+        <td>@(Format(Model.Swim * 1.5 / 6.0))</td>
+      </tr>
+    }
+    @if (Model.Fly > 0)
+    {
+      <tr>
+        <td>Vol</td>
+        <td>@(Model.Fly)</td>
+        <td>@(Format(Model.Fly * 1.5))</td>
+        <td>@(Format(Model.Fly * 1.5 / 6.0))</td>
+      </tr>
+    }
+    @if (Model.Hover > 0)
+    {
+      <tr>
+        <td>Lévitation</td>
+        <td>@(Model.Hover)</td>
+        <td>@(Format(Model.Hover * 1.5))</td>
+        <td>@(Format(Model.Hover * 1.5 / 6.0))</td>
+      </tr>
+    }
+    @if (Model.Burrow > 0)
+    {
+      <tr>
+        <td>Creusage</td>
+        <td>@(Model.Burrow)</td>
+        <td>@(Format(Model.Burrow * 1.5))</td>
+        <td>@(Format(Model.Burrow * 1.5 / 6.0))</td>
+      </tr>
+    }
+  </tbody>
+</table>

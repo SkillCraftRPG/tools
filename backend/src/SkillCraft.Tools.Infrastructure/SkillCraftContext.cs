@@ -14,6 +14,8 @@ public class SkillCraftContext : DbContext
   internal DbSet<CustomizationEntity> Customizations => Set<CustomizationEntity>();
   internal DbSet<EducationEntity> Educations => Set<EducationEntity>();
   internal DbSet<LanguageEntity> Languages => Set<LanguageEntity>();
+  internal DbSet<LineageEntity> Lineages => Set<LineageEntity>();
+  internal DbSet<LineageLanguageEntity> LineageLanguages => Set<LineageLanguageEntity>();
   internal DbSet<NatureEntity> Natures => Set<NatureEntity>();
   internal DbSet<SpecializationEntity> Specializations => Set<SpecializationEntity>();
   internal DbSet<SpecializationOptionalTalentEntity> SpecializationOptionalTalents => Set<SpecializationOptionalTalentEntity>();

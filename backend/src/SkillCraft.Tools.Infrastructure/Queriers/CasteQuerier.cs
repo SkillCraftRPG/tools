@@ -15,14 +15,14 @@ namespace SkillCraft.Tools.Infrastructure.Queriers;
 internal class CasteQuerier : ICasteQuerier
 {
   private readonly IActorService _actorService;
-  private readonly ISqlHelper _sqlHelper;
   private readonly DbSet<CasteEntity> _castes;
+  private readonly ISqlHelper _sqlHelper;
 
   public CasteQuerier(IActorService actorService, SkillCraftContext context, ISqlHelper sqlHelper)
   {
     _actorService = actorService;
-    _sqlHelper = sqlHelper;
     _castes = context.Castes;
+    _sqlHelper = sqlHelper;
   }
 
   public async Task<CasteId?> FindIdAsync(Slug uniqueSlug, CancellationToken cancellationToken)

@@ -23,7 +23,7 @@ internal static class AspectQueries
       .Authorize()
       .Description("Searches a list of aspects.")
       .Arguments(
-      new QueryArgument<NonNullGraphType<SearchAspectsPayloadGraphType>>() { Name = "payload", Description = "The aspect search parameters." })
+        new QueryArgument<NonNullGraphType<SearchAspectsPayloadGraphType>>() { Name = "payload", Description = "The aspect search parameters." })
       .ResolveAsync(async context => await context.ExecuteAsync(new SearchAspectsQuery(
         context.GetArgument<SearchAspectsPayload>("payload"))));
   }

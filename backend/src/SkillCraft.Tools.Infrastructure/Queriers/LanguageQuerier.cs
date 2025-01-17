@@ -15,14 +15,14 @@ namespace SkillCraft.Tools.Infrastructure.Queriers;
 internal class LanguageQuerier : ILanguageQuerier
 {
   private readonly IActorService _actorService;
-  private readonly ISqlHelper _sqlHelper;
   private readonly DbSet<LanguageEntity> _languages;
+  private readonly ISqlHelper _sqlHelper;
 
   public LanguageQuerier(IActorService actorService, SkillCraftContext context, ISqlHelper sqlHelper)
   {
     _actorService = actorService;
-    _sqlHelper = sqlHelper;
     _languages = context.Languages;
+    _sqlHelper = sqlHelper;
   }
 
   public async Task<LanguageId?> FindIdAsync(Slug uniqueSlug, CancellationToken cancellationToken)

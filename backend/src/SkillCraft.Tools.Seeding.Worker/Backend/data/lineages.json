@@ -1,0 +1,551 @@
+﻿[
+  {
+    "Id": "fc83f23e-8602-426a-8227-1d18f3fbf0d3",
+    "ParentId": null,
+    "UniqueSlug": "celestin",
+    "DisplayName": "Célestin",
+    "Description": "Le célestin est un humain ayant une ascendance céleste, soit un parent ou un lointain ancêtre appartenant à une espèce céleste, par exemple un ange. Cet ancêtre leur confère certains pouvoirs et une robustesse surnaturelle en lien avec leur origine lumineuse. Physiquement, ils ressemblent en tout point aux humains. Leur teint, leur pilosité et leurs yeux sont généralement très pâles. Leur peau les trahit par de faibles reflets dorés, argentés, bleutés, ou un mélange de ces couleurs, agrémentant leur beauté. Également, ils sont également trahis par certains traits célestes lorsqu’ils apprennent à contrôler et à manifester ceux-ci. On peut retrouver des célestins partout en Ouespéro, mais leur présence est souvent associée à de sombres présages, si bien que le commun des mortels les évite, et certains tenteront même de les éliminer.",
+    "Attributes": {
+      "Agility": 0,
+      "Coordination": 0,
+      "Intellect": 0,
+      "Presence": 1,
+      "Sensitivity": 0,
+      "Spirit": 1,
+      "Vigor": 0,
+      "Extra": 1
+    },
+    "Traits": [
+      {
+        "Id": "0ce21bee-9c61-4baf-8978-e05314a24b21",
+        "Name": "Porteur de lumière",
+        "Description": "Le personnage acquiert gratuitement le pouvoir <u>Lumière</u>. Une fois par jour, il peut toucher une créature consentante afin de la guérir d’un nombre de d4 égal à son modificateur d’Esprit (minimum 1). Il doit compléter une nuit de sommeil afin de réutiliser cette capacité."
+      },
+      {
+        "Id": "2c4472be-0c21-4e79-8202-f3464f525b4e",
+        "Name": "Résistance céleste",
+        "Description": "Le personnage acquiert la résistance aux dégâts nécrotiques et radiants."
+      },
+      {
+        "Id": "967bea5c-99f1-4f7b-9efb-8edbb89602bd",
+        "Name": "Forme céleste",
+        "Description": "Chaque fois que le tiers du personnage augmente, il acquiert une des transformations suivantes. Une fois par tour, par une action, il peut activer une transformation qu’il a acquise. Il peut mettre fin à la transformation par une action. La transformation dure au plus une minute. Il doit compléter une nuit de sommeil afin de réutiliser cette capacité.\n\n- **Âme radiante (tiers 2 ou 3).** Une paire d’ailes spectrales et lumineuses apparaissent dans le dos du personnage, lui conférant une vitesse de vol égale à sa vitesse de marche. Une fois par tour, pendant que la transformation est active, lorsque le personnage inflige des points de dégâts par une attaque ou un pouvoir, il peut infliger un nombre de points de dégâts radiants supplémentaires égal à son modificateur de Présence (minimum 1).\n- **Émanation lumineuse.** De la radiance brûlante est émise de la bouche et des yeux du personnage. Il émet de la clarté dans un rayon de 3 mètres et de la pénombre dans un rayon de 3 mètres additionnels. Toute créature terminant son tour en étant située à 3 mètres ou moins du personnage reçoit un nombre de points de dégâts radiants égal à son modificateur de Présence (minimum 1). Une fois par tour, pendant que la transformation est active, lorsque le personnage inflige des points de dégâts par une attaque ou un pouvoir, il peut infliger un nombre de points de dégâts radiants supplémentaires égal à son modificateur de Présence (minimum 1).\n- **Voile sombre.** Les yeux du personnage deviennent ténébreux et des ailes fantomatiques apparaissent dans son dos. Toute créature ennemie située à 3 mètres ou moins de sa position et voyant le personnage doit effectuer un jet de sauvegarde de _Performance_ opposé au test passif de _Performance_ du personnage. En cas d’échec, une créature est apeurée par le personnage jusqu’à la fin du prochain tour du personnage. Une fois par tour, pendant que la transformation est active, lorsque le personnage inflige des points de dégâts par une attaque ou un pouvoir, il peut infliger un nombre de points de dégâts nécrotiques supplémentaires égal à son modificateur de Présence (minimum 1)."
+      }
+    ],
+    "Languages": {
+      "Ids": [],
+      "Extra": 2,
+      "Text": "Le personnage apprend la langue du peuple au sein duquel il a été élevé ainsi qu’une langue supplémentaire au choix."
+    },
+    "Names": {
+      "Text": "Le personnage porte un prénom et un nom de famille en fonction du peuple au sein duquel il a été élevé. Son prénom est généralement sélectionné afin d’évoquer ses origines angéliques.",
+      "Family": [],
+      "Female": [],
+      "Male": [],
+      "Unisex": [],
+      "Custom": []
+    },
+    "Speeds": {
+      "Walk": 6,
+      "Climb": 0,
+      "Swim": 0,
+      "Fly": 0,
+      "Hover": 0,
+      "Burrow": 0
+    },
+    "Size": {
+      "Category": "Medium",
+      "Roll": "140+2d20"
+    },
+    "Weight": {
+      "Starved": "11+1d4",
+      "Skinny": "15+1d4",
+      "Normal": "19+1d6",
+      "Overweight": "25+1d6",
+      "Obese": "31+1d10"
+    },
+    "Ages": {
+      "Adolescent": 8,
+      "Adult": 15,
+      "Mature": 40,
+      "Venerable": 160
+    }
+  },
+  {
+    "Id": "503c357d-60af-4ef5-a14b-d54eae4d6f8f",
+    "ParentId": null,
+    "UniqueSlug": "demi-elfe",
+    "DisplayName": "Demi-Elfe",
+    "Description": "Issus de croisements entre humains et elfes, les demi-elfes ont hérité de certaines qualités de chacune de ces espèces. Leurs traditions et valeurs varient grandement en fonction de s’ils ont été élevés par un seul de leurs deux parents, ou par leurs deux parents, ce qui est très rare. Leur longévité les place dans une situation déconcertante, puisqu’ils voient leur parent humain mourir, mais décèdent généralement avant leur parent elfique. De manière générale, s’ils ont été élevés à l’écart des sociétés de leurs parents, ils développement une affinité avec les individus marginaux. Sinon, ils apprennent à composer avec les différences et deviennent d’excellents médiateurs.",
+    "Attributes": {
+      "Agility": 0,
+      "Coordination": 1,
+      "Intellect": 0,
+      "Presence": 0,
+      "Sensitivity": 0,
+      "Spirit": 0,
+      "Vigor": 0,
+      "Extra": 2
+    },
+    "Traits": [
+      {
+        "Id": "e7690058-7a14-4eca-bd72-d7ca9d2d7a51",
+        "Name": "Apprentissage accéléré",
+        "Description": "Le personnage débute avec 2 points d’Apprentissage supplémentaires et acquiert 1 point d’Apprentissage supplémentaire à chaque fois qu’il atteint un niveau étant un multiple de 4 (4, 8, 12, 16 et 20)."
+      },
+      {
+        "Id": "12b6a7e8-738a-4dd5-8a2d-48c0f102ddf7",
+        "Name": "Héritage elfique",
+        "Description": "Le personnage se voit conférer l’avantage à ses jets de sauvegarde contre les effets et pouvoirs causant le sommeil et l’inconscience."
+      },
+      {
+        "Id": "2c9bacd1-238f-4444-ab09-ae1d20afc6b9",
+        "Name": "Versatilité",
+        "Description": "Le personnage peut acquérir à rabais deux talents associés à une compétence. Ces talents portent le même nom qu’une compétence. Il ne peut utiliser cette capacité d’afin d’acquérir gratuitement un talent en cumulant plusieurs rabais."
+      }
+    ],
+    "Languages": {
+      "Ids": [],
+      "Extra": 3,
+      "Text": "Le personnage apprend la langue maternelle du parent qui l’a élevé ainsi que 2 langues supplémentaires au choix. S’il a été élevé par ses deux parents, il apprend la langue maternelle de ses deux parents ainsi qu’une langue supplémentaire au choix."
+    },
+    "Names": {
+      "Text": "Le personnage porte un nom et un prénom en fonction du parent qui l’a élevé. Il n’est pas rare de voir un demi-elfe élevé par ses deux parents porter un prénom elfique et un nom de famille humain ou vice-versa.",
+      "Family": [],
+      "Female": [],
+      "Male": [],
+      "Unisex": [],
+      "Custom": []
+    },
+    "Speeds": {
+      "Walk": 6,
+      "Climb": 0,
+      "Swim": 0,
+      "Fly": 0,
+      "Hover": 0,
+      "Burrow": 0
+    },
+    "Size": {
+      "Category": "Medium",
+      "Roll": "140+5d10"
+    },
+    "Weight": {
+      "Starved": "11+1d4",
+      "Skinny": "15+1d4",
+      "Normal": "19+1d4",
+      "Overweight": "23+1d6",
+      "Obese": "29+1d8"
+    },
+    "Ages": {
+      "Adolescent": 10,
+      "Adult": 20,
+      "Mature": 40,
+      "Venerable": 160
+    }
+  },
+  {
+    "Id": "1dfe4702-e7a1-4f0f-a9ad-8a1b230df5e7",
+    "ParentId": null,
+    "UniqueSlug": "demi-orque",
+    "DisplayName": "Demi-Orque",
+    "Description": "Issus de croisements entre humains et orques, les demi-orques ont hérité de certaines qualités de chacune de ces espèces. Le mélange de la curiosité conférée par leur sang humain et de la férocité conférée par leur sang orque fait d’eux de redoutables mercenaires. Rejetés par les sociétés humaines pour leur monstruosité et par les sociétés orques pour leur impureté, la plupart sont des nomades ou s’installent à proximité d’une communauté qui saura exploiter leur imposante carrure, ce qui est parfois très lucratif.",
+    "Attributes": {
+      "Agility": 0,
+      "Coordination": 0,
+      "Intellect": 0,
+      "Presence": 0,
+      "Sensitivity": 0,
+      "Spirit": 0,
+      "Vigor": 1,
+      "Extra": 2
+    },
+    "Traits": [
+      {
+        "Id": "9f909cc1-2e83-4824-8a36-3bb8bcb8ffb8",
+        "Name": "Apprentissage accéléré",
+        "Description": "Le personnage débute avec 2 points d’Apprentissage supplémentaires et acquiert 1 point d’Apprentissage supplémentaire à chaque fois qu’il atteint un niveau étant un multiple de 4 (4, 8, 12, 16 et 20)."
+      },
+      {
+        "Id": "83ef10e1-76ff-4617-a7d1-0179645efbc2",
+        "Name": "Héritage orque",
+        "Description": "Le personnage se voit conférer l’avantage à ses jets de sauvegarde contre les effets et pouvoirs causant la peur."
+      },
+      {
+        "Id": "f43c804f-ddf6-4581-9c5f-9a0d5ba265d7",
+        "Name": "Versatilité",
+        "Description": "Le personnage peut acquérir à rabais deux talents associés à une compétence. Ces talents portent le même nom qu’une compétence. Il ne peut utiliser cette capacité d’afin d’acquérir gratuitement un talent en cumulant plusieurs rabais."
+      }
+    ],
+    "Languages": {
+      "Ids": [],
+      "Extra": 2,
+      "Text": "Le personnage apprend la langue maternelle du parent qui l’a élevé ainsi qu’une langue supplémentaire au choix. S’il a été élevé par ses deux parents, il apprend la langue maternelle de ses deux parents."
+    },
+    "Names": {
+      "Text": "Le personnage apprend la langue maternelle du parent qui l’a élevé ainsi qu’une langue supplémentaire au choix. S’il a été élevé par ses deux parents, il apprend la langue maternelle de ses deux parents.",
+      "Family": [],
+      "Female": [],
+      "Male": [],
+      "Unisex": [],
+      "Custom": []
+    },
+    "Speeds": {
+      "Walk": 6,
+      "Climb": 0,
+      "Swim": 0,
+      "Fly": 0,
+      "Hover": 0,
+      "Burrow": 0
+    },
+    "Size": {
+      "Category": "Medium",
+      "Roll": "140+5d10"
+    },
+    "Weight": {
+      "Starved": "11+1d4",
+      "Skinny": "15+1d4",
+      "Normal": "19+1d8",
+      "Overweight": "27+1d8",
+      "Obese": "35+1d8"
+    },
+    "Ages": {
+      "Adolescent": 8,
+      "Adult": 15,
+      "Mature": 45,
+      "Venerable": 75
+    }
+  },
+  {
+    "Id": "e21225ca-4554-49a4-b19c-b63de5b652fd",
+    "ParentId": null,
+    "UniqueSlug": "dhampir",
+    "DisplayName": "Dhampir",
+    "Description": "Le Dhampir est un humanoïde similaire en tout point aux humains. Sa taille et son gabarit physique sont semblables. Il est trahi par sa peau pâle et grisâtre, dénuée de vie, ainsi que ses canines pointues. Ces canines lui permettent notamment d’absorber l’énergie vitale d’une autre créature vivante. Le Dhampir est une créature nocturne, dotée d’une vision précise dans le noir, mais vulnérable à la vive lumière et à la lumière de l’astre solaire. Bien qu'il soit en partie humain, une créature vampirique fait partie de son ascendance, soit un parent ou un ancêtre lointain. Il hérite de certaines caractéristiques de cette créature, par exemple des facultés physiques et mentales augmentées, ainsi que la capacité surnaturelle de modifier ses facultés physiques et mentales afin de mieux s’adapter à une situation. Malgré leur nature partiellement humaine, le Dhampir est considéré comme une menace pour la société, il préfère donc vivre en réclusion et en marge de celle-ci.",
+    "Attributes": {
+      "Agility": 1,
+      "Coordination": 0,
+      "Intellect": 1,
+      "Presence": 0,
+      "Sensitivity": 0,
+      "Spirit": 0,
+      "Vigor": 0,
+      "Extra": 1
+    },
+    "Traits": [
+      {
+        "Id": "68b6b152-f444-4c1c-9531-8d03150561d5",
+        "Name": "Facultés surnaturelles",
+        "Description": "Le personnage acquiert gratuitement le talent <u>Acrobaties</u>. Également, il peut canaliser le niveau 2 du pouvoir <u>Augmentation naturelle</u> sur lui-même sans nécessiter de composante Focus ni Matériel un nombre de fois par jour égal à son tiers de personnage. Il doit compléter une nuit de sommeil afin de récupérer ces utilisations. Le pouvoir prend fin s’il entre dans la lumière directe du Soleil."
+      },
+      {
+        "Id": "5e36407f-3c21-4cf9-8b00-70037de2e209",
+        "Name": "Morsure vampirique",
+        "Description": "Le personnage est doté d’une paire de canines acérées. Il peut les utiliser par un test de _Mêlée_ afin d’infliger 1d4 points de dégâts perçants additionnés à sa Force. Lorsqu’il réussit une attaque en les utilisant contre une créature n’étant pas un mort-vivant ni une construction, il peut dépenser des points d’Énergie afin de bénéficier d’un des deux effets suivants.\n\n_Élévation._ Il dépense un nombre de points d’Énergie compris entre 1 et le résultat du d4 additionné à son modificateur de Vigueur. Il ajoute un bonus égal à ce nombre à son prochain test de compétence.\n_Guérison._ Il dépense un nombre de points d’Énergie compris entre 1 et la moitié des points de dégâts infligés, et récupère un nombre égal de points de Vitalité."
+      },
+      {
+        "Id": "4045f25f-e78b-4f73-ac65-c32dfaf6a7ca",
+        "Name": "Sans vie",
+        "Description": "Le personnage n’a pas besoin de respirer. Il se voit conférer l’avantage à ses jets de sauvegarde contre les effets de faim, de soif et lui infligeant un ou plusieurs niveaux de Fatigue."
+      },
+      {
+        "Id": "40cef373-aca7-4813-802f-5aa30bc2a376",
+        "Name": "Sensibilité solaire",
+        "Description": "Lorsque le personnage effectue un test d’attaque contre une cible se trouvant dans la lumière directe du Soleil, ou lorsqu’il tente de voir quelque chose dans la lumière du Soleil par un test de _Perception_, son test est affligé du désavantage."
+      },
+      {
+        "Id": "00c93272-7aa1-44f5-b3dd-ce5a1002986c",
+        "Name": "Vision nocturne",
+        "Description": "Le personnage voit dans la pénombre comme si la zone était dans la clarté à une distance de 18 mètres (12 cases). Dans l’obscurité, il ne voit qu’en teintes de gris, il ne peut donc pas distinguer les couleurs."
+      }
+    ],
+    "Languages": {
+      "Ids": [],
+      "Extra": 2,
+      "Text": "Le personnage apprend la langue du peuple au sein duquel il a été élevé ainsi qu’une langue supplémentaire au choix."
+    },
+    "Names": {
+      "Text": "Le personnage porte un prénom et un nom de famille en fonction du peuple au sein duquel il a été élevé. Son prénom est généralement sélectionné afin d’évoquer ses origines vampiriques.",
+      "Family": [],
+      "Female": [],
+      "Male": [],
+      "Unisex": [],
+      "Custom": []
+    },
+    "Speeds": {
+      "Walk": 7,
+      "Climb": 0,
+      "Swim": 0,
+      "Fly": 0,
+      "Hover": 0,
+      "Burrow": 0
+    },
+    "Size": {
+      "Category": "Medium",
+      "Roll": "140+2d20"
+    },
+    "Weight": {
+      "Starved": "11+1d4",
+      "Skinny": "15+1d4",
+      "Normal": "19+1d6",
+      "Overweight": "25+1d6",
+      "Obese": "31+1d10"
+    },
+    "Ages": {
+      "Adolescent": 8,
+      "Adult": 15,
+      "Mature": 275,
+      "Venerable": 750
+    }
+  },
+  {
+    "Id": "a960d8c0-f691-449c-94ac-0bfbd6588758",
+    "ParentId": null,
+    "UniqueSlug": "humain",
+    "DisplayName": "Humain",
+    "Description": "Les humains représentent le commun des mortels. Répandus sur toute la surface du monde, ils s’adaptent au climat des territoires sur lesquels ils s’installent. Leur apparence physique et leurs traits psychologiques varient grandement en fonction de leur habitat et de leurs traditions. Leur capacité d’apprentissage constitue une caractéristique qui leur est unique et qui surpasse celle des autres espèces.",
+    "Attributes": {
+      "Agility": 0,
+      "Coordination": 0,
+      "Intellect": 0,
+      "Presence": 0,
+      "Sensitivity": 0,
+      "Spirit": 0,
+      "Vigor": 0,
+      "Extra": 2
+    },
+    "Traits": [
+      {
+        "Id": "f20f865a-343e-49f3-bda9-d0b0094e5109",
+        "Name": "Apprentissage accéléré",
+        "Description": "Le personnage débute avec 4 points d’Apprentissage supplémentaires et acquiert 1 point d’Apprentissage supplémentaire à chaque fois qu’il atteint un niveau pair (2, 4, 6, 8, 10, etc.)."
+      },
+      {
+        "Id": "ea67f05d-3679-4ff4-96e7-54b55cc1eca5",
+        "Name": "Versatilité",
+        "Description": "Le personnage acquiert gratuitement un talent associé à une compétence. Ces talents portent le même nom qu’une compétence."
+      }
+    ],
+    "Languages": {
+      "Ids": [],
+      "Extra": 1,
+      "Text": null
+    },
+    "Names": {
+      "Text": "Les humains portent généralement un prénom et un nom de famille.",
+      "Family": [],
+      "Female": [],
+      "Male": [],
+      "Unisex": [],
+      "Custom": []
+    },
+    "Speeds": {
+      "Walk": 6,
+      "Climb": 0,
+      "Swim": 0,
+      "Fly": 0,
+      "Hover": 0,
+      "Burrow": 0
+    },
+    "Size": {
+      "Category": "Medium",
+      "Roll": "140+2d20"
+    },
+    "Weight": {
+      "Starved": "11+1d4",
+      "Skinny": "15+1d4",
+      "Normal": "19+1d6",
+      "Overweight": "25+1d6",
+      "Obese": "31+1d10"
+    },
+    "Ages": {
+      "Adolescent": 8,
+      "Adult": 15,
+      "Mature": 21,
+      "Venerable": 35
+    }
+  },
+  {
+    "Id": "2764c743-c06b-421f-8ba4-571b93ea6eff",
+    "ParentId": "a960d8c0-f691-449c-94ac-0bfbd6588758",
+    "UniqueSlug": "dallois",
+    "DisplayName": "Dallois",
+    "Description": "Les Dallois tiennent bastion dans les Triskîles, un archipel situé dans l’océan Illuntique, entre la Mer des Brumes et la mer Norrienne. Ils peuplent le royaume d’Ellesdales, situé sur l’île éponyme, qui est localisée au Nord de la Griffe. Ils partagent leurs origines avec les autres peuples du Nord, ce qui explique leur teint, leurs yeux et leurs cheveux pâles. Ils sont reconnus pour leur charme et leur politesse, leur sens de l’humour et leur hardiesse.",
+    "Attributes": {
+      "Agility": 0,
+      "Coordination": 0,
+      "Intellect": 0,
+      "Presence": 0,
+      "Sensitivity": 0,
+      "Spirit": 0,
+      "Vigor": 0,
+      "Extra": 0
+    },
+    "Traits": [],
+    "Languages": {
+      "Ids": [ "ccdef3a1-0888-4860-a318-aeeac57701a7" ],
+      "Extra": 0,
+      "Text": null
+    },
+    "Names": {
+      "Text": null,
+      "Family": [ "Atkins", "Braegon", "Cooper", "Drummon", "Dykstra", "Erickson", "Fergus", "Sommer", "Sylvester", "Wieren" ],
+      "Female": [ "Aldith", "Dreda", "Eda", "Fenna", "Ibbel", "Jadd", "Jeltje", "Nynke", "Oighrig", "Rosa" ],
+      "Male": [ "Aldherd", "Bent", "Dubhghall", "Elric", "Hamon", "Lourens", "Morris", "Randel", "Ruadh", "Wilhem" ],
+      "Unisex": [],
+      "Custom": []
+    },
+    "Speeds": {
+      "Walk": 0,
+      "Climb": 0,
+      "Swim": 0,
+      "Fly": 0,
+      "Hover": 0,
+      "Burrow": 0
+    },
+    "Size": {
+      "Category": "Medium",
+      "Roll": null
+    },
+    "Weight": {
+      "Starved": null,
+      "Skinny": null,
+      "Normal": null,
+      "Overweight": null,
+      "Obese": null
+    },
+    "Ages": {
+      "Adolescent": null,
+      "Adult": null,
+      "Mature": null,
+      "Venerable": null
+    }
+  },
+  {
+    "Id": "730a28b7-04af-4bfa-b5d9-a0698a535f95",
+    "ParentId": "a960d8c0-f691-449c-94ac-0bfbd6588758",
+    "UniqueSlug": "onerien",
+    "DisplayName": "Onérien",
+    "Description": "Les Onériens sont un peuple important de l’Ouespéro. Ils peulent l’Onérie, un pays séparé en deux parties : une première, rattachée au contient, et la seconde, l’île de Sicagie, située dans la mer Mésienne. Ce pays est le coeur du Saint-Empire, en sa forme longue « Saint-Empire Rémien d’Onérie », dont la capitale est Rême, une affluente cité portuaire de l’île de Sicagie. Les Onériens sont reconnus pour leur gastronomie, leur puissance militaire et navale, mais également pour leur générosité, leur loyauté et leur amour de l’art. On les décrit comme étant de taille moyenne, avec des yeux et cheveux foncés, et un nez aquilin.",
+    "Attributes": {
+      "Agility": 0,
+      "Coordination": 0,
+      "Intellect": 0,
+      "Presence": 0,
+      "Sensitivity": 0,
+      "Spirit": 0,
+      "Vigor": 0,
+      "Extra": 0
+    },
+    "Traits": [],
+    "Languages": {
+      "Ids": [ "e0b25143-f6c8-4196-9b78-67e591c274df" ],
+      "Extra": 0,
+      "Text": null
+    },
+    "Names": {
+      "Text": null,
+      "Family": [ "Acampora", "Ceretti", "Dicastelli", "Ezzio", "Fonzo", "Lugano", "Passi", "Santis", "Trimboli", "Zibello" ],
+      "Female": [ "Alagia", "Cara", "Diana", "Emelosin", "Gili", "Jabella", "Milia", "Orelia", "Sibillia", "Verita" ],
+      "Male": [ "Bonadeus", "Fioretto", "Humilis", "Luzio", "Napoli", "Polo", "Rizardo", "Santo", "Tieri", "Volta" ],
+      "Unisex": [],
+      "Custom": []
+    },
+    "Speeds": {
+      "Walk": 0,
+      "Climb": 0,
+      "Swim": 0,
+      "Fly": 0,
+      "Hover": 0,
+      "Burrow": 0
+    },
+    "Size": {
+      "Category": "Medium",
+      "Roll": null
+    },
+    "Weight": {
+      "Starved": null,
+      "Skinny": null,
+      "Normal": null,
+      "Overweight": null,
+      "Obese": null
+    },
+    "Ages": {
+      "Adolescent": null,
+      "Adult": null,
+      "Mature": null,
+      "Venerable": null
+    }
+  },
+  {
+    "Id": "017ad3ed-2599-47b3-99b9-d8633c52c7e5",
+    "ParentId": null,
+    "UniqueSlug": "infernon",
+    "DisplayName": "Infernon",
+    "Description": "L’Infernon est un humain ayant une ascendance infernale, soit un parent ou un lointain ancêtre appartenant à une espèce infernale, par exemple un démon. Cet ancêtre leur confère certains pouvoirs et une robustesse surnaturelle en lien avec leur origine ténébreuse. Physiquement, ils ressemblent en tout point aux humains. Leur teint, leur pilosité et leurs yeux sont généralement très foncés. Leur peau les trahit par de faibles reflets rougeâtres, pourpres, violacés, ou un mélange de ces couleurs, agrémentant leur beauté. Également, ils sont également trahis par certains traits infernaux lorsqu’ils apprennent à contrôler et à manifester ceux-ci. On peut retrouver des Infernons partout en Ouespéro, mais leur présence est souvent associée à de sombres présages, si bien que le commun des mortels les évite, et certains tenteront même de les éliminer.",
+    "Attributes": {
+      "Agility": 0,
+      "Coordination": 0,
+      "Intellect": 0,
+      "Presence": 1,
+      "Sensitivity": 0,
+      "Spirit": 1,
+      "Vigor": 0,
+      "Extra": 1
+    },
+    "Traits": [
+      {
+        "Id": "c89c58bd-a409-4739-b6e2-ba4b58797d71",
+        "Name": "Porteur de torche",
+        "Description": "Le personnage acquiert gratuitement le pouvoir <u>Souffle empoisonné</u>. Une fois par jour, il peut projeter des flammes dans un cône de 4,5 mètres. Toute créature dans la zone doit effectuer un jet de sauvegarde d’_Acrobaties_ opposé à un test d’_Occultisme_ du personnage. En cas d’échec, une créature reçoit un nombre de points de dégâts de feu égal à un nombre de d4 égal au modificateur d’Esprit du personnage (minimum 1). En cas de réussite, une créature ne reçoit que la moitié des points de dégâts. Il doit compléter une nuit de sommeil afin de réutiliser cette capacité."
+      },
+      {
+        "Id": "08e3afbb-8571-465e-872e-b2543be49878",
+        "Name": "Résistance infernale",
+        "Description": "Le personnage acquiert la résistance aux dégâts de feu et de poison."
+      },
+      {
+        "Id": "667e0ff8-ceb1-4659-b6d8-e90e563843e7",
+        "Name": "Forme infernale",
+        "Description": "Chaque fois que le tiers du personnage augmente, il acquiert une des transformations suivantes. Une fois par tour, par une action, il peut activer une transformation qu’il a acquise. Il peut mettre fin à la transformation par une action. La transformation dure au plus une minute. Il doit compléter une nuit de sommeil afin de réutiliser cette capacité.\n\n**Âme infernale (tiers 2 ou 3).** Une paire d’ailes spectrales et ténébreuses apparaissent dans le dos du personnage, lui conférant une vitesse de vol égale à sa vitesse de marche. Une fois par tour, pendant que la transformation est active, lorsque le personnage inflige des points de dégâts par une attaque ou un pouvoir, il peut infliger un nombre de points de dégâts de feu supplémentaires égal à son modificateur de Présence (minimum 1).\n**Émanation ténébreuse.** Un épais nuage de ténèbres émane de la bouche et des yeux du personnage. Il émet des ténèbres dans un rayon de 4,5 mètres. L’effet compte comme un pouvoir dont le niveau dépend du tiers du personnage (tiers 1 : niveau 2, tiers 2 : niveau 3, tiers 3 : niveau 5). Toute créature terminant son tour en étant située dans les ténèbres reçoit un nombre de points de dégâts de poison égal à son modificateur de Présence (minimum 1). Une fois par tour, pendant que la transformation est active, lorsque le personnage inflige des points de dégâts par une attaque ou un pouvoir, il peut infliger un nombre de points de dégâts de poison supplémentaires égal à son modificateur de Présence (minimum 1).\n**Voile infernal.** Les yeux du personnage s’enflamment et des ailes de feu apparaissent dans son dos. Toute créature ennemie située à 3 mètres ou moins de sa position et voyant le personnage doit effectuer un jet de sauvegarde de _Performance_ opposé au test passif de _Performance_ du personnage. En cas d’échec, une créature est apeurée par le personnage jusqu’à la fin du prochain tour du personnage. Une fois par tour, pendant que la transformation est active, lorsque le personnage inflige des points de dégâts par une attaque ou un pouvoir, il peut infliger un nombre de points de dégâts de feu supplémentaires égal à son modificateur de Présence (minimum 1)."
+      }
+    ],
+    "Languages": {
+      "Ids": [],
+      "Extra": 2,
+      "Text": "Le personnage apprend la langue du peuple au sein duquel il a été élevé ainsi qu’une langue supplémentaire au choix."
+    },
+    "Names": {
+      "Text": "Le personnage porte un prénom et un nom de famille en fonction du peuple au sein duquel il a été élevé. Son prénom est généralement sélectionné afin d’évoquer ses origines infernales.",
+      "Family": [],
+      "Female": [],
+      "Male": [],
+      "Unisex": [],
+      "Custom": []
+    },
+    "Speeds": {
+      "Walk": 6,
+      "Climb": 0,
+      "Swim": 0,
+      "Fly": 0,
+      "Hover": 0,
+      "Burrow": 0
+    },
+    "Size": {
+      "Category": "Medium",
+      "Roll": "140+2d20"
+    },
+    "Weight": {
+      "Starved": "11+1d4",
+      "Skinny": "15+1d4",
+      "Normal": "19+1d6",
+      "Overweight": "25+1d6",
+      "Obese": "31+1d10"
+    },
+    "Ages": {
+      "Adolescent": 8,
+      "Adult": 15,
+      "Mature": 40,
+      "Venerable": 160
+    }
+  }
+]

@@ -1,0 +1,11 @@
+﻿@using SkillCraft.Tools.Core.Lineages.Models;
+@model AgesModel
+
+<strong>Âge.</strong>
+<ul>
+  <li><i>Enfant.</i> Moins de @(Model.Adolescent) ans</li>
+  <li><i>Adolescent.</i> @(Model.Adolescent) à @(Model.Adult - 1) ans</li>
+  <li><i>Adulte.</i> @(Model.Adult) à @(Model.Mature - 1) ans</li>
+  <li><i>Âge mur.</i> @(Model.Mature) à @(Model.Venerable - 1) ans</li>
+  <li><i>Vénérable.</i> @(Model.Venerable) ans et plus</li>
+</ul>

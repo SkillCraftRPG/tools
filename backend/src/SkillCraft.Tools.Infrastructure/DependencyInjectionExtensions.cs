@@ -10,6 +10,7 @@ using SkillCraft.Tools.Core.Customizations;
 using SkillCraft.Tools.Core.Educations;
 using SkillCraft.Tools.Core.Identity;
 using SkillCraft.Tools.Core.Languages;
+using SkillCraft.Tools.Core.Lineages;
 using SkillCraft.Tools.Core.Natures;
 using SkillCraft.Tools.Core.Specializations;
 using SkillCraft.Tools.Core.Talents;
@@ -57,6 +58,7 @@ public static class DependencyInjectionExtensions
       .AddScoped<ICustomizationQuerier, CustomizationQuerier>()
       .AddScoped<IEducationQuerier, EducationQuerier>()
       .AddScoped<ILanguageQuerier, LanguageQuerier>()
+      .AddScoped<ILineageQuerier, LineageQuerier>()
       .AddScoped<INatureQuerier, NatureQuerier>()
       .AddScoped<ISpecializationQuerier, SpecializationQuerier>()
       .AddScoped<ITalentQuerier, TalentQuerier>();
@@ -70,6 +72,7 @@ public static class DependencyInjectionExtensions
       .AddScoped<ICustomizationRepository, CustomizationRepository>()
       .AddScoped<IEducationRepository, EducationRepository>()
       .AddScoped<ILanguageRepository, LanguageRepository>()
+      .AddScoped<ILineageRepository, LineageRepository>()
       .AddScoped<INatureRepository, NatureRepository>()
       .AddScoped<ISpecializationRepository, SpecializationRepository>()
       .AddScoped<ITalentRepository, TalentRepository>();

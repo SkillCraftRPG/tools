@@ -15,14 +15,14 @@ namespace SkillCraft.Tools.Infrastructure.Queriers;
 internal class AspectQuerier : IAspectQuerier
 {
   private readonly IActorService _actorService;
-  private readonly ISqlHelper _sqlHelper;
   private readonly DbSet<AspectEntity> _aspects;
+  private readonly ISqlHelper _sqlHelper;
 
   public AspectQuerier(IActorService actorService, SkillCraftContext context, ISqlHelper sqlHelper)
   {
     _actorService = actorService;
-    _sqlHelper = sqlHelper;
     _aspects = context.Aspects;
+    _sqlHelper = sqlHelper;
   }
 
   public async Task<AspectId?> FindIdAsync(Slug uniqueSlug, CancellationToken cancellationToken)

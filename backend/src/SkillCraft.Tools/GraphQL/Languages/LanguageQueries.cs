@@ -23,7 +23,7 @@ internal static class LanguageQueries
       .Authorize()
       .Description("Searches a list of languages.")
       .Arguments(
-      new QueryArgument<NonNullGraphType<SearchLanguagesPayloadGraphType>>() { Name = "payload", Description = "The language search parameters." })
+        new QueryArgument<NonNullGraphType<SearchLanguagesPayloadGraphType>>() { Name = "payload", Description = "The language search parameters." })
       .ResolveAsync(async context => await context.ExecuteAsync(new SearchLanguagesQuery(
         context.GetArgument<SearchLanguagesPayload>("payload"))));
   }

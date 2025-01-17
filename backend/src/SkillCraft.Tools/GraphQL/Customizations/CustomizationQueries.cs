@@ -23,7 +23,7 @@ internal static class CustomizationQueries
       .Authorize()
       .Description("Searches a list of customizations.")
       .Arguments(
-      new QueryArgument<NonNullGraphType<SearchCustomizationsPayloadGraphType>>() { Name = "payload", Description = "The customization search parameters." })
+        new QueryArgument<NonNullGraphType<SearchCustomizationsPayloadGraphType>>() { Name = "payload", Description = "The customization search parameters." })
       .ResolveAsync(async context => await context.ExecuteAsync(new SearchCustomizationsQuery(
         context.GetArgument<SearchCustomizationsPayload>("payload"))));
   }

@@ -23,7 +23,7 @@ internal static class NatureQueries
       .Authorize()
       .Description("Searches a list of natures.")
       .Arguments(
-      new QueryArgument<NonNullGraphType<SearchNaturesPayloadGraphType>>() { Name = "payload", Description = "The nature search parameters." })
+        new QueryArgument<NonNullGraphType<SearchNaturesPayloadGraphType>>() { Name = "payload", Description = "The nature search parameters." })
       .ResolveAsync(async context => await context.ExecuteAsync(new SearchNaturesQuery(
         context.GetArgument<SearchNaturesPayload>("payload"))));
   }

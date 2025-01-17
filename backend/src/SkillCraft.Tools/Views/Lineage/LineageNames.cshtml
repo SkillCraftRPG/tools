@@ -1,0 +1,52 @@
+﻿@using MarkdownSharp;
+@using SkillCraft.Tools.Core.Lineages.Models;
+@model NamesModel
+
+@{
+  Markdown markdown = new();
+}
+
+<h3>Noms</h3>
+@if (Model.Text != null)
+{
+  @(Html.Raw(markdown.Transform(Model.Text)))
+}
+<table class="table table-striped">
+  <tbody>
+    @if (Model.Family.Count > 0)
+    {
+      <tr>
+        <th scope="row">Noms de famille</th>
+        <td>@(string.Join(", ", Model.Family))</td>
+      </tr>
+    }
+    @if (Model.Female.Count > 0)
+    {
+      <tr>
+        <th scope="row">Prénoms féminins</th>
+        <td>@(string.Join(", ", Model.Female))</td>
+      </tr>
+    }
+    @if (Model.Male.Count > 0)
+    {
+      <tr>
+        <th scope="row">Prénoms masculins</th>
+        <td>@(string.Join(", ", Model.Male))</td>
+      </tr>
+    }
+    @if (Model.Unisex.Count > 0)
+    {
+      <tr>
+        <th scope="row">Prénoms unisexes</th>
+        <td>@(string.Join(", ", Model.Unisex))</td>
+      </tr>
+    }
+    @foreach (NameCategory category in Model.Custom)
+    {
+      <tr>
+        <th scope="row">@(category.Key)</th>
+        <td>@(string.Join(", ", category.Values))</td>
+      </tr>
+    }
+  </tbody>
+</table>
