@@ -47,6 +47,7 @@ internal class LineageQuerier : ILineageQuerier
     string streamId = lineageId.Value;
 
     LineageEntity? lineage = await _lineages.AsNoTracking()
+      .Include(x => x.Children)
       .Include(x => x.Languages)
       .Include(x => x.Parent)
       .SingleOrDefaultAsync(x => x.StreamId == streamId, cancellationToken);
@@ -56,6 +57,7 @@ internal class LineageQuerier : ILineageQuerier
   public async Task<LineageModel?> ReadAsync(Guid id, CancellationToken cancellationToken)
   {
     LineageEntity? lineage = await _lineages.AsNoTracking()
+      .Include(x => x.Children)
       .Include(x => x.Languages)
       .Include(x => x.Parent)
       .SingleOrDefaultAsync(x => x.Id == id, cancellationToken);
@@ -67,6 +69,7 @@ internal class LineageQuerier : ILineageQuerier
     string uniqueSlugNormalized = Helper.Normalize(uniqueSlug);
 
     LineageEntity? lineage = await _lineages.AsNoTracking()
+      .Include(x => x.Children)
       .Include(x => x.Languages)
       .Include(x => x.Parent)
       .SingleOrDefaultAsync(x => x.UniqueSlugNormalized == uniqueSlugNormalized, cancellationToken);

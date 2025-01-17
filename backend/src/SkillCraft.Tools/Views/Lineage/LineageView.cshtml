@@ -12,9 +12,13 @@
   string title = Model.DisplayName ?? Model.UniqueSlug;
   ViewBag.Title = title;
 
-  BreadcrumbModel breadcrumb = new(title, [new LinkModel("/lignees", "Lignées")]);
-  
-    Markdown markdown = new();
+  BreadcrumbModel breadcrumb = new(title, [new LinkModel("/especes", "Espèces")]);
+  if (Model.Parent != null)
+  {
+    breadcrumb.Links.Add(new LinkModel($"/especes/{Model.Parent.UniqueSlug}", Model.Parent.DisplayName ?? Model.Parent.UniqueSlug));
+  }
+
+  Markdown markdown = new();
 
   string? description = null;
   if (Model.Description != null)
@@ -76,5 +80,9 @@
   @if (Model.Traits.Count > 0)
   {
     @(await Html.PartialAsync("LineageTraits.cshtml", Model.Traits))
+  }
+  @if (Model.Children.Count > 0)
+  {
+    @(await Html.PartialAsync("LineageChildren.cshtml", Model))
   }
 </main>

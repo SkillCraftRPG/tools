@@ -7,13 +7,13 @@
 @{
   Layout = "_Layout";
 
-  ViewBag.Title = "Langues";
+  ViewBag.Title = "Espèces";
 
-  BreadcrumbModel breadcrumb = new("Langues");
+  BreadcrumbModel breadcrumb = new("Espèces");
 }
 
 <main class="container">
-  <h1>Langues</h1>
+  <h1>Espèces</h1>
   @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
   @if (Model.Items.Count < 1)
   {
@@ -33,13 +33,13 @@
         {
           <tr>
             <td>
-              <a href="/lignees/@(lineage.UniqueSlug)">@(lineage.DisplayName ?? lineage.UniqueSlug)</a>
+              <a href="/especes/@(lineage.UniqueSlug)">@(lineage.DisplayName ?? lineage.UniqueSlug)</a>
             </td>
             <td>@(Translator.Translate(lineage.Size.Category))</td>
           </tr>
         }
       </tbody>
     </table>
-    <p class="float-end"><strong>@(Model.Items.Count) @(Model.Items.Count > 1 ? "lignées" : "lignée")</strong></p>
+    <p class="float-end"><strong>@(Model.Items.Count) @(Model.Items.Count > 1 ? "espèces" : "espèce")</strong></p>
   }
 </main>
