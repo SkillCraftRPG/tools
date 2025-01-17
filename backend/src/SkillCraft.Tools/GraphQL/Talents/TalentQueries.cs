@@ -23,7 +23,7 @@ internal static class TalentQueries
       .Authorize()
       .Description("Searches a list of talents.")
       .Arguments(
-      new QueryArgument<NonNullGraphType<SearchTalentsPayloadGraphType>>() { Name = "payload", Description = "The talent search parameters." })
+        new QueryArgument<NonNullGraphType<SearchTalentsPayloadGraphType>>() { Name = "payload", Description = "The talent search parameters." })
       .ResolveAsync(async context => await context.ExecuteAsync(new SearchTalentsQuery(
         context.GetArgument<SearchTalentsPayload>("payload"))));
   }

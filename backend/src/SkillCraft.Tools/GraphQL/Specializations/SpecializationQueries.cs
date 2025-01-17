@@ -23,7 +23,7 @@ internal static class SpecializationQueries
       .Authorize()
       .Description("Searches a list of specializations.")
       .Arguments(
-      new QueryArgument<NonNullGraphType<SearchSpecializationsPayloadGraphType>>() { Name = "payload", Description = "The specialization search parameters." })
+        new QueryArgument<NonNullGraphType<SearchSpecializationsPayloadGraphType>>() { Name = "payload", Description = "The specialization search parameters." })
       .ResolveAsync(async context => await context.ExecuteAsync(new SearchSpecializationsQuery(
         context.GetArgument<SearchSpecializationsPayload>("payload"))));
   }

@@ -23,7 +23,7 @@ internal static class EducationQueries
       .Authorize()
       .Description("Searches a list of educations.")
       .Arguments(
-      new QueryArgument<NonNullGraphType<SearchEducationsPayloadGraphType>>() { Name = "payload", Description = "The education search parameters." })
+        new QueryArgument<NonNullGraphType<SearchEducationsPayloadGraphType>>() { Name = "payload", Description = "The education search parameters." })
       .ResolveAsync(async context => await context.ExecuteAsync(new SearchEducationsQuery(
         context.GetArgument<SearchEducationsPayload>("payload"))));
   }
