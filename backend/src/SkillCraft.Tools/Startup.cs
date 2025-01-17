@@ -157,6 +157,7 @@ internal class Startup : StartupBase
     application.UseSession();
     application.UseMiddleware<Logging>();
     application.UseMiddleware<RenewSession>();
+    application.UseMiddleware<RedirectNotFound>();
     application.UseAuthentication();
     application.UseAuthorization();
 

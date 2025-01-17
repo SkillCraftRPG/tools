@@ -21,7 +21,7 @@
   }
 }
 
-<div class="container">
+<main class="container">
   <h1>@(title)</h1>
   @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
   @(await Html.PartialAsync("~/Views/Shared/StatusDetail.cshtml", Model))
@@ -59,4 +59,4 @@
     <h3>Description</h3>
     <div>@(Html.Raw(description))</div>
   }
-</div>
+</main>

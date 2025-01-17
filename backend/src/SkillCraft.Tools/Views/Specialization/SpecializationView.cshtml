@@ -33,7 +33,7 @@
   }
 }
 
-<div class="container">
+<main class="container">
   <h1>@(title) (tiers @(Model.Tier))</h1>
   @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
   @(await Html.PartialAsync("~/Views/Shared/StatusDetail.cshtml", Model))
@@ -119,4 +119,4 @@
       </ul>
     }
   }
-</div>
+</main>
