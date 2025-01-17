@@ -159,7 +159,7 @@ public class Lineage : AggregateRoot
 
     Raise(new LineageCreated(parent?.Id, uniqueSlug), actorId);
   }
-  protected virtual void Apply(LineageCreated @event)
+  protected virtual void Handle(LineageCreated @event)
   {
     ParentId = @event.ParentId;
 
@@ -194,7 +194,7 @@ public class Lineage : AggregateRoot
       _updated = new();
     }
   }
-  protected virtual void Apply(LineageUpdated @event)
+  protected virtual void Handle(LineageUpdated @event)
   {
     if (@event.UniqueSlug != null)
     {

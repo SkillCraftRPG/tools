@@ -1,0 +1,74 @@
+﻿[
+  {
+    "Id": "fc83f23e-8602-426a-8227-1d18f3fbf0d3",
+    "ParentId": null,
+    "UniqueSlug": "celestin",
+    "DisplayName": "Célestin",
+    "Description": "Le célestin est un humain ayant une ascendance céleste, soit un parent ou un lointain ancêtre appartenant à une espèce céleste, par exemple un ange. Cet ancêtre leur confère certains pouvoirs et une robustesse surnaturelle en lien avec leur origine lumineuse. Physiquement, ils ressemblent en tout point aux humains. Leur teint, leur pilosité et leurs yeux sont généralement très pâles. Leur peau les trahit par de faibles reflets dorés, argentés, bleutés, ou un mélange de ces couleurs, agrémentant leur beauté. Également, ils sont également trahis par certains traits célestes lorsqu’ils apprennent à contrôler et à manifester ceux-ci. On peut retrouver des célestins partout en Ouespéro, mais leur présence est souvent associée à de sombres présages, si bien que le commun des mortels les évite, et certains tenteront même de les éliminer.",
+    "Attributes": {
+      "Agility": 0,
+      "Coordination": 0,
+      "Intellect": 0,
+      "Presence": 1,
+      "Sensitivity": 0,
+      "Spirit": 1,
+      "Vigor": 0,
+      "Extra": 1
+    },
+    "Traits": [
+      {
+        "Id": "0ce21bee-9c61-4baf-8978-e05314a24b21",
+        "Name": "Porteur de lumière",
+        "Description": "Le personnage acquiert gratuitement le pouvoir <u>Lumière</u>. Une fois par jour, il peut toucher une créature consentante afin de la guérir d’un nombre de d4 égal à son modificateur d’Esprit (minimum 1). Il doit compléter une nuit de sommeil afin de réutiliser cette capacité."
+      },
+      {
+        "Id": "2c4472be-0c21-4e79-8202-f3464f525b4e",
+        "Name": "Résistance céleste",
+        "Description": "Le personnage acquiert la résistance aux dégâts nécrotiques et radiants."
+      },
+      {
+        "Id": "967bea5c-99f1-4f7b-9efb-8edbb89602bd",
+        "Name": "Forme céleste",
+        "Description": "Chaque fois que le tiers du personnage augmente, il acquiert une des transformations suivantes. Une fois par tour, par une action, il peut activer une transformation qu’il a acquise. Il peut mettre fin à la transformation par une action. La transformation dure au plus une minute. Il doit compléter une nuit de sommeil afin de réutiliser cette capacité.\n\n**Âme radiante (tiers 2 ou 3).** Une paire d’ailes spectrales et lumineuses apparaissent dans le dos du personnage, lui conférant une vitesse de vol égale à sa vitesse de marche. Une fois par tour, pendant que la transformation est active, lorsque le personnage inflige des points de dégâts par une attaque ou un pouvoir, il peut infliger un nombre de points de dégâts radiants supplémentaires égal à son modificateur de Présence (minimum 1).\n**Émanation lumineuse.** De la radiance brûlante est émise de la bouche et des yeux du personnage. Il émet de la clarté dans un rayon de 3 mètres et de la pénombre dans un rayon de 3 mètres additionnels. Toute créature terminant son tour en étant située à 3 mètres ou moins du personnage reçoit un nombre de points de dégâts radiants égal à son modificateur de Présence (minimum 1). Une fois par tour, pendant que la transformation est active, lorsque le personnage inflige des points de dégâts par une attaque ou un pouvoir, il peut infliger un nombre de points de dégâts radiants supplémentaires égal à son modificateur de Présence (minimum 1).\n**Voile sombre.** Les yeux du personnage deviennent ténébreux et des ailes fantomatiques apparaissent dans son dos. Toute créature ennemie située à 3 mètres ou moins de sa position et voyant le personnage doit effectuer un jet de sauvegarde de _Performance_ opposé au test passif de _Performance_ du personnage. En cas d’échec, une créature est apeurée par le personnage jusqu’à la fin du prochain tour du personnage. Une fois par tour, pendant que la transformation est active, lorsque le personnage inflige des points de dégâts par une attaque ou un pouvoir, il peut infliger un nombre de points de dégâts nécrotiques supplémentaires égal à son modificateur de Présence (minimum 1)."
+      }
+    ],
+    "Languages": {
+      "Ids": [],
+      "Extra": 2,
+      "Text": "Le personnage apprend la langue du peuple au sein duquel il a été élevé ainsi qu’une langue supplémentaire au choix."
+    },
+    "Names": {
+      "Text": "Le personnage porte un prénom et un nom de famille en fonction du peuple au sein duquel il a été élevé. Son prénom est généralement sélectionné afin d’évoquer ses origines angéliques.",
+      "Family": [],
+      "Female": [],
+      "Male": [],
+      "Unisex": [],
+      "Custom": []
+    },
+    "Speeds": {
+      "Walk": 6,
+      "Climb": 0,
+      "Swim": 0,
+      "Fly": 0,
+      "Hover": 0,
+      "Burrow": 0
+    },
+    "Size": {
+      "Category": "Medium",
+      "Roll": "140+2d20"
+    },
+    "Weight": {
+      "Starved": "11+1d4",
+      "Skinny": "15+1d4",
+      "Normal": "19+1d6",
+      "Overweight": "25+1d6",
+      "Obese": "31+1d10"
+    },
+    "Age": {
+      "Adolescent": 8,
+      "Adult": 15,
+      "Mature": 40,
+      "Venerable": 160
+    }
+  }
+]
