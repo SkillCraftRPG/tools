@@ -33,7 +33,7 @@ public class LineageController : Controller
     bool parsed = Guid.TryParse(idOrSlug, out Guid id);
     ReadLineageQuery query = new(parsed ? id : null, idOrSlug);
     LineageModel? lineage = await _mediator.Send(query, cancellationToken);
-    if (lineage == null)
+    if (lineage == null || lineage.Parent != null)
     {
       return NotFound();
     }
