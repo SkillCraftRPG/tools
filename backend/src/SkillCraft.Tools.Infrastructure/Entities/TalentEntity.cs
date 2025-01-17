@@ -1,4 +1,5 @@
-﻿using SkillCraft.Tools.Core;
+﻿using Logitar.EventSourcing;
+using SkillCraft.Tools.Core;
 using SkillCraft.Tools.Core.Talents.Events;
 using SkillCraft.Tools.Infrastructure.SkillCraftDb;
 
@@ -40,6 +41,16 @@ internal class TalentEntity : AggregateEntity
 
   private TalentEntity() : base()
   {
+  }
+
+  public override IReadOnlyCollection<ActorId> GetActorIds()
+  {
+    List<ActorId> actorIds = [.. base.GetActorIds()];
+    if (RequiredTalent != null)
+    {
+      actorIds.AddRange(RequiredTalent.GetActorIds());
+    }
+    return actorIds.AsReadOnly();
   }
 
   public void Update(TalentEntity? requiredTalent, TalentUpdated @event)

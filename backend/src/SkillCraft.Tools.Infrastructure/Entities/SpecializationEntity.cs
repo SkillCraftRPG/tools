@@ -1,4 +1,5 @@
-﻿using SkillCraft.Tools.Core.Specializations;
+﻿using Logitar.EventSourcing;
+using SkillCraft.Tools.Core.Specializations;
 using SkillCraft.Tools.Core.Specializations.Events;
 using SkillCraft.Tools.Core.Specializations.Models;
 using SkillCraft.Tools.Core.Talents;
@@ -97,6 +98,20 @@ internal class SpecializationEntity : AggregateEntity
     {
       SetReservedTalent(@event.ReservedTalent.Value);
     }
+  }
+
+  public override IReadOnlyCollection<ActorId> GetActorIds()
+  {
+    List<ActorId> actorIds = [.. base.GetActorIds()];
+    if (RequiredTalent != null)
+    {
+      actorIds.AddRange(RequiredTalent.GetActorIds());
+    }
+    foreach (TalentEntity optionalTalent in OptionalTalents)
+    {
+      actorIds.AddRange(optionalTalent.GetActorIds());
+    }
+    return actorIds.AsReadOnly();
   }
 
   public IReadOnlyCollection<string> GetOtherRequirements()

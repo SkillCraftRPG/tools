@@ -1,4 +1,5 @@
-﻿using SkillCraft.Tools.Core;
+﻿using Logitar.EventSourcing;
+using SkillCraft.Tools.Core;
 using SkillCraft.Tools.Core.Natures.Events;
 using SkillCraft.Tools.Infrastructure.SkillCraftDb;
 
@@ -31,6 +32,16 @@ internal class NatureEntity : AggregateEntity
 
   private NatureEntity() : base()
   {
+  }
+
+  public override IReadOnlyCollection<ActorId> GetActorIds()
+  {
+    List<ActorId> actorIds = [.. base.GetActorIds()];
+    if (Gift != null)
+    {
+      actorIds.AddRange(Gift.GetActorIds());
+    }
+    return actorIds.AsReadOnly();
   }
 
   public void Update(CustomizationEntity? gift, NatureUpdated @event)

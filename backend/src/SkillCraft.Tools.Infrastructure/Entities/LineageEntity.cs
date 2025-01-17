@@ -1,4 +1,5 @@
-﻿using SkillCraft.Tools.Core;
+﻿using Logitar.EventSourcing;
+using SkillCraft.Tools.Core;
 using SkillCraft.Tools.Core.Lineages;
 using SkillCraft.Tools.Core.Lineages.Events;
 using SkillCraft.Tools.Core.Lineages.Models;
@@ -78,6 +79,16 @@ internal class LineageEntity : AggregateEntity
 
   private LineageEntity() : base()
   {
+  }
+
+  public override IReadOnlyCollection<ActorId> GetActorIds()
+  {
+    List<ActorId> actorIds = [.. base.GetActorIds()];
+    foreach (LanguageEntity language in Languages)
+    {
+      actorIds.AddRange(language.GetActorIds());
+    }
+    return actorIds.AsReadOnly();
   }
 
   public void Update(IReadOnlyCollection<LanguageEntity> languages, LineageUpdated @event)
