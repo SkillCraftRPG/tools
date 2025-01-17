@@ -15,14 +15,14 @@ namespace SkillCraft.Tools.Infrastructure.Queriers;
 internal class SpecializationQuerier : ISpecializationQuerier
 {
   private readonly IActorService _actorService;
-  private readonly ISqlHelper _sqlHelper;
   private readonly DbSet<SpecializationEntity> _specializations;
+  private readonly ISqlHelper _sqlHelper;
 
   public SpecializationQuerier(IActorService actorService, SkillCraftContext context, ISqlHelper sqlHelper)
   {
     _actorService = actorService;
-    _sqlHelper = sqlHelper;
     _specializations = context.Specializations;
+    _sqlHelper = sqlHelper;
   }
 
   public async Task<SpecializationId?> FindIdAsync(Slug uniqueSlug, CancellationToken cancellationToken)

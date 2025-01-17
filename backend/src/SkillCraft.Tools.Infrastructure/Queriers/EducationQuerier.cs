@@ -15,14 +15,14 @@ namespace SkillCraft.Tools.Infrastructure.Queriers;
 internal class EducationQuerier : IEducationQuerier
 {
   private readonly IActorService _actorService;
-  private readonly ISqlHelper _sqlHelper;
   private readonly DbSet<EducationEntity> _educations;
+  private readonly ISqlHelper _sqlHelper;
 
   public EducationQuerier(IActorService actorService, SkillCraftContext context, ISqlHelper sqlHelper)
   {
     _actorService = actorService;
-    _sqlHelper = sqlHelper;
     _educations = context.Educations;
+    _sqlHelper = sqlHelper;
   }
 
   public async Task<EducationId?> FindIdAsync(Slug uniqueSlug, CancellationToken cancellationToken)
