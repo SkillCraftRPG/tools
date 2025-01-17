@@ -1,7 +1,7 @@
 ﻿using SkillCraft.Tools.Core;
 using SkillCraft.Tools.Core.Customizations;
 
-namespace SkillCraft.Tools;
+namespace SkillCraft.Tools.Models;
 
 public static class Translator
 {
@@ -19,6 +19,17 @@ public static class Translator
   {
     [CustomizationType.Disability] = "Handicap",
     [CustomizationType.Gift] = "Don"
+  };
+  private static readonly Dictionary<SizeCategory, string> _sizeCategories = new()
+  {
+    [SizeCategory.Diminutive] = "Infime",
+    [SizeCategory.Tiny] = "Minuscule",
+    [SizeCategory.Small] = "Petite",
+    [SizeCategory.Medium] = "Moyenne",
+    [SizeCategory.Large] = "Grande",
+    [SizeCategory.Huge] = "Énorme",
+    [SizeCategory.Gargantuan] = "Gigantesque",
+    [SizeCategory.Colossal] = "Colossale"
   };
   private static readonly Dictionary<Skill, string> _skills = new()
   {
@@ -46,5 +57,6 @@ public static class Translator
 
   public static string Translate(Ability attribute) => _attributes.TryGetValue(attribute, out string? translation) ? translation : attribute.ToString();
   public static string Translate(CustomizationType type) => _customizationTypes.TryGetValue(type, out string? translation) ? translation : type.ToString();
+  public static string Translate(SizeCategory sizeCategory) => _sizeCategories.TryGetValue(sizeCategory, out string? translation) ? translation : sizeCategory.ToString();
   public static string Translate(Skill skill) => _skills.TryGetValue(skill, out string? translation) ? translation : skill.ToString();
 }

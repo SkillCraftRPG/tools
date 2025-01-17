@@ -47,6 +47,8 @@ internal class LineageQuerier : ILineageQuerier
     string streamId = lineageId.Value;
 
     LineageEntity? lineage = await _lineages.AsNoTracking()
+      .Include(x => x.Languages)
+      .Include(x => x.Parent)
       .SingleOrDefaultAsync(x => x.StreamId == streamId, cancellationToken);
 
     return lineage == null ? null : await MapAsync(lineage, cancellationToken);
@@ -54,6 +56,8 @@ internal class LineageQuerier : ILineageQuerier
   public async Task<LineageModel?> ReadAsync(Guid id, CancellationToken cancellationToken)
   {
     LineageEntity? lineage = await _lineages.AsNoTracking()
+      .Include(x => x.Languages)
+      .Include(x => x.Parent)
       .SingleOrDefaultAsync(x => x.Id == id, cancellationToken);
 
     return lineage == null ? null : await MapAsync(lineage, cancellationToken);
@@ -63,6 +67,8 @@ internal class LineageQuerier : ILineageQuerier
     string uniqueSlugNormalized = Helper.Normalize(uniqueSlug);
 
     LineageEntity? lineage = await _lineages.AsNoTracking()
+      .Include(x => x.Languages)
+      .Include(x => x.Parent)
       .SingleOrDefaultAsync(x => x.UniqueSlugNormalized == uniqueSlugNormalized, cancellationToken);
 
     return lineage == null ? null : await MapAsync(lineage, cancellationToken);
@@ -73,6 +79,19 @@ internal class LineageQuerier : ILineageQuerier
     IQueryBuilder builder = _sqlHelper.QueryFrom(Lineages.Table).SelectAll(Lineages.Table)
       .ApplyIdFilter(payload, Lineages.Id);
     _sqlHelper.ApplyTextSearch(builder, payload.Search, Lineages.UniqueSlug, Lineages.DisplayName);
+
+    if (payload.ParentId.HasValue)
+    {
+      TableId parent = new(Lineages.Table.Schema, Lineages.Table.Table ?? string.Empty, "Parent");
+      ColumnId parentId = new(nameof(LineageEntity.LineageId), parent);
+      ColumnId parentUid = new(nameof(LineageEntity.Id), parent);
+
+      builder.Join(parentId, Lineages.ParentId, new OperatorCondition(parentUid, Operators.IsEqualTo(payload.ParentId.Value)));
+    }
+    else
+    {
+      builder.Where(Lineages.ParentId, Operators.IsNull());
+    }
 
     if (payload.Attribute.HasValue)
     {
@@ -87,14 +106,6 @@ internal class LineageQuerier : ILineageQuerier
       builder.Join(LineageLanguages.LineageId, Lineages.LineageId)
         .Join(SkillCraftDb.Languages.LanguageId, LineageLanguages.LanguageId)
         .Where(SkillCraftDb.Languages.Id, Operators.IsEqualTo(payload.LanguageId.Value));
-    }
-    if (payload.ParentId.HasValue)
-    {
-      TableId parent = new(Lineages.Table.Schema, Lineages.Table.Table ?? string.Empty, "Parent");
-      ColumnId parentId = new(nameof(LineageEntity.LineageId), parent);
-      ColumnId parentUid = new(nameof(LineageEntity.Id), parent);
-
-      builder.Join(parentId, Lineages.ParentId, new OperatorCondition(parentUid, Operators.IsEqualTo(payload.ParentId.Value)));
     }
     if (payload.SizeCategory.HasValue)
     {

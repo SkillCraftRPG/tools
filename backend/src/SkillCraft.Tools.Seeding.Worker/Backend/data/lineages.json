@@ -29,7 +29,7 @@
       {
         "Id": "967bea5c-99f1-4f7b-9efb-8edbb89602bd",
         "Name": "Forme céleste",
-        "Description": "Chaque fois que le tiers du personnage augmente, il acquiert une des transformations suivantes. Une fois par tour, par une action, il peut activer une transformation qu’il a acquise. Il peut mettre fin à la transformation par une action. La transformation dure au plus une minute. Il doit compléter une nuit de sommeil afin de réutiliser cette capacité.\n\n**Âme radiante (tiers 2 ou 3).** Une paire d’ailes spectrales et lumineuses apparaissent dans le dos du personnage, lui conférant une vitesse de vol égale à sa vitesse de marche. Une fois par tour, pendant que la transformation est active, lorsque le personnage inflige des points de dégâts par une attaque ou un pouvoir, il peut infliger un nombre de points de dégâts radiants supplémentaires égal à son modificateur de Présence (minimum 1).\n**Émanation lumineuse.** De la radiance brûlante est émise de la bouche et des yeux du personnage. Il émet de la clarté dans un rayon de 3 mètres et de la pénombre dans un rayon de 3 mètres additionnels. Toute créature terminant son tour en étant située à 3 mètres ou moins du personnage reçoit un nombre de points de dégâts radiants égal à son modificateur de Présence (minimum 1). Une fois par tour, pendant que la transformation est active, lorsque le personnage inflige des points de dégâts par une attaque ou un pouvoir, il peut infliger un nombre de points de dégâts radiants supplémentaires égal à son modificateur de Présence (minimum 1).\n**Voile sombre.** Les yeux du personnage deviennent ténébreux et des ailes fantomatiques apparaissent dans son dos. Toute créature ennemie située à 3 mètres ou moins de sa position et voyant le personnage doit effectuer un jet de sauvegarde de _Performance_ opposé au test passif de _Performance_ du personnage. En cas d’échec, une créature est apeurée par le personnage jusqu’à la fin du prochain tour du personnage. Une fois par tour, pendant que la transformation est active, lorsque le personnage inflige des points de dégâts par une attaque ou un pouvoir, il peut infliger un nombre de points de dégâts nécrotiques supplémentaires égal à son modificateur de Présence (minimum 1)."
+        "Description": "Chaque fois que le tiers du personnage augmente, il acquiert une des transformations suivantes. Une fois par tour, par une action, il peut activer une transformation qu’il a acquise. Il peut mettre fin à la transformation par une action. La transformation dure au plus une minute. Il doit compléter une nuit de sommeil afin de réutiliser cette capacité.\n\n- **Âme radiante (tiers 2 ou 3).** Une paire d’ailes spectrales et lumineuses apparaissent dans le dos du personnage, lui conférant une vitesse de vol égale à sa vitesse de marche. Une fois par tour, pendant que la transformation est active, lorsque le personnage inflige des points de dégâts par une attaque ou un pouvoir, il peut infliger un nombre de points de dégâts radiants supplémentaires égal à son modificateur de Présence (minimum 1).\n- **Émanation lumineuse.** De la radiance brûlante est émise de la bouche et des yeux du personnage. Il émet de la clarté dans un rayon de 3 mètres et de la pénombre dans un rayon de 3 mètres additionnels. Toute créature terminant son tour en étant située à 3 mètres ou moins du personnage reçoit un nombre de points de dégâts radiants égal à son modificateur de Présence (minimum 1). Une fois par tour, pendant que la transformation est active, lorsque le personnage inflige des points de dégâts par une attaque ou un pouvoir, il peut infliger un nombre de points de dégâts radiants supplémentaires égal à son modificateur de Présence (minimum 1).\n- **Voile sombre.** Les yeux du personnage deviennent ténébreux et des ailes fantomatiques apparaissent dans son dos. Toute créature ennemie située à 3 mètres ou moins de sa position et voyant le personnage doit effectuer un jet de sauvegarde de _Performance_ opposé au test passif de _Performance_ du personnage. En cas d’échec, une créature est apeurée par le personnage jusqu’à la fin du prochain tour du personnage. Une fois par tour, pendant que la transformation est active, lorsque le personnage inflige des points de dégâts par une attaque ou un pouvoir, il peut infliger un nombre de points de dégâts nécrotiques supplémentaires égal à son modificateur de Présence (minimum 1)."
       }
     ],
     "Languages": {
@@ -64,7 +64,7 @@
       "Overweight": "25+1d6",
       "Obese": "31+1d10"
     },
-    "Age": {
+    "Ages": {
       "Adolescent": 8,
       "Adult": 15,
       "Mature": 40,
@@ -136,7 +136,7 @@
       "Overweight": "23+1d6",
       "Obese": "29+1d8"
     },
-    "Age": {
+    "Ages": {
       "Adolescent": 10,
       "Adult": 20,
       "Mature": 40,
@@ -208,7 +208,7 @@
       "Overweight": "27+1d8",
       "Obese": "35+1d8"
     },
-    "Age": {
+    "Ages": {
       "Adolescent": 8,
       "Adult": 15,
       "Mature": 45,
@@ -290,7 +290,7 @@
       "Overweight": "25+1d6",
       "Obese": "31+1d10"
     },
-    "Age": {
+    "Ages": {
       "Adolescent": 8,
       "Adult": 15,
       "Mature": 275,
@@ -357,7 +357,7 @@
       "Overweight": "25+1d6",
       "Obese": "31+1d10"
     },
-    "Age": {
+    "Ages": {
       "Adolescent": 8,
       "Adult": 15,
       "Mature": 21,
@@ -413,7 +413,7 @@
       "Overweight": null,
       "Obese": null
     },
-    "Age": {
+    "Ages": {
       "Adolescent": null,
       "Adult": null,
       "Mature": null,
@@ -469,7 +469,7 @@
       "Overweight": null,
       "Obese": null
     },
-    "Age": {
+    "Ages": {
       "Adolescent": null,
       "Adult": null,
       "Mature": null,
@@ -541,7 +541,7 @@
       "Overweight": "25+1d6",
       "Obese": "31+1d10"
     },
-    "Age": {
+    "Ages": {
       "Adolescent": 8,
       "Adult": 15,
       "Mature": 40,

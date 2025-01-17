@@ -1,0 +1,26 @@
+﻿@using SkillCraft.Tools.Core.Lineages.Models;
+@model WeightModel
+
+<strong>Poids.</strong>
+<ul>
+  @if (Model.Starved != null)
+  {
+    <li><i>Dénutrition.</i> @(Model.Starved)</li>
+  }
+  @if (Model.Skinny != null)
+  {
+    <li><i>Maigre.</i> @(Model.Skinny)</li>
+  }
+  @if (Model.Normal != null)
+  {
+    <li><i>Normal.</i> @(Model.Normal)</li>
+  }
+  @if (Model.Overweight != null)
+  {
+    <li><i>Surpoids.</i> @(Model.Overweight)</li>
+  }
+  @if (Model.Obese != null)
+  {
+    <li><i>Obèse.</i> @(Model.Obese)</li>
+  }
+</ul>

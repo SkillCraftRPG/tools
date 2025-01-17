@@ -131,10 +131,6 @@ internal class Mapper
     {
       destination.Parent = ToLineage(source.Parent);
     }
-    foreach (LineageEntity child in source.Children)
-    {
-      destination.Children.Add(ToLineage(child));
-    }
 
     MapAggregate(source, destination);
 
