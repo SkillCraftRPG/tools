@@ -7,6 +7,7 @@ using SkillCraft.Tools.Core.Castes.Models;
 using SkillCraft.Tools.Core.Customizations.Models;
 using SkillCraft.Tools.Core.Educations.Models;
 using SkillCraft.Tools.Core.Languages.Models;
+using SkillCraft.Tools.Core.Lineages.Models;
 using SkillCraft.Tools.Core.Natures.Models;
 using SkillCraft.Tools.Core.Specializations.Models;
 using SkillCraft.Tools.Core.Talents.Models;
@@ -94,6 +95,46 @@ internal class Mapper
       Skill = source.Skill,
       WealthMultiplier = source.WealthMultiplier
     };
+
+    MapAggregate(source, destination);
+
+    return destination;
+  }
+
+  public LineageModel ToLineage(LineageEntity source)
+  {
+    LineageModel destination = new()
+    {
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description,
+      Attributes = source.GetAttributes(),
+      Languages = source.GetLanguages(),
+      Names = source.GetNames(),
+      Speeds = source.GetSpeeds(),
+      Size = source.GetSize(),
+      Weight = source.GetWeight(),
+      Ages = source.GetAges()
+    };
+
+    foreach (KeyValuePair<Guid, TraitModel> trait in source.GetTraits())
+    {
+      destination.Traits.Add(trait.Value);
+    }
+
+    foreach (LanguageEntity language in source.Languages)
+    {
+      destination.Languages.Items.Add(ToLanguage(language));
+    }
+
+    if (source.Parent != null)
+    {
+      destination.Parent = ToLineage(source.Parent);
+    }
+    foreach (LineageEntity child in source.Children)
+    {
+      destination.Children.Add(ToLineage(child));
+    }
 
     MapAggregate(source, destination);
 
