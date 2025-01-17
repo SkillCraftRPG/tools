@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <None Include="secrets.sample.json" />
+    <None Include="Views\Error\NotFound404.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

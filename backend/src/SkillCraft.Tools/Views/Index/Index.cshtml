@@ -6,7 +6,7 @@
   BreadcrumbModel breadcrumb = new();
 }
 
-<div class="container">
+<main class="container">
   <h1>Accueil</h1>
   @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
   <ul>
@@ -20,4 +20,4 @@
     <li><a href="/specialisations">Spécialisations</a></li>
     <li><a href="/talents">Talents</a></li>
   </ul>
-</div>
+</main>

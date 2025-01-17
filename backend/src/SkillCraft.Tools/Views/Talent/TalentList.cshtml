@@ -16,7 +16,7 @@
     .ToArray();
 }
 
-<div class="container">
+<main class="container">
   <h1>Talents</h1>
   @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
   @if (talents.Count < 1)
@@ -61,4 +61,4 @@
     </table>
     <p class="float-end"><strong>@(talents.Count) @(talents.Count > 1 ? "talents" : "talent")</strong></p>
   }
-</div>
+</main>

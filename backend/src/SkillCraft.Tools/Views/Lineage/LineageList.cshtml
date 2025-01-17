@@ -12,7 +12,7 @@
   BreadcrumbModel breadcrumb = new("Langues");
 }
 
-<div class="container">
+<main class="container">
   <h1>Langues</h1>
   @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
   @if (Model.Items.Count < 1)
@@ -42,4 +42,4 @@
     </table>
     <p class="float-end"><strong>@(Model.Items.Count) @(Model.Items.Count > 1 ? "lignées" : "lignée")</strong></p>
   }
-</div>
+</main>

@@ -27,7 +27,7 @@
   bool hasNames = LineageHelper.HasNames(Model.Names);
 }
 
-<div class="container">
+<main class="container">
   <h1>@(title)</h1>
   @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
   @(await Html.PartialAsync("~/Views/Shared/StatusDetail.cshtml", Model))
@@ -77,4 +77,4 @@
   {
     @(await Html.PartialAsync("LineageTraits.cshtml", Model.Traits))
   }
-</div>
+</main>
