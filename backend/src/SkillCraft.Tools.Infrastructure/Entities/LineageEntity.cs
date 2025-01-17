@@ -81,12 +81,24 @@ internal class LineageEntity : AggregateEntity
   {
   }
 
-  public override IReadOnlyCollection<ActorId> GetActorIds()
+  public override IReadOnlyCollection<ActorId> GetActorIds() => GetActorIds(includeChildren: true, includeParent: true);
+  public IReadOnlyCollection<ActorId> GetActorIds(bool includeChildren, bool includeParent)
   {
     List<ActorId> actorIds = [.. base.GetActorIds()];
     foreach (LanguageEntity language in Languages)
     {
       actorIds.AddRange(language.GetActorIds());
+    }
+    if (includeChildren)
+    {
+      foreach (LineageEntity child in Children)
+      {
+        actorIds.AddRange(child.GetActorIds(includeChildren: true, includeParent: false));
+      }
+    }
+    if (includeParent && Parent != null)
+    {
+      actorIds.AddRange(Parent.GetActorIds(includeChildren: false, includeParent: true));
     }
     return actorIds.AsReadOnly();
   }
