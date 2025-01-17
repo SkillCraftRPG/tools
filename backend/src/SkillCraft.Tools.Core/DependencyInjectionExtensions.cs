@@ -8,6 +8,7 @@ using SkillCraft.Tools.Core.Castes;
 using SkillCraft.Tools.Core.Customizations;
 using SkillCraft.Tools.Core.Educations;
 using SkillCraft.Tools.Core.Languages;
+using SkillCraft.Tools.Core.Lineages;
 using SkillCraft.Tools.Core.Logging;
 using SkillCraft.Tools.Core.Natures;
 using SkillCraft.Tools.Core.Specializations;
@@ -36,6 +37,7 @@ public static class DependencyInjectionExtensions
       .AddTransient<ICustomizationManager, CustomizationManager>()
       .AddTransient<IEducationManager, EducationManager>()
       .AddTransient<ILanguageManager, LanguageManager>()
+      .AddTransient<ILineageManager, LineageManager>()
       .AddTransient<INatureManager, NatureManager>()
       .AddTransient<ISpecializationManager, SpecializationManager>()
       .AddTransient<ITalentManager, TalentManager>();
