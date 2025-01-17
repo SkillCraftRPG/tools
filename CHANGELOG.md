@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Lineages
 - 404 Not Found Page
+- Children lineages (Nations)
 
 ### Fixed
 

@@ -101,7 +101,8 @@ internal class Mapper
     return destination;
   }
 
-  public LineageModel ToLineage(LineageEntity source)
+  public LineageModel ToLineage(LineageEntity source) => ToLineage(source, parent: null);
+  public LineageModel ToLineage(LineageEntity source, LineageModel? parent)
   {
     LineageModel destination = new()
     {
@@ -114,7 +115,8 @@ internal class Mapper
       Speeds = source.GetSpeeds(),
       Size = source.GetSize(),
       Weight = source.GetWeight(),
-      Ages = source.GetAges()
+      Ages = source.GetAges(),
+      Parent = parent
     };
 
     foreach (KeyValuePair<Guid, TraitModel> trait in source.GetTraits())
@@ -127,9 +129,13 @@ internal class Mapper
       destination.Languages.Items.Add(ToLanguage(language));
     }
 
-    if (source.Parent != null)
+    if (parent == null && source.Parent != null)
     {
       destination.Parent = ToLineage(source.Parent);
+    }
+    foreach (LineageEntity child in source.Children)
+    {
+      destination.Children.Add(ToLineage(child, destination));
     }
 
     MapAggregate(source, destination);
