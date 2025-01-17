@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Added missing migration.
+- Added missing relationship actor IDs.
 
 ## [0.5.0] - 2025-01-15
 
