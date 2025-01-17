@@ -1,5 +1,4 @@
-﻿using MarkdownSharp;
-using SkillCraft.Tools.Core.Languages.Models;
+﻿using SkillCraft.Tools.Core.Languages.Models;
 using SkillCraft.Tools.Core.Lineages;
 using SkillCraft.Tools.Core.Lineages.Models;
 
@@ -49,8 +48,7 @@ internal static class LineageHelper
   {
     if (languages.Text != null)
     {
-      Markdown markdown = new();
-      return markdown.Transform(languages.Text);
+      return MarkdownHelper.RenderInline(languages.Text);
     }
 
     List<string> formatted = new(capacity: 1 + languages.Items.Count);
