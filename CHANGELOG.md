@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Nothing yet.
 
+## [0.6.1] - 2025-01-18
+
+### Fixed
+
+- Nature list page title
+
 ## [0.6.0] - 2025-01-17
 
 ### Added
@@ -81,7 +87,8 @@ Nothing yet.
 - Seed for aspects, castes, customizations, educations, languages, natures, and talents.
 - Basic identity management.
 
-[unreleased]: https://github.com/Logitar/Portal/compare/v0.6.0...HEAD
+[unreleased]: https://github.com/Logitar/Portal/compare/v0.6.1...HEAD
+[0.6.1]: https://github.com/SkillCraftRPG/tools/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/SkillCraftRPG/tools/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/SkillCraftRPG/tools/compare/v0.4.1...v0.5.0
 [0.4.1]: https://github.com/SkillCraftRPG/tools/compare/v0.4.0...v0.4.1
