@@ -7,13 +7,13 @@
 @{
   Layout = "_Layout";
 
-  ViewBag.Title = "Éducations";
+  ViewBag.Title = "Natures";
 
-  BreadcrumbModel breadcrumb = new("Éducations");
+  BreadcrumbModel breadcrumb = new("Natures");
 }
 
 <main class="container">
-  <h1>Éducations</h1>
+  <h1>Natures</h1>
   @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
   @if (Model.Items.Count < 1)
   {
@@ -51,6 +51,6 @@
         }
       </tbody>
     </table>
-    <p class="float-end"><strong>@(Model.Items.Count) @(Model.Items.Count > 1 ? "éducations" : "éducation")</strong></p>
+    <p class="float-end"><strong>@(Model.Items.Count) @(Model.Items.Count > 1 ? "natures" : "nature")</strong></p>
   }
 </main>
