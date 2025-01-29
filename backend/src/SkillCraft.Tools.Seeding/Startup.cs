@@ -2,7 +2,6 @@
 using Logitar.Cms.Infrastructure;
 using Logitar.Cms.Infrastructure.PostgreSQL;
 using Logitar.Cms.Infrastructure.SqlServer;
-using System.Reflection;
 
 namespace SkillCraft.Tools.Seeding;
 

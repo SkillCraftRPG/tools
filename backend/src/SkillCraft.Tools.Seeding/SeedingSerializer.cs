@@ -1,7 +1,4 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
-
-namespace SkillCraft.Tools.Seeding;
+﻿namespace SkillCraft.Tools.Seeding;
 
 internal static class SeedingSerializer
 {

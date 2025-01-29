@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using SkillCraft.Tools.Seeding.Cms.Tasks;
-using System.Diagnostics;
 
 namespace SkillCraft.Tools.Seeding;
 
@@ -36,6 +35,7 @@ internal class SeedingWorker : BackgroundService
     {
       // NOTE(fpion): the order of these tasks matter.
       await ExecuteAsync(new SeedContentTypesTask(), cancellationToken);
+      await ExecuteAsync(new SeedFieldTypesTask(), cancellationToken);
     }
     catch (Exception exception)
     {
