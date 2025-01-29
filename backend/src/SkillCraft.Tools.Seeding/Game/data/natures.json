@@ -1,0 +1,162 @@
+﻿[
+  {
+    "Id": "699d88bf-f741-416c-b423-4f4ea5189f49",
+    "UniqueSlug": "agile",
+    "DisplayName": "Agile",
+    "Description": "Les mouvements du personnage sont effectués avec aisance et promptitude, souplesse et alerte.",
+    "Attribute": "Agility",
+    "Gift": "Réflexes"
+  },
+  {
+    "Id": "5ac251b8-1c09-45bb-a00f-788838deb984",
+    "UniqueSlug": "attentif",
+    "DisplayName": "Attentif",
+    "Description": "Le personnage porte attention à son environnement, aux objets et aux créatures qui l’entourent.",
+    "Attribute": "Sensitivity",
+    "Gift": "Vision aiguisée"
+  },
+  {
+    "Id": "e37b874c-ffe1-4631-81e8-c3bb1b0a5b3a",
+    "UniqueSlug": "bienveillant",
+    "DisplayName": "Bienveillant",
+    "Description": "Le personnage montre de bonnes intentions, de bonnes dispositions envers les autres, ses paroles sont complaisantes et il se montre compréhensif.",
+    "Attribute": "Sensitivity",
+    "Gift": "Médecine de brousse"
+  },
+  {
+    "Id": "24bd3326-57f8-4240-904d-c5b65a8e2e03",
+    "UniqueSlug": "coriace",
+    "DisplayName": "Coriace",
+    "Description": "Le personnage est tenace et solide, il maintient fermement ses positions.",
+    "Attribute": "Vigor",
+    "Gift": "Dur à cuire"
+  },
+  {
+    "Id": "3fa46cf8-3857-4e41-86ed-fecd4d793f3b",
+    "UniqueSlug": "courrouce",
+    "DisplayName": "Courroucé",
+    "Description": "Les émotions du personnage sont vives et ses mouvements sont brusques.",
+    "Attribute": "Agility",
+    "Gift": "Féroce"
+  },
+  {
+    "Id": "b1d6cf74-5ce1-40a6-bce1-bf48881238a2",
+    "UniqueSlug": "curieux",
+    "DisplayName": "Curieux",
+    "Description": "Le personnage est avide de voir, de comprendre et de savoir.",
+    "Attribute": "Intellect",
+    "Gift": "Pensée claire"
+  },
+  {
+    "Id": "3b4465f5-dab4-4f80-af4e-fc00a069da36",
+    "UniqueSlug": "debrouillard",
+    "DisplayName": "Débrouillard",
+    "Description": "Par des ruses, astuces et sa dextérité manuelle, le personnage sait se tirer d’embarras et obtenir ce qu’il désire.",
+    "Attribute": "Coordination",
+    "Gift": "Aigrefin"
+  },
+  {
+    "Id": "16a76d43-f724-49eb-88ee-575266cada10",
+    "UniqueSlug": "explorateur",
+    "DisplayName": "Explorateur",
+    "Description": "Les voyages de découverte en contrées inconnues font partie des désirs et/ou des expériences du personnage.",
+    "Attribute": "Intellect",
+    "Gift": "Polyglotte"
+  },
+  {
+    "Id": "f0f0d211-7515-4a2e-9aa1-9fc709c48ed4",
+    "UniqueSlug": "habile",
+    "DisplayName": "Habile",
+    "Description": "Les gestes et mouvements du personnage sont effectuées avec adresse et précision.",
+    "Attribute": "Coordination",
+    "Gift": "Adresse légendaire"
+  },
+  {
+    "Id": "c544ef30-607a-4202-8c4b-5205087f0db7",
+    "UniqueSlug": "inspirant",
+    "DisplayName": "Inspirant",
+    "Description": "Le personnage inspire facilement des émotions à ceux qui l’entourent.",
+    "Attribute": "Presence",
+    "Gift": "Orateur"
+  },
+  {
+    "Id": "aefffe59-a4a8-425e-b2b8-b4159ef05297",
+    "UniqueSlug": "muscle",
+    "DisplayName": "Musclé",
+    "Description": "La musculature du personnage est développée, vive et efficace.",
+    "Attribute": "Vigor",
+    "Gift": "Baraqué"
+  },
+  {
+    "Id": "fb2f8e3c-b1c0-4f6d-b243-f3788a44b5a1",
+    "UniqueSlug": "mysterieux",
+    "DisplayName": "Mystérieux",
+    "Description": "Le personnage s’entoure de secrets et de mystères, il laisse peu paraître ses idées et émotions.",
+    "Attribute": "Spirit",
+    "Gift": "Mysticisme"
+  },
+  {
+    "Id": "3f1b21dd-de5a-4c62-86c8-cb59a27ced5b",
+    "UniqueSlug": "naturel",
+    "DisplayName": "Naturel",
+    "Description": "Le personnage dégage simplicité, aisance, vraisemblance, il agit selon sa nature profonde, sans masque.",
+    "Attribute": "Sensitivity",
+    "Gift": "Sixième sens"
+  },
+  {
+    "Id": "95da4d36-54bb-46a3-b7a2-c7fb4fcaa7f9",
+    "UniqueSlug": "perfectionniste",
+    "DisplayName": "Perfectionniste",
+    "Description": "Le personnage est doté d’un souci exagéré et pointu du détail, il est minutieux.",
+    "Attribute": "Coordination",
+    "Gift": "Fignolage"
+  },
+  {
+    "Id": "e657a05f-02eb-4e7a-a131-7de509615f45",
+    "UniqueSlug": "savant",
+    "DisplayName": "Savant",
+    "Description": "Les connaissances du personnage sont étendues dans divers domaines ou une discipline particulière.",
+    "Attribute": "Intellect",
+    "Gift": "Entrepôt à connaissances"
+  },
+  {
+    "Id": "07d179d8-c079-487f-9f3e-70ea78bc9995",
+    "UniqueSlug": "solitaire",
+    "DisplayName": "Solitaire",
+    "Description": "Le personnage cherche la solitude, il s’attache peu aux autres.",
+    "Attribute": "Sensitivity",
+    "Gift": "Globe-trotteur"
+  },
+  {
+    "Id": "a7682e33-26bd-4cd9-80d5-071e81e9cb22",
+    "UniqueSlug": "sournois",
+    "DisplayName": "Sournois",
+    "Description": "Le personnage cache ses pensées, ses sentiments véritables, il arrive à ses fins en étant malveillant, hypocrite ou manipulateur.",
+    "Attribute": "Presence",
+    "Gift": "Ventriloque"
+  },
+  {
+    "Id": "77f30ddf-86b7-42e0-9048-8ff9e1013ced",
+    "UniqueSlug": "stoique",
+    "DisplayName": "Stoïque",
+    "Description": "La volonté du personnage est ferme, il est impassible et indifférent à a douleur.",
+    "Attribute": "Spirit",
+    "Gift": "Infatigable"
+  },
+  {
+    "Id": "6ea47502-8dd4-4c53-925a-d21ad46ad2c6",
+    "UniqueSlug": "supporteur",
+    "DisplayName": "Supporteur",
+    "Description": "Le personnage est encourageant, sa parole remonte le moral et motive ses compagnons.",
+    "Attribute": "Presence",
+    "Gift": "Mots d’encouragement"
+  },
+  {
+    "Id": "4472fadb-85c7-45ec-9243-7e88b59b26dd",
+    "UniqueSlug": "timide",
+    "DisplayName": "Timide",
+    "Description": "Les actes, décisions, opinions ou paroles du personnage manquent d’assurance ou de hardiesse, il se fait peut remarquer.",
+    "Attribute": "Agility",
+    "Gift": "Effacé"
+  }
+]
