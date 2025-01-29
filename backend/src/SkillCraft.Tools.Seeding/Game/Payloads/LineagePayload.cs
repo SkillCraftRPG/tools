@@ -34,6 +34,15 @@ public record AttributeBonuses
   public int Extra { get; set; }
 }
 
+public record TraitPayload
+{
+  public Guid Id { get; set; }
+
+  public string UniqueSlug { get; set; } = string.Empty;
+  public string? DisplayName { get; set; }
+  public string? Description { get; set; }
+}
+
 public record Languages
 {
   public List<string> Items { get; set; } = [];
