@@ -12,25 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools", "src\SkillCraft.Tools\SkillCraft.Tools.csproj", "{A298D736-828B-4E90-8A4F-28350A5A13ED}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.Core", "src\SkillCraft.Tools.Core\SkillCraft.Tools.Core.csproj", "{3299EE56-6F3B-4407-953B-4A1000A660D9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.Infrastructure", "src\SkillCraft.Tools.Infrastructure\SkillCraft.Tools.Infrastructure.csproj", "{5432C476-E90D-468C-9C0A-7D7CB1F1605A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.Infrastructure.SqlServer", "src\SkillCraft.Tools.Infrastructure.SqlServer\SkillCraft.Tools.Infrastructure.SqlServer.csproj", "{33D6401B-5C68-4152-ACA9-4904861D052E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.DataTransform.Worker", "src\SkillCraft.Tools.DataTransform.Worker\SkillCraft.Tools.DataTransform.Worker.csproj", "{8A14DF8E-9F4B-4664-AD29-734853689415}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataTransform", "DataTransform", "{BB4AFFC5-BE86-4663-B998-3B439E3E0161}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Seeding", "Seeding", "{77EADDA1-A6D1-4838-9604-EBA9B36009C2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.Seeding.Worker", "src\SkillCraft.Tools.Seeding.Worker\SkillCraft.Tools.Seeding.Worker.csproj", "{0326C613-5940-453B-B593-93C7075DBF18}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.Infrastructure.PostgreSQL", "src\SkillCraft.Tools.Infrastructure.PostgreSQL\SkillCraft.Tools.Infrastructure.PostgreSQL.csproj", "{406AA84A-0033-4F52-9F99-18402D4BC89C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.Infrastructure.MongoDB", "src\SkillCraft.Tools.Infrastructure.MongoDB\SkillCraft.Tools.Infrastructure.MongoDB.csproj", "{E044ED18-54B7-470D-A817-62016F53BDC2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools", "src\SkillCraft.Tools\SkillCraft.Tools.csproj", "{045244D4-3C9C-4670-A01B-2CB90DA134A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,44 +20,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A298D736-828B-4E90-8A4F-28350A5A13ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A298D736-828B-4E90-8A4F-28350A5A13ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A298D736-828B-4E90-8A4F-28350A5A13ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A298D736-828B-4E90-8A4F-28350A5A13ED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3299EE56-6F3B-4407-953B-4A1000A660D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3299EE56-6F3B-4407-953B-4A1000A660D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3299EE56-6F3B-4407-953B-4A1000A660D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3299EE56-6F3B-4407-953B-4A1000A660D9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5432C476-E90D-468C-9C0A-7D7CB1F1605A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5432C476-E90D-468C-9C0A-7D7CB1F1605A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5432C476-E90D-468C-9C0A-7D7CB1F1605A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5432C476-E90D-468C-9C0A-7D7CB1F1605A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{33D6401B-5C68-4152-ACA9-4904861D052E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33D6401B-5C68-4152-ACA9-4904861D052E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33D6401B-5C68-4152-ACA9-4904861D052E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33D6401B-5C68-4152-ACA9-4904861D052E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8A14DF8E-9F4B-4664-AD29-734853689415}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A14DF8E-9F4B-4664-AD29-734853689415}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A14DF8E-9F4B-4664-AD29-734853689415}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A14DF8E-9F4B-4664-AD29-734853689415}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0326C613-5940-453B-B593-93C7075DBF18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0326C613-5940-453B-B593-93C7075DBF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0326C613-5940-453B-B593-93C7075DBF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0326C613-5940-453B-B593-93C7075DBF18}.Release|Any CPU.Build.0 = Release|Any CPU
-		{406AA84A-0033-4F52-9F99-18402D4BC89C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{406AA84A-0033-4F52-9F99-18402D4BC89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{406AA84A-0033-4F52-9F99-18402D4BC89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{406AA84A-0033-4F52-9F99-18402D4BC89C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E044ED18-54B7-470D-A817-62016F53BDC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E044ED18-54B7-470D-A817-62016F53BDC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E044ED18-54B7-470D-A817-62016F53BDC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E044ED18-54B7-470D-A817-62016F53BDC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{045244D4-3C9C-4670-A01B-2CB90DA134A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{045244D4-3C9C-4670-A01B-2CB90DA134A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{045244D4-3C9C-4670-A01B-2CB90DA134A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{045244D4-3C9C-4670-A01B-2CB90DA134A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{8A14DF8E-9F4B-4664-AD29-734853689415} = {BB4AFFC5-BE86-4663-B998-3B439E3E0161}
-		{0326C613-5940-453B-B593-93C7075DBF18} = {77EADDA1-A6D1-4838-9604-EBA9B36009C2}
 	EndGlobalSection
 EndGlobal
