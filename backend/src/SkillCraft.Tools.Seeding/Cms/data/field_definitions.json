@@ -10,7 +10,7 @@
     "UniqueName": "MandatoryAttribute1",
     "DisplayName": "Mandatory Attribute 1",
     "Description": null,
-    "Placeholder": null
+    "Placeholder": "Select an attribute"
   },
   {
     "ContentTypeId": "e61b449b-b5c2-4c13-9766-378ecce19e31",
@@ -23,7 +23,7 @@
     "UniqueName": "MandatoryAttribute2",
     "DisplayName": "Mandatory Attribute 2",
     "Description": null,
-    "Placeholder": null
+    "Placeholder": "Select an attribute"
   },
   {
     "ContentTypeId": "e61b449b-b5c2-4c13-9766-378ecce19e31",
@@ -36,7 +36,7 @@
     "UniqueName": "OptionalAttribute1",
     "DisplayName": "Optional Attribute 1",
     "Description": null,
-    "Placeholder": null
+    "Placeholder": "Select an attribute"
   },
   {
     "ContentTypeId": "e61b449b-b5c2-4c13-9766-378ecce19e31",
@@ -49,7 +49,7 @@
     "UniqueName": "OptionalAttribute2",
     "DisplayName": "Optional Attribute 2",
     "Description": null,
-    "Placeholder": null
+    "Placeholder": "Select an attribute"
   },
   {
     "ContentTypeId": "e61b449b-b5c2-4c13-9766-378ecce19e31",
@@ -62,7 +62,7 @@
     "UniqueName": "DiscountedSkill1",
     "DisplayName": "Discounted Skill 1",
     "Description": null,
-    "Placeholder": null
+    "Placeholder": "Select a skill"
   },
   {
     "ContentTypeId": "e61b449b-b5c2-4c13-9766-378ecce19e31",
@@ -75,7 +75,7 @@
     "UniqueName": "DiscountedSkill2",
     "DisplayName": "Discounted Skill 2",
     "Description": null,
-    "Placeholder": null
+    "Placeholder": "Select a skill"
   },
   {
     "ContentTypeId": "2744394f-3b4b-4de9-9fa5-3760eb811f11",
@@ -88,7 +88,7 @@
     "UniqueName": "Type",
     "DisplayName": null,
     "Description": null,
-    "Placeholder": null
+    "Placeholder": "Select a customization type"
   },
   {
     "ContentTypeId": "d31c910d-5541-4179-8e6b-d2caa886bd26",
@@ -127,7 +127,7 @@
     "UniqueName": "Skill",
     "DisplayName": null,
     "Description": null,
-    "Placeholder": null
+    "Placeholder": "Select a skill"
   },
   {
     "ContentTypeId": "b2e8f000-b391-48fc-8ba2-4e50bd8aa54d",
@@ -166,7 +166,7 @@
     "UniqueName": "Skill",
     "DisplayName": null,
     "Description": null,
-    "Placeholder": null
+    "Placeholder": "Select a skill"
   },
   {
     "ContentTypeId": "c078d6c8-f019-41a5-8081-0b52cf0b63ac",
@@ -192,7 +192,7 @@
     "UniqueName": "Attribute",
     "DisplayName": null,
     "Description": null,
-    "Placeholder": null
+    "Placeholder": "Select an attribute"
   },
   {
     "ContentTypeId": "3f0bf2fb-d9b4-4130-912e-df6bd80969da",
@@ -257,7 +257,7 @@
     "UniqueName": "Skill",
     "DisplayName": null,
     "Description": null,
-    "Placeholder": null
+    "Placeholder": "Select a skill"
   },
   {
     "ContentTypeId": "22660a57-7c5e-4d9a-8010-c823fa067bd8",
@@ -686,7 +686,7 @@
     "UniqueName": "SizeCategory",
     "DisplayName": "Size Category",
     "Description": null,
-    "Placeholder": null
+    "Placeholder": "Select a size category"
   },
   {
     "ContentTypeId": "d01f9459-2b9a-40d9-9b1b-85d52bb6daf5",
