@@ -14,4 +14,8 @@
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Logitar.Cms.Core" Version="0.2.2" />
+  </ItemGroup>
+
 </Project>
