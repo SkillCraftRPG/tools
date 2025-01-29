@@ -44,16 +44,17 @@ internal class SeedingWorker : BackgroundService
       ILanguageQuerier languageQuerier = scope.ServiceProvider.GetRequiredService<ILanguageQuerier>();
       LanguageModel language = await languageQuerier.ReadDefaultAsync(cancellationToken);
 
-      await ExecuteAsync(new SeedAspectsTask(language), cancellationToken);
-      await ExecuteAsync(new SeedCustomizationsTask(language), cancellationToken);
+      //await ExecuteAsync(new SeedAspectsTask(language), cancellationToken);
+      //await ExecuteAsync(new SeedCustomizationsTask(language), cancellationToken);
       await ExecuteAsync(new SeedScriptsTask(language), cancellationToken);
       await ExecuteAsync(new SeedLanguagesTask(language), cancellationToken);
-      await ExecuteAsync(new SeedFeaturesTask(language), cancellationToken);
-      await ExecuteAsync(new SeedCastesTask(language), cancellationToken);
-      await ExecuteAsync(new SeedEducationsTask(language), cancellationToken);
-      await ExecuteAsync(new SeedNaturesTask(language), cancellationToken);
-      await ExecuteAsync(new SeedTalentsTask(language), cancellationToken);
-      await ExecuteAsync(new SeedSpecializationsTask(language), cancellationToken);
+      await ExecuteAsync(new SeedLineagesTask(language), cancellationToken);
+      //await ExecuteAsync(new SeedFeaturesTask(language), cancellationToken);
+      //await ExecuteAsync(new SeedCastesTask(language), cancellationToken);
+      //await ExecuteAsync(new SeedEducationsTask(language), cancellationToken);
+      //await ExecuteAsync(new SeedNaturesTask(language), cancellationToken);
+      //await ExecuteAsync(new SeedTalentsTask(language), cancellationToken);
+      //await ExecuteAsync(new SeedSpecializationsTask(language), cancellationToken);
     }
     catch (Exception exception)
     {

@@ -95,7 +95,7 @@ internal class SeedTalentsTaskHandler : INotificationHandler<SeedTalentsTask>
     }
   }
 
-  private static void AddFieldValues(CreateOrReplaceContentPayload payload, Dictionary<string, Guid> fields, TalentPayload talent, IReadOnlyDictionary<string, Guid> talents)
+  private static void AddFieldValues(CreateOrReplaceContentPayload payload, Dictionary<string, Guid> fields, TalentPayload talent, Dictionary<string, Guid> talents)
   {
     payload.AddFieldValue(fields[Talent.Tier], talent.Tier);
     payload.AddFieldValue(fields[Talent.AllowMultiplePurchases], talent.AllowMultiplePurchases);
