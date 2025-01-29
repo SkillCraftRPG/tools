@@ -1,0 +1,98 @@
+﻿[
+  {
+    "Id": "a5cddac3-83dd-412e-9f3b-278fce0a864e",
+    "UniqueSlug": "aradoc",
+    "DisplayName": "Aradoc",
+    "Description": "Autrefois un dialecte du Rénon vulgaire, cette langue correspond à l’évolution de ce dialecte dans la péninsule de l’Arasie. C’est la langue officielle de la Couronne d’Arasie, qui règne sur cette péninsule. À l’oreille et à l’écrit, elle est similaire à la Languedoïl et à l’Onérien. Sa sonorité romantique en fait une langue populaire auprès des poètes et des artistes.",
+    "Script": "Rénon",
+    "TypicalSpeakers": "Arasiens, Gitsani, Hauts-Elfes"
+  },
+  {
+    "Id": "e8980822-3d3c-4ace-a270-d557ef36a452",
+    "UniqueSlug": "areumain",
+    "DisplayName": "Areumain",
+    "Description": "Autrefois un dialecte du Rénon vulgaire, cette langue correspond à l’évolution de ce dialecte dans les terres situées entre les Dargates et la mer Charbonne. Elle est parlée par les roturiers et populations libres de cette région, la noblesse et les autorités de cette région utilisant le Rénon comme langue d’administration.",
+    "Script": "Rénon",
+    "TypicalSpeakers": "Gitsani"
+  },
+  {
+    "Id": "ccdef3a1-0888-4860-a318-aeeac57701a7",
+    "UniqueSlug": "dallois",
+    "DisplayName": "Dallois",
+    "Description": "Le Dallois est une langue dérivée du Norrois, tel le Gormanche. Il est principalement parlé dans les Triskîles et est la langue officielle du Royaume d’Ellesdales. À l’origine très proche du Norrois, cette langue est aujourd’hui très similaire à la Languedoïl. Il y a environ deux siècles, la noblesse d’Ellesdales a été remplacée par celle du Royaume de Vaillance. Pendant près de 150 ans, cette noblesse a gouverné Ellesdales en utilisant la Languedoïl, avec peu d’égard envers le Dallois, langue utilisée par la populace. Cela explique pourquoi près du tiers du lexique Dallois est emprunté à la Languedoïl.",
+    "Script": "Rénon, Runique",
+    "TypicalSpeakers": "Dallois"
+  },
+  {
+    "Id": "834f2162-f07e-4ac0-877d-8f9a6899277e",
+    "UniqueSlug": "glaidique",
+    "DisplayName": "Glaïdique",
+    "Description": "Le Glaïdique est la langue très ancienne des Elfes sylvains. Elle a été préservée par ces derniers et a donc peu évolué au cours des derniers siècles. Elle se décline en deux dialectes\u00A0: le dialecte insulaire, parlé par les Elfes sylvains des Triskîles, et le dialecte continental, parlé par les Elfes sylvains des Nives. Les différences entre ces deux dialectes sont minimes étant donné la nature conservatrice des Elfes sylvains. D’ailleurs, ces derniers évitent de partager leur langue, ce qui rend ardue la tâche de trouver un traducteur.",
+    "Script": "Elfique",
+    "TypicalSpeakers": "Angolites, Elfes sylvains"
+  },
+  {
+    "Id": "dff93a83-6022-4b40-b4aa-4f66b7d9470d",
+    "UniqueSlug": "gormanche",
+    "DisplayName": "Gormanche",
+    "Description": "Le Gormanche est une langue dérivée du Norrois, tel le Dallois. Il est parlé en Gormanie, par les rares habitants de la terre sans homme, et par la population des petits états indépendants. Les réfugiés de la guerre opposant le Saint-Empire à l’Union de Kraken se sont répandus dans les régions environnantes, amenant avec eux cette langue. On trouvera donc de nombreux locuteurs de cette langue dans les terres du Royaume de Vaillance.",
+    "Script": "Runique",
+    "TypicalSpeakers": "Gormands"
+  },
+  {
+    "Id": "ac6bb743-c6b4-4383-84fb-84716db2e052",
+    "UniqueSlug": "languedoil",
+    "DisplayName": "Languedoïl",
+    "Description": "Autrefois un dialecte du Rénon vulgaire, cette langue correspond à l’évolution de ce dialecte dans la région de Vaillance. Par l’influence des Vaillançais sur le Saint-Empire ainsi que leur neutralité dans le conflit opposant cet empire à l’Union de Kraken, cette langue est très répandue en Ouespéro. C’est la langue utilisée de facto par les diplomates et les marchands. Elle est surnommée pour cette raison «\u00A0Commun\u00A0». Elle se prononce «\u00A0langue d’oye\u00A0».",
+    "Script": "Rénon",
+    "TypicalSpeakers": "Gitsani, Vaillançais"
+  },
+  {
+    "Id": "c0040fa8-b34b-4a8f-81b7-9e1464afaea1",
+    "UniqueSlug": "norrois",
+    "DisplayName": "Norrois",
+    "Description": "Le Norrois est une langue extrêmement ancienne, prenant racine dans les contrées du Nord il y a environ trois millénaires. C’est la langue officielle de l’Union de Kraken et elle est parlée par la population des états composant l’union. Elle est également utilisée comme langue légale et administrative par les états situés dans la sphère d’influence de l’Union de Kraken, notamment la Gormanie et les Triskîles. On trouvera donc des locuteurs de cette langue dans ces régions.",
+    "Script": "Runique",
+    "TypicalSpeakers": "Norriens"
+  },
+  {
+    "Id": "e0b25143-f6c8-4196-9b78-67e591c274df",
+    "UniqueSlug": "onerien",
+    "DisplayName": "Onérien",
+    "Description": "Autrefois un dialecte du Rénon vulgaire, cette langue correspond à l’évolution de ce dialecte dans la péninsule de l’Onérie et sur l’île de Sicagie. C’est la langue couramment utilisée par les sujets du Saint-Empire, qu’ils habitent l’Onérie, la Sicagie ou les possessions outremer de l’empire. Il ne sera pas difficile d’en trouver des locuteurs dans toute région à l’intérieur de la sphère d’influence du Saint-Empire.",
+    "Script": "Rénon",
+    "TypicalSpeakers": "Gitsani, Haut-Elfes, Onériens, Sarnes"
+  },
+  {
+    "Id": "b9340bcb-88d7-4aed-a222-271c48e2976c",
+    "UniqueSlug": "orrinique",
+    "DisplayName": "Orrinique",
+    "Description": "L’Orrinique est une langue historique, originaire de l’Orrinie, pays des Orrins. Bien qu’elle date de plusieurs millénaires, elle a su s’adapter au fil des siècles, ce qui lui permet aujourd’hui d’être encore pertinente. Elle est très utilisée par les diplomates, gouverneurs, marchands et légistes de l’Orrinie et de la Nantolie. Bien que la majorité des textes scientifiques, philosophiques et religieux soient aujourd’hui traduits en Rénon, il existe encore de nombreux textes anciens uniquement rédigés en Orrinique. Cette langue est donc encore étudiée par certains historiens et révérends afin de leur permettre d’interpréter ces textes.",
+    "Script": "Orrinique",
+    "TypicalSpeakers": "Chalites, Gitsani, Minotaures"
+  },
+  {
+    "Id": "8b0608c3-b162-49c3-9d75-b7520379c656",
+    "UniqueSlug": "renon",
+    "DisplayName": "Rénon",
+    "Description": "Le Rénon est une langue très ancienne, datant d’environ deux millénaires. Les différents dialectes de sa dernière forme parlée, le Rénon vulgaire, ont évolué en plusieurs langues mutuellement inintelligibles au cours des derniers siècles. Bien que le Rénon ne soit plus parlé, c’est la langue de facto utilisée par les érudits et les ecclésiastes afin de rédiger les textes scientifiques et religieux. Elle est également utilisée par le Saint-Empire afin de rédiger les documents administratifs et légaux. Pour cette raison, elle est surnommée «\u00A0Impérial\u00A0».",
+    "Script": "Rénon",
+    "TypicalSpeakers": null
+  },
+  {
+    "Id": "3da0e657-20d0-44e6-9616-8ccdaeaec3f6",
+    "UniqueSlug": "squerzele",
+    "DisplayName": "Squerzèle",
+    "Description": "Le Squerzèle est la langue des Nains gris, qui peuplent les collines marécageuses de la grande plaine d’Ouespéro. Elle s’est aussi transmise aux Nains bruns qui sont devenus les voisins des Nains gris en quittant les montagnes de Kroumir afin de s’installer dans les montagnes situées entre la grande plaine d’Ouespéro et l’Orrinie, dans le Sud de l’Ouespéro. Elle est primordiale à connaître pour tout aventurier et marchand désirant voyager et commercer en ces régions.",
+    "Script": "Montagnard",
+    "TypicalSpeakers": "Nains gris"
+  },
+  {
+    "Id": "4bf2d2e5-853f-4857-b491-54692c035a43",
+    "UniqueSlug": "vulcain",
+    "DisplayName": "Vulcain",
+    "Description": "Le Vulcain est une langue très ancienne associée aux dragons. Elle est partagée par les créatures reptiliennes et les laquais des dragons considérés dignes de parler cette langue. Elle est mystérieuse et méconnue, gardée jalousement par ceux qui la connaissent puisqu’elle permet de communiquer avec les dragons dans leur propre langue.",
+    "Script": "Balafré",
+    "TypicalSpeakers": "Salamandres, Sang-dragons"
+  }
+]

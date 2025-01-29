@@ -32,12 +32,12 @@
   },
   {
     "Id": "d23c0ce2-752b-421e-ac7f-8abfe214d419",
-    "UniqueName": "Script",
+    "UniqueName": "Scripts",
     "DisplayName": null,
     "Description": null,
     "RelatedContent": {
       "ContentTypeId": "9c9987af-9dde-4942-b8f6-a558c9d40275",
-      "IsMultiple": false
+      "IsMultiple": true
     }
   },
   {
@@ -45,9 +45,7 @@
     "UniqueName": "TypicalSpeakers",
     "DisplayName": "Typical Speakers",
     "Description": null,
-    "RichText": {
-      "ContentType": "text/plain"
-    }
+    "Tags": {}
   },
   {
     "Id": "5e8157da-989f-497e-a1e0-9f2e39dedb21",
