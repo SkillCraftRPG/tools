@@ -38,33 +38,6 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  skillcraft_tools_rabbitmq:
-    image: masstransit/rabbitmq
-    container_name: SkillCraft.Tools_rabbitmq
-    restart: unless-stopped
-    ports:
-      - 25677:5672
-      - 35677:15672
-
-  skillcraft_tools_portal:
-    image: fpion/portal:v5.0.0
-    container_name: SkillCraft.Tools_portal
-    depends_on:
-      - skillcraft_tools_mongo
-      - skillcraft_tools_mssql
-      - skillcraft_tools_postgres
-      - skillcraft_tools_rabbitmq
-    restart: unless-stopped
-    environment:
-      ASPNETCORE_Environment: Development
-      MassTransit:RabbitMQ:Host: skillcraft_tools_rabbitmq
-      MassTransit:RabbitMQ:Port: 5672
-      MongoDB:ConnectionString: mongodb://skillcraft:gmTEKnUvPya9JX4L@skillcraft_tools_mongo:27017/
-      POSTGRESQLCONNSTR_Portal: "User ID=postgres;Password=kCK6g3w9P4Z8HYse;Host=skillcraft_tools_postgres;Port=5432;Database=Portal;"
-      SQLCONNSTR_Portal: "Server=skillcraft_tools_mssql;Database=Portal;User Id=SA;Password=ATMdrBhNHQ9Z2xG6;Persist Security Info=False;Encrypt=False;"
-    ports:
-      - 28888:8080
-
   skillcraft_tools_backend:
     build:
       context: ./backend
@@ -79,9 +52,8 @@ services:
     environment:
       ASPNETCORE_Environment: Development
       MongoDB:ConnectionString: mongodb://skillcraft:gmTEKnUvPya9JX4L@skillcraft_tools_mongo:27017/
-      Portal:BaseUrl: "http://skillcraft_tools_portal:8080"
-      POSTGRESQLCONNSTR_SkillCraft: "User ID=postgres;Password=kCK6g3w9P4Z8HYse;Host=skillcraft_tools_postgres;Port=5432;Database=SkillCraftTools;"
-      SQLCONNSTR_SkillCraft: "Server=skillcraft_tools_mssql,1433;Database=SkillCraftTools;User Id=SA;Password=ATMdrBhNHQ9Z2xG6;Persist Security Info=False;Encrypt=False;"
+      POSTGRESQLCONNSTR_SkillCraft: "User ID=postgres;Password=kCK6g3w9P4Z8HYse;Host=skillcraft_tools_postgres;Port=5432;Database=tools;"
+      SQLCONNSTR_SkillCraft: "Server=skillcraft_tools_mssql,1433;Database=Tools;User Id=SA;Password=ATMdrBhNHQ9Z2xG6;Persist Security Info=False;Encrypt=False;"
     ports:
       - 28088:8080
 
