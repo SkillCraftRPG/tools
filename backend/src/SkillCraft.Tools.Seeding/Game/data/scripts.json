@@ -1,0 +1,38 @@
+﻿[
+  {
+    "Id": "0e0bfcf9-8376-4b4f-ab9b-d63fcb2221bb",
+    "UniqueSlug": "balafre",
+    "DisplayName": "Balafré",
+    "Description": "Le Balafré est un système d’écriture méconnu datant d’une époque bien plus lointaine que celle de l’invention des premiers alphabets. Certains le jugent trop primitif afin d’être considéré comme un alphabet. Chaque symbole de ce système d’écriture est formé de plusieurs traits pouvant être tracés à l’aide d’un objet pointu, par exemple une griffe. Les légendes racontent qu’il a été inventé par les dragons et qu’il est toujours utilisé par ceux-ci, comme en atteste la langue Vulcaine. Il se lit et s’écrit de la gauche vers la droite."
+  },
+  {
+    "Id": "fc7647a2-1854-495e-9126-5f036ca03389",
+    "UniqueSlug": "elfique",
+    "DisplayName": "Elfique",
+    "Description": "L’Elfique est le plus ancien système d’écriture, datant de plus de cinq millénaires. Il est étonnamment raffiné pour son âge. Il a été importé par les Elfes gris ayant traversé l’Hyperborée afin de s’installer en Ouespéro. Il s’est ensuite transmis par les peuples descendant des Elfes gris, notamment les Elfes lunaires, les Elfes sylvains et les Haut-Elfes. Cet alphabet s’écrit de la gauche vers la droite. Ses symboles sont composés de traits simples se terminant en coin pointu ou courbé. Les symboles sont connectés ensemble afin de former des syllabes."
+  },
+  {
+    "Id": "a76bf247-2956-4674-b3a5-82e0b29bf5a1",
+    "UniqueSlug": "montagnard",
+    "DisplayName": "Montagnard",
+    "Description": "Le Montagnard est un alphabet inventé par les Nains il y a environ 300 ans afin de remplacer le Cunéiforme. Le Cunéiforme est un système phonétique et archaïque conçu à l’origine afin d’exprimer à l’écrit les langues montagnardes sur des tablettes d’argiles et des stèles en pierre. Les langues montagnardes ayant grandement évolué au cours des derniers millénaires, il est devenu désuet et l’alphabet Montagnard a rapidement été adopté en remplacement du Cunéiforme. Ce nouveau système s’écrit et se lit de la gauche vers la droite et est composé de plus de 40 symboles."
+  },
+  {
+    "Id": "3ffa891f-5da4-4003-8a32-61b8b8a5110f",
+    "UniqueSlug": "orrinique",
+    "DisplayName": "Orrinique",
+    "Description": "Ce système d’écriture a été inventé il y a 2000 ans par les Orrins afin de faciliter la représentation textuelle de la langue Orrinique. À cet époque, l’Orrinie entre dans une période dite « archaïque », pendant laquelle les Orrins subissent une augmentation de population massive. Ils révolutionnent leur politique et leur organisation, reconstruisent les réseaux de commerce détruits dans les siècles précédents, et fondent de nombreuses colonies. Il se lit et s’écrit de la gauche vers la droite et est composé de 24 symboles. Il est ultimement dérivé des hiéroglyphes utilisés par les Khémites."
+  },
+  {
+    "Id": "4d40d5cf-f963-45f8-88f0-7baffc46b25e",
+    "UniqueSlug": "renon",
+    "DisplayName": "Rénon",
+    "Description": "L’alphabet Rénon est le système d’écriture le plus utilisé en Ouespéro. Il est notamment utilisé par les langues issues des différents dialectes du Rénon vulgaire. Il se lit et s’écrit de la gauche vers la droite et est composé de 23 symboles. Bien que les symboles soient différents de ceux de l’alphabet Orrinique, son emploi et sa phonologie sont identiques à ceux de l’alphabet Orrinique. L’alphabet Rénon est apparu dans le siècle suivant la création de l’alphabet Orrinique à la suite de contacts importants entre la République Rénone et les colonies Orrines établies sur l’île de Sicagie."
+  },
+  {
+    "Id": "4dca9f13-5fa4-4d14-b963-82583d8881f8",
+    "UniqueSlug": "runique",
+    "DisplayName": "Runique",
+    "Description": "Les runes, ou alphabet runique, composent un système d’écriture utilisé par le Norrois et les langues dérivées du Norrois, tel le Gormanche. La première forme de ce système d’écriture est apparue il y a environ treize siècles et a évolué en l’alphabet runique du présent. Il comportait à l’origine 24 symboles, puis a été réduit à 16 symboles, avant d’être étendu aux 27 runes principales contemporaines. De plus, il existe plusieurs formes différentes pour la majorité de ces runes. Cet alphabet s’écrit en boustrophédon, c’est-à-dire que les lignes sont lues et écrites de la gauche vers la droite, puis de la droite vers la gauche, en alternant à chaque ligne. La première ligne s’écrit toujours de la gauche vers la droite."
+  }
+]

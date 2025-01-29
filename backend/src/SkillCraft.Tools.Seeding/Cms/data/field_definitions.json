@@ -98,7 +98,7 @@
     "IsRequired": false,
     "IsIndexed": false,
     "IsUnique": false,
-    "UniqueName": "Script",
+    "UniqueName": "Scripts",
     "DisplayName": null,
     "Description": null,
     "Placeholder": null
