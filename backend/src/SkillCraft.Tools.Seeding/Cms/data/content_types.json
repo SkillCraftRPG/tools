@@ -54,5 +54,26 @@
     "UniqueName": "Nature",
     "DisplayName": null,
     "Description": null
+  },
+  {
+    "Id": "5db2ed1e-ba50-4102-ae08-699900ff055e",
+    "IsInvariant": false,
+    "UniqueName": "Talent",
+    "DisplayName": null,
+    "Description": null
+  },
+  {
+    "Id": "22660a57-7c5e-4d9a-8010-c823fa067bd8",
+    "IsInvariant": false,
+    "UniqueName": "Specialization",
+    "DisplayName": null,
+    "Description": null
+  },
+  {
+    "Id": "8444d060-ec6b-4a6b-ab65-a8e1a6bef46c",
+    "IsInvariant": false,
+    "UniqueName": "ReservedTalent",
+    "DisplayName": "Reserved Talent",
+    "Description": null
   }
 ]
