@@ -1,0 +1,92 @@
+﻿[
+  {
+    "Id": "e9232d1c-de08-45af-b934-24d833fd31b5",
+    "UniqueSlug": "amuseur",
+    "DisplayName": "Amuseur",
+    "Description": "Adepte d’art, de poésie, de cirque ou de théâtre, l’amuseur ère de villages en cités afin d’offrir ses performances. Bien plus qu’un simple gagne-pain, cela lui permet de former un réseau de contacts et de recueillir toutes sortes d’informations.",
+    "Skill": "Performance",
+    "WealthRoll": "8d6",
+    "Features": "Protégé, Vagabond"
+  },
+  {
+    "Id": "89f3011a-151f-4617-aae8-1cbfa8e280de",
+    "UniqueSlug": "artisan",
+    "DisplayName": "Artisan",
+    "Description": "L’artisan est un expert d’un procédé de transformation des matières brutes. Il peut être un boulanger, un forgeron, un orfèvre, un tisserand ou pratiquer tout genre de profession œuvrant dans la transformation des matières brutes.",
+    "Skill": "Craft",
+    "WealthRoll": "8d6",
+    "Features": "Professionnel, Sujet"
+  },
+  {
+    "Id": "0547ce2a-d1e8-4009-9d32-a8c7c280bdd9",
+    "UniqueSlug": "boheme",
+    "DisplayName": "Bohème",
+    "Description": "Le bohème ne possède aucun domicile fixe ni occupation permanente. Il doit sa survie à la bonté des autres lorsqu’il mendie ou aux crimes qu’il perpètre dans les centres urbains. Il est incapable de s’intégrer à la société dont laquelle il dépend afin de survivre, il est donc fréquemment rejeté par celle-ci.",
+    "Skill": "Thievery",
+    "WealthRoll": "6d6",
+    "Features": "Rancunier, Survivant"
+  },
+  {
+    "Id": "99a46697-3804-45fe-b79c-08c631361b19",
+    "UniqueSlug": "exile",
+    "DisplayName": "Exilé",
+    "Description": "Banni par son peuple ou par choix personnel, l’exilé a recours à son instinct de survie et à sa connaissance des milieux sauvages afin de survivre à son environnement. Il garde de mauvais souvenirs de son ancienne vie et prépare aigrement sa vengeance.",
+    "Skill": "Survival",
+    "WealthRoll": "6d6",
+    "Features": "Rancunier, Vagabond"
+  },
+  {
+    "Id": "0d12e0f2-5165-49e7-b1a7-f2dcf4ea3a11",
+    "UniqueSlug": "guerisseur",
+    "DisplayName": "Guérisseur",
+    "Description": "Le guérisseur est responsable du maintien et de l’amélioration de la santé de la communauté ou de la société pour laquelle il œuvre. Sa clientèle est vaste : il doit soigner les citadins bourgeois, la haute noblesse, mais aussi les pauvres paysans, et parfois même les chasseurs en territoire sauvage et les soldats blessés sur un champ de bataille.",
+    "Skill": "Medicine",
+    "WealthRoll": "7d6",
+    "Features": "Guetteur, Sujet"
+  },
+  {
+    "Id": "c6c474d4-5eb2-464c-9c6d-25bcba87dac3",
+    "UniqueSlug": "marchand",
+    "DisplayName": "Marchand",
+    "Description": "Propriétaire d’une boutique ou vendeur ambulant, le marchand est un des derniers maillons de la chaîne de production de sa société. Sa profession requiert de sa part une excellente communication ainsi qu’un bon sens d’analyse afin de s’assurer de la qualité des produits vendus.",
+    "Skill": "Investigation",
+    "WealthRoll": "8d6",
+    "Features": "Professionnel, Vagabond"
+  },
+  {
+    "Id": "a8f9c94e-bbbd-44bd-a167-00996f83ae9e",
+    "UniqueSlug": "milicien",
+    "DisplayName": "Milicien",
+    "Description": "Le milicien est responsable de protéger les citoyens sur les terres de son seigneur. Il possède les droits mais également la responsabilité de faire appliquer les lois. Il doit également parfois jouer le rôle d’éclaireur et de soldat au sein de l’armée de sa patrie.",
+    "Skill": "Melee",
+    "WealthRoll": "7d6",
+    "Features": "Guetteur, Sujet"
+  },
+  {
+    "Id": "190418d1-8755-4569-95d6-40713a7b6e55",
+    "UniqueSlug": "noble",
+    "DisplayName": "Noble",
+    "Description": "Riche propriétaire terrien ou lié par son sang à un seigneur, le noble est responsable de l’administration et de la gouvernance de terres. Il codifie les lois et tranche en cas de différents. L’ensemble de ses tâches est lourd de responsabilités et pousse parfois les héritiers nobles à quitter leur famille avant d’hériter de ces fonctions.",
+    "Skill": "Diplomacy",
+    "WealthRoll": "9d6",
+    "Features": "Protégé, Sujet"
+  },
+  {
+    "Id": "3cc0c849-d103-4c14-ab70-82b72c04236d",
+    "UniqueSlug": "paysan",
+    "DisplayName": "Paysan",
+    "Description": "Les paysans représentent la base de la pyramide hiérarchique de leur société, bien que les plus nombreux. Ils sont affectés aux tâches les moins louables mais les plus importantes au sein de la chaîne de production. Mineurs, bûcherons, agriculteurs ou autres professionnels, leur mode de vie requiert une bonne forme physique et une tolérance exceptionnelle à l’effort.",
+    "Skill": "Athletics",
+    "WealthRoll": "7d6",
+    "Features": "Autosuffisant, Sujet"
+  },
+  {
+    "Id": "fb3902ff-f2ef-48df-8c77-5b6608d714cf",
+    "UniqueSlug": "religieux",
+    "DisplayName": "Religieux",
+    "Description": "Les religieux sont responsables du culte et des traditions de leur société. Ils ont également le mandat de traiter les événements surnaturels et de rassurer la population quant à ceux-ci. Les religieux œuvrent dans un temple, un sanctuaire, une église ou tout autre lieu de culture. Il peut compter sur l’aide d’autres fidèles impliqués comme lui mais doit également rendre de nombreux services à son culte.",
+    "Skill": "Occultism",
+    "WealthRoll": "9d6",
+    "Features": "Révérend, Sujet"
+  }
+]

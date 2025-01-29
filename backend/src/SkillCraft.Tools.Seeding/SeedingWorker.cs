@@ -48,6 +48,8 @@ internal class SeedingWorker : BackgroundService
       await ExecuteAsync(new SeedCustomizationsTask(language), cancellationToken);
       await ExecuteAsync(new SeedScriptsTask(language), cancellationToken);
       await ExecuteAsync(new SeedLanguagesTask(language), cancellationToken);
+      await ExecuteAsync(new SeedFeaturesTask(language), cancellationToken);
+      await ExecuteAsync(new SeedCastesTask(language), cancellationToken);
       await ExecuteAsync(new SeedEducationsTask(language), cancellationToken);
       await ExecuteAsync(new SeedNaturesTask(language), cancellationToken);
     }

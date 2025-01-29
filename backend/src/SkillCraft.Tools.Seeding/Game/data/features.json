@@ -1,0 +1,56 @@
+[
+  {
+    "Id": "a80c196c-55c3-4a2d-9c18-7522f7579dba",
+    "UniqueSlug": "autosuffisant",
+    "DisplayName": "Autosuffisant",
+    "Description": "Le personnage préfère l’environnement agricole aux cités surpeuplées et étroites. Ses tests de _Survie_ afin de trouver de l’eau, de la nourriture ou un abri dans son pays d’origine se voient conférer l’avantage."
+  },
+  {
+    "Id": "2e12b6be-536c-4c37-855f-3e64a68f2350",
+    "UniqueSlug": "guetteur",
+    "DisplayName": "Guetteur",
+    "Description": "Le personnage ne dort que d’un œil, toujours aux aguets afin d’appréhender n’importe quel danger. Ses tests de _Perception_ ne sont pas affligés du désavantage lorsqu’il dort en moyenne 4 heures par tranche de deux journées consécutives."
+  },
+  {
+    "Id": "56acf228-be0f-46ac-ab5f-ecae32bc8d7f",
+    "UniqueSlug": "professionnel",
+    "DisplayName": "Professionnel",
+    "Description": "Les apprentissages et réalisations du personnage lui ont permis de devenir membre d’une organisation de professionnels comme lui, telle une guilde d’artisans ou de marchands. S’il ne peut payer pour un toit ou de la nourriture, il peut facilement trouver du travail afin de couvrir ces dépenses essentielles."
+  },
+  {
+    "Id": "b84d8bdb-65fd-4420-9a8a-7dfbe0e909cf",
+    "UniqueSlug": "protege",
+    "DisplayName": "Protégé",
+    "Description": "Par le prestige de sa famille et sa participation à des événements de l’aristocratie, le personnage est connu de la noblesse locale. Il peut demander gîte et couvert membres de la noblesse. En échange, ceux-ci peuvent lui demander une ou plusieurs faveurs immédiates, futures ou encore invoquer le droit de surprise, c’est-à-dire une faveur d’un quelconque ordre de grandeur lorsque l’occasion de présenter."
+  },
+  {
+    "Id": "a354620e-bafc-4760-8c4d-f8271a0c2d8f",
+    "UniqueSlug": "rancunier",
+    "DisplayName": "Rancunier",
+    "Description": "Peu importe la raison, le personnage a renoncé à sa fidélité envers son seigneur. Il connaît les rouages du système lorsqu’il est question d’éviter de payer des taxes et de jouer avec les lois en place. Lorsqu’il se trouve dans son pays d’origine, il peut réduire ses dépenses essentielles de 10 %."
+  },
+  {
+    "Id": "c17a1343-9c23-42e5-8140-6a0ee22eeae8",
+    "UniqueSlug": "reverend",
+    "DisplayName": "Révérend",
+    "Description": "En arborant les vertus de son culte et en accomplissant plusieurs tâches au sein de celui-ci, le personnage est désormais connu et peut compter sur l’aide de ses pairs. S’il n’a pas assez d’argent pour payer ses dépenses essentielles, il peut quérir le support de son culte et faire don de tout l’argent qu’il lui reste en échange du gîte et couvert. Son culte peut lui demander des faveurs en échange. S’il est découvert à tromper son culte sur l’argent qu’il possède réellement, il est expulsé de celui-ci jusqu’à ce qu’il ne se repente."
+  },
+  {
+    "Id": "340abc07-de0b-4792-9718-b0522b6e7451",
+    "UniqueSlug": "sujet",
+    "DisplayName": "Sujet",
+    "Description": "Sujet d’un seigneur quelconque, le personnage n’est victime d’aucune taxe imposée aux voyageurs étrangers. Il peut réduire ses dépenses essentielles de 10 % sur sa terre natale."
+  },
+  {
+    "Id": "cfed39a4-b6a5-40c9-93bb-78c48c80e0ad",
+    "UniqueSlug": "survivant",
+    "DisplayName": "Survivant",
+    "Description": "Ayant souffert de nombreuses privations au cours de sa vie, le personnage sait faire plus avec moins. Ses tests de _Survie_ afin de trouver de l’eau, de la nourriture ou un abri en milieu sauvage se voient conférer l’avantage."
+  },
+  {
+    "Id": "89154847-bbf8-4760-adc9-9dd466f6722c",
+    "UniqueSlug": "vagabond",
+    "DisplayName": "Vagabond",
+    "Description": "Aucun village ni aucune ville n’est un meilleur domicile pour le personnage que la route. Qu’il soit nomade par choix ou par obligation, ses tests de _Survie_ afin de trouver de l’eau, de la nourriture ou un abri se voient conférer l’avantage lorsqu’il se trouve à proximité d’une route maintenue."
+  }
+]
