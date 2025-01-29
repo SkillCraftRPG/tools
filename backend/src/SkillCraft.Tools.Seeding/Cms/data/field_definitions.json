@@ -59,8 +59,8 @@
     "IsRequired": false,
     "IsIndexed": false,
     "IsUnique": false,
-    "UniqueName": "Skill1",
-    "DisplayName": "Skill 1",
+    "UniqueName": "DiscountedSkill1",
+    "DisplayName": "Discounted Skill 1",
     "Description": null,
     "Placeholder": null
   },
@@ -72,8 +72,8 @@
     "IsRequired": false,
     "IsIndexed": false,
     "IsUnique": false,
-    "UniqueName": "Skill2",
-    "DisplayName": "Skill 2",
+    "UniqueName": "DiscountedSkill2",
+    "DisplayName": "Discounted Skill 2",
     "Description": null,
     "Placeholder": null
   },

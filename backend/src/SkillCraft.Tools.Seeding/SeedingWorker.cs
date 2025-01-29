@@ -1,5 +1,8 @@
-﻿using MediatR;
+﻿using Logitar.Cms.Core.Localization;
+using Logitar.Cms.Core.Localization.Models;
+using MediatR;
 using SkillCraft.Tools.Seeding.Cms.Tasks;
+using SkillCraft.Tools.Seeding.Game.Tasks;
 
 namespace SkillCraft.Tools.Seeding;
 
@@ -37,6 +40,11 @@ internal class SeedingWorker : BackgroundService
       await ExecuteAsync(new SeedContentTypesTask(), cancellationToken);
       await ExecuteAsync(new SeedFieldTypesTask(), cancellationToken);
       await ExecuteAsync(new SeedFieldDefinitionsTask(), cancellationToken);
+
+      ILanguageQuerier languageQuerier = scope.ServiceProvider.GetRequiredService<ILanguageQuerier>();
+      LanguageModel language = await languageQuerier.ReadDefaultAsync(cancellationToken);
+
+      await ExecuteAsync(new SeedAspectsTask(language), cancellationToken);
     }
     catch (Exception exception)
     {
