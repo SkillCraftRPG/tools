@@ -33,6 +33,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SkillCraft.Tools.Core\SkillCraft.Tools.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="System.Diagnostics" />
     <Using Include="System.Reflection" />
     <Using Include="System.Text" />
