@@ -72,7 +72,8 @@ internal class SeedEducationsTaskHandler : INotificationHandler<SeedEducationsTa
 
         payload = new()
         {
-          UniqueName = education.UniqueSlug
+          UniqueName = education.UniqueSlug,
+          DisplayName = education.DisplayName
         };
         AddFieldValues(payload, fields, education);
         command = new(education.Id, LanguageId: null, payload);

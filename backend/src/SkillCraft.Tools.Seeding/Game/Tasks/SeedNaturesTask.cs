@@ -74,7 +74,8 @@ internal class SeedNaturesTaskHandler : INotificationHandler<SeedNaturesTask>
 
         payload = new()
         {
-          UniqueName = nature.UniqueSlug
+          UniqueName = nature.UniqueSlug,
+          DisplayName = nature.DisplayName
         };
         AddFieldValues(payload, fields, nature, gifts);
         command = new(nature.Id, LanguageId: null, payload);

@@ -74,7 +74,8 @@ internal class SeedTalentsTaskHandler : INotificationHandler<SeedTalentsTask>
 
         payload = new()
         {
-          UniqueName = talent.UniqueSlug
+          UniqueName = talent.UniqueSlug,
+          DisplayName = talent.DisplayName
         };
         AddFieldValues(payload, fields, talent, talentIdByNames);
         command = new(talent.Id, LanguageId: null, payload);

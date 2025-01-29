@@ -75,7 +75,8 @@ internal class SeedSpecializationsTaskHandler : INotificationHandler<SeedSpecial
 
         payload = new()
         {
-          UniqueName = specialization.UniqueSlug
+          UniqueName = specialization.UniqueSlug,
+          DisplayName = specialization.DisplayName
         };
         AddInvariantValues(payload, fields, specialization, talents);
         command = new(specialization.Id, LanguageId: null, payload);

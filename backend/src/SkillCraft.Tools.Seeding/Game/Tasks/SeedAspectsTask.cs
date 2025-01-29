@@ -72,7 +72,8 @@ internal class SeedAspectsTaskHandler : INotificationHandler<SeedAspectsTask>
 
         payload = new()
         {
-          UniqueName = aspect.UniqueSlug
+          UniqueName = aspect.UniqueSlug,
+          DisplayName = aspect.DisplayName
         };
         AddFieldValues(payload, fields, aspect);
         command = new(aspect.Id, LanguageId: null, payload);

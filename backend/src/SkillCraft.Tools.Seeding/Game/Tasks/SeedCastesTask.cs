@@ -74,7 +74,8 @@ internal class SeedCastesTaskHandler : INotificationHandler<SeedCastesTask>
 
         payload = new()
         {
-          UniqueName = caste.UniqueSlug
+          UniqueName = caste.UniqueSlug,
+          DisplayName = caste.DisplayName
         };
         AddFieldValues(payload, fields, caste, features);
         command = new(caste.Id, LanguageId: null, payload);

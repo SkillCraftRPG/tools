@@ -72,7 +72,8 @@ internal class SeedFeaturesTaskHandler : INotificationHandler<SeedFeaturesTask>
 
         payload = new()
         {
-          UniqueName = feature.UniqueSlug
+          UniqueName = feature.UniqueSlug,
+          DisplayName = feature.DisplayName
         };
         command = new(feature.Id, LanguageId: null, payload);
         result = await _mediator.Send(command, cancellationToken);
