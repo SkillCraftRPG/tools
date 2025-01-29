@@ -1,0 +1,58 @@
+﻿[
+  {
+    "Id": "e61b449b-b5c2-4c13-9766-378ecce19e31",
+    "IsInvariant": false,
+    "UniqueName": "Aspect",
+    "DisplayName": null,
+    "Description": null
+  },
+  {
+    "Id": "2744394f-3b4b-4de9-9fa5-3760eb811f11",
+    "IsInvariant": false,
+    "UniqueName": "Customization",
+    "DisplayName": null,
+    "Description": null
+  },
+  {
+    "Id": "9c9987af-9dde-4942-b8f6-a558c9d40275",
+    "IsInvariant": false,
+    "UniqueName": "Script",
+    "DisplayName": null,
+    "Description": null
+  },
+  {
+    "Id": "d31c910d-5541-4179-8e6b-d2caa886bd26",
+    "IsInvariant": false,
+    "UniqueName": "Language",
+    "DisplayName": null,
+    "Description": null
+  },
+  {
+    "Id": "a4f5d5a2-b2ab-4f68-905d-4adad4cfdcbc",
+    "IsInvariant": false,
+    "UniqueName": "CasteFeature",
+    "DisplayName": null,
+    "Description": null
+  },
+  {
+    "Id": "b2e8f000-b391-48fc-8ba2-4e50bd8aa54d",
+    "IsInvariant": false,
+    "UniqueName": "Caste",
+    "DisplayName": null,
+    "Description": null
+  },
+  {
+    "Id": "c078d6c8-f019-41a5-8081-0b52cf0b63ac",
+    "IsInvariant": false,
+    "UniqueName": "Education",
+    "DisplayName": null,
+    "Description": null
+  },
+  {
+    "Id": "3f0bf2fb-d9b4-4130-912e-df6bd80969da",
+    "IsInvariant": false,
+    "UniqueName": "Nature",
+    "DisplayName": null,
+    "Description": null
+  }
+]
