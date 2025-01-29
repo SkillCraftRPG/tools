@@ -326,14 +326,27 @@
   },
   {
     "ContentTypeId": "22660a57-7c5e-4d9a-8010-c823fa067bd8",
-    "FieldDefinitionId": "1bfb9c95-99ff-4ff8-bbac-4f3ae90bbe1f",
-    "FieldTypeId": "c1de1215-9557-464a-b553-095f858d2404",
-    "IsInvariant": true,
+    "FieldDefinitionId": "1ebf6527-5367-4da9-aa4f-19b30f4bbd10",
+    "FieldTypeId": "93e23baa-55a5-4cba-ab2b-c39de4b9cb1c",
+    "IsInvariant": false,
     "IsRequired": false,
     "IsIndexed": false,
     "IsUnique": false,
-    "UniqueName": "ReservedTalent",
-    "DisplayName": "Reserved Talent",
+    "UniqueName": "ReservedTalentName",
+    "DisplayName": "Reserved Talent Name",
+    "Description": null,
+    "Placeholder": null
+  },
+  {
+    "ContentTypeId": "22660a57-7c5e-4d9a-8010-c823fa067bd8",
+    "FieldDefinitionId": "ee178a1f-5e36-41e0-afcb-148521665351",
+    "FieldTypeId": "ed6a316f-2ce0-48a9-9c48-f339d0519dc1",
+    "IsInvariant": false,
+    "IsRequired": false,
+    "IsIndexed": false,
+    "IsUnique": false,
+    "UniqueName": "ReservedTalentDescription",
+    "DisplayName": "Reserved Talent Description",
     "Description": null,
     "Placeholder": null
   }

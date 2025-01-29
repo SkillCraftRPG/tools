@@ -186,13 +186,21 @@
     }
   },
   {
-    "Id": "c1de1215-9557-464a-b553-095f858d2404",
-    "UniqueName": "ReservedTalent",
-    "DisplayName": "Reserved Talent",
+    "Id": "93e23baa-55a5-4cba-ab2b-c39de4b9cb1c",
+    "UniqueName": "ReservedTalentName",
+    "DisplayName": "Reserved Talent Name",
     "Description": null,
-    "RelatedContent": {
-      "ContentTypeId": "8444d060-ec6b-4a6b-ab65-a8e1a6bef46c",
-      "IsMultiple": false
+    "String": {
+      "MaximumLength": 255
+    }
+  },
+  {
+    "Id": "ed6a316f-2ce0-48a9-9c48-f339d0519dc1",
+    "UniqueName": "ReservedTalentDescription",
+    "DisplayName": "Reserved Talent Description",
+    "Description": null,
+    "RichText": {
+      "ContentType": "text/plain"
     }
   }
 ]
