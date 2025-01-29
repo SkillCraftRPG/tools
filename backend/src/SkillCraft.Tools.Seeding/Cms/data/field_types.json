@@ -1,0 +1,123 @@
+﻿[
+  {
+    "Id": "82436f47-5710-402f-8d0b-14a8a1e0a692",
+    "UniqueName": "Attribute",
+    "DisplayName": null,
+    "Description": null,
+    "Select": {
+      "IsMultiple": false,
+      "Options": [
+        { "Text": "Agility" },
+        { "Text": "Coordination" },
+        { "Text": "Intellect" },
+        { "Text": "Presence" },
+        { "Text": "Sensitivity" },
+        { "Text": "Spirit" },
+        { "Text": "Vigor" }
+      ]
+    }
+  },
+  {
+    "Id": "5b5d779e-0915-471b-97e4-2079b59cb4b7",
+    "UniqueName": "CustomizationType",
+    "DisplayName": "Customization Type",
+    "Description": null,
+    "Select": {
+      "IsMultiple": false,
+      "Options": [
+        { "Text": "Gift" },
+        { "Text": "Disability" }
+      ]
+    }
+  },
+  {
+    "Id": "d23c0ce2-752b-421e-ac7f-8abfe214d419",
+    "UniqueName": "Script",
+    "DisplayName": null,
+    "Description": null,
+    "RelatedContent": {
+      "ContentTypeId": "9c9987af-9dde-4942-b8f6-a558c9d40275",
+      "IsMultiple": false
+    }
+  },
+  {
+    "Id": "98f296cd-088a-46e6-b2b8-d657362809f5",
+    "UniqueName": "TypicalSpeakers",
+    "DisplayName": "Typical Speakers",
+    "Description": null,
+    "RichText": {
+      "ContentType": "text/plain"
+    }
+  },
+  {
+    "Id": "5e8157da-989f-497e-a1e0-9f2e39dedb21",
+    "UniqueName": "Skill",
+    "DisplayName": null,
+    "Description": null,
+    "Select": {
+      "IsMultiple": false,
+      "Options": [
+        { "Text": "Acrobatics" },
+        { "Text": "Athletics" },
+        { "Text": "Craft" },
+        { "Text": "Deception" },
+        { "Text": "Diplomacy" },
+        { "Text": "Discipline" },
+        { "Text": "Insight" },
+        { "Text": "Investigation" },
+        { "Text": "Knowledge" },
+        { "Text": "Linguistics" },
+        { "Text": "Medicine" },
+        { "Text": "Melee" },
+        { "Text": "Occultism" },
+        { "Text": "Orientation" },
+        { "Text": "Perception" },
+        { "Text": "Performance" },
+        { "Text": "Resistance" },
+        { "Text": "Stealth" },
+        { "Text": "Survival" },
+        { "Text": "Thievery" }
+      ]
+    }
+  },
+  {
+    "Id": "393dd016-cc84-4182-a979-41ce0c60b986",
+    "UniqueName": "Roll",
+    "DisplayName": null,
+    "Description": null,
+    "String": {
+      "MaximumLength": 255
+    }
+  },
+  {
+    "Id": "e670f8e1-cc33-4b3c-8eff-a0953c95b2ff",
+    "UniqueName": "CasteFeatures",
+    "DisplayName": "Caste Features",
+    "Description": null,
+    "RelatedContent": {
+      "ContentTypeId": "a4f5d5a2-b2ab-4f68-905d-4adad4cfdcbc",
+      "IsMultiple": true
+    }
+  },
+  {
+    "Id": "46a6e24b-5b9f-483f-8564-23af09c4b62e",
+    "UniqueName": "WealthMultiplier",
+    "DisplayName": "Wealth Multiplier",
+    "Description": null,
+    "Number": {
+      "MinimumValue": 4,
+      "MaximumValue": 12,
+      "Step": 2
+    }
+  },
+  {
+    "Id": "dfb90092-b333-4b1d-8c19-e28daf8a3902",
+    "UniqueName": "Gift",
+    "DisplayName": null,
+    "Description": null,
+    "RelatedContent": {
+      "ContentTypeId": "2744394f-3b4b-4de9-9fa5-3760eb811f11",
+      "IsMultiple": false
+    }
+  }
+]
