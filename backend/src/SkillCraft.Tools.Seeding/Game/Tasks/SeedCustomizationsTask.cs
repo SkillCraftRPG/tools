@@ -72,7 +72,8 @@ internal class SeedCustomizationsTaskHandler : INotificationHandler<SeedCustomiz
 
         payload = new()
         {
-          UniqueName = customization.UniqueSlug
+          UniqueName = customization.UniqueSlug,
+          DisplayName = customization.DisplayName
         };
         payload.AddFieldValue(fields[Customization.Type], customization.Type);
         command = new(customization.Id, LanguageId: null, payload);

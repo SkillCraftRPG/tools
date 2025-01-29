@@ -77,7 +77,8 @@ internal class SeedLineagesTaskHandler : INotificationHandler<SeedLineagesTask>
 
         payload = new()
         {
-          UniqueName = lineage.UniqueSlug
+          UniqueName = lineage.UniqueSlug,
+          DisplayName = lineage.DisplayName
         };
         AddInvariantValues(payload, fields, lineage, lineageIdByNames, languages);
         command = new(lineage.Id, LanguageId: null, payload);

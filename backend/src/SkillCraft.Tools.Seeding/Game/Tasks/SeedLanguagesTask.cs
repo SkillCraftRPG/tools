@@ -81,7 +81,8 @@ internal class SeedLanguagesTaskHandler : INotificationHandler<SeedLanguagesTask
 
         payload = new()
         {
-          UniqueName = input.UniqueSlug
+          UniqueName = input.UniqueSlug,
+          DisplayName = input.DisplayName
         };
         if (!string.IsNullOrWhiteSpace(input.Script))
         {

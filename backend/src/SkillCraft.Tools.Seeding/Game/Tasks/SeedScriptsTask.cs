@@ -72,7 +72,8 @@ internal class SeedScriptsTaskHandler : INotificationHandler<SeedScriptsTask>
 
         payload = new()
         {
-          UniqueName = script.UniqueSlug
+          UniqueName = script.UniqueSlug,
+          DisplayName = script.DisplayName
         };
         command = new(script.Id, LanguageId: null, payload);
         result = await _mediator.Send(command, cancellationToken);
