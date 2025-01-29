@@ -59,10 +59,9 @@ internal class SeedLanguagesTaskHandler : INotificationHandler<SeedLanguagesTask
         };
         if (!string.IsNullOrWhiteSpace(input.TypicalSpeakers))
         {
-          string[] tags = input.TypicalSpeakers.Split(',')
+          IEnumerable<string> tags = input.TypicalSpeakers.Split(',')
             .Where(value => !string.IsNullOrWhiteSpace(value))
-            .Select(value => value.Trim())
-            .ToArray();
+            .Select(value => value.Trim());
           payload.AddFieldValue(fields[Language.TypicalSpeakers], JsonSerializer.Serialize(tags));
         }
         CreateOrReplaceContentCommand command = new(input.Id, language.Id, payload);
@@ -86,10 +85,9 @@ internal class SeedLanguagesTaskHandler : INotificationHandler<SeedLanguagesTask
         };
         if (!string.IsNullOrWhiteSpace(input.Script))
         {
-          Guid[] contentIds = input.Script.Split(',')
+          IEnumerable<Guid> contentIds = input.Script.Split(',')
             .Where(script => !string.IsNullOrWhiteSpace(script))
-            .Select(script => scripts[script.Trim()])
-            .ToArray();
+            .Select(script => scripts[script.Trim()]);
           payload.AddFieldValue(fields[Language.Scripts], JsonSerializer.Serialize(contentIds));
         }
         command = new(input.Id, LanguageId: null, payload);
