@@ -45,6 +45,7 @@ internal class SeedingWorker : BackgroundService
       LanguageModel language = await languageQuerier.ReadDefaultAsync(cancellationToken);
 
       await ExecuteAsync(new SeedAspectsTask(language), cancellationToken);
+      await ExecuteAsync(new SeedCustomizationsTask(language), cancellationToken);
     }
     catch (Exception exception)
     {
