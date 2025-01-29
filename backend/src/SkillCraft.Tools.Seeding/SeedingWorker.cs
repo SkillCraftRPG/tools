@@ -36,6 +36,7 @@ internal class SeedingWorker : BackgroundService
       // NOTE(fpion): the order of these tasks matter.
       await ExecuteAsync(new SeedContentTypesTask(), cancellationToken);
       await ExecuteAsync(new SeedFieldTypesTask(), cancellationToken);
+      await ExecuteAsync(new SeedFieldDefinitionsTask(), cancellationToken);
     }
     catch (Exception exception)
     {

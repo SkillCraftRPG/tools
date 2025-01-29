@@ -119,5 +119,82 @@
       "ContentTypeId": "2744394f-3b4b-4de9-9fa5-3760eb811f11",
       "IsMultiple": false
     }
+  },
+  {
+    "Id": "623fb3e3-4206-414a-938e-5e644d4bc8c9",
+    "UniqueName": "TalentTier",
+    "DisplayName": "Talent Tier",
+    "Description": null,
+    "Number": {
+      "MinimumValue": 0,
+      "MaximumValue": 3,
+      "Step": 1
+    }
+  },
+  {
+    "Id": "9da4801c-9997-4e99-b67f-fadab5bffd6a",
+    "UniqueName": "AllowMultiplePurchases",
+    "DisplayName": "Allow Multiple Purchases",
+    "Description": null,
+    "Boolean": {}
+  },
+  {
+    "Id": "609cede5-cc83-4dd1-8596-8b623e2ce12b",
+    "UniqueName": "Talent",
+    "DisplayName": null,
+    "Description": null,
+    "RelatedContent": {
+      "ContentTypeId": "5db2ed1e-ba50-4102-ae08-699900ff055e",
+      "IsMultiple": false
+    }
+  },
+  {
+    "Id": "137205b4-7b8a-494f-a745-3fe3cbfc12ec",
+    "UniqueName": "SpecializationTier",
+    "DisplayName": "Specialization Tier",
+    "Description": null,
+    "Number": {
+      "MinimumValue": 1,
+      "MaximumValue": 3,
+      "Step": 1
+    }
+  },
+  {
+    "Id": "f2ee2786-86b9-4349-92c9-ead1f5b452f0",
+    "UniqueName": "Talents",
+    "DisplayName": null,
+    "Description": null,
+    "RelatedContent": {
+      "ContentTypeId": "5db2ed1e-ba50-4102-ae08-699900ff055e",
+      "IsMultiple": true
+    }
+  },
+  {
+    "Id": "7f0d1553-ead9-42a7-a6ca-18a8fa13a4a0",
+    "UniqueName": "SpecializationOtherRequirements",
+    "DisplayName": "Specialization Other Requirements",
+    "Description": null,
+    "RichText": {
+      "ContentType": "text/plain"
+    }
+  },
+  {
+    "Id": "51ea3dd9-359a-4b69-b994-fee19e6a40cb",
+    "UniqueName": "SpecializationOtherOptions",
+    "DisplayName": "Specialization Other Options",
+    "Description": null,
+    "RichText": {
+      "ContentType": "text/plain"
+    }
+  },
+  {
+    "Id": "c1de1215-9557-464a-b553-095f858d2404",
+    "UniqueName": "ReservedTalent",
+    "DisplayName": "Reserved Talent",
+    "Description": null,
+    "RelatedContent": {
+      "ContentTypeId": "8444d060-ec6b-4a6b-ab65-a8e1a6bef46c",
+      "IsMultiple": false
+    }
   }
 ]
