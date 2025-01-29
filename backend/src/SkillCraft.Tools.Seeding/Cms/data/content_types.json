@@ -68,5 +68,19 @@
     "UniqueName": "Specialization",
     "DisplayName": null,
     "Description": null
+  },
+  {
+    "Id": "f2e0e8af-bcd9-478d-bc44-9f210e927c26",
+    "IsInvariant": false,
+    "UniqueName": "LineageTrait",
+    "DisplayName": "Lineage Trait",
+    "Description": null
+  },
+  {
+    "Id": "d01f9459-2b9a-40d9-9b1b-85d52bb6daf5",
+    "IsInvariant": false,
+    "UniqueName": "Lineage",
+    "DisplayName": null,
+    "Description": null
   }
 ]

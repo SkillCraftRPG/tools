@@ -202,5 +202,142 @@
     "RichText": {
       "ContentType": "text/plain"
     }
+  },
+  {
+    "Id": "ebb35a3a-3d0f-4885-b782-907b850de987",
+    "UniqueName": "Lineage",
+    "DisplayName": null,
+    "Description": null,
+    "RelatedContent": {
+      "ContentTypeId": "d01f9459-2b9a-40d9-9b1b-85d52bb6daf5",
+      "IsMultiple": false
+    }
+  },
+  {
+    "Id": "41044676-f3a7-4fc5-bc27-76c6c726fa0c",
+    "UniqueName": "AttributeBonus",
+    "DisplayName": "Attribute Bonus",
+    "Description": null,
+    "Number": {
+      "MinimumValue": 0,
+      "MaximumValue": 2,
+      "Step": 1
+    }
+  },
+  {
+    "Id": "ae0f562a-ee23-4e65-a43b-dc8a5712cee7",
+    "UniqueName": "ExtraAttributes",
+    "DisplayName": "Extra Attributes",
+    "Description": null,
+    "Number": {
+      "MinimumValue": 0,
+      "MaximumValue": 2,
+      "Step": 1
+    }
+  },
+  {
+    "Id": "50c2dfb6-5e44-4a8a-8298-2ebad10a3898",
+    "UniqueName": "LineageTraits",
+    "DisplayName": "Lineage Traits",
+    "Description": null,
+    "RelatedContent": {
+      "ContentTypeId": "f2e0e8af-bcd9-478d-bc44-9f210e927c26",
+      "IsMultiple": true
+    }
+  },
+  {
+    "Id": "99e93fbe-a60c-43c2-b6eb-e49f47996e6a",
+    "UniqueName": "Languages",
+    "DisplayName": null,
+    "Description": null,
+    "RelatedContent": {
+      "ContentTypeId": "d31c910d-5541-4179-8e6b-d2caa886bd26",
+      "IsMultiple": true
+    }
+  },
+  {
+    "Id": "fc81f79f-217f-438f-a6ab-e8176455f8d8",
+    "UniqueName": "ExtraLanguages",
+    "DisplayName": "Extra Languages",
+    "Description": null,
+    "Number": {
+      "MinimumValue": 0,
+      "MaximumValue": 3,
+      "Step": 1
+    }
+  },
+  {
+    "Id": "8d2adb2f-5d73-4c77-aa3d-8884542b49de",
+    "UniqueName": "LanguagesText",
+    "DisplayName": "Languages Text",
+    "Description": null,
+    "RichText": {
+      "ContentType": "text/plain"
+    }
+  },
+  {
+    "Id": "c833a895-adac-47fa-89d0-d2b282aee648",
+    "UniqueName": "NamesText",
+    "DisplayName": "Names Text",
+    "Description": null,
+    "RichText": {
+      "ContentType": "text/plain"
+    }
+  },
+  {
+    "Id": "eb329d8f-6414-4cea-b162-fe92b931eaca",
+    "UniqueName": "Names",
+    "DisplayName": null,
+    "Description": null,
+    "Tags": {}
+  },
+  {
+    "Id": "3b958e66-b2cd-4388-8f9e-e5fcc023b2e1",
+    "UniqueName": "CustomNames",
+    "DisplayName": "Custom Names",
+    "Description": null,
+    "RichText": {
+      "ContentType": "text/plain"
+    }
+  },
+  {
+    "Id": "ccd2e1db-37bd-4d40-a3e8-3d75f44992e1",
+    "UniqueName": "Speed",
+    "DisplayName": null,
+    "Description": null,
+    "Number": {
+      "MinimumValue": 0,
+      "MaximumValue": 8,
+      "Step": 1
+    }
+  },
+  {
+    "Id": "f0e01b17-81c3-4d78-95e2-caf9dc6d5d0d",
+    "UniqueName": "SizeCategory",
+    "DisplayName": "Size Category",
+    "Description": null,
+    "Select": {
+      "IsMultiple": false,
+      "Options": [
+        { "Text": "Diminutive" },
+        { "Text": "Tiny" },
+        { "Text": "Small" },
+        { "Text": "Medium" },
+        { "Text": "Large" },
+        { "Text": "Huge" },
+        { "Text": "Gargantuan" },
+        { "Text": "Colossal" }
+      ]
+    }
+  },
+  {
+    "Id": "ad391a78-be30-4033-ae4b-15a039dd206b",
+    "UniqueName": "Age",
+    "DisplayName": null,
+    "Description": null,
+    "Number": {
+      "MinimumValue": 1,
+      "Step": 1
+    }
   }
 ]
