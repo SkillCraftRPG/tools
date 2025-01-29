@@ -107,10 +107,9 @@ internal class SeedCastesTaskHandler : INotificationHandler<SeedCastesTask>
     }
     if (!string.IsNullOrWhiteSpace(caste.Features))
     {
-      Guid[] contentIds = caste.Features.Split(',')
+      IEnumerable<Guid> contentIds = caste.Features.Split(',')
         .Where(feature => !string.IsNullOrWhiteSpace(feature))
-        .Select(feature => features[feature.Trim()])
-        .ToArray();
+        .Select(feature => features[feature.Trim()]);
       payload.AddFieldValue(fields[Caste.Features], JsonSerializer.Serialize(contentIds));
     }
   }
