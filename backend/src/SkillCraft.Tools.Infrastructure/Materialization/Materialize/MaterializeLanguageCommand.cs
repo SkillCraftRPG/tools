@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using SkillCraft.Tools.Core.Contents;
 using SkillCraft.Tools.Infrastructure.Entities;
 
-namespace SkillCraft.Tools.Infrastructure.Materialization;
+namespace SkillCraft.Tools.Infrastructure.Materialization.Materialize;
 
 public record MaterializeLanguageCommand : IRequest
 {

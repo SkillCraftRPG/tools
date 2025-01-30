@@ -6,7 +6,7 @@ using SkillCraft.Tools.Core.Contents;
 using SkillCraft.Tools.Infrastructure.Entities;
 using Attribute = SkillCraft.Tools.Core.Attribute;
 
-namespace SkillCraft.Tools.Infrastructure.Materialization;
+namespace SkillCraft.Tools.Infrastructure.Materialization.Materialize;
 
 public record MaterializeNatureCommand : IRequest
 {

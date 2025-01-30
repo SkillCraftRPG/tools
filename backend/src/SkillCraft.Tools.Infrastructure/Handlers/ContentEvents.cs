@@ -4,13 +4,14 @@ using Logitar.Cms.Core.Fields;
 using Logitar.Cms.Core.Localization;
 using MediatR;
 using SkillCraft.Tools.Core.Contents;
-using SkillCraft.Tools.Infrastructure.Materialization;
+using SkillCraft.Tools.Infrastructure.Materialization.Materialize;
+using SkillCraft.Tools.Infrastructure.Materialization.Remove;
 using Language = Logitar.Cms.Core.Localization.Language;
 using LanguageType = SkillCraft.Tools.Core.Contents.Language;
 
 namespace SkillCraft.Tools.Infrastructure.Handlers;
 
-internal class ContentEvents : INotificationHandler<ContentLocalePublished>
+internal class ContentEvents : INotificationHandler<ContentLocalePublished>, INotificationHandler<ContentLocaleUnpublished>
 {
   private readonly IContentRepository _contentRepository;
   private readonly IContentTypeRepository _contentTypeRepository;
@@ -69,9 +70,6 @@ internal class ContentEvents : INotificationHandler<ContentLocalePublished>
       case Education.UniqueName:
         command = new MaterializeEducationCommand(@event, fieldValues, language == null ? null : locale);
         break;
-      case Nature.UniqueName:
-        command = new MaterializeNatureCommand(@event, fieldValues, language == null ? null : locale);
-        break;
       case LanguageType.UniqueName:
         command = new MaterializeLanguageCommand(@event, fieldValues, language == null ? null : locale);
         break;
@@ -80,6 +78,9 @@ internal class ContentEvents : INotificationHandler<ContentLocalePublished>
         break;
       case LineageTrait.UniqueName:
         command = new MaterializeTraitCommand(@event, fieldValues, language == null ? null : locale);
+        break;
+      case Nature.UniqueName:
+        command = new MaterializeNatureCommand(@event, fieldValues, language == null ? null : locale);
         break;
       case Script.UniqueName:
         command = new MaterializeScriptCommand(@event, fieldValues, language == null ? null : locale);
@@ -96,7 +97,6 @@ internal class ContentEvents : INotificationHandler<ContentLocalePublished>
       await _mediator.Send(command, cancellationToken);
     }
   }
-
   private static IReadOnlyDictionary<string, string> BuildFieldValues(ContentLocale locale, Language? language, ContentType contentType)
   {
     bool isInvariant = language == null;
@@ -113,5 +113,71 @@ internal class ContentEvents : INotificationHandler<ContentLocalePublished>
       }
     }
     return fieldValues.AsReadOnly();
+  }
+
+  public async Task Handle(ContentLocaleUnpublished @event, CancellationToken cancellationToken)
+  {
+    Language? language = null;
+    if (@event.LanguageId.HasValue)
+    {
+      language = await _languageRepository.LoadAsync(@event.LanguageId.Value, cancellationToken)
+        ?? throw new InvalidOperationException($"The language 'Id={@event.LanguageId}' was not loaded.");
+
+      if (!language.IsDefault)
+      {
+        return;
+      }
+    }
+
+    ContentId contentId = new(@event.StreamId);
+    Content content = await _contentRepository.LoadAsync(contentId, cancellationToken)
+      ?? throw new InvalidOperationException($"The content 'Id={contentId}' was not loaded.");
+
+    ContentType contentType = await _contentTypeRepository.LoadAsync(content, cancellationToken); ;
+
+    IRequest? command = null;
+    switch (contentType.UniqueName.Value)
+    {
+      case Aspect.UniqueName:
+        command = new RemoveAspectCommand(@event);
+        break;
+      case CasteFeature.UniqueName:
+        command = new RemoveFeatureCommand(@event);
+        break;
+      case Caste.UniqueName:
+        command = new RemoveCasteCommand(@event);
+        break;
+      case Customization.UniqueName:
+        command = new RemoveCustomizationCommand(@event);
+        break;
+      case Education.UniqueName:
+        command = new RemoveEducationCommand(@event);
+        break;
+      case LanguageType.UniqueName:
+        command = new RemoveLanguageCommand(@event);
+        break;
+      case Lineage.UniqueName:
+        command = new RemoveLineageCommand(@event);
+        break;
+      case LineageTrait.UniqueName:
+        command = new RemoveTraitCommand(@event);
+        break;
+      case Nature.UniqueName:
+        command = new RemoveNatureCommand(@event);
+        break;
+      case Script.UniqueName:
+        command = new RemoveScriptCommand(@event);
+        break;
+      case Specialization.UniqueName:
+        command = new RemoveSpecializationCommand(@event);
+        break;
+      case Talent.UniqueName:
+        command = new RemoveTalentCommand(@event);
+        break;
+    }
+    if (command != null)
+    {
+      await _mediator.Send(command, cancellationToken);
+    }
   }
 }

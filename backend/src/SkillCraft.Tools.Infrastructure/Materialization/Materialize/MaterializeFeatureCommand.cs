@@ -4,7 +4,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SkillCraft.Tools.Infrastructure.Entities;
 
-namespace SkillCraft.Tools.Infrastructure.Materialization;
+namespace SkillCraft.Tools.Infrastructure.Materialization.Materialize;
 
 public record MaterializeFeatureCommand : IRequest
 {
