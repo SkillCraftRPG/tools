@@ -1,4 +1,6 @@
-﻿namespace SkillCraft.Tools.Seeding.Game.Payloads;
+﻿using Attribute = SkillCraft.Tools.Core.Attribute;
+
+namespace SkillCraft.Tools.Seeding.Game.Payloads;
 
 public record NaturePayload
 {
@@ -8,6 +10,6 @@ public record NaturePayload
   public string? DisplayName { get; set; }
   public string? Description { get; set; }
 
-  public GameAttribute? Attribute { get; set; }
+  public Attribute? Attribute { get; set; }
   public string? Gift { get; set; }
 }

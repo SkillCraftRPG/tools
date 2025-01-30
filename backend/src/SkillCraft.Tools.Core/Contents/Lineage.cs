@@ -4,8 +4,8 @@ public static class Lineage
 {
   public const string UniqueName = "Lineage";
 
-  public const string Adolescent = "Adolescent";
-  public const string Adult = "Adult";
+  public const string AdolescentAge = "AdolescentAge";
+  public const string AdultAge = "AdultAge";
   public const string Agility = "Agility";
   public const string BurrowSpeed = "BurrowSpeed";
   public const string ClimbSpeed = "ClimbSpeed";
@@ -21,7 +21,7 @@ public static class Lineage
   public const string Languages = "Languages";
   public const string LanguagesText = "LanguagesText";
   public const string MaleNames = "MaleNames";
-  public const string Mature = "Mature";
+  public const string MatureAge = "MatureAge";
   public const string NamesText = "NamesText";
   public const string NormalRoll = "NormalRoll";
   public const string ObeseRoll = "ObeseRoll";
@@ -37,7 +37,7 @@ public static class Lineage
   public const string SwimSpeed = "SwimSpeed";
   public const string Traits = "Traits";
   public const string UnisexNames = "UnisexNames";
-  public const string Venerable = "Venerable";
+  public const string VenerableAge = "VenerableAge";
   public const string Vigor = "Vigor";
   public const string WalkSpeed = "WalkSpeed";
 }

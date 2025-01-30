@@ -1,4 +1,4 @@
-﻿namespace SkillCraft.Tools.Seeding.Game.Payloads;
+﻿namespace SkillCraft.Tools.Core;
 
 public enum Skill
 {

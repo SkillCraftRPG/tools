@@ -774,7 +774,7 @@
     "IsRequired": false,
     "IsIndexed": false,
     "IsUnique": false,
-    "UniqueName": "Adolescent",
+    "UniqueName": "AdolescentAge",
     "DisplayName": null,
     "Description": null,
     "Placeholder": null
@@ -787,7 +787,7 @@
     "IsRequired": false,
     "IsIndexed": false,
     "IsUnique": false,
-    "UniqueName": "Adult",
+    "UniqueName": "AdultAge",
     "DisplayName": null,
     "Description": null,
     "Placeholder": null
@@ -800,7 +800,7 @@
     "IsRequired": false,
     "IsIndexed": false,
     "IsUnique": false,
-    "UniqueName": "Mature",
+    "UniqueName": "MatureAge",
     "DisplayName": null,
     "Description": null,
     "Placeholder": null
@@ -813,7 +813,7 @@
     "IsRequired": false,
     "IsIndexed": false,
     "IsUnique": false,
-    "UniqueName": "Venerable",
+    "UniqueName": "VenerableAge",
     "DisplayName": null,
     "Description": null,
     "Placeholder": null

@@ -176,19 +176,19 @@ internal class SeedLineagesTaskHandler : INotificationHandler<SeedLineagesTask>
 
     if (lineage.Ages.Adolescent.HasValue)
     {
-      payload.AddFieldValue(fields[Lineage.Adolescent], lineage.Ages.Adolescent.Value);
+      payload.AddFieldValue(fields[Lineage.AdolescentAge], lineage.Ages.Adolescent.Value);
     }
     if (lineage.Ages.Adult.HasValue)
     {
-      payload.AddFieldValue(fields[Lineage.Adult], lineage.Ages.Adult.Value);
+      payload.AddFieldValue(fields[Lineage.AdultAge], lineage.Ages.Adult.Value);
     }
     if (lineage.Ages.Mature.HasValue)
     {
-      payload.AddFieldValue(fields[Lineage.Mature], lineage.Ages.Mature.Value);
+      payload.AddFieldValue(fields[Lineage.MatureAge], lineage.Ages.Mature.Value);
     }
     if (lineage.Ages.Venerable.HasValue)
     {
-      payload.AddFieldValue(fields[Lineage.Venerable], lineage.Ages.Venerable.Value);
+      payload.AddFieldValue(fields[Lineage.VenerableAge], lineage.Ages.Venerable.Value);
     }
   }
 

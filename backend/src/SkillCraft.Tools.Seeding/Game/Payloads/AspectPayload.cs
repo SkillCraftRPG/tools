@@ -1,4 +1,7 @@
-﻿namespace SkillCraft.Tools.Seeding.Game.Payloads;
+﻿using SkillCraft.Tools.Core;
+using Attribute = SkillCraft.Tools.Core.Attribute;
+
+namespace SkillCraft.Tools.Seeding.Game.Payloads;
 
 public record AspectPayload
 {
@@ -14,10 +17,10 @@ public record AspectPayload
 
 public record AttributeSelection
 {
-  public GameAttribute? Mandatory1 { get; set; }
-  public GameAttribute? Mandatory2 { get; set; }
-  public GameAttribute? Optional1 { get; set; }
-  public GameAttribute? Optional2 { get; set; }
+  public Attribute? Mandatory1 { get; set; }
+  public Attribute? Mandatory2 { get; set; }
+  public Attribute? Optional1 { get; set; }
+  public Attribute? Optional2 { get; set; }
 }
 
 public record SkillSelection
