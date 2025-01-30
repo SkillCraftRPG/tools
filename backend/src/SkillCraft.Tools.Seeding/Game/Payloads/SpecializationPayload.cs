@@ -21,5 +21,5 @@ internal record SpecializationPayload
 public record ReservedTalent
 {
   public string Name { get; set; } = string.Empty;
-  public List<string> Descriptions { get; set; } = [];
+  public string? Description { get; set; }
 }

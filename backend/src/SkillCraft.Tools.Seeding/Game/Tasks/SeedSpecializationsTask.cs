@@ -156,14 +156,9 @@ internal class SeedSpecializationsTaskHandler : INotificationHandler<SeedSpecial
         payload.AddFieldValue(fields[Specialization.ReservedTalentName], specialization.ReservedTalent.Name);
       }
 
-      IEnumerable<string> descriptions = specialization.ReservedTalent.Descriptions
-        .Where(description => !string.IsNullOrWhiteSpace(description))
-        .Select(description => string.Concat("- ", description.Trim()))
-        .Distinct();
-      if (descriptions.Any())
+      if (!string.IsNullOrWhiteSpace(specialization.ReservedTalent.Description))
       {
-        string description = string.Join('\n', new string[] { "Le personnage acquiert les capacités suivantes.", string.Empty }.Concat(descriptions));
-        payload.AddFieldValue(fields[Specialization.ReservedTalentDescription], description);
+        payload.AddFieldValue(fields[Specialization.ReservedTalentDescription], specialization.ReservedTalent.Description);
       }
     }
   }
