@@ -7,6 +7,8 @@ public static class DepdencyInjectionExtensions
 {
   public static IServiceCollection AddSkillCraftToolsCore(this IServiceCollection services)
   {
-    return services.AddLogitarCmsCore();
+    return services
+      .AddLogitarCmsCore()
+      .AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
   }
 }
