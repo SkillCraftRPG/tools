@@ -1,0 +1,264 @@
+﻿using Logitar;
+using Logitar.Cms.Core;
+using Logitar.Cms.Core.Actors;
+using Logitar.EventSourcing;
+using Logitar.Identity.EntityFrameworkCore.Relational.Entities;
+using SkillCraft.Tools.Core.Aspects.Models;
+using SkillCraft.Tools.Core.Castes.Models;
+using SkillCraft.Tools.Core.Customizations.Models;
+using SkillCraft.Tools.Core.Educations.Models;
+using SkillCraft.Tools.Core.Languages.Models;
+using SkillCraft.Tools.Core.Lineages.Models;
+using SkillCraft.Tools.Core.Natures.Models;
+using SkillCraft.Tools.Core.Specializations.Models;
+using SkillCraft.Tools.Core.Talents.Models;
+using SkillCraft.Tools.Infrastructure.Entities;
+
+namespace SkillCraft.Tools.Infrastructure;
+
+internal class Mapper
+{
+  private readonly Dictionary<ActorId, ActorModel> _actors = [];
+  private readonly ActorModel _system = new();
+
+  public Mapper()
+  {
+  }
+
+  public Mapper(IEnumerable<ActorModel> actors)
+  {
+    foreach (ActorModel actor in actors)
+    {
+      ActorId id = new(actor.Id);
+      _actors[id] = actor;
+    }
+  }
+
+  public AspectModel ToAspect(AspectEntity source)
+  {
+    AspectModel destination = new()
+    {
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description,
+      Attributes = source.GetAttributeSelection(),
+      Skills = source.GetSkillSelection()
+    };
+
+    MapAggregate(source, destination);
+
+    return destination;
+  }
+
+  public CasteModel ToCaste(CasteEntity source)
+  {
+    CasteModel destination = new()
+    {
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description,
+      Skill = source.Skill,
+      WealthRoll = source.WealthRoll
+    };
+
+    foreach (FeatureEntity feature in source.Features)
+    {
+      destination.Features.Add(ToFeature(feature));
+    }
+
+    MapAggregate(source, destination);
+
+    return destination;
+  }
+  private static FeatureModel ToFeature(FeatureEntity source) => new()
+  {
+    Id = source.Id,
+    Name = source.DisplayName ?? source.UniqueSlug,
+    Description = source.Description
+  };
+
+  public CustomizationModel ToCustomization(CustomizationEntity source)
+  {
+    CustomizationModel destination = new()
+    {
+      Type = source.Type,
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description
+    };
+
+    MapAggregate(source, destination);
+
+    return destination;
+  }
+
+  public EducationModel ToEducation(EducationEntity source)
+  {
+    EducationModel destination = new()
+    {
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description,
+      Skill = source.Skill,
+      WealthMultiplier = source.WealthMultiplier
+    };
+
+    MapAggregate(source, destination);
+
+    return destination;
+  }
+
+  public LineageModel ToLineage(LineageEntity source) => ToLineage(source, parent: null);
+  public LineageModel ToLineage(LineageEntity source, LineageModel? parent)
+  {
+    LineageModel destination = new()
+    {
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description,
+      Attributes = source.GetAttributes(),
+      Languages = source.GetLanguages(),
+      Names = source.GetNames(),
+      Speeds = source.GetSpeeds(),
+      Size = source.GetSize(),
+      Weight = source.GetWeight(),
+      Ages = source.GetAges(),
+      Parent = parent
+    };
+
+    foreach (TraitEntity trait in source.Traits)
+    {
+      destination.Traits.Add(ToTrait(trait));
+    }
+
+    foreach (LanguageEntity language in source.Languages)
+    {
+      destination.Languages.Items.Add(ToLanguage(language));
+    }
+
+    if (parent == null && source.Parent != null)
+    {
+      destination.Parent = ToLineage(source.Parent);
+    }
+    foreach (LineageEntity child in source.Children)
+    {
+      destination.Children.Add(ToLineage(child, destination));
+    }
+
+    MapAggregate(source, destination);
+
+    return destination;
+  }
+  private static TraitModel ToTrait(TraitEntity source) => new()
+  {
+    Id = source.Id,
+    Name = source.DisplayName ?? source.UniqueSlug,
+    Description = source.Description
+  };
+
+  public LanguageModel ToLanguage(LanguageEntity source)
+  {
+    LanguageModel destination = new()
+    {
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description,
+      //Script = source.Script, // TODO(fpion): implement
+      TypicalSpeakers = source.TypicalSpeakers
+    };
+
+    MapAggregate(source, destination);
+
+    return destination;
+  }
+
+  public NatureModel ToNature(NatureEntity source)
+  {
+    NatureModel destination = new()
+    {
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description,
+      Attribute = source.Attribute
+    };
+
+    if (source.Gift != null)
+    {
+      destination.Gift = ToCustomization(source.Gift);
+    }
+
+    MapAggregate(source, destination);
+
+    return destination;
+  }
+
+  public SpecializationModel ToSpecialization(SpecializationEntity source)
+  {
+    SpecializationModel destination = new()
+    {
+      Tier = source.Tier,
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description,
+      ReservedTalent = source.GetReservedTalent()
+    };
+
+    if (source.RequiredTalent != null)
+    {
+      destination.RequiredTalent = ToTalent(source.RequiredTalent);
+    }
+    destination.OtherRequirements.AddRange(source.GetOtherRequirements());
+
+    foreach (TalentEntity optionalTalent in source.OptionalTalents)
+    {
+      destination.OptionalTalents.Add(ToTalent(optionalTalent));
+    }
+    destination.OtherOptions.AddRange(source.GetOtherOptions());
+
+    MapAggregate(source, destination);
+
+    return destination;
+  }
+
+  public TalentModel ToTalent(TalentEntity source)
+  {
+    TalentModel destination = new()
+    {
+      Tier = source.Tier,
+      UniqueSlug = source.UniqueSlug,
+      DisplayName = source.DisplayName,
+      Description = source.Description,
+      AllowMultiplePurchases = source.AllowMultiplePurchases,
+      Skill = source.Skill
+    };
+
+    if (source.RequiredTalent != null)
+    {
+      destination.RequiredTalent = ToTalent(source.RequiredTalent);
+    }
+
+    MapAggregate(source, destination);
+
+    return destination;
+  }
+
+  private void MapAggregate(AggregateEntity source, AggregateModel destination)
+  {
+    try
+    {
+      destination.Id = new StreamId(source.StreamId).ToGuid();
+    }
+    catch (Exception)
+    {
+    }
+    destination.Version = source.Version;
+    destination.CreatedBy = TryFindActor(source.CreatedBy) ?? _system;
+    destination.CreatedOn = source.CreatedOn.AsUniversalTime();
+    destination.UpdatedBy = TryFindActor(source.UpdatedBy) ?? _system;
+    destination.UpdatedOn = source.UpdatedOn.AsUniversalTime();
+  }
+
+  private ActorModel? TryFindActor(string? id) => TryFindActor(id == null ? null : new ActorId(id));
+  private ActorModel? TryFindActor(ActorId? id) => id.HasValue && _actors.TryGetValue(id.Value, out ActorModel? actor) ? actor : null;
+}
+

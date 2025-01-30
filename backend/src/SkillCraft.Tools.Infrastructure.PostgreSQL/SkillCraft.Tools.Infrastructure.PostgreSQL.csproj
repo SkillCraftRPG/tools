@@ -15,7 +15,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Logitar.Cms.Infrastructure.PostgreSQL" Version="0.2.3" />
+    <PackageReference Include="Logitar.Cms.Infrastructure.PostgreSQL" Version="0.3.0" />
   </ItemGroup>
 
   <ItemGroup>

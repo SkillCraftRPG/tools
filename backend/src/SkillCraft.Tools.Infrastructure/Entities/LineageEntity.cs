@@ -3,6 +3,7 @@ using Logitar.EventSourcing;
 using Logitar.Identity.EntityFrameworkCore.Relational.Entities;
 using Logitar.Identity.EntityFrameworkCore.Relational.IdentityDb;
 using SkillCraft.Tools.Core;
+using SkillCraft.Tools.Core.Lineages.Models;
 
 namespace SkillCraft.Tools.Infrastructure.Entities;
 
@@ -99,6 +100,93 @@ internal class LineageEntity : AggregateEntity
       actorIds.AddRange(Parent.GetActorIds(includeChildren: false, includeParent: true));
     }
     return actorIds.AsReadOnly();
+  }
+
+  public AgesModel GetAges() => new()
+  {
+    Adolescent = AdolescentAge,
+    Adult = AdultAge,
+    Mature = MatureAge,
+    Venerable = VenerableAge
+  };
+  public AttributeBonusesModel GetAttributes() => new()
+  {
+    Agility = Agility,
+    Coordination = Coordination,
+    Intellect = Intellect,
+    Presence = Presence,
+    Sensitivity = Sensitivity,
+    Spirit = Spirit,
+    Vigor = Vigor,
+    Extra = ExtraAttributes
+  };
+  public LanguagesModel GetLanguages() => new()
+  {
+    Extra = ExtraLanguages,
+    Text = LanguagesText
+  };
+  public NamesModel GetNames()
+  {
+    NamesModel names = new()
+    {
+      Text = NamesText
+    };
+    if (FamilyNames != null)
+    {
+      names.Family.AddRange(JsonSerializer.Deserialize<IEnumerable<string>>(FamilyNames) ?? []);
+    }
+    if (FemaleNames != null)
+    {
+      names.Female.AddRange(JsonSerializer.Deserialize<IEnumerable<string>>(FemaleNames) ?? []);
+    }
+    if (MaleNames != null)
+    {
+      names.Male.AddRange(JsonSerializer.Deserialize<IEnumerable<string>>(MaleNames) ?? []);
+    }
+    if (UnisexNames != null)
+    {
+      names.Unisex.AddRange(JsonSerializer.Deserialize<IEnumerable<string>>(UnisexNames) ?? []);
+    }
+    if (CustomNames != null)
+    {
+      Dictionary<string, IEnumerable<string>>? custom = JsonSerializer.Deserialize<Dictionary<string, IEnumerable<string>>>(CustomNames);
+      if (custom != null)
+      {
+        foreach (KeyValuePair<string, IEnumerable<string>> category in custom)
+        {
+          names.Custom.Add(new NameCategory(category));
+        }
+      }
+    }
+    return names;
+  }
+  public SizeModel GetSize() => new()
+  {
+    Category = SizeCategory,
+    Roll = SizeRoll
+  };
+  public SpeedsModel GetSpeeds() => new()
+  {
+    Walk = WalkSpeed,
+    Climb = ClimbSpeed,
+    Swim = SwimSpeed,
+    Fly = FlySpeed,
+    Hover = HoverSpeed,
+    Burrow = BurrowSpeed
+  };
+  public WeightModel GetWeight() => new()
+  {
+    Starved = StarvedRoll,
+    Skinny = SkinnyRoll,
+    Normal = NormalRoll,
+    Overweight = OverweightRoll,
+    Obese = ObeseRoll
+  };
+
+  public void SetParent(LineageEntity? parent)
+  {
+    Parent = parent;
+    ParentId = parent?.ParentId;
   }
 
   public void Update(ContentLocalePublished @event)

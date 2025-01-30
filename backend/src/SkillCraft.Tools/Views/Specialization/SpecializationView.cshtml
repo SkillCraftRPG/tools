@@ -1,0 +1,109 @@
+﻿@using Logitar;
+@using MarkdownSharp;
+@using SkillCraft.Tools;
+@using SkillCraft.Tools.Core.Specializations.Models;
+@using SkillCraft.Tools.Core.Talents.Models;
+@using SkillCraft.Tools.Models;
+@using SkillCraft.Tools.Models.Components;
+@model SpecializationModel
+
+@{
+  Layout = "_Layout";
+
+  string title = Model.DisplayName ?? Model.UniqueSlug;
+  ViewBag.Title = title;
+
+  BreadcrumbModel breadcrumb = new(title, [new LinkModel("/specialisations", "Spécialisations")]);
+
+  Markdown markdown = new();
+
+  string? description = null;
+  if (Model.Description != null)
+  {
+    description = markdown.Transform(Model.Description.Replace("\\r", "\r").Replace("\\n", "\n").Remove("\r"));
+  }
+
+  string? optionalTalents = null;
+  if (Model.OptionalTalents.Count > 0)
+  {
+    optionalTalents = string.Join(
+      ", ",
+      Model.OptionalTalents.OrderBy(talent => talent.DisplayName ?? talent.UniqueSlug)
+        .Select(talent => $"<a href=\"/talents/{talent.UniqueSlug}\">{talent.DisplayName ?? talent.UniqueSlug}</a>"));
+  }
+}
+
+<main class="container">
+  <h1>@(title) (tiers @(Model.Tier))</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+  @(await Html.PartialAsync("~/Views/Shared/StatusDetail.cshtml", Model))
+  @if (description != null)
+  {
+    <h3>Description</h3>
+    <div>@(Html.Raw(description))</div>
+  }
+  <ul>
+    @if (Model.OtherRequirements.Count > 0)
+    {
+      <li>
+        <strong>Requis.</strong>
+        @if (Model.OtherRequirements.Count == 1)
+        {
+          @(Html.Raw(MarkdownHelper.RenderInline(Model.OtherRequirements.Single())))
+        }
+        else
+        {
+          <ul>
+            @foreach (string otherRequirement in Model.OtherRequirements)
+            {
+              <li>@(Html.Raw(MarkdownHelper.RenderInline(otherRequirement)))</li>
+            }
+          </ul>
+        }
+      </li>
+    }
+    @if (Model.RequiredTalent != null)
+    {
+      <li>
+        <strong>Talent requis.</strong>
+        <a href="/talents/@(Model.RequiredTalent.UniqueSlug)">@(Model.RequiredTalent.DisplayName ?? Model.RequiredTalent.UniqueSlug)</a>
+      </li>
+    }
+    @if (optionalTalents != null)
+    {
+      <li>
+        <strong>Talents optionnels.</strong> @(Html.Raw(optionalTalents))
+      </li>
+    }
+    @if (Model.OtherOptions.Count > 0)
+    {
+      <li>
+        <strong>Autres options.</strong>
+        @if (Model.OtherOptions.Count == 1)
+        {
+          @(Html.Raw(MarkdownHelper.RenderInline(Model.OtherOptions.Single())))
+        }
+        else
+        {
+          <ul>
+            @foreach (string otherOption in Model.OtherOptions)
+            {
+              <li>@(Html.Raw(MarkdownHelper.RenderInline(otherOption)))</li>
+            }
+          </ul>
+        }
+      </li>
+    }
+    @if (Model.ReservedTalent != null)
+    {
+      <li>
+        <strong>Talent réservé.</strong> <u>@(Model.ReservedTalent.Name)</u>
+      </li>
+    }
+  </ul>
+  @if (Model.ReservedTalent != null && !string.IsNullOrWhiteSpace(Model.ReservedTalent.Description))
+  {
+    <h3>@(Model.ReservedTalent.Name)</h3>
+    @(Html.Raw(markdown.Transform(Model.ReservedTalent.Description)))
+  }
+</main>

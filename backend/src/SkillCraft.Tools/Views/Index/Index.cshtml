@@ -1,0 +1,23 @@
+﻿@using SkillCraft.Tools.Models.Components;
+
+@{
+  Layout = "_Layout";
+
+  BreadcrumbModel breadcrumb = new();
+}
+
+<main class="container">
+  <h1>Accueil</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+  <ul>
+    <li><a href="/aspects">Aspects</a></li>
+    <li><a href="/castes">Castes</a></li>
+    <li><a href="/dons-handicaps">Dons & Handicaps</a></li>
+    <li><a href="/educations">Éducations</a></li>
+    <li><a href="/especes">Espèces</a></li>
+    <li><a href="/langues">Langues</a></li>
+    <li><a href="/natures">Natures</a></li>
+    <li><a href="/specialisations">Spécialisations</a></li>
+    <li><a href="/talents">Talents</a></li>
+  </ul>
+</main>

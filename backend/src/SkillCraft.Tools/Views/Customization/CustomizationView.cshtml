@@ -1,0 +1,41 @@
+﻿@using Logitar;
+@using MarkdownSharp;
+@using SkillCraft.Tools.Core.Customizations.Models;
+@using SkillCraft.Tools.Models;
+@using SkillCraft.Tools.Models.Components;
+@model CustomizationModel
+
+@{
+  Layout = "_Layout";
+
+  string title = Model.DisplayName ?? Model.UniqueSlug;
+  ViewBag.Title = title;
+
+  BreadcrumbModel breadcrumb = new(title, [new LinkModel("/dons-handicaps", "Dons & Handicaps")]);
+
+  string? description = null;
+  if (Model.Description != null)
+  {
+    Markdown markdown = new();
+    description = markdown.Transform(Model.Description.Replace("\\r", "\r").Replace("\\n", "\n").Remove("\r"));
+  }
+}
+
+<main class="container">
+  <h1>@(title)</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+  @(await Html.PartialAsync("~/Views/Shared/StatusDetail.cshtml", Model))
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <th scope="row">Type</th>
+        <td>@(Translator.Translate(Model.Type))</td>
+      </tr>
+    </tbody>
+  </table>
+  @if (description != null)
+  {
+    <h3>Description</h3>
+    <div>@(Html.Raw(description))</div>
+  }
+</main>

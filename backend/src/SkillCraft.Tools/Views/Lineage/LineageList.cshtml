@@ -1,0 +1,45 @@
+﻿@using Logitar.Cms.Core.Search;
+@using SkillCraft.Tools.Core.Lineages.Models;
+@using SkillCraft.Tools.Models;
+@using SkillCraft.Tools.Models.Components;
+@model SearchResults<LineageModel>
+
+@{
+  Layout = "_Layout";
+
+  ViewBag.Title = "Espèces";
+
+  BreadcrumbModel breadcrumb = new("Espèces");
+}
+
+<main class="container">
+  <h1>Espèces</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+  @if (Model.Items.Count < 1)
+  {
+    <p>Cette liste est vide.</p>
+  }
+  else
+  {
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Nom</th>
+          <th scope="col">Catégorie de taille</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (LineageModel lineage in Model.Items)
+        {
+          <tr>
+            <td>
+              <a href="/especes/@(lineage.UniqueSlug)">@(lineage.DisplayName ?? lineage.UniqueSlug)</a>
+            </td>
+            <td>@(Translator.Translate(lineage.Size.Category))</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <p class="float-end"><strong>@(Model.Items.Count) @(Model.Items.Count > 1 ? "espèces" : "espèce")</strong></p>
+  }
+</main>

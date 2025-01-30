@@ -1,0 +1,47 @@
+﻿@using Logitar.Cms.Core.Search;
+@using SkillCraft.Tools.Core.Educations.Models;
+@using SkillCraft.Tools.Models;
+@using SkillCraft.Tools.Models.Components;
+@model SearchResults<EducationModel>
+
+@{
+  Layout = "_Layout";
+
+  ViewBag.Title = "Éducations";
+
+  BreadcrumbModel breadcrumb = new("Éducations");
+}
+
+<main class="container">
+  <h1>Éducations</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+  @if (Model.Items.Count < 1)
+  {
+    <p>Cette liste est vide.</p>
+  }
+  else
+  {
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Nom</th>
+          <th scope="col">Compétence</th>
+          <th scope="col">Richesse initiale (multiplicateur)</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (EducationModel education in Model.Items)
+        {
+          <tr>
+            <td>
+              <a href="/educations/@(education.UniqueSlug)">@(education.DisplayName ?? education.UniqueSlug)</a>
+            </td>
+            <td>@(education.Skill.HasValue ? Translator.Translate(education.Skill.Value) : "—")</td>
+            <td>@(education.WealthMultiplier.HasValue ? $"×{education.WealthMultiplier.Value}" : "—")</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <p class="float-end"><strong>@(Model.Items.Count) @(Model.Items.Count > 1 ? "éducations" : "éducation")</strong></p>
+  }
+</main>

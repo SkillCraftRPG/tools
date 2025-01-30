@@ -1,0 +1,62 @@
+﻿@using Logitar.Cms.Core.Search;
+@using SkillCraft.Tools;
+@using SkillCraft.Tools.Core.Specializations.Models;
+@using SkillCraft.Tools.Models.Components;
+@model SearchResults<SpecializationModel>
+
+@{
+  Layout = "_Layout";
+
+  ViewBag.Title = "Spécialisations";
+
+  BreadcrumbModel breadcrumb = new("Spécialisations");
+
+  IReadOnlyCollection<SpecializationModel> specializations = Model.Items
+    .OrderBy(specialization => $"{specialization.Tier}_{specialization.DisplayName ?? specialization.UniqueSlug}")
+    .ToArray();
+}
+
+<main class="container">
+  <h1>Spécialisations</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+  @if (specializations.Count < 1)
+  {
+    <p>Cette liste est vide.</p>
+  }
+  else
+  {
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Tiers</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Talent requis</th>
+          <th scope="col">Talent réservé</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (SpecializationModel specialization in specializations)
+        {
+          <tr>
+            <td>@(specialization.Tier)</td>
+            <td>
+              <a href="/specialisations/@(specialization.UniqueSlug)">@(specialization.DisplayName ?? specialization.UniqueSlug)</a>
+            </td>
+            <td>
+              @if (specialization.RequiredTalent == null)
+              {
+                @("—")
+              }
+              else
+              {
+                <a href="/talents/@(specialization.RequiredTalent.UniqueSlug)">@(specialization.RequiredTalent.DisplayName ?? specialization.RequiredTalent.UniqueSlug)</a>
+              }
+            </td>
+            <td>@(specialization.ReservedTalent?.Name ?? "—")</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <p class="float-end"><strong>@(specializations.Count) @(specializations.Count > 1 ? "spécialisations" : "spécialisation")</strong></p>
+  }
+</main>

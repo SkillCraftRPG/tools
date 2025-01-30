@@ -1,0 +1,28 @@
+﻿@using SkillCraft.Tools.Models.Components;
+@model ImageModel
+
+@{
+  int? height = Model.Height < 1 ? null : Model.Height;
+  int? width = Model.Width < 1 ? null : Model.Width;
+
+  List<string> classes = new(capacity: 3);
+  if (Model.IsCircle)
+  {
+    classes.Add("rounded-circle");
+  }
+  else if (Model.IsRounded)
+  {
+    classes.Add("rounded");
+  }
+  if (Model.IsFluid)
+  {
+    classes.Add("img-fluid");
+  }
+  if (Model.IsThumbnail)
+  {
+    classes.Add("img-thumbnail");
+  }
+  string className = string.Join(' ', classes);
+}
+
+<img alt="@(Model.Alt)" class="@(className)" height="@(height)" src="@(Model.Src)" width="@(width)" />
