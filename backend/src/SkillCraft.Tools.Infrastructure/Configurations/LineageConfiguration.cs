@@ -35,7 +35,7 @@ internal class LineageConfiguration : AggregateConfiguration<LineageEntity>, IEn
 
     builder.HasOne(x => x.Parent).WithMany(x => x.Children)
       .HasPrincipalKey(x => x.LineageId).HasForeignKey(x => x.ParentId)
-      .OnDelete(DeleteBehavior.SetNull);
+      .OnDelete(DeleteBehavior.Restrict);
     builder.HasMany(x => x.Traits).WithMany(x => x.Lineages)
       .UsingEntity<LineageTraitEntity>(builder =>
       {

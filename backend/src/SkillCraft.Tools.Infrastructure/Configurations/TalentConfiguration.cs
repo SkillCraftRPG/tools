@@ -33,6 +33,6 @@ internal class TalentConfiguration : AggregateConfiguration<TalentEntity>, IEnti
 
     builder.HasOne(x => x.RequiredTalent).WithMany(x => x.RequiringTalents)
       .HasPrincipalKey(x => x.TalentId).HasForeignKey(x => x.RequiredTalentId)
-      .OnDelete(DeleteBehavior.SetNull);
+      .OnDelete(DeleteBehavior.Restrict);
   }
 }

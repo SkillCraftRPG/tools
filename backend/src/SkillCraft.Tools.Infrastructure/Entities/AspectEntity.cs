@@ -2,6 +2,7 @@
 using Logitar.Identity.EntityFrameworkCore.Relational.Entities;
 using Logitar.Identity.EntityFrameworkCore.Relational.IdentityDb;
 using SkillCraft.Tools.Core;
+using SkillCraft.Tools.Core.Aspects.Models;
 using Attribute = SkillCraft.Tools.Core.Attribute;
 
 namespace SkillCraft.Tools.Infrastructure.Entities;
@@ -35,6 +36,19 @@ internal class AspectEntity : AggregateEntity
   private AspectEntity() : base()
   {
   }
+
+  public AttributeSelectionModel GetAttributeSelection() => new()
+  {
+    Mandatory1 = MandatoryAttribute1,
+    Mandatory2 = MandatoryAttribute2,
+    Optional1 = OptionalAttribute1,
+    Optional2 = OptionalAttribute2
+  };
+  public SkillSelectionModel GetSkillSelection() => new()
+  {
+    Discounted1 = DiscountedSkill1,
+    Discounted2 = DiscountedSkill2
+  };
 
   public void Update(ContentLocalePublished @event)
   {
