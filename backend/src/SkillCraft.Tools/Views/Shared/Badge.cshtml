@@ -1,0 +1,20 @@
+﻿@using SkillCraft.Tools.Models.Components;
+@model BadgeModel
+
+@{
+  List<string> classes = new(capacity: 3)
+  {
+    "badge"
+  };
+  if (Model.IsPill) {
+    classes.Add("rounded-pill");
+  }
+  if (Model.Variant.HasValue) {
+    classes.Add($"text-bg-{Model.Variant.Value.ToString().ToLowerInvariant()}");
+  }
+  string className = string.Join(' ', classes);
+}
+
+<span class="@(className)">
+  <slot></slot>
+</span>

@@ -1,0 +1,27 @@
+﻿@using Logitar.Cms.Core.Actors;
+@using SkillCraft.Tools.Models.Components;
+@model StatusModel
+
+@{
+  AvatarModel avatar = new(Model.Actor)
+  {
+    Size = 24
+  };
+  switch (Model.Actor.Type)
+  {
+    case ActorType.ApiKey:
+      avatar.Icon = "fas fa-key";
+      avatar.Variant = BadgeVariant.Info;
+      break;
+    case ActorType.System:
+      avatar.DisplayName = "Système";
+      avatar.Icon = "fas fa-robot";
+      break;
+  }
+}
+
+<span>
+  @(Model.Text) le @(Model.Timestamp.ToLocalTime()) par
+  @(await Html.PartialAsync("Avatar.cshtml", avatar))
+  @(avatar.DisplayName)
+</span>

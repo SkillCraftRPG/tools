@@ -1,0 +1,69 @@
+﻿@using Logitar.Cms.Core.Search;
+@using SkillCraft.Tools.Core.Customizations;
+@using SkillCraft.Tools.Core.Customizations.Models;
+@using SkillCraft.Tools.Models;
+@using SkillCraft.Tools.Models.Components;
+@model SearchResults<CustomizationModel>
+
+@{
+  Layout = "_Layout";
+
+  ViewBag.Title = "Dons & Handicaps";
+
+  BreadcrumbModel breadcrumb = new("Dons & Handicaps");
+
+  IReadOnlyCollection<CustomizationModel> customizations = Model.Items
+    .OrderBy(customization => $"{Translator.Translate(customization.Type)}_{customization.DisplayName ?? customization.UniqueSlug}")
+    .ToArray();
+
+  int disabilities = 0;
+  int gifts = 0;
+  foreach (CustomizationModel customization in customizations)
+  {
+    switch (customization.Type)
+    {
+      case CustomizationType.Disability:
+        disabilities++;
+        break;
+      case CustomizationType.Gift:
+        gifts++;
+        break;
+    }
+  }
+}
+
+<main class="container">
+  <h1>Dons & Handicaps</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+  @if (customizations.Count < 1)
+  {
+    <p>Cette liste est vide.</p>
+  }
+  else
+  {
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Type</th>
+          <th scope="col">Nom</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (CustomizationModel customization in customizations)
+        {
+          <tr>
+            <td>@(Translator.Translate(customization.Type))</td>
+            <td>
+              <a href="/dons-handicaps/@(customization.UniqueSlug)">@(customization.DisplayName ?? customization.UniqueSlug)</a>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <p class="float-end">
+      <strong>
+        @(gifts) @(gifts > 1 ? "dons" : "don") @("&") @(disabilities) @(disabilities > 1 ? "handicaps" : "handicap")
+      </strong>
+    </p>
+  }
+</main>

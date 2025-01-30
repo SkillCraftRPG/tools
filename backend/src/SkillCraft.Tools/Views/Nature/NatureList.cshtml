@@ -1,0 +1,56 @@
+﻿@using Logitar.Cms.Core.Search;
+@using SkillCraft.Tools.Core.Natures.Models;
+@using SkillCraft.Tools.Models;
+@using SkillCraft.Tools.Models.Components;
+@model SearchResults<NatureModel>
+
+@{
+  Layout = "_Layout";
+
+  ViewBag.Title = "Natures";
+
+  BreadcrumbModel breadcrumb = new("Natures");
+}
+
+<main class="container">
+  <h1>Natures</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+  @if (Model.Items.Count < 1)
+  {
+    <p>Cette liste est vide.</p>
+  }
+  else
+  {
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Nom</th>
+          <th scope="col">Attribut</th>
+          <th scope="col">Don</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (NatureModel nature in Model.Items)
+        {
+          <tr>
+            <td>
+              <a href="/natures/@(nature.UniqueSlug)">@(nature.DisplayName ?? nature.UniqueSlug)</a>
+            </td>
+            <td>@(nature.Attribute.HasValue ? Translator.Translate(nature.Attribute.Value) : "—")</td>
+            <td>
+              @if (nature.Gift == null)
+              {
+                @("—")
+              }
+              else
+              {
+                <a href="/dons-handicaps/@(nature.Gift.UniqueSlug)">@(nature.Gift.DisplayName ?? nature.Gift.UniqueSlug)</a>
+              }
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <p class="float-end"><strong>@(Model.Items.Count) @(Model.Items.Count > 1 ? "natures" : "nature")</strong></p>
+  }
+</main>

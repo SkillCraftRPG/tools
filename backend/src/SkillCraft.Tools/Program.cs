@@ -3,6 +3,7 @@ using Logitar.Cms.Infrastructure.Commands;
 using MediatR;
 using Microsoft.FeatureManagement;
 using SkillCraft.Tools.Constants;
+using SkillCraft.Tools.Infrastructure.Commands;
 
 namespace SkillCraft.Tools;
 
@@ -31,6 +32,7 @@ internal class Program
     if (await featureManager.IsEnabledAsync(Features.MigrateDatabase))
     {
       await mediator.Send(new InitializeDatabaseCommand());
+      await mediator.Send(new MigrateDatabaseCommand());
     }
 
     string uniqueName = configuration.GetValue<string>("CMS_USERNAME") ?? DefaultUniqueName;

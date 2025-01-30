@@ -1,0 +1,62 @@
+﻿@using Logitar;
+@using MarkdownSharp;
+@using SkillCraft.Tools.Core.Talents.Models;
+@using SkillCraft.Tools.Models;
+@using SkillCraft.Tools.Models.Components;
+@model TalentModel
+
+@{
+  Layout = "_Layout";
+
+  string title = Model.DisplayName ?? Model.UniqueSlug;
+  ViewBag.Title = title;
+
+  BreadcrumbModel breadcrumb = new(title, [new LinkModel("/talents", "Talents")]);
+
+  string? description = null;
+  if (Model.Description != null)
+  {
+    Markdown markdown = new();
+    description = markdown.Transform(Model.Description.Replace("\\r", "\r").Replace("\\n", "\n").Remove("\r"));
+  }
+}
+
+<main class="container">
+  <h1>@(title)</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+  @(await Html.PartialAsync("~/Views/Shared/StatusDetail.cshtml", Model))
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <th scope="row">Tier</th>
+        <td>@(Model.Tier)</td>
+      </tr>
+      <tr>
+        <th scope="row">Talent requis</th>
+        <td>
+          @if (Model.RequiredTalent == null)
+          {
+            <span>—</span>
+          }
+          else
+          {
+            <a href="/talents/@(Model.RequiredTalent.UniqueSlug)">@(Model.RequiredTalent.DisplayName ?? Model.RequiredTalent.UniqueSlug)</a>
+          }
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Compétence</th>
+        <td>@(Model.Skill.HasValue ? Translator.Translate(Model.Skill.Value) : "—")</td>
+      </tr>
+      <tr>
+        <th scope="row">Achats multiples</th>
+        <td>@(Model.AllowMultiplePurchases ? "✓ Oui" : "✗ Non")</td>
+      </tr>
+    </tbody>
+  </table>
+  @if (description != null)
+  {
+    <h3>Description</h3>
+    <div>@(Html.Raw(description))</div>
+  }
+</main>

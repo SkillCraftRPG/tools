@@ -1,0 +1,29 @@
+﻿@using SkillCraft.Tools.Core.Lineages.Models;
+@using SkillCraft.Tools.Models;
+@model LineageModel
+
+@{
+  LineageModel[] children = Model.Children.OrderBy(child => child.DisplayName ?? child.UniqueSlug).ToArray();
+}
+
+<h3>Peuples</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Catégorie de taille</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (LineageModel child in children)
+    {
+      <tr>
+        <td>
+          <a href="/especes/@(Model.UniqueSlug)/peuples/@(child.UniqueSlug)">@(child.DisplayName ?? child.UniqueSlug)</a>
+        </td>
+        <td>@(Translator.Translate(child.Size.Category))</td>
+      </tr>
+    }
+  </tbody>
+</table>
+<p class="float-end"><strong>@(children.Length) @(children.Length > 1 ? "peuples" : "peuple")</strong></p>

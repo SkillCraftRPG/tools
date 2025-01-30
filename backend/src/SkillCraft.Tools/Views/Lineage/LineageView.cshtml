@@ -1,0 +1,88 @@
+﻿@using Logitar;
+@using MarkdownSharp;
+@using SkillCraft.Tools.Core.Lineages.Models;
+@using SkillCraft.Tools.Models;
+@using SkillCraft.Tools.Models.Components;
+@using SkillCraft.Tools.Models.Lineage;
+@model LineageModel
+
+@{
+  Layout = "_Layout";
+
+  string title = Model.DisplayName ?? Model.UniqueSlug;
+  ViewBag.Title = title;
+
+  BreadcrumbModel breadcrumb = new(title, [new LinkModel("/especes", "Espèces")]);
+  if (Model.Parent != null)
+  {
+    breadcrumb.Links.Add(new LinkModel($"/especes/{Model.Parent.UniqueSlug}", Model.Parent.DisplayName ?? Model.Parent.UniqueSlug));
+  }
+
+  Markdown markdown = new();
+
+  string? description = null;
+  if (Model.Description != null)
+  {
+    description = markdown.Transform(Model.Description.Replace("\\r", "\r").Replace("\\n", "\n").Remove("\r"));
+  }
+
+  string? formattedAttributes = LineageHelper.FormatAttributes(Model.Attributes);
+  string? formattedLanguages = LineageHelper.FormatLanguages(Model.Languages);
+  bool hasNames = LineageHelper.HasNames(Model.Names);
+}
+
+<main class="container">
+  <h1>@(title)</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+  @(await Html.PartialAsync("~/Views/Shared/StatusDetail.cshtml", Model))
+  <ul>
+    @if (formattedAttributes != null)
+    {
+      <li><strong>Attributs.</strong> @(Html.Raw(formattedAttributes))</li>
+    }
+    @if (formattedLanguages != null)
+    {
+      <li><strong>Langues.</strong> @(Html.Raw(formattedLanguages))</li>
+    }
+    @if (!hasNames && Model.Names.Text != null)
+    {
+      <li><strong>Noms.</strong> @(Html.Raw(MarkdownHelper.RenderInline(Model.Names.Text)))</li>
+    }
+    <li>
+      <strong>Taille.</strong> @(Translator.Translate(Model.Size.Category))
+      @if (Model.Size.Roll != null)
+      {
+        @($"({Model.Size.Roll} cm)")
+      }
+    </li>
+    @if (LineageHelper.HasWeight(Model.Weight))
+    {
+      <li>@(await Html.PartialAsync("LineageWeight.cshtml", Model.Weight))</li>
+    }
+    @if (LineageHelper.HasAges(Model.Ages))
+    {
+      <li>@(await Html.PartialAsync("LineageAges.cshtml", Model.Ages))</li>
+    }
+  </ul>
+  @if (description != null)
+  {
+    <h3>Description</h3>
+    <div>@(Html.Raw(description))</div>
+  }
+  @if (LineageHelper.HasNames(Model.Names))
+  {
+    @(await Html.PartialAsync("LineageNames.cshtml", Model.Names))
+  }
+  @if (LineageHelper.HasSpeeds(Model.Speeds))
+  {
+    @(await Html.PartialAsync("LineageSpeeds.cshtml", Model.Speeds))
+  }
+  @if (Model.Traits.Count > 0)
+  {
+    @(await Html.PartialAsync("LineageTraits.cshtml", Model.Traits))
+  }
+  @if (Model.Children.Count > 0)
+  {
+    @(await Html.PartialAsync("LineageChildren.cshtml", Model))
+  }
+</main>

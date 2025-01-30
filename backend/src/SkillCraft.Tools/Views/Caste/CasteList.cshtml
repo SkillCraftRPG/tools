@@ -1,0 +1,49 @@
+﻿@using Logitar.Cms.Core.Search;
+@using SkillCraft.Tools.Core.Castes.Models;
+@using SkillCraft.Tools.Models;
+@using SkillCraft.Tools.Models.Components;
+@model SearchResults<CasteModel>
+
+@{
+  Layout = "_Layout";
+
+  ViewBag.Title = "Castes";
+
+  BreadcrumbModel breadcrumb = new("Castes");
+}
+
+<main class="container">
+  <h1>Castes</h1>
+  @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
+  @if (Model.Items.Count < 1)
+  {
+    <p>Cette liste est vide.</p>
+  }
+  else
+  {
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Nom</th>
+          <th scope="col">Compétence</th>
+          <th scope="col">Richesse initiale (jet)</th>
+          <th scope="col">Particularités</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (CasteModel caste in Model.Items)
+        {
+          <tr>
+            <td>
+              <a href="/castes/@(caste.UniqueSlug)">@(caste.DisplayName ?? caste.UniqueSlug)</a>
+            </td>
+            <td>@(caste.Skill.HasValue ? Translator.Translate(caste.Skill.Value) : "—")</td>
+            <td>@(caste.WealthRoll ?? "—")</td>
+            <td>@(Html.Raw(caste.Features.Count < 1 ? "—" : string.Join("<br />", caste.Features.Select(feature => feature.Name))))</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <p class="float-end"><strong>@(Model.Items.Count) @(Model.Items.Count > 1 ? "castes" : "caste")</strong></p>
+  }
+</main>

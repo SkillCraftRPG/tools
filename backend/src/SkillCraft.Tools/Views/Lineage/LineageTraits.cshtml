@@ -1,0 +1,23 @@
+﻿@using Logitar;
+@using MarkdownSharp;
+@using SkillCraft.Tools.Core.Lineages.Models;
+@using SkillCraft.Tools.Models;
+@model IEnumerable<TraitModel>
+
+@{
+  IOrderedEnumerable<TraitModel> traits = Model.OrderBy(trait => trait.Name);
+}
+
+<h3>Traits</h3>
+<ul>
+  @foreach (TraitModel trait in traits)
+  {
+    <li>
+      <strong>@(trait.Name).</strong>
+      @if (trait.Description != null)
+      {
+        @(Html.Raw(MarkdownHelper.RenderInline(trait.Description)))
+      }
+    </li>
+  }
+</ul>
