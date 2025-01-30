@@ -2,11 +2,9 @@
 using Logitar.Cms.Core.Contents.Events;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using SkillCraft.Tools.Core.Contents;
-using SkillCraft.Tools.Core.Customizations;
 using SkillCraft.Tools.Infrastructure.Entities;
 
-namespace SkillCraft.Tools.Infrastructure.Materialization;
+namespace SkillCraft.Tools.Infrastructure.Materialization.Materialize;
 
 public record MaterializeCustomizationCommand : IRequest
 {
