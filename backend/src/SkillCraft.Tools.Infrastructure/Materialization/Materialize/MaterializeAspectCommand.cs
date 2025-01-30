@@ -52,11 +52,11 @@ internal class MaterializeAspectCommandHandler : IRequestHandler<MaterializeAspe
     if (locale == null)
     {
       aspect.MandatoryAttribute1 = command.FieldValues.TryGetValue(Aspect.MandatoryAttribute1, out string? mandatoryAttribute1) ? Enum.Parse<Attribute>(mandatoryAttribute1) : null;
-      aspect.MandatoryAttribute2 = command.FieldValues.TryGetValue(Aspect.MandatoryAttribute1, out string? mandatoryAttribute2) ? Enum.Parse<Attribute>(mandatoryAttribute2) : null;
+      aspect.MandatoryAttribute2 = command.FieldValues.TryGetValue(Aspect.MandatoryAttribute2, out string? mandatoryAttribute2) ? Enum.Parse<Attribute>(mandatoryAttribute2) : null;
       aspect.OptionalAttribute1 = command.FieldValues.TryGetValue(Aspect.OptionalAttribute1, out string? optionalAttribute1) ? Enum.Parse<Attribute>(optionalAttribute1) : null;
       aspect.OptionalAttribute2 = command.FieldValues.TryGetValue(Aspect.OptionalAttribute2, out string? optionalAttribute2) ? Enum.Parse<Attribute>(optionalAttribute2) : null;
       aspect.DiscountedSkill1 = command.FieldValues.TryGetValue(Aspect.DiscountedSkill1, out string? discountedSkill1) ? Enum.Parse<Skill>(discountedSkill1) : null;
-      aspect.DiscountedSkill2 = command.FieldValues.TryGetValue(Aspect.DiscountedSkill1, out string? discountedSkill2) ? Enum.Parse<Skill>(discountedSkill2) : null;
+      aspect.DiscountedSkill2 = command.FieldValues.TryGetValue(Aspect.DiscountedSkill2, out string? discountedSkill2) ? Enum.Parse<Skill>(discountedSkill2) : null;
     }
     else
     {

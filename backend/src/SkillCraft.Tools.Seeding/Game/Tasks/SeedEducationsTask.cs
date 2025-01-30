@@ -4,6 +4,7 @@ using Logitar.Cms.Core.Contents.Models;
 using Logitar.Cms.Core.Localization.Models;
 using MediatR;
 using SkillCraft.Tools.Core.Contents;
+using SkillCraft.Tools.Seeding.Cms;
 using SkillCraft.Tools.Seeding.Game.Payloads;
 
 namespace SkillCraft.Tools.Seeding.Game.Tasks;
@@ -13,10 +14,12 @@ internal class SeedEducationsTask : SeedingTask
   public override string? Description => "Seeds the educations into the CMS.";
 
   public LanguageModel Language { get; }
+  public PublicationAction PublicationAction { get; }
 
-  public SeedEducationsTask(LanguageModel language)
+  public SeedEducationsTask(LanguageModel language, PublicationAction publicationAction)
   {
     Language = language;
+    PublicationAction = publicationAction;
   }
 }
 
@@ -89,6 +92,18 @@ internal class SeedEducationsTaskHandler : INotificationHandler<SeedEducationsTa
         else
         {
           _logger.LogInformation("The content locale invariant was updated for education '{Education}' (Id={Id}).", displayText, education.Id);
+        }
+
+        switch (task.PublicationAction)
+        {
+          case PublicationAction.Publish:
+            await _mediator.Send(new PublishContentCommand(education.Id), cancellationToken);
+            _logger.LogInformation("The contents were published for education '{Education}' (Id={Id}).", displayText, education.Id);
+            break;
+          case PublicationAction.Unpublish:
+            await _mediator.Send(new UnpublishContentCommand(education.Id), cancellationToken);
+            _logger.LogInformation("The contents were unpublished for education '{Education}' (Id={Id}).", displayText, education.Id);
+            break;
         }
       }
     }
