@@ -5,5 +5,5 @@ namespace SkillCraft.Tools.Seeding;
 
 internal class SeedingApplicationContext : IApplicationContext
 {
-  public ActorId? ActorId => null; // TODO(fpion): implement
+  public ActorId? ActorId { get; set; }
 }

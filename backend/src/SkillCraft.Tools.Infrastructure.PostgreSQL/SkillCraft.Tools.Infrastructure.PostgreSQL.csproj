@@ -15,7 +15,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Logitar.Cms.Core" Version="0.2.3" />
+    <PackageReference Include="Logitar.Cms.Infrastructure.PostgreSQL" Version="0.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SkillCraft.Tools.Infrastructure\SkillCraft.Tools.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

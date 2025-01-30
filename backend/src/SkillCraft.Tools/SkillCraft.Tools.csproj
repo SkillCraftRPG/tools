@@ -26,9 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Logitar.Cms.Infrastructure.PostgreSQL" Version="0.2.2" />
-    <PackageReference Include="Logitar.Cms.Infrastructure.SqlServer" Version="0.2.2" />
-    <PackageReference Include="Logitar.Cms.Web" Version="0.2.2" />
+    <PackageReference Include="Logitar.Cms.Web" Version="0.2.3" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.1" />
     <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="9.0.1" />
@@ -38,7 +36,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SkillCraft.Tools.Core\SkillCraft.Tools.Core.csproj" />
+    <ProjectReference Include="..\SkillCraft.Tools.Infrastructure.PostgreSQL\SkillCraft.Tools.Infrastructure.PostgreSQL.csproj" />
+    <ProjectReference Include="..\SkillCraft.Tools.Infrastructure.SqlServer\SkillCraft.Tools.Infrastructure.SqlServer.csproj" />
   </ItemGroup>
 
 </Project>
