@@ -52,6 +52,11 @@ internal class SeedLineagesTaskHandler : INotificationHandler<SeedLineagesTask>
         string displayText = lineage.DisplayName ?? lineage.UniqueSlug;
         lineageIdByNames[displayText] = lineage.Id;
 
+        foreach (TraitPayload trait in lineage.Traits)
+        {
+          await SeedAsync(trait, language, cancellationToken);
+        }
+
         CreateOrReplaceContentPayload payload = new()
         {
           ContentTypeId = contentType.Id,
@@ -99,6 +104,56 @@ internal class SeedLineagesTaskHandler : INotificationHandler<SeedLineagesTask>
     }
   }
 
+  private async Task SeedAsync(TraitPayload trait, LanguageModel language, CancellationToken cancellationToken)
+  {
+    ContentTypeModel contentType = await _contentTypeQuerier.ReadAsync(LineageTrait.UniqueName, cancellationToken)
+      ?? throw new InvalidOperationException($"The content type '{LineageTrait.UniqueName}' could not be found.");
+
+    string displayText = trait.DisplayName ?? trait.UniqueSlug;
+
+    CreateOrReplaceContentPayload payload = new()
+    {
+      ContentTypeId = contentType.Id,
+      UniqueName = trait.UniqueSlug,
+      DisplayName = trait.DisplayName,
+      Description = trait.Description
+    };
+    CreateOrReplaceContentCommand command = new(trait.Id, language.Id, payload);
+    CreateOrReplaceContentResult result = await _mediator.Send(command, cancellationToken);
+    if (result.Content == null)
+    {
+      throw new InvalidOperationException($"'{nameof(CreateOrReplaceContentCommand)}' returned null for lineage trait 'Id={trait.Id}' (locale).");
+    }
+    else if (result.Created)
+    {
+      _logger.LogInformation("The content locale ({Language}) was created for lineage trait '{Lineage}' (Id={Id}).", language.Locale, displayText, trait.Id);
+    }
+    else
+    {
+      _logger.LogInformation("The content locale ({Language}) was updated for lineage trait '{Lineage}' (Id={Id}).", language.Locale, displayText, trait.Id);
+    }
+
+    payload = new()
+    {
+      UniqueName = trait.UniqueSlug,
+      DisplayName = trait.DisplayName
+    };
+    command = new(trait.Id, LanguageId: null, payload);
+    result = await _mediator.Send(command, cancellationToken);
+    if (result.Content == null)
+    {
+      throw new InvalidOperationException($"'{nameof(CreateOrReplaceContentCommand)}' returned null for lineage trait 'Id={trait.Id}' (invariant).");
+    }
+    else if (result.Created)
+    {
+      _logger.LogInformation("The content locale invariant was created for lineage trait '{Lineage}' (Id={Id}).", displayText, trait.Id);
+    }
+    else
+    {
+      _logger.LogInformation("The content locale invariant was updated for lineage trait '{Lineage}' (Id={Id}).", displayText, trait.Id);
+    }
+  }
+
   private static void AddInvariantValues(
     CreateOrReplaceContentPayload payload,
     Dictionary<string, Guid> fields,
@@ -121,8 +176,7 @@ internal class SeedLineagesTaskHandler : INotificationHandler<SeedLineagesTask>
     payload.AddFieldValue(fields[Lineage.Vigor], lineage.Attributes.Vigor);
     payload.AddFieldValue(fields[Lineage.ExtraAttributes], lineage.Attributes.Extra);
 
-    IEnumerable<Guid> traitIds = []; // TODO(fpion): implement
-    payload.AddFieldValue(fields[Lineage.Traits], JsonSerializer.Serialize(traitIds));
+    payload.AddFieldValue(fields[Lineage.Traits], JsonSerializer.Serialize(lineage.Traits.Select(trait => trait.Id).Distinct()));
 
     IEnumerable<Guid> languageIds = lineage.Languages.Items
       .Where(language => !string.IsNullOrWhiteSpace(language))
