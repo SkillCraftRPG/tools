@@ -7,7 +7,7 @@
     "Description": "L’animiste est un adepte d’un culte spirituel voué à un élément naturel. Ces éléments peuvent concerner par exemple les animaux, la chasse et le climat, ou encore la nuit et la Lune. Ils peuvent également concerner les esprits des défunts et ancestraux, ou encore les croyances des peuples archaïques. L’animiste jongle avec les forces féériques ou ombrageuses qui régissent ces éléments naturels, et adoptent généralement une posture de devin et de guérisseur auprès d’un culte ou d’une communauté primitive.",
     "RequiredTalent": "Spiritualité",
     "OtherRequirements": [
-      "Le personnage doit avoir sélectionné un domaine d’animisme lorsqu’il a acquis le talent <u>Spiritualité</u>."
+      "Le personnage doit avoir sélectionné un domaine d’animisme lorsqu’il a acquis le talent [Spiritualité](/talents/spiritualite)."
     ],
     "OptionalTalents": [
       "Armes improvisées",
@@ -23,11 +23,7 @@
     "OtherOptions": [],
     "ReservedTalent": {
       "Name": "Animisme",
-      "Descriptions": [
-        "Il peut acquérir les pouvoirs de tiers 1 de son domaine d’animisme et apprend gratuitement un de ces pouvoirs.",
-        "Il acquiert une capacité de tiers 1 spécifique à son domaine d’animisme.",
-        "**Forme sauvage.** Le personnage prend la forme d’une bête qu’il a vue ou touchée auparavant par une action. Il peut effectuer cette transformation une fois par jour et doit compléter une nuit de sommeil afin de réutiliser cette capacité. Le niveau de la bête doit être inférieur ou égal à ½ et celle-ci ne doit pas pouvoir voler. Il peut rester dans cette forme pendant un nombre d’heures égal à son rang d’_Occultisme_ (minimum 1). Après ce délai, il reprend sa forme normale. Il peut également reprendre sa forme normale par une action. Il reprend automatiquement sa forme normale s’il tombe inconscient, agonisant ou s’il meurt. Les règles suivantes s’appliquent lorsqu’il assume une forme sauvage.\n\n- L’Agilité, la Coordination et la Vigueur du personnage sont remplacés par ces attributs de la bête. Il conserve le rang de ses compétences, mais si le rang de certaines compétences de la bête sont supérieurs aux siens, alors ceux-ci sont remplacés par ceux de la bête. Il ne peut utiliser les actions légendaires ni les résistances légendaires de la bête.\n- Ses points de Vitalité sont remplacés par ceux de la bête. Lorsqu’il reprend sa forme normale, il récupère les points de Vitalité qu’il avait avant de prendre sa forme sauvage. Si ses points de Vitalité en forme sauvage chutent à une valeur inférieure à 0, alors l’excès de points de Vitalité perdus est transféré en points de dégâts aux points de Vitalité de sa forme normale.\n- En forme sauvage, il ne peut canaliser de pouvoir, et son habileté à parler ou à effectuer une action requérant ses mains sont limitées à celle de la bête. Il ne perd pas sa concentration s’il était en train de canaliser un pouvoir lorsqu’il a pris sa forme sauvage, mais il ne peut réagir avec ce pouvoir sans reprendre sa forme normale. Il peut néanmoins utiliser ses capacités d’espèce ainsi que ses talents si la bête le permet.\n- Il ne peut utiliser son équipement en forme sauvage. Il décide si son équipement tombe au sol à sa position, s’il fusionne avec sa forme sauvage, ou s’il est porté par la forme sauvage. L’équipement porté fonctionne comme sur forme normale, mais il ne change pas de taille afin de s’adapter à la forme sauvage. Il est donc possible qu’un équipement soit inutilisable et même gênant à la forme sauvage. L’équipement fusionné avec la forme sauvage n’a aucun effet tant que le personnage ne reprend pas sa forme normale."
-      ]
+      "Description": "Le personnage acquiert les capacités suivantes.\n\n- Il peut acquérir les pouvoirs de tiers 1 de son domaine d’animisme et apprend gratuitement un de ces pouvoirs.\n- Il acquiert une capacité de tiers 1 spécifique à son domaine d’animisme.\n- **Forme sauvage.** Le personnage prend la forme d’une bête qu’il a vue ou touchée auparavant par une action. Il peut effectuer cette transformation une fois par jour et doit compléter une nuit de sommeil afin de réutiliser cette capacité. Le niveau de la bête doit être inférieur ou égal à ½ et celle-ci ne doit pas pouvoir voler. Il peut rester dans cette forme pendant un nombre d’heures égal à son rang d’_Occultisme_ (minimum 1). Après ce délai, il reprend sa forme normale. Il peut également reprendre sa forme normale par une action. Il reprend automatiquement sa forme normale s’il tombe inconscient, agonisant ou s’il meurt. Les règles suivantes s’appliquent lorsqu’il assume une forme sauvage.\n  - L’Agilité, la Coordination et la Vigueur du personnage sont remplacés par ces attributs de la bête. Il conserve le rang de ses compétences, mais si le rang de certaines compétences de la bête sont supérieurs aux siens, alors ceux-ci sont remplacés par ceux de la bête. Il ne peut utiliser les actions légendaires ni les résistances légendaires de la bête.\n  - Ses points de Vitalité sont remplacés par ceux de la bête. Lorsqu’il reprend sa forme normale, il récupère les points de Vitalité qu’il avait avant de prendre sa forme sauvage. Si ses points de Vitalité en forme sauvage chutent à une valeur inférieure à 0, alors l’excès de points de Vitalité perdus est transféré en points de dégâts aux points de Vitalité de sa forme normale.\n  - En forme sauvage, il ne peut canaliser de pouvoir, et son habileté à parler ou à effectuer une action requérant ses mains sont limitées à celle de la bête. Il ne perd pas sa concentration s’il était en train de canaliser un pouvoir lorsqu’il a pris sa forme sauvage, mais il ne peut réagir avec ce pouvoir sans reprendre sa forme normale. Il peut néanmoins utiliser ses capacités d’espèce ainsi que ses talents si la bête le permet.\n  - Il ne peut utiliser son équipement en forme sauvage. Il décide si son équipement tombe au sol à sa position, s’il fusionne avec sa forme sauvage, ou s’il est porté par la forme sauvage. L’équipement porté fonctionne comme sur forme normale, mais il ne change pas de taille afin de s’adapter à la forme sauvage. Il est donc possible qu’un équipement soit inutilisable et même gênant à la forme sauvage. L’équipement fusionné avec la forme sauvage n’a aucun effet tant que le personnage ne reprend pas sa forme normale."
     }
   },
   {
@@ -52,11 +48,7 @@
     "OtherOptions": [],
     "ReservedTalent": {
       "Name": "Astromancie",
-      "Descriptions": [
-        "Il peut acquérir les pouvoirs de tiers 1 d’astromancie et apprend gratuitement un de ces pouvoirs.",
-        "S’il acquiert le talent <u>Initiation magique</u>, il acquiert gratuitement le talent <u>Méditation</u>.",
-        "**Ascendant.** Le nombre maximal de signes astrologiques qu’il peut apprendre augmente de 21 à 35, suivant la formule `2 + (2 × 𝑅𝑎𝑛𝑔𝑂𝑐𝑐𝑢𝑙𝑡𝑖𝑠𝑚𝑒) + 𝑀𝑜𝑑𝑖𝑓𝑖𝑐𝑎𝑡𝑒𝑢𝑟𝐼𝑛𝑡𝑒𝑙𝑙𝑒𝑐𝑡`. Également, le temps et les matériaux nécessaires à l’apprentissage d’un nouveau signe astrologique sont réduits de moitié. Ces éléments sont décrits en annexe à cet ouvrage."
-      ]
+      "Description": "Le personnage acquiert les capacités suivantes.\n\n- Il peut acquérir les pouvoirs de tiers 1 d’astromancie et apprend gratuitement un de ces pouvoirs.\n- S’il acquiert le talent [Initiation magique](/talents/initiation-magique), il acquiert gratuitement le talent [Méditation](/talents/meditation).\n- **Ascendant.** Le nombre maximal de signes astrologiques qu’il peut apprendre augmente de 21 à 35, suivant la formule `2 + (2 × 𝑅𝑎𝑛𝑔𝑂𝑐𝑐𝑢𝑙𝑡𝑖𝑠𝑚𝑒) + 𝑀𝑜𝑑𝑖𝑓𝑖𝑐𝑎𝑡𝑒𝑢𝑟𝐼𝑛𝑡𝑒𝑙𝑙𝑒𝑐𝑡`. Également, le temps et les matériaux nécessaires à l’apprentissage d’un nouveau signe astrologique sont réduits de moitié. Ces éléments sont décrits en annexe à cet ouvrage."
     }
   },
   {
@@ -67,7 +59,7 @@
     "Description": "Les clercs sont des adeptes religieux d’une divinité. Ils représentent celle-ci dans le monde matériel, faisant régner ses préceptes et tentant d’agrandir son cercle de croyants. En échange de cette mission, cette divinité leur prête une partie de ses pouvoirs, qu’ils peuvent utiliser afin d’étendre la portée de leur divinité.",
     "RequiredTalent": "Spiritualité",
     "OtherRequirements": [
-      "Le personnage doit avoir sélectionné un domaine divin lorsqu’il a acquis le talent <u>Spiritualité</u>."
+      "Le personnage doit avoir sélectionné un domaine divin lorsqu’il a acquis le talent [Spiritualité](/talents/spiritualite)."
     ],
     "OptionalTalents": [
       "Connaissance",
@@ -83,11 +75,7 @@
     "OtherOptions": [],
     "ReservedTalent": {
       "Name": "Clergé",
-      "Descriptions": [
-        "Il peut acquérir les pouvoirs de tiers 1 du domaine de sa divinité et apprend gratuitement un de ces pouvoirs.",
-        "Il acquiert une capacité de tiers 1 spécifique au domaine de sa divinité.",
-        "**Pouvoir divin.** Une fois par jour, le personnage peut invoquer un pouvoir divin spécifique au domaine de sa divinité. Il doit compléter une nuit de sommeil afin de réutiliser cette capacité."
-      ]
+      "Description": "Le personnage acquiert les capacités suivantes.\n\n- Il peut acquérir les pouvoirs de tiers 1 du domaine de sa divinité et apprend gratuitement un de ces pouvoirs.\n- Il acquiert une capacité de tiers 1 spécifique au domaine de sa divinité.\n- **Pouvoir divin.** Une fois par jour, le personnage peut invoquer un pouvoir divin spécifique au domaine de sa divinité. Il doit compléter une nuit de sommeil afin de réutiliser cette capacité."
     }
   },
   {
@@ -114,11 +102,7 @@
     "OtherOptions": [],
     "ReservedTalent": {
       "Name": "Adrénaline",
-      "Descriptions": [
-        "Il peut acquérir à rabais les talents <u>Cuirassé</u> et <u>Initiative accrue</u>.",
-        "**Indomptable.** Lorsqu’il échoue un jet de sauvegarde, il peut rejouer le jet par une action libre en dépensant 25 points d’Énergie et doit utiliser le nouveau résultat. Il peut utiliser cette capacité un nombre de fois égal à son tiers de personnage et doit compléter une nuit de sommeil afin de récupérer ces utilisations.",
-        "**Second souffle.** En situation de combat, permet au personnage de récupérer des points de Vitalité par une action libre. Il jette 1d10 auquel il additionne son modificateur de Vigueur. Il dépense un nombre de points d’Énergie égal à ce résultat et récupère un nombre de points de Vitalité égal à ce résultat. Il peut utiliser cette capacité un nombre de fois égal à son tiers de personnage et doit compléter une nuit de sommeil afin de récupérer ces utilisations."
-      ]
+      "Description": "Le personnage acquiert les capacités suivantes :\n\n- Il peut acquérir à rabais les talents [Cuirassé](/talents/cuirasse) et [Initiative accrue](/talents/initiative-accrue).\n- **Indomptable.** Lorsqu’il échoue un jet de sauvegarde, il peut rejouer le jet par une action libre en dépensant 25 points d’Énergie et doit utiliser le nouveau résultat. Il peut utiliser cette capacité un nombre de fois égal à son tiers de personnage et doit compléter une nuit de sommeil afin de récupérer ces utilisations.\n- **Second souffle.** En situation de combat, permet au personnage de récupérer des points de Vitalité par une action libre. Il jette 1d10 auquel il additionne son modificateur de Vigueur. Il dépense un nombre de points d’Énergie égal à ce résultat et récupère un nombre de points de Vitalité égal à ce résultat. Il peut utiliser cette capacité un nombre de fois égal à son tiers de personnage et doit compléter une nuit de sommeil afin de récupérer ces utilisations."
     }
   },
   {
@@ -148,11 +132,7 @@
     "OtherOptions": [],
     "ReservedTalent": {
       "Name": "Avant-garde",
-      "Descriptions": [
-        "Il peut acquérir à rabais les talents <u>Observateur</u> et <u>Survivalisme</u>.",
-        "**Cible privilégiée.** Lorsqu’il réussit une attaque contre une créature, il peut diriger toute son attention sur cette créature pendant la prochaine minute. Cet effet fonctionne comme la concentration des pouvoirs. Lorsqu’il utilise cette capacité, et une fois par tour lorsqu’il réussit une attaque contre cette créature, il peut ajouter 1d4 points de dégâts supplémentaires par tiers de personnage aux dégâts infligés par cette attaque. Il peut utiliser cette capacité un nombre de fois égal à son modificateur de Sensibilité (minimum 1) et doit compléter une nuit de sommeil afin de récupérer ces utilisations.",
-        "**Sens aiguisés.** Lorsqu’il n’est pas aveuglé, assourdi ou incapable, il se voit conférer l’avantage à ses jets de sauvegarde d’_Acrobaties_ s’il peut voir le déclencheur du jet de sauvegarde, par exemple un piège. Également, lorsqu’une créature qu’il peut voir et dont la taille est supérieure d’au moins une catégorie à la sienne échoue une attaque dirigée contre lui, il peut effectuer une attaque d’opportunité en réaction immédiatement."
-      ]
+      "Description": "Le personnage acquiert les capacités suivantes.\n\n- Il peut acquérir à rabais les talents [Observateur](/talents/observateur) et [Survivalisme](/talents/survivalisme).\n- **Cible privilégiée.** Lorsqu’il réussit une attaque contre une créature, il peut diriger toute son attention sur cette créature pendant la prochaine minute. Cet effet fonctionne comme la concentration des pouvoirs. Lorsqu’il utilise cette capacité, et une fois par tour lorsqu’il réussit une attaque contre cette créature, il peut ajouter 1d4 points de dégâts supplémentaires par tiers de personnage aux dégâts infligés par cette attaque. Il peut utiliser cette capacité un nombre de fois égal à son modificateur de Sensibilité (minimum 1) et doit compléter une nuit de sommeil afin de récupérer ces utilisations.\n- **Sens aiguisés.** Lorsqu’il n’est pas aveuglé, assourdi ou incapable, il se voit conférer l’avantage à ses jets de sauvegarde d’_Acrobaties_ s’il peut voir le déclencheur du jet de sauvegarde, par exemple un piège. Également, lorsqu’une créature qu’il peut voir et dont la taille est supérieure d’au moins une catégorie à la sienne échoue une attaque dirigée contre lui, il peut effectuer une attaque d’opportunité en réaction immédiatement."
     }
   },
   {
@@ -179,11 +159,7 @@
     "OtherOptions": [],
     "ReservedTalent": {
       "Name": "Essence élémentaire",
-      "Descriptions": [
-        "Il peut acquérir les pouvoirs de tiers 1 associés à son élément et apprend gratuitement un de ces pouvoirs. Il peut également acquérir les pouvoirs de tiers 1 issus d’une combinaison élémentaire comprenant son élément.",
-        "Il peut acquérir à rabais deux talents en fonction en fonction de son élément. S’il a acquis un de ces deux talents, alors le rabais est transféré à l’autre talent. S’il a acquis ces deux talents, alors les deux rabais s’appliquent à l’acquisition de son prochain pouvoir élémentaire.\n\n- Air : <u>Tromperie</u> et <u>Tissu de mensonges</u>.\n- Eau : <u>Intuition</u> et <u>Suspicion</u>.\n- Feu : <u>Mêlée</u> et <u>Formation martiale</u>.\n- Terre : <u>Résistance</u> et <u>Robustesse accrue</u>.\n- Esprit : <u>Discipline</u> et <u>Endurance accrue</u>.",
-        "Il peut convertir des points d’Énergie en points d’essence élémentaire afin d’utiliser de puissantes capacités élémentaires de tiers 1. Cette conversion ainsi que les capacités pouvant être utilisées sont décrites en annexe à cet ouvrage."
-      ]
+      "Description": "Le personnage acquiert les capacités suivantes :\n\n- Il peut acquérir les pouvoirs de tiers 1 associés à son élément et apprend gratuitement un de ces pouvoirs. Il peut également acquérir les pouvoirs de tiers 1 issus d’une combinaison élémentaire comprenant son élément.\n- Il peut acquérir à rabais deux talents en fonction en fonction de son élément. S’il a acquis un de ces deux talents, alors le rabais est transféré à l’autre talent. S’il a acquis ces deux talents, alors les deux rabais s’appliquent à l’acquisition de son prochain pouvoir élémentaire.\n  - Air : [Tromperie](/talents/tromperie) et [Tissu de mensonges](/talents/tissu-de-mensonges).\n  - Eau : [Intuition](/talents/intuition) et [Suspicion](/talents/suspicion).\n  - Feu : [Mêlée](/talents/melee) et [Formation martiale](/talents/formation-martiale).\n  - Terre : [Résistance](/talents/resistance) et [Robustesse accrue](/talents/robustesse-accrue).\n  - Esprit : [Discipline](/talents/discipline) et [Endurance accrue](/talents/endurance-accrue).\n- Il peut convertir des points d’Énergie en points d’essence élémentaire afin d’utiliser de puissantes capacités élémentaires de tiers 1. Cette conversion ainsi que les capacités pouvant être utilisées sont décrites en annexe à cet ouvrage."
     }
   },
   {
@@ -213,12 +189,7 @@
     "OtherOptions": [],
     "ReservedTalent": {
       "Name": "Inspiration artistique",
-      "Descriptions": [
-        "Il peut acquérir à rabais les talents <u>Distraction</u> et <u>Présence terrifiante</u>.",
-        "La prochaine fois qu’il acquiert le talent <u>Expertise</u>, alors il acquiert ce talent pour une seconde compétence de son choix. La seconde acquisition est gratuite.",
-        "**Berceuse apaisante.** Il peut jouer une douce berceuse pendant une halte ou au début d’une nuit de sommeil. Il dépense 15 points d’Énergie et sélectionne un nombre de créatures inférieur ou égal à son modificateur de Présence (minimum 1) qu’il peut voir, qui peuvent l’entendre et qui sont situées à 4,5 mètres ou moins de sa position. À la fin de la période de repos, le personnage ainsi que chacune de ces créatures récupère 1d8 points de Vitalité même si la période a été brièvement interrompue. Lorsqu’il atteint le tiers 2, le personnage peut dépenser 30 points d’Énergie afin d’augmenter à 2d8 les points de Vitalité récupérés. Lorsqu’il atteint le tiers 3, il peut dépenser 45 points d’Énergie afin d’augmenter à 3d8 les points de Vitalité récupérés. Le personnage doit compléter une nuit de sommeil afin de réutiliser cette capacité.",
-        "**Boléro héroïque.** Par une action, le personnage dépense 5 points d’Énergie afin de jouer un boléro inspirant la gloire à une créature qu’il peut voir, qui peut l’entendre et qui est située à 18 mètres ou moins de sa position. Celle-ci peut ajouter 1d8 à n’importe quel testde compétence pendant la prochaine heure avant de savoir si le test est réussi ou échoué. Une créature ne peut avoir qu’un seul dé à la fois, et le dé est perdu lorsque utilisé ou après une heure. Le personnage peut utiliser cette capacité un nombre de fois égal à son modificateur de Présence (minimum 1) et doit compléter une nuit de sommeil afin de récupérer ces utilisations."
-      ]
+      "Description": "Le personnage acquiert les capacités suivantes.\n\n- Il peut acquérir à rabais les talents [Distraction](/talents/distraction) et [Présence terrifiante](/talents/presence-terrifiante).\n- La prochaine fois qu’il acquiert le talent [Expertise](/talents/expertise), alors il acquiert ce talent pour une seconde compétence de son choix. La seconde acquisition est gratuite.\n- **Berceuse apaisante.** Il peut jouer une douce berceuse pendant une halte ou au début d’une nuit de sommeil. Il dépense 15 points d’Énergie et sélectionne un nombre de créatures inférieur ou égal à son modificateur de Présence (minimum 1) qu’il peut voir, qui peuvent l’entendre et qui sont situées à 4,5 mètres ou moins de sa position. À la fin de la période de repos, le personnage ainsi que chacune de ces créatures récupère 1d8 points de Vitalité même si la période a été brièvement interrompue. Lorsqu’il atteint le tiers 2, le personnage peut dépenser 30 points d’Énergie afin d’augmenter à 2d8 les points de Vitalité récupérés. Lorsqu’il atteint le tiers 3, il peut dépenser 45 points d’Énergie afin d’augmenter à 3d8 les points de Vitalité récupérés. Le personnage doit compléter une nuit de sommeil afin de réutiliser cette capacité.\n- **Boléro héroïque.** Par une action, le personnage dépense 5 points d’Énergie afin de jouer un boléro inspirant la gloire à une créature qu’il peut voir, qui peut l’entendre et qui est située à 18 mètres ou moins de sa position. Celle-ci peut ajouter 1d8 à n’importe quel testde compétence pendant la prochaine heure avant de savoir si le test est réussi ou échoué. Une créature ne peut avoir qu’un seul dé à la fois, et le dé est perdu lorsque utilisé ou après une heure. Le personnage peut utiliser cette capacité un nombre de fois égal à son modificateur de Présence (minimum 1) et doit compléter une nuit de sommeil afin de récupérer ces utilisations."
     }
   },
   {
@@ -248,11 +219,7 @@
     "OtherOptions": [],
     "ReservedTalent": {
       "Name": "Subterfuge",
-      "Descriptions": [
-        "Il peut acquérir à rabais les talents <u>Attaque sournoise</u> et <u>Parade</u>.",
-        "La prochaine fois qu’il acquiert le talent <u>Expertise</u>, alors il acquiert ce talent pour une seconde compétence de son choix. La seconde acquisition est gratuite.",
-        "**Escarmouche.** Lorsqu’une créature ennemie termine son tour dans une case adjacente à celle du personnage, alors celui-ci peut utiliser sa réaction afin d’effectuer l’activité **Déplacement** à la moitié de sa vitesse, ou il effectue l’activité **Pas prudent**. Les attaques d’opportunité déclenchées par ce déplacement sont affligées du désavantage."
-      ]
+      "Description": "Le personnage acquiert les capacités suivantes.\n\n- Il peut acquérir à rabais les talents [Attaque sournoise](/talents/attaque-sournoise) et [Parade](/talents/parade).\n- La prochaine fois qu’il acquiert le talent [Expertise](/talents/expertise), alors il acquiert ce talent pour une seconde compétence de son choix. La seconde acquisition est gratuite.\n- **Escarmouche.** Lorsqu’une créature ennemie termine son tour dans une case adjacente à celle du personnage, alors celui-ci peut utiliser sa réaction afin d’effectuer l’activité **Déplacement** à la moitié de sa vitesse, ou il effectue l’activité **Pas prudent**. Les attaques d’opportunité déclenchées par ce déplacement sont affligées du désavantage."
     }
   },
   {
@@ -287,12 +254,7 @@
     "OtherOptions": [ "un bricolage magique de tiers 1" ],
     "ReservedTalent": {
       "Name": "Ingéniosité magique",
-      "Descriptions": [
-        "Il peut acquérir les bricolages magiques de tiers 2 et apprend gratuitement un de ces bricolages magiques. Afin de canaliser ces bricolages magiques à un niveau supérieur, il doit avoir acquis le talent <u>Magie puissante</u> ainsi qu’une des spécialisations suivantes : _Alchimiste_ ou _Artificier_.",
-        "**Adepte d’artéfacts.** Le nombre maximal d’artéfacts magiques auxquels le personnage peut être harmonisé en même temps augmente à 4. Lorsque son tiers de personnage atteint 3, ce nombre augmente à 5 et il ignore les requis de spécialisations et d’espèces lorsqu’il s’harmonise à un artéfact magique. Également, lorsqu’il fabrique un objet non magique de rareté commune ou peu fréquente, il n’a besoin que du quart du temps de fabrication et réduit de 25 % la quantité de matériel requise.",
-        "**Éclair de génie.** Lorsque le personnage voit un allié situé à 9 mètres ou moins de sa position effectuer un test de compétence, il peut utiliser sa réaction afin d’ajouter au test un bonus égal à son modificateur d’Intellect (minimum 1). Il peut utiliser cette capacité un nombre de fois égal à son modificateur d’Intellect (minimum 1) et doit compléter une nuit de sommeil afin de récupérer ces utilisations.",
-        "**Escamotage magique.** Lorsque le personnage canalise le niveau 1 du pouvoir <u>Main magique</u>, il peut effectuer des actions supplémentaires avec la main. Il peut effectuer ces actions de manière furtive en effectuant un test de _Furtivité_ ou de _Roublardise_ au choix. Il peut ranger un objet dans un conteneur porté ou tenu par une autre créature, récupérer un objet d’un conteneur porté ou tenu par une autre créature, et utiliser des outils de voleur à distance afin de crocheter une serrure ou désamorcer un piège. Il peut également distraire une créature jusqu’à la fin de son tour, ce qui lui confère l’avantage au test de ses attaques dirigées contre cette créature."
-      ]
+      "Description": "Le personnage acquiert les capacités suivantes :\n\n- Il peut acquérir les bricolages magiques de tiers 2 et apprend gratuitement un de ces bricolages magiques. Afin de canaliser ces bricolages magiques à un niveau supérieur, il doit avoir acquis le talent [Magie puissante](/talents/magie-puissante) ainsi qu’une des spécialisations suivantes : [Alchimiste](/specialisations/alchimiste) ou [Artificier](/specialisations/artificier).\n- **Adepte d’artéfacts.** Le nombre maximal d’artéfacts magiques auxquels le personnage peut être harmonisé en même temps augmente à 4. Lorsque son tiers de personnage atteint 3, ce nombre augmente à 5 et il ignore les requis de spécialisations et d’espèces lorsqu’il s’harmonise à un artéfact magique. Également, lorsqu’il fabrique un objet non magique de rareté commune ou peu fréquente, il n’a besoin que du quart du temps de fabrication et réduit de 25 % la quantité de matériel requise.\n- **Éclair de génie.** Lorsque le personnage voit un allié situé à 9 mètres ou moins de sa position effectuer un test de compétence, il peut utiliser sa réaction afin d’ajouter au test un bonus égal à son modificateur d’Intellect (minimum 1). Il peut utiliser cette capacité un nombre de fois égal à son modificateur d’Intellect (minimum 1) et doit compléter une nuit de sommeil afin de récupérer ces utilisations.\n- **Escamotage magique.** Lorsque le personnage canalise le niveau 1 du pouvoir [Main magique](/pouvoirs/main-magique), il peut effectuer des actions supplémentaires avec la main. Il peut effectuer ces actions de manière furtive en effectuant un test de _Furtivité_ ou de _Roublardise_ au choix. Il peut ranger un objet dans un conteneur porté ou tenu par une autre créature, récupérer un objet d’un conteneur porté ou tenu par une autre créature, et utiliser des outils de voleur à distance afin de crocheter une serrure ou désamorcer un piège. Il peut également distraire une créature jusqu’à la fin de son tour, ce qui lui confère l’avantage au test de ses attaques dirigées contre cette créature."
     }
   },
   {
@@ -325,12 +287,7 @@
     "OtherOptions": [],
     "ReservedTalent": {
       "Name": "Sournoiseries",
-      "Descriptions": [
-        "Il peut acquérir à rabais les talents <u<Attaque sanglante</u>, <u>Destruction</u> et <u>Lancer précis</u>.",
-        "**Exploits.** La chance et la bravoure du personnage lui permettent parfois d’accomplir des exploits. Lorsqu’il désire accomplir un exploit, il doit dépenser 20 points d’Énergie avant de savoir si le test est réussi ou échoué. Il peut également piger un point d’Espérance dans la banque commune afin de réduire cette dépense à 10 points d’Énergie, ou utiliser un point d’Espérance qu’il possède en Momentum afin de ne dépenser aucun point d’Énergie.\n\n- _Bagarre._ Il confère l’avantage à un de ses tests d’Initiative.\n- _Cascade._ Lorsqu’il voit une créature effectuer une attaque dirigée en sa direction, alors il peut utiliser sa réaction afin d’effectuer l’activité **Pas prudent** ou de se jeter au sol en position renversée dans une case adjacente à la sienne. Lorsqu’il en fait ainsi, son Esquive augmente de +2 s’il a effectué un **Pas prudent** ou de +5 s’il s’est jeté au sol, à partir de l’attaque pour laquelle il a utilisé cette capacité et jusqu’au début de son prochain tour.\n- _Contre-attaque._ Lorsqu’il voit une créature échouer une attaque de mêlée dirigée vers lui, alors il peut utiliser sa réaction afin d’effectuer une attaque d’opportunité contre cette créature.\n- _Point faible._ Il peut effectuer une Attaque sournoise, même si son test d’attaque ne bénéficie pas de l’avantage et qu’aucune créature alliée ne se trouve dans une case adjacente à celle de sa cible.",
-        "**Guet-apens.** Lorsqu’il attaque une créature prise au dépourvu, alors il se voit conférer l’avantage à son test d’attaque. Également, il fait 20 à la première attaque qu’il effectue contre une créature surprise (automatiquement une réussite critique).",
-        "**Pensées intrusives.** Lorsqu’il réussit une attaque en maniant une arme improvisée, le ou les dés de dégâts sont remplacés par des d8. Également, lorsqu’il tente une attaque en maniant une arme improvisée, il peut décider si les dégâts infligés sont létaux ou non avant de connaître le résultat du test. Enfin, il peut utiliser une arme d’une manière non conventionnelle afin que celle-ci soit considérée comme une arme improvisée, par exemple le pommeau d’une épée, le manche d’une hache, ou encore le corps d’un arc. Lorsqu’il en fait ainsi, il peut utiliser les talents <u>Bris</u> et <u>Destruction</u> avec cette arme, et il peut décider si les dégâts infligés sont létaux ou non en effectuant une attaque en maniant cette arme."
-      ]
+      "Description": "Le personnage acquiert les capacités suivantes.\n\n- Il peut acquérir à rabais les talents [Attaque sanglante](/talents/attaque-sanglante), [Destruction](/talents/destruction) et [Lancer précis](/talents/lancer-precis).\n- **Exploits.** La chance et la bravoure du personnage lui permettent parfois d’accomplir des exploits. Lorsqu’il désire accomplir un exploit, il doit dépenser 20 points d’Énergie avant de savoir si le test est réussi ou échoué. Il peut également piger un point d’Espérance dans la banque commune afin de réduire cette dépense à 10 points d’Énergie, ou utiliser un point d’Espérance qu’il possède en Momentum afin de ne dépenser aucun point d’Énergie.\n  - _Bagarre._ Il confère l’avantage à un de ses tests d’Initiative.\n  - _Cascade._ Lorsqu’il voit une créature effectuer une attaque dirigée en sa direction, alors il peut utiliser sa réaction afin d’effectuer l’activité **Pas prudent** ou de se jeter au sol en position renversée dans une case adjacente à la sienne. Lorsqu’il en fait ainsi, son Esquive augmente de +2 s’il a effectué un **Pas prudent** ou de +5 s’il s’est jeté au sol, à partir de l’attaque pour laquelle il a utilisé cette capacité et jusqu’au début de son prochain tour.\n  - _Contre-attaque._ Lorsqu’il voit une créature échouer une attaque de mêlée dirigée vers lui, alors il peut utiliser sa réaction afin d’effectuer une attaque d’opportunité contre cette créature.\n  - _Point faible._ Il peut effectuer une Attaque sournoise, même si son test d’attaque ne bénéficie pas de l’avantage et qu’aucune créature alliée ne se trouve dans une case adjacente à celle de sa cible.\n- **Guet-apens.** Lorsqu’il attaque une créature prise au dépourvu, alors il se voit conférer l’avantage à son test d’attaque. Également, il fait 20 à la première attaque qu’il effectue contre une créature surprise (automatiquement une réussite critique).\n- **Pensées intrusives.** Lorsqu’il réussit une attaque en maniant une arme improvisée, le ou les dés de dégâts sont remplacés par des d8. Également, lorsqu’il tente une attaque en maniant une arme improvisée, il peut décider si les dégâts infligés sont létaux ou non avant de connaître le résultat du test. Enfin, il peut utiliser une arme d’une manière non conventionnelle afin que celle-ci soit considérée comme une arme improvisée, par exemple le pommeau d’une épée, le manche d’une hache, ou encore le corps d’un arc. Lorsqu’il en fait ainsi, il peut utiliser les talents [Bris](/talents/bris) et [Destruction](/talents/destruction) avec cette arme, et il peut décider si les dégâts infligés sont létaux ou non en effectuant une attaque en maniant cette arme."
     }
   },
   {
@@ -363,12 +320,7 @@
     "OtherOptions": [],
     "ReservedTalent": {
       "Name": "Impétuosité",
-      "Descriptions": [
-        "Il peut acquérir à rabais les talents <u>Double attaque</u>, <u>Force incroyable</u> et <u>Onde de choc</u>.",
-        "**Bagarreur.** Il se voit conférer l’avantage à ses tests d’Initiative.",
-        "**Rigide.** Lorsqu’il ne porte pas d’armure, il ajoute son modificateur de Vigueur à sa Défense (minimum 1). S’il ne porte qu’une armure légère, il ajoute seulement la moitié de son modificateur de Vigueur à sa Défense. Il peut bénéficier de cette capacité tout en utilisant un bouclier.",
-        "**Témérité.** En situation de combat, permet au personnage d’entrer en état de témérité au début de son tour par une action libre. Il ne doit pas porter d’armure lourde ni de bouclier lourd afin de bénéficier de cette capacité. En état de témérité, ses tests d’attaques de mêlée se voient conférer l’avantage, tout comme les tests des attaques dirigées contre lui. Sa vitesse augmente de 3 mètres, il inflige 1d6 points de dégâts supplémentaires lorsqu’il réussit une attaque de mêlée et il peut ajouter 1d6 à ses jets de sauvegarde. Ces effets durent jusqu’au début de son prochain tour."
-      ]
+      "Description": "Le personnage acquiert les capacités suivantes.\n\n- Il peut acquérir à rabais les talents [Double attaque](/talents/double-attaque), [Force incroyable](/talents/force-incroyable) et [Onde de choc](/talents/onde-de-choc).\n- **Bagarreur.** Il se voit conférer l’avantage à ses tests d’Initiative.\n- **Rigide.** Lorsqu’il ne porte pas d’armure, il ajoute son modificateur de Vigueur à sa Défense (minimum 1). S’il ne porte qu’une armure légère, il ajoute seulement la moitié de son modificateur de Vigueur à sa Défense. Il peut bénéficier de cette capacité tout en utilisant un bouclier.\n- **Témérité.** En situation de combat, permet au personnage d’entrer en état de témérité au début de son tour par une action libre. Il ne doit pas porter d’armure lourde ni de bouclier lourd afin de bénéficier de cette capacité. En état de témérité, ses tests d’attaques de mêlée se voient conférer l’avantage, tout comme les tests des attaques dirigées contre lui. Sa vitesse augmente de 3 mètres, il inflige 1d6 points de dégâts supplémentaires lorsqu’il réussit une attaque de mêlée et il peut ajouter 1d6 à ses jets de sauvegarde. Ces effets durent jusqu’au début de son prochain tour."
     }
   },
   {
@@ -379,9 +331,9 @@
     "Description": "La puissance du Catalyste provient de son contrôle de plusieurs éléments et de sa capacité à combiner ces éléments afin de produire des pouvoirs et effets surnaturels inhabituels. Parfois, cette combinaison est harmonieuse, particulièrement lorsque deux éléments similaires sont combinés. En revanche, lorsque deux éléments sont opposés, soit l’Air et la Terre ou l’Eau et le Feu, cette combinaison peut être dévastatrice et causer d’importants cataclysmes.",
     "RequiredTalent": "Barrière mentale",
     "OtherRequirements": [
-      "Le personnage doit avoir acquis la spécialisation _Élémentariste_.",
-      "Il doit avoir acquis le talent <u>Combinaison élémentaire</u>.",
-      "Il doit avoir acquis le talent <u>Élémentarisme</u> pour un second élément. Ces deux éléments doivent figurer parmi la liste suivante : Air, Eau, Feu et Terre.",
+      "Le personnage doit avoir acquis la spécialisation [Élémentariste](/specialisations/elementariste).",
+      "Il doit avoir acquis le talent [Combinaison élémentaire](/talents/combinaison-elementaire).",
+      "Il doit avoir acquis le talent [Élémentarisme](/talents/elementarisme) pour un second élément. Ces deux éléments doivent figurer parmi la liste suivante : Air, Eau, Feu et Terre.",
       "Il doit également avoir acquis deux pouvoirs issus d’une combinaison élémentaire. Les pouvoirs acquis gratuitement ne satisfont pas cette condition. Ces deux pouvoirs sont inclus dans les talents optionnels de cette spécialisation."
     ],
     "OptionalTalents": [
@@ -405,12 +357,7 @@
     "OtherOptions": [ "deux pouvoirs issus d’une combinaison élémentaire" ],
     "ReservedTalent": {
       "Name": "Fusion élémentaire",
-      "Descriptions": [
-        "Il peut acquérir à rabais les talents <u>Magie guerrière</u> et <u>Résilience</u>.",
-        "Il peut acquérir les pouvoirs de tiers 2 de son élément pour lequel il a acquis la spécialisation _Élémentariste_, de son second élément ainsi que de sa combinaison élémentaire. Il apprend gratuitement un pouvoir issu de sa combinaison élémentaire et peut acquérir un pouvoir à rabais associé à un de ces deux éléments.",
-        "Il peut désormais utiliser de puissantes capacités élémentaires de tiers 2. Ces capacités sont détaillées en annexe à cet ouvrage.",
-        "**Attaque élémentaire.** Lorsque le personnage utilise le talent <u>Attaque magique</u>, il peut remplacer les dégâts magiques par les dégâts élémentaires associés à sa combinaison élémentaire."
-      ]
+      "Description": "Le personnage acquiert les capacités suivantes.\n\n- Il peut acquérir à rabais les talents [Magie guerrière](/talents/magie-guerriere) et [Résilience](/talents/resilience).\n- Il peut acquérir les pouvoirs de tiers 2 de son élément pour lequel il a acquis la spécialisation [Élémentariste](/specialisations/elementariste), de son second élément ainsi que de sa combinaison élémentaire. Il apprend gratuitement un pouvoir issu de sa combinaison élémentaire et peut acquérir un pouvoir à rabais associé à un de ces deux éléments.\n- Il peut désormais utiliser de puissantes capacités élémentaires de tiers 2. Ces capacités sont détaillées en annexe à cet ouvrage.\n- **Attaque élémentaire.** Lorsque le personnage utilise le talent [Attaque magique](/talents/attaque-magique), il peut remplacer les dégâts magiques par les dégâts élémentaires associés à sa combinaison élémentaire."
     }
   },
   {
@@ -421,9 +368,9 @@
     "Description": "Le druide est un animiste ayant réussi un rite de passage afin d’être accepté dans un cercle d’un culte spirituel voué à un ou plusieurs éléments naturels. L’appartenance à ce culte lui a permis d’accéder aux secrets de ce culte, notamment un langage clandestin et des pouvoirs de puissance supérieure. Ces pouvoirs sont accompagnés de nouvelles responsabilités : il doit respecter les préceptes du cercle l’ayant accepté afin de conserver le droit de les utiliser.",
     "RequiredTalent": "Magie puissante",
     "OtherRequirements": [
-      "Le personnage doit avoir acquis la spécialisation _Animiste_.",
-      "Il ne doit pas avoir acquis la spécialisation _Chaman_.",
-      "Il doit avoir sélectionné un domaine d’animisme naturel lorsqu’il a acquis le talent <u>Spiritualité</u>."
+      "Le personnage doit avoir acquis la spécialisation [Animiste](/specialisations/animiste).",
+      "Il ne doit pas avoir acquis la spécialisation [Chaman](/specialisations/chaman).",
+      "Il doit avoir sélectionné un domaine d’animisme naturel lorsqu’il a acquis le talent [Spiritualité](/talents/spiritualite)."
     ],
     "OptionalTalents": [
       "Armes de jet",
@@ -441,12 +388,7 @@
     "OtherOptions": [ "pouvoirs de tiers 1 de son domaine d’animisme" ],
     "ReservedTalent": {
       "Name": "Druidisme",
-      "Descriptions": [
-        "Il peut acquérir les pouvoirs de tiers 2 de son domaine d’animisme et apprend gratuitement un de ces pouvoirs.",
-        "Il acquiert une capacité de tiers 2 spécifique à son domaine d’animisme.",
-        "Il peut maintenant assumer sa forme sauvage deux fois par jour. Il doit compléter une nuit de sommeil afin de récupérer ces utilisations. Également, il peut maintenant prendre la forme d’une bête de niveau inférieur ou égal à 1 et celle-ci peut voler.",
-        "**Druidique.** Le personnage apprend le langage secret et mystique des druides. Il est impossible d’apprendre cette langue sans devenir Druide. Un mystérieux voile surnaturel l’empêche de l’apprendre à un non-Druide. Ce voile permet à un pouvoir d’identifier qu’il s’agit du langage secret, mais pas de le comprendre ni de le parler."
-      ]
+      "Description": "Le personnage acquiert les capacités suivantes.\n\n- Il peut acquérir les pouvoirs de tiers 2 de son domaine d’animisme et apprend gratuitement un de ces pouvoirs.\n- Il acquiert une capacité de tiers 2 spécifique à son domaine d’animisme.\n- Il peut maintenant assumer sa forme sauvage deux fois par jour. Il doit compléter une nuit de sommeil afin de récupérer ces utilisations. Également, il peut maintenant prendre la forme d’une bête de niveau inférieur ou égal à 1 et celle-ci peut voler.\n- **Druidique.** Le personnage apprend le langage secret et mystique des druides. Il est impossible d’apprendre cette langue sans devenir Druide. Un mystérieux voile surnaturel l’empêche de l’apprendre à un non-Druide. Ce voile permet à un pouvoir d’identifier qu’il s’agit du langage secret, mais pas de le comprendre ni de le parler."
     }
   },
   {
@@ -457,8 +399,8 @@
     "Description": "Dans les profondeurs de son repaire obscur et caché loin des regards, l’haruspice pratique de sombres rituels incorporant du sang, des entrailles de bêtes et d’anciens symboles gravés dans la pierre. Les murmures des esprits guident ses mains, lui révélant des visions d’avenir, des secrets du passé et des réalités du présent. Bien qu’il soit craint par la populace et la noblesse, les prédictions de l’haruspice ne sont pas toujours teintées de mort et de désespoir.",
     "RequiredTalent": "Naturalisme",
     "OtherRequirements": [
-      "Le personnage doit avoir acquis la spécialisation _Élémentariste_ pour l’élément Esprit.",
-      "Il ne doit pas avoir acquis la spécialisation _Augure_."
+      "Le personnage doit avoir acquis la spécialisation [Élémentariste](/specialisations/elementariste) pour l’élément Esprit.",
+      "Il ne doit pas avoir acquis la spécialisation [Augure](/specialisations/augure)."
     ],
     "OptionalTalents": [
       "Barrière mentale",
@@ -476,12 +418,7 @@
     "OtherOptions": [ "pouvoirs de tiers 1 associés à l’élément Esprit et à la Nécromancie" ],
     "ReservedTalent": {
       "Name": "Hiéroscopie",
-      "Descriptions": [
-        "Il peut acquérir à rabais les talents <u>Érudition</u>, <u>Extraction du poison</u> et <u>Magie guerrière</u>.",
-        "Il peut acquérir les pouvoirs de tiers 2 associés à l’élément Esprit et à la Nécromancie, et apprend gratuitement un de ces pouvoirs.",
-        "Il peut désormais utiliser de puissantes capacités élémentaires de tiers 2. Ces capacités sont détaillées en annexe à cet ouvrage.",
-        "**Attaque élémentaire.** Lorsque le personnage utilise le talent <u>Attaque magique</u>, il peut remplacer les dégâts magiques par des dégâts nécrotiques."
-      ]
+      "Description": "Le personnage acquiert les capacités suivantes.\n\n- Il peut acquérir à rabais les talents [Érudition](/talents/erudition), [Extraction du poison](/talents/extraction-du-poison) et [Magie guerrière](/talents/magie-guerriere).\n- Il peut acquérir les pouvoirs de tiers 2 associés à l’élément Esprit et à la Nécromancie, et apprend gratuitement un de ces pouvoirs.\n- Il peut désormais utiliser de puissantes capacités élémentaires de tiers 2. Ces capacités sont détaillées en annexe à cet ouvrage.\n- **Attaque élémentaire.** Lorsque le personnage utilise le talent [Attaque magique](/talents/attaque-magique), il peut remplacer les dégâts magiques par des dégâts nécrotiques."
     }
   },
   {
@@ -492,8 +429,8 @@
     "Description": "Le terme mage désigne les Astromanciens en général, mais le titre de Mage n’est décerné qu’aux plus brillants de ceux-ci. En réussissant une série de tests complexes et éprouvants, un Astromancien prouve sa valeur à une Tour de Magie. Il se spécialise ensuite dans un Cercle de Magie en étudiant le corpus de ses collègues.",
     "RequiredTalent": "Initiation magique",
     "OtherRequirements": [
-      "Le personnage doit avoir acquis la spécialisation _Astromancien_.",
-      "Il ne doit pas avoir acquis la spécialisation _Magelame_."
+      "Le personnage doit avoir acquis la spécialisation [Astromancien](/specialisations/astromancien).",
+      "Il ne doit pas avoir acquis la spécialisation [Magelame](/specialisations/magelame)."
     ],
     "OptionalTalents": [
       "Barrière mentale",
@@ -511,11 +448,7 @@
     "OtherOptions": [ "pouvoirs de tiers 1 d’astromancie" ],
     "ReservedTalent": {
       "Name": "Magie raffinée",
-      "Descriptions": [
-        "Il peut acquérir à rabais les talents <u>Magie guerrière</u>, <u>Magie précise</u> et <u>Optimisation magique. Ces rabais ne sont pas cumulables avec les rabais conférés par la spécialisation _Sorcier_.",
-        "Il peut acquérir les pouvoirs de tiers 2 d’astromancie et apprend gratuitement un de ces pouvoirs.",
-        "Il sélectionne un cercle de magie pour lequel il a acquis le talent <u>Initiation magique</u> et il acquiert la capacité de tiers 2 spécifique à ce cercle de magie."
-      ]
+      "Description": "Le personnage acquiert les capacités suivantes.\n\n- Il peut acquérir à rabais les talents [Magie guerrière](/talents/magie-guerriere), [Magie précise](/talents/magie-precise) et [Optimisation magique](/talents/optimisation-magique). Ces rabais ne sont pas cumulables avec les rabais conférés par la spécialisation [Sorcier](/specialisations/sorcier).\n- Il peut acquérir les pouvoirs de tiers 2 d’astromancie et apprend gratuitement un de ces pouvoirs.\n- Il sélectionne un cercle de magie pour lequel il a acquis le talent [Initiation magique](/talents/initiation-magique) et il acquiert la capacité de tiers 2 spécifique à ce cercle de magie."
     }
   },
   {
@@ -526,8 +459,8 @@
     "Description": "Le prêtre est un clerc ayant progressé au sein de son clergé. Il est non seulement reconnu par ses pairs comme un important ambassadeur de sa divinité par un échelon plus élevé, il est également reconnu par sa divinité en recevant des pouvoirs plus puissants de la part de celle-ci.",
     "RequiredTalent": "Magie puissante",
     "OtherRequirements": [
-      "Le personnage doit avoir acquis la spécialisation _Clerc_.",
-      "Il ne doit pas avoir acquis la spécialisation _Champion_."
+      "Le personnage doit avoir acquis la spécialisation [Clerc](/specialisations/clerc).",
+      "Il ne doit pas avoir acquis la spécialisation [Champion](/specialisations/champion)."
     ],
     "OptionalTalents": [
       "Barrière mentale",
@@ -545,12 +478,7 @@
     "OtherOptions": [ "pouvoirs de tiers 1 du domaine de sa divinité" ],
     "ReservedTalent": {
       "Name": "Prêtrise",
-      "Descriptions": [
-        "Il peut acquérir les pouvoirs de tiers 2 du domaine de sa divinité et apprend gratuitement un de ces pouvoirs.",
-        "Il acquiert une capacité de tiers 2 spécifique au domaine de sa divinité.",
-        "Il peut maintenant invoquer un pouvoir divin spécifique au domaine de sa divinité deux fois par jour. Il doit compléter une nuit de sommeil afin de récupérer ces utilisations.",
-        "**Attaque divine.** Lorsque le personnage effectue une <u>Attaque magique</u>, il peut substituer les dégâts magiques par des dégâts du type associé au domaine de sa divinité."
-      ]
+      "Description": "Le personnage acquiert les capacités suivantes.\n\n- Il peut acquérir les pouvoirs de tiers 2 du domaine de sa divinité et apprend gratuitement un de ces pouvoirs.\n- Il acquiert une capacité de tiers 2 spécifique au domaine de sa divinité.\n- Il peut maintenant invoquer un pouvoir divin spécifique au domaine de sa divinité deux fois par jour. Il doit compléter une nuit de sommeil afin de récupérer ces utilisations.\n- **Attaque divine.** Lorsque le personnage effectue une [Attaque magique](/talents/attaque-magique), il peut substituer les dégâts magiques par des dégâts du type associé au domaine de sa divinité."
     }
   },
   {
@@ -583,12 +511,7 @@
     "OtherOptions": [],
     "ReservedTalent": {
       "Name": "Entraînement militaire",
-      "Descriptions": [
-        "Il peut acquérir à rabais les talents <u>Attaque précise</u>, <u>Attaques multiples</u> et <u>Poigne de fer</u>.",
-        "**Ardeur au combat.** En situation de combat, permet au personnage de dépenser 15, 30 ou 45 points d’Énergie à la fin de son tour. Pour chaque tranche de 15 points d’Énergie dépensés, il peut effectuer une action supplémentaire pendant ce tour. Il peut utiliser cette capacité un nombre de fois égal à son tiers de personnage et doit compléter une nuit de sommeil afin de récupérer ces utilisations.",
-        "**Athlète remarquable.** Lorsqu’il effectue un test de compétence d’une des compétences suivantes, il remplace le rang de cette compétence par son tiers de personnage si celui-ci est plus élevé que le rang de cette compétence : _Acrobaties_, _Artisanat_, _Athlétisme_, _Furtivité_, _Mêlée_, _Orientation_, _Résistance_ et _Roublardise_.",
-        "**Déduction guerrière.** Lorsqu’il n’est pas en situation de combat, le personnage peut observer ou interagir avec une créature pendant une minute. Cela lui permet de déterminer si les caractéristiques suivantes de cette créature sont supérieures, inférieures ou égales aux siennes, à la discrétion du maître de jeu : scores d’Agilité, de Coordination et de Vigueur, Défense, Esquive, et points de Vitalité et d’Énergie actuels."
-      ]
+      "Description": "Le personnage acquiert les capacités suivantes.\n\n- Il peut acquérir à rabais les talents [Attaque précise](/talents/attaque-precise), [Attaques multiples](/talents/attaques-multiples) et [Poigne de fer](/talents/poigne-de-fer).\n- **Ardeur au combat.** En situation de combat, permet au personnage de dépenser 15, 30 ou 45 points d’Énergie à la fin de son tour. Pour chaque tranche de 15 points d’Énergie dépensés, il peut effectuer une action supplémentaire pendant ce tour. Il peut utiliser cette capacité un nombre de fois égal à son tiers de personnage et doit compléter une nuit de sommeil afin de récupérer ces utilisations.\n- **Athlète remarquable.** Lorsqu’il effectue un test de compétence d’une des compétences suivantes, il remplace le rang de cette compétence par son tiers de personnage si celui-ci est plus élevé que le rang de cette compétence : _Acrobaties_, _Artisanat_, _Athlétisme_, _Furtivité_, _Mêlée_, _Orientation_, _Résistance_ et _Roublardise_.\n- **Déduction guerrière.** Lorsqu’il n’est pas en situation de combat, le personnage peut observer ou interagir avec une créature pendant une minute. Cela lui permet de déterminer si les caractéristiques suivantes de cette créature sont supérieures, inférieures ou égales aux siennes, à la discrétion du maître de jeu : scores d’Agilité, de Coordination et de Vigueur, Défense, Esquive, et points de Vitalité et d’Énergie actuels."
     }
   }
 ]
