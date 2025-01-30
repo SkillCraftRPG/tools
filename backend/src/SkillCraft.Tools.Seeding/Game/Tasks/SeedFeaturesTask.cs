@@ -4,6 +4,7 @@ using Logitar.Cms.Core.Contents.Models;
 using Logitar.Cms.Core.Localization.Models;
 using MediatR;
 using SkillCraft.Tools.Core.Contents;
+using SkillCraft.Tools.Seeding.Cms;
 using SkillCraft.Tools.Seeding.Game.Payloads;
 
 namespace SkillCraft.Tools.Seeding.Game.Tasks;
@@ -13,10 +14,12 @@ internal class SeedFeaturesTask : SeedingTask
   public override string? Description => "Seeds the caste features into the CMS.";
 
   public LanguageModel Language { get; }
+  public PublicationAction PublicationAction { get; }
 
-  public SeedFeaturesTask(LanguageModel language)
+  public SeedFeaturesTask(LanguageModel language, PublicationAction publicationAction)
   {
     Language = language;
+    PublicationAction = publicationAction;
   }
 }
 
@@ -88,6 +91,18 @@ internal class SeedFeaturesTaskHandler : INotificationHandler<SeedFeaturesTask>
         else
         {
           _logger.LogInformation("The content locale invariant was updated for caste feature '{Feature}' (Id={Id}).", displayText, feature.Id);
+        }
+
+        switch (task.PublicationAction)
+        {
+          case PublicationAction.Publish:
+            await _mediator.Send(new PublishContentCommand(feature.Id), cancellationToken);
+            _logger.LogInformation("The contents were published for caste feature '{Feature}' (Id={Id}).", displayText, feature.Id);
+            break;
+          case PublicationAction.Unpublish:
+            await _mediator.Send(new UnpublishContentCommand(feature.Id), cancellationToken);
+            _logger.LogInformation("The contents were unpublished for caste feature '{Feature}' (Id={Id}).", displayText, feature.Id);
+            break;
         }
       }
     }

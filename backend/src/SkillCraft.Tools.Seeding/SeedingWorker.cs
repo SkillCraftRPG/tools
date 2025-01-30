@@ -5,6 +5,7 @@ using Logitar.Cms.Core.Users;
 using Logitar.Cms.Core.Users.Models;
 using Logitar.EventSourcing;
 using MediatR;
+using SkillCraft.Tools.Seeding.Cms;
 using SkillCraft.Tools.Seeding.Cms.Tasks;
 using SkillCraft.Tools.Seeding.Game.Tasks;
 
@@ -67,17 +68,18 @@ internal class SeedingWorker : BackgroundService
       await ExecuteAsync(new SeedFieldTypesTask(), cancellationToken);
       await ExecuteAsync(new SeedFieldDefinitionsTask(), cancellationToken);
 
-      await ExecuteAsync(new SeedAspectsTask(language), cancellationToken);
-      await ExecuteAsync(new SeedCustomizationsTask(language), cancellationToken);
-      await ExecuteAsync(new SeedScriptsTask(language), cancellationToken);
-      await ExecuteAsync(new SeedLanguagesTask(language), cancellationToken);
-      await ExecuteAsync(new SeedLineagesTask(language), cancellationToken);
-      await ExecuteAsync(new SeedFeaturesTask(language), cancellationToken);
-      await ExecuteAsync(new SeedCastesTask(language), cancellationToken);
-      await ExecuteAsync(new SeedEducationsTask(language), cancellationToken);
-      await ExecuteAsync(new SeedNaturesTask(language), cancellationToken);
-      await ExecuteAsync(new SeedTalentsTask(language), cancellationToken);
-      await ExecuteAsync(new SeedSpecializationsTask(language), cancellationToken);
+      PublicationAction publicationAction = PublicationAction.Publish;
+      await ExecuteAsync(new SeedAspectsTask(language, publicationAction), cancellationToken);
+      await ExecuteAsync(new SeedCustomizationsTask(language, publicationAction), cancellationToken);
+      await ExecuteAsync(new SeedScriptsTask(language, publicationAction), cancellationToken);
+      await ExecuteAsync(new SeedLanguagesTask(language, publicationAction), cancellationToken);
+      await ExecuteAsync(new SeedLineagesTask(language, publicationAction), cancellationToken);
+      await ExecuteAsync(new SeedFeaturesTask(language, publicationAction), cancellationToken);
+      await ExecuteAsync(new SeedCastesTask(language, publicationAction), cancellationToken);
+      await ExecuteAsync(new SeedEducationsTask(language, publicationAction), cancellationToken);
+      await ExecuteAsync(new SeedNaturesTask(language, publicationAction), cancellationToken);
+      await ExecuteAsync(new SeedTalentsTask(language, publicationAction), cancellationToken);
+      await ExecuteAsync(new SeedSpecializationsTask(language, publicationAction), cancellationToken);
     }
     catch (Exception exception)
     {

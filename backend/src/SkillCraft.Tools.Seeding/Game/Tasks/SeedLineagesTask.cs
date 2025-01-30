@@ -4,6 +4,7 @@ using Logitar.Cms.Core.Contents.Models;
 using Logitar.Cms.Core.Localization.Models;
 using MediatR;
 using SkillCraft.Tools.Core.Contents;
+using SkillCraft.Tools.Seeding.Cms;
 using SkillCraft.Tools.Seeding.Game.Payloads;
 
 namespace SkillCraft.Tools.Seeding.Game.Tasks;
@@ -13,10 +14,12 @@ internal class SeedLineagesTask : SeedingTask
   public override string? Description => "Seeds the lineages and their traits into the CMS.";
 
   public LanguageModel Language { get; }
+  public PublicationAction PublicationAction { get; }
 
-  public SeedLineagesTask(LanguageModel language)
+  public SeedLineagesTask(LanguageModel language, PublicationAction publicationAction)
   {
     Language = language;
+    PublicationAction = publicationAction;
   }
 }
 
@@ -54,7 +57,7 @@ internal class SeedLineagesTaskHandler : INotificationHandler<SeedLineagesTask>
 
         foreach (TraitPayload trait in lineage.Traits)
         {
-          await SeedAsync(trait, language, cancellationToken);
+          await SeedAsync(trait, language, task.PublicationAction, cancellationToken);
         }
 
         CreateOrReplaceContentPayload payload = new()
@@ -100,11 +103,23 @@ internal class SeedLineagesTaskHandler : INotificationHandler<SeedLineagesTask>
         {
           _logger.LogInformation("The content locale invariant was updated for lineage '{Lineage}' (Id={Id}).", displayText, lineage.Id);
         }
+
+        switch (task.PublicationAction)
+        {
+          case PublicationAction.Publish:
+            await _mediator.Send(new PublishContentCommand(lineage.Id), cancellationToken);
+            _logger.LogInformation("The contents were published for lineage '{Lineage}' (Id={Id}).", displayText, lineage.Id);
+            break;
+          case PublicationAction.Unpublish:
+            await _mediator.Send(new UnpublishContentCommand(lineage.Id), cancellationToken);
+            _logger.LogInformation("The contents were unpublished for lineage '{Lineage}' (Id={Id}).", displayText, lineage.Id);
+            break;
+        }
       }
     }
   }
 
-  private async Task SeedAsync(TraitPayload trait, LanguageModel language, CancellationToken cancellationToken)
+  private async Task SeedAsync(TraitPayload trait, LanguageModel language, PublicationAction publicationAction, CancellationToken cancellationToken)
   {
     ContentTypeModel contentType = await _contentTypeQuerier.ReadAsync(LineageTrait.UniqueName, cancellationToken)
       ?? throw new InvalidOperationException($"The content type '{LineageTrait.UniqueName}' could not be found.");
@@ -146,11 +161,23 @@ internal class SeedLineagesTaskHandler : INotificationHandler<SeedLineagesTask>
     }
     else if (result.Created)
     {
-      _logger.LogInformation("The content locale invariant was created for lineage trait '{Lineage}' (Id={Id}).", displayText, trait.Id);
+      _logger.LogInformation("The content locale invariant was created for lineage trait '{Trait}' (Id={Id}).", displayText, trait.Id);
     }
     else
     {
-      _logger.LogInformation("The content locale invariant was updated for lineage trait '{Lineage}' (Id={Id}).", displayText, trait.Id);
+      _logger.LogInformation("The content locale invariant was updated for lineage trait '{Trait}' (Id={Id}).", displayText, trait.Id);
+    }
+
+    switch (publicationAction)
+    {
+      case PublicationAction.Publish:
+        await _mediator.Send(new PublishContentCommand(trait.Id), cancellationToken);
+        _logger.LogInformation("The contents were published for lineage trait '{Trait}' (Id={Id}).", displayText, trait.Id);
+        break;
+      case PublicationAction.Unpublish:
+        await _mediator.Send(new UnpublishContentCommand(trait.Id), cancellationToken);
+        _logger.LogInformation("The contents were unpublished for lineage trait '{Trait}' (Id={Id}).", displayText, trait.Id);
+        break;
     }
   }
 

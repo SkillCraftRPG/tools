@@ -4,6 +4,7 @@ using Logitar.Cms.Core.Contents.Models;
 using Logitar.Cms.Core.Localization.Models;
 using MediatR;
 using SkillCraft.Tools.Core.Contents;
+using SkillCraft.Tools.Seeding.Cms;
 using SkillCraft.Tools.Seeding.Game.Payloads;
 
 namespace SkillCraft.Tools.Seeding.Game.Tasks;
@@ -13,10 +14,12 @@ internal class SeedAspectsTask : SeedingTask
   public override string? Description => "Seeds the aspects into the CMS.";
 
   public LanguageModel Language { get; }
+  public PublicationAction PublicationAction { get; }
 
-  public SeedAspectsTask(LanguageModel language)
+  public SeedAspectsTask(LanguageModel language, PublicationAction publicationAction)
   {
     Language = language;
+    PublicationAction = publicationAction;
   }
 }
 
@@ -89,6 +92,18 @@ internal class SeedAspectsTaskHandler : INotificationHandler<SeedAspectsTask>
         else
         {
           _logger.LogInformation("The content locale invariant was updated for aspect '{Aspect}' (Id={Id}).", displayText, aspect.Id);
+        }
+
+        switch (task.PublicationAction)
+        {
+          case PublicationAction.Publish:
+            await _mediator.Send(new PublishContentCommand(aspect.Id), cancellationToken);
+            _logger.LogInformation("The contents were published for aspect '{Aspect}' (Id={Id}).", displayText, aspect.Id);
+            break;
+          case PublicationAction.Unpublish:
+            await _mediator.Send(new UnpublishContentCommand(aspect.Id), cancellationToken);
+            _logger.LogInformation("The contents were unpublished for aspect '{Aspect}' (Id={Id}).", displayText, aspect.Id);
+            break;
         }
       }
     }
