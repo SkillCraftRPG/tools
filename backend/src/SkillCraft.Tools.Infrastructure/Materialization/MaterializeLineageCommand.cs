@@ -52,6 +52,14 @@ internal class MaterializeLineageCommandHandler : IRequestHandler<MaterializeLin
     ContentLocale? locale = command.Locale;
     if (locale == null)
     {
+      LineageEntity? parent = null;
+      if (command.FieldValues.TryGetValue(Lineage.Parent, out string? parentValue))
+      {
+        Guid parentId = Guid.Parse(parentValue);
+        parent = await _context.Lineages.SingleOrDefaultAsync(x => x.Id == parentId, cancellationToken);
+      }
+      lineage.SetParent(parent);
+
       lineage.Agility = command.FieldValues.TryGetValue(Lineage.Agility, out string? agility) ? int.Parse(agility) : 0;
       lineage.Coordination = command.FieldValues.TryGetValue(Lineage.Coordination, out string? coordination) ? int.Parse(coordination) : 0;
       lineage.Intellect = command.FieldValues.TryGetValue(Lineage.Intellect, out string? intellect) ? int.Parse(intellect) : 0;

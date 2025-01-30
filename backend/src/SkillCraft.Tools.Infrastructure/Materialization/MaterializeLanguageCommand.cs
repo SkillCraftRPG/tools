@@ -66,7 +66,19 @@ internal class MaterializeLanguageCommandHandler : IRequestHandler<MaterializeLa
       language.DisplayName = locale.DisplayName?.Value;
       language.Description = locale.Description?.Value;
 
-      language.TypicalSpeakers = command.FieldValues.TryGetValue(Language.TypicalSpeakers, out string? typicalSpeakers) ? typicalSpeakers : null;
+      if (command.FieldValues.TryGetValue(Language.TypicalSpeakers, out string? typicalSpeakers))
+      {
+        IEnumerable<string> values = (JsonSerializer.Deserialize<IEnumerable<string>>(typicalSpeakers) ?? [])
+          .Where(value => !string.IsNullOrWhiteSpace(value))
+          .Select(value => value.Trim())
+          .Distinct()
+          .OrderBy(value => value);
+        language.TypicalSpeakers = values.Any() ? string.Join(", ", values) : null;
+      }
+      else
+      {
+        language.TypicalSpeakers = null;
+      }
     }
 
     await _context.SaveChangesAsync(cancellationToken);

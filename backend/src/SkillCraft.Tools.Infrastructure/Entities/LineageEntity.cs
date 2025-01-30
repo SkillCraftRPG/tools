@@ -183,6 +183,12 @@ internal class LineageEntity : AggregateEntity
     Obese = ObeseRoll
   };
 
+  public void SetParent(LineageEntity? parent)
+  {
+    Parent = parent;
+    ParentId = parent?.ParentId;
+  }
+
   public void Update(ContentLocalePublished @event)
   {
     base.Update(@event);
