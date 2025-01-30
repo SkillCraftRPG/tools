@@ -1,6 +1,6 @@
 ﻿namespace SkillCraft.Tools.Seeding.Game.Payloads;
 
-public record FeaturePayload
+internal record FeaturePayload
 {
   public Guid Id { get; set; }
 

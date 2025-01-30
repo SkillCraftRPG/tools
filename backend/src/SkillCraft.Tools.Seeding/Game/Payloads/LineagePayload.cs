@@ -2,7 +2,7 @@
 
 namespace SkillCraft.Tools.Seeding.Game.Payloads;
 
-public record LineagePayload
+internal record LineagePayload
 {
   public Guid Id { get; set; }
 

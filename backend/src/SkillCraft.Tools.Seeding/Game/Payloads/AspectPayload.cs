@@ -3,7 +3,7 @@ using Attribute = SkillCraft.Tools.Core.Attribute;
 
 namespace SkillCraft.Tools.Seeding.Game.Payloads;
 
-public record AspectPayload
+internal record AspectPayload
 {
   public Guid Id { get; set; }
 
@@ -15,7 +15,7 @@ public record AspectPayload
   public SkillSelection Skills { get; set; } = new();
 }
 
-public record AttributeSelection
+internal record AttributeSelection
 {
   public Attribute? Mandatory1 { get; set; }
   public Attribute? Mandatory2 { get; set; }
@@ -23,7 +23,7 @@ public record AttributeSelection
   public Attribute? Optional2 { get; set; }
 }
 
-public record SkillSelection
+internal record SkillSelection
 {
   public Skill? Discounted1 { get; set; }
   public Skill? Discounted2 { get; set; }

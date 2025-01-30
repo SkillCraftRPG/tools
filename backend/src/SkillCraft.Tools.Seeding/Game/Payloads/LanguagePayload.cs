@@ -1,6 +1,6 @@
 ﻿namespace SkillCraft.Tools.Seeding.Game.Payloads;
 
-public record LanguagePayload
+internal record LanguagePayload
 {
   public Guid Id { get; set; }
 
