@@ -1,5 +1,9 @@
-﻿using Logitar.Cms.Core.Localization;
+﻿using Logitar.Cms.Core;
+using Logitar.Cms.Core.Localization;
 using Logitar.Cms.Core.Localization.Models;
+using Logitar.Cms.Core.Users;
+using Logitar.Cms.Core.Users.Models;
+using Logitar.EventSourcing;
 using MediatR;
 using SkillCraft.Tools.Seeding.Cms.Tasks;
 using SkillCraft.Tools.Seeding.Game.Tasks;
@@ -8,8 +12,11 @@ namespace SkillCraft.Tools.Seeding;
 
 internal class SeedingWorker : BackgroundService
 {
+  private const string DefaultUniqueName = "admin";
   private const string GenericErrorMessage = "An unhanded exception occurred.";
 
+  private readonly IApplicationContext _applicationContext;
+  private readonly IConfiguration _configuration;
   private readonly IHostApplicationLifetime _hostApplicationLifetime;
   private readonly ILogger<SeedingWorker> _logger;
   private readonly IServiceProvider _serviceProvider;
@@ -19,8 +26,15 @@ internal class SeedingWorker : BackgroundService
 
   private LogLevel _result = LogLevel.Information; // NOTE(fpion): "Information" means success.
 
-  public SeedingWorker(IHostApplicationLifetime hostApplicationLifetime, ILogger<SeedingWorker> logger, IServiceProvider serviceProvider)
+  public SeedingWorker(
+    IApplicationContext applicationContext,
+    IConfiguration configuration,
+    IHostApplicationLifetime hostApplicationLifetime,
+    ILogger<SeedingWorker> logger,
+    IServiceProvider serviceProvider)
   {
+    _applicationContext = applicationContext;
+    _configuration = configuration;
     _hostApplicationLifetime = hostApplicationLifetime;
     _logger = logger;
     _serviceProvider = serviceProvider;
@@ -36,13 +50,22 @@ internal class SeedingWorker : BackgroundService
 
     try
     {
+      IUserQuerier userQuerier = scope.ServiceProvider.GetRequiredService<IUserQuerier>();
+      string uniqueName = _configuration.GetValue<string>("CMS_USERNAME") ?? DefaultUniqueName;
+      UserModel user = await userQuerier.ReadAsync(uniqueName, cancellationToken)
+        ?? throw new InvalidOperationException($"The user '{uniqueName}' could not be found.");
+      if (_applicationContext is SeedingApplicationContext applicationContext)
+      {
+        applicationContext.ActorId = new ActorId(user.Id);
+      }
+
+      ILanguageQuerier languageQuerier = scope.ServiceProvider.GetRequiredService<ILanguageQuerier>();
+      LanguageModel language = await languageQuerier.ReadDefaultAsync(cancellationToken);
+
       // NOTE(fpion): the order of these tasks matter.
       await ExecuteAsync(new SeedContentTypesTask(), cancellationToken);
       await ExecuteAsync(new SeedFieldTypesTask(), cancellationToken);
       await ExecuteAsync(new SeedFieldDefinitionsTask(), cancellationToken);
-
-      ILanguageQuerier languageQuerier = scope.ServiceProvider.GetRequiredService<ILanguageQuerier>();
-      LanguageModel language = await languageQuerier.ReadDefaultAsync(cancellationToken);
 
       await ExecuteAsync(new SeedAspectsTask(language), cancellationToken);
       await ExecuteAsync(new SeedCustomizationsTask(language), cancellationToken);

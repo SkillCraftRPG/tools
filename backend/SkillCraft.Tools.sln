@@ -20,6 +20,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.Core", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.Infrastructure", "src\SkillCraft.Tools.Infrastructure\SkillCraft.Tools.Infrastructure.csproj", "{48D2747A-CE8B-4E61-AC1E-348046F27365}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.Infrastructure.SqlServer", "src\SkillCraft.Tools.Infrastructure.SqlServer\SkillCraft.Tools.Infrastructure.SqlServer.csproj", "{DB9D2F18-D744-48DF-AF1D-4F564FBF7C66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillCraft.Tools.Infrastructure.PostgreSQL", "src\SkillCraft.Tools.Infrastructure.PostgreSQL\SkillCraft.Tools.Infrastructure.PostgreSQL.csproj", "{F4ACCA6A-B068-4B31-8B41-0DC46FF64248}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +46,14 @@ Global
 		{48D2747A-CE8B-4E61-AC1E-348046F27365}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48D2747A-CE8B-4E61-AC1E-348046F27365}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48D2747A-CE8B-4E61-AC1E-348046F27365}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB9D2F18-D744-48DF-AF1D-4F564FBF7C66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB9D2F18-D744-48DF-AF1D-4F564FBF7C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB9D2F18-D744-48DF-AF1D-4F564FBF7C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB9D2F18-D744-48DF-AF1D-4F564FBF7C66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4ACCA6A-B068-4B31-8B41-0DC46FF64248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4ACCA6A-B068-4B31-8B41-0DC46FF64248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4ACCA6A-B068-4B31-8B41-0DC46FF64248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4ACCA6A-B068-4B31-8B41-0DC46FF64248}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,9 @@
 ﻿using Logitar.Cms.Core;
 using Logitar.Cms.Infrastructure;
-using Logitar.Cms.Infrastructure.PostgreSQL;
-using Logitar.Cms.Infrastructure.SqlServer;
+using SkillCraft.Tools.Core;
+using SkillCraft.Tools.Infrastructure;
+using SkillCraft.Tools.Infrastructure.PostgreSQL;
+using SkillCraft.Tools.Infrastructure.SqlServer;
 
 namespace SkillCraft.Tools.Seeding;
 
@@ -19,17 +21,17 @@ internal class Startup
     services.AddHostedService<SeedingWorker>();
     services.AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
-    services.AddLogitarCmsCore();
-    services.AddLogitarCmsInfrastructure();
+    services.AddSkillCraftToolsCore();
+    services.AddSkillCraftToolsInfrastructure();
 
     DatabaseProvider databaseProvider = _configuration.GetValue<DatabaseProvider?>("DatabaseProvider") ?? DatabaseProvider.SqlServer;
     switch (databaseProvider)
     {
       case DatabaseProvider.PostgreSQL:
-        services.AddLogitarCmsWithPostgreSQL(_configuration);
+        services.AddSkillCraftToolsWithPostgreSQL(_configuration);
         break;
       case DatabaseProvider.SqlServer:
-        services.AddLogitarCmsWithSqlServer(_configuration);
+        services.AddSkillCraftToolsWithSqlServer(_configuration);
         break;
       default:
         throw new DatabaseProviderNotSupportedException(databaseProvider);

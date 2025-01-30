@@ -1,7 +1,4 @@
-﻿using Logitar.Cms.Core;
-using Logitar.Cms.Infrastructure;
-using Logitar.Cms.Infrastructure.PostgreSQL;
-using Logitar.Cms.Infrastructure.SqlServer;
+﻿using Logitar.Cms.Infrastructure;
 using Logitar.Cms.Web;
 using Logitar.Cms.Web.Authentication;
 using Logitar.Cms.Web.Constants;
@@ -15,6 +12,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.FeatureManagement;
 using Scalar.AspNetCore;
 using SkillCraft.Tools.Constants;
+using SkillCraft.Tools.Core;
+using SkillCraft.Tools.Infrastructure;
+using SkillCraft.Tools.Infrastructure.PostgreSQL;
+using SkillCraft.Tools.Infrastructure.SqlServer;
 
 namespace SkillCraft.Tools;
 
@@ -33,8 +34,8 @@ internal class Startup : StartupBase
   {
     base.ConfigureServices(services);
 
-    services.AddLogitarCmsCore();
-    services.AddLogitarCmsInfrastructure();
+    services.AddSkillCraftToolsCore();
+    services.AddSkillCraftToolsInfrastructure();
     services.AddLogitarCmsWeb(_configuration);
 
     services.AddCors();
@@ -72,16 +73,18 @@ internal class Startup : StartupBase
     switch (databaseProvider)
     {
       case DatabaseProvider.PostgreSQL:
-        services.AddLogitarCmsWithPostgreSQL(_configuration);
+        services.AddSkillCraftToolsWithPostgreSQL(_configuration);
         healthChecks.AddDbContextCheck<EventContext>();
         healthChecks.AddDbContextCheck<IdentityContext>();
         healthChecks.AddDbContextCheck<CmsContext>();
+        healthChecks.AddDbContextCheck<SkillCraftContext>();
         break;
       case DatabaseProvider.SqlServer:
-        services.AddLogitarCmsWithSqlServer(_configuration);
+        services.AddSkillCraftToolsWithSqlServer(_configuration);
         healthChecks.AddDbContextCheck<EventContext>();
         healthChecks.AddDbContextCheck<IdentityContext>();
         healthChecks.AddDbContextCheck<CmsContext>();
+        healthChecks.AddDbContextCheck<SkillCraftContext>();
         break;
       default:
         throw new DatabaseProviderNotSupportedException(databaseProvider);

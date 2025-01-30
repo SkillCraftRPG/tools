@@ -26,14 +26,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Logitar.Cms.Infrastructure.PostgreSQL" Version="0.2.2" />
-    <PackageReference Include="Logitar.Cms.Infrastructure.SqlServer" Version="0.2.2" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.1" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SkillCraft.Tools.Core\SkillCraft.Tools.Core.csproj" />
+    <ProjectReference Include="..\SkillCraft.Tools.Infrastructure.PostgreSQL\SkillCraft.Tools.Infrastructure.PostgreSQL.csproj" />
+    <ProjectReference Include="..\SkillCraft.Tools.Infrastructure.SqlServer\SkillCraft.Tools.Infrastructure.SqlServer.csproj" />
   </ItemGroup>
 
   <ItemGroup>
