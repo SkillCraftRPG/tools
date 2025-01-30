@@ -61,7 +61,8 @@ internal class SeedLanguagesTaskHandler : INotificationHandler<SeedLanguagesTask
         {
           IEnumerable<string> tags = input.TypicalSpeakers.Split(',')
             .Where(value => !string.IsNullOrWhiteSpace(value))
-            .Select(value => value.Trim());
+            .Select(value => value.Trim())
+            .Distinct();
           payload.AddFieldValue(fields[Language.TypicalSpeakers], JsonSerializer.Serialize(tags));
         }
         CreateOrReplaceContentCommand command = new(input.Id, language.Id, payload);

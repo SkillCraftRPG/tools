@@ -1,4 +1,6 @@
-﻿namespace SkillCraft.Tools.Seeding.Game.Payloads;
+﻿using SkillCraft.Tools.Core;
+
+namespace SkillCraft.Tools.Seeding.Game.Payloads;
 
 public record LineagePayload
 {
@@ -80,18 +82,6 @@ public record Size
 {
   public SizeCategory Category { get; set; }
   public string? Roll { get; set; }
-}
-
-public enum SizeCategory
-{
-  Diminutive = -3,
-  Tiny = -2,
-  Small = -1,
-  Medium = 0,
-  Large = 1,
-  Huge = 2,
-  Gargantuan = 3,
-  Colossal = 4
 }
 
 public record Weight

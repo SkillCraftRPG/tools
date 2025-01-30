@@ -4,6 +4,7 @@ using Logitar.Cms.Core.Contents.Models;
 using Logitar.Cms.Core.Localization.Models;
 using MediatR;
 using SkillCraft.Tools.Core.Contents;
+using SkillCraft.Tools.Core.Customizations;
 using SkillCraft.Tools.Seeding.Game.Payloads;
 
 namespace SkillCraft.Tools.Seeding.Game.Tasks;

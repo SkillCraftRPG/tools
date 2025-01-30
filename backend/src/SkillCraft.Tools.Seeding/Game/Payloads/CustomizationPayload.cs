@@ -1,4 +1,6 @@
-﻿namespace SkillCraft.Tools.Seeding.Game.Payloads;
+﻿using SkillCraft.Tools.Core.Customizations;
+
+namespace SkillCraft.Tools.Seeding.Game.Payloads;
 
 public record CustomizationPayload
 {
@@ -9,10 +11,4 @@ public record CustomizationPayload
   public string UniqueSlug { get; set; } = string.Empty;
   public string? DisplayName { get; set; }
   public string? Description { get; set; }
-}
-
-public enum CustomizationType
-{
-  Disability,
-  Gift
 }

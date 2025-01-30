@@ -107,7 +107,8 @@ internal class SeedSpecializationsTaskHandler : INotificationHandler<SeedSpecial
       payload.AddFieldValue(fields[Specialization.RequiredTalent], contentId);
     }
 
-    IEnumerable<Guid> contentIds = specialization.OptionalTalents.Where(talent => !string.IsNullOrWhiteSpace(talent))
+    IEnumerable<Guid> contentIds = specialization.OptionalTalents
+      .Where(talent => !string.IsNullOrWhiteSpace(talent))
       .Select(talent => talents[talent.Trim()])
       .Distinct();
     payload.AddFieldValue(fields[Specialization.OptionalTalents], JsonSerializer.Serialize(contentIds));

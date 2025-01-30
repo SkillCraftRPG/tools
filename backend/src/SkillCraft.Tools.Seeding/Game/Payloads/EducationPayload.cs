@@ -1,4 +1,6 @@
-﻿namespace SkillCraft.Tools.Seeding.Game.Payloads;
+﻿using SkillCraft.Tools.Core;
+
+namespace SkillCraft.Tools.Seeding.Game.Payloads;
 
 public record EducationPayload
 {
