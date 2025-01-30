@@ -4,7 +4,7 @@ namespace SkillCraft.Tools.Core.Languages.Models;
 
 public record SearchLanguagesPayload : SearchPayload
 {
-  public string? Script { get; set; }
+  public Guid? ScriptId { get; set; }
 
   public new List<LanguageSortOption> Sort { get; set; } = [];
 }

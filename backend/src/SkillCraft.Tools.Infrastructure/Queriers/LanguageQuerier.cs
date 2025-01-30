@@ -29,6 +29,7 @@ internal class LanguageQuerier : ILanguageQuerier
   public async Task<LanguageModel?> ReadAsync(Guid id, CancellationToken cancellationToken)
   {
     LanguageEntity? language = await _languages.AsNoTracking()
+      .Include(x => x.Scripts)
       .SingleOrDefaultAsync(x => x.Id == id, cancellationToken);
 
     return language == null ? null : await MapAsync(language, cancellationToken);
@@ -38,6 +39,7 @@ internal class LanguageQuerier : ILanguageQuerier
     string uniqueSlugNormalized = Helper.Normalize(uniqueSlug);
 
     LanguageEntity? language = await _languages.AsNoTracking()
+      .Include(x => x.Scripts)
       .SingleOrDefaultAsync(x => x.UniqueSlugNormalized == uniqueSlugNormalized, cancellationToken);
 
     return language == null ? null : await MapAsync(language, cancellationToken);
@@ -49,12 +51,15 @@ internal class LanguageQuerier : ILanguageQuerier
       .ApplyIdFilter(Languages.Id, payload.Ids);
     _queryHelper.ApplyTextSearch(builder, payload.Search, Languages.UniqueSlug, Languages.DisplayName);
 
-    if (!string.IsNullOrWhiteSpace(payload.Script))
+    if (payload.ScriptId.HasValue)
     {
-      //builder.Where(Languages.Script, Operators.IsEqualTo(payload.Script.Trim())); // TODO(fpion): implement
+      builder.Join(LanguageScripts.LanguageId, Languages.LanguageId)
+        .Join(Scripts.ScriptId, LanguageScripts.ScriptId)
+        .Where(Scripts.Id, Operators.IsEqualTo(payload.ScriptId.Value));
     }
 
-    IQueryable<LanguageEntity> query = _languages.FromQuery(builder).AsNoTracking();
+    IQueryable<LanguageEntity> query = _languages.FromQuery(builder).AsNoTracking()
+      .Include(x => x.Scripts);
 
     long total = await query.LongCountAsync(cancellationToken);
 

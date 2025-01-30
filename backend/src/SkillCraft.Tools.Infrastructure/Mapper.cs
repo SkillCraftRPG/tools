@@ -163,14 +163,24 @@ internal class Mapper
       UniqueSlug = source.UniqueSlug,
       DisplayName = source.DisplayName,
       Description = source.Description,
-      //Script = source.Script, // TODO(fpion): implement
       TypicalSpeakers = source.TypicalSpeakers
     };
+
+    foreach (ScriptEntity script in source.Scripts)
+    {
+      destination.Scripts.Add(ToScript(script));
+    }
 
     MapAggregate(source, destination);
 
     return destination;
   }
+  private static ScriptModel ToScript(ScriptEntity source) => new()
+  {
+    Id = source.Id,
+    Name = source.DisplayName ?? source.UniqueSlug,
+    Description = source.Description
+  };
 
   public NatureModel ToNature(NatureEntity source)
   {
