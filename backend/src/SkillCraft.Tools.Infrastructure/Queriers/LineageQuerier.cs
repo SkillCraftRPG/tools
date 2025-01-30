@@ -82,8 +82,8 @@ internal class LineageQuerier : ILineageQuerier
     if (payload.LanguageId.HasValue)
     {
       builder.Join(LineageLanguages.LineageId, Lineages.LineageId)
-        .Join(SkillCraftDb.Languages.LanguageId, LineageLanguages.LanguageId)
-        .Where(SkillCraftDb.Languages.Id, Operators.IsEqualTo(payload.LanguageId.Value));
+        .Join(Languages.LanguageId, LineageLanguages.LanguageId)
+        .Where(Languages.Id, Operators.IsEqualTo(payload.LanguageId.Value));
     }
     if (payload.SizeCategory.HasValue)
     {

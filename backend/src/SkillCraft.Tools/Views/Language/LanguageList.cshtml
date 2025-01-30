@@ -2,6 +2,7 @@
 @using SkillCraft.Tools;
 @using SkillCraft.Tools.Core.Languages.Models;
 @using SkillCraft.Tools.Models.Components;
+@using SkillCraft.Tools.Models.Language;
 @model SearchResults<LanguageModel>
 
 @{
@@ -25,7 +26,7 @@
       <thead>
         <tr>
           <th scope="col">Nom</th>
-          <th scope="col">Alphabet</th>
+          <th scope="col">Alphabets</th>
           <th scope="col">Locuteurs typiques</th>
         </tr>
       </thead>
@@ -36,7 +37,7 @@
             <td>
               <a href="/langues/@(language.UniqueSlug)">@(language.DisplayName ?? language.UniqueSlug)</a>
             </td>
-            <td>@(language.Script ?? "—")</td>
+            <td>@(LanguageHelper.FormatScripts(language))</td>
             <td>@(language.TypicalSpeakers ?? "—")</td>
           </tr>
         }
