@@ -560,7 +560,8 @@
     "DisplayName": "Soldat",
     "Description": "Le soldat est un professionnel hautement discipliné entraîné au combat, ardent défenseur des intérêts de l’armée qu’il a intégrée. Il est vêtu d’une armure forgée avec précision et d’armes sélectionnées avec discernement, paré de son fidèle bouclier, sans oublier son arc de prédilection ou quelques javelots. Sa force ou sa précision légendaire, son regard scrutateur, sa résilience et sa loyauté indéfectible en font un allié remarquable.",
     "RequiredTalent": "Manœuvres de combat",
-    "OtherRequirements": [
+    "OtherRequirements": [],
+    "OptionalTalents": [
       "Ambidextre",
       "Armes à deux mains",
       "Armes de finesse",
@@ -579,7 +580,6 @@
       "Robustesse accrue",
       "Suspicion"
     ],
-    "OptionalTalents": [],
     "OtherOptions": [],
     "ReservedTalent": {
       "Name": "Entraînement militaire",
