@@ -9,15 +9,19 @@
 <main class="container">
   <h1>Accueil</h1>
   @(await Html.PartialAsync("~/Views/Shared/Breadcrumb.cshtml", breadcrumb))
-  <ul>
-    <li><a href="/aspects">Aspects</a></li>
-    <li><a href="/castes">Castes</a></li>
-    <li><a href="/dons-handicaps">Dons & Handicaps</a></li>
-    <li><a href="/educations">Éducations</a></li>
-    <li><a href="/especes">Espèces</a></li>
-    <li><a href="/langues">Langues</a></li>
-    <li><a href="/natures">Natures</a></li>
-    <li><a href="/specialisations">Spécialisations</a></li>
-    <li><a href="/talents">Talents</a></li>
-  </ul>
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <div class="sc-grid-main">
+      <a href="/langues" class="tile"><span class="fas fa-language"></span> Langues</a>
+      <a href="/especes" class="tile"><span class="fas fa-paw"></span> Espèces</a>
+      <a href="/dons-handicaps" class="tile"><span class="fas fa-list"></span> Dons &amp; Handicaps</a>
+      <a href="/natures" class="tile"><span class="fas fa-brain"></span> Natures</a>
+      <a href="/aspects" class="tile"><span class="fas fa-circle-info"></span> Aspects</a>
+      <a href="/castes" class="tile"><span class="fas fa-screwdriver-wrench"></span> Castes</a>
+      <a href="/educations" class="tile"><span class="fas fa-graduation-cap"></span> Éducations</a>
+      <a href="/talents" class="tile"><span class="fas fa-code-branch"></span> Talents</a>
+      <a href="/pouvoirs" class="tile"><span class="fas fa-wand-sparkles"></span> Pouvoirs</a>
+      <a href="/specialisations" class="tile"><span class="fas fa-landmark"></span> Spécialisations</a>
+      <a href="/objets" class="tile"><span class="fas fa-shopping-cart"></span> Objets</a>
+    </div>
+  </div>
 </main>
